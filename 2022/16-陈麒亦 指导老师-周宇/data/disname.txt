@@ -1,0 +1,88 @@
+Acne
+Active pulmonary tuberculosis
+Acute ischemic stroke
+Acute myeloid leukemia
+Alzheimer’s disease
+Atherosclerosis
+Atherosclerotic vascular disease
+Basal cell carcinoma
+Bladder cancer
+Bladder urothelial carcinoma
+Breast cancer
+Cardiovascular disease
+Carotid disease and ischemic stroke
+Cervical cancer
+Cervical carcinoma
+Cholangiocarcinoma
+Clear cell renal cell carcinoma
+Colon cancer
+Colorectal cancer
+Coronary artery disease
+Cutaneous squamous cell carcinoma
+Diabetes mellitus
+Diabetes retinopathy
+Diabetic retinopathy
+Dilated cardiomyopathy
+Ebola virus disease
+Endometrial cancer
+Esophageal cancer
+Esophageal squamous cell carcinoma
+Essential hypertension
+Facet joint osteoarthritis
+Gastric cancer
+Gestational diabetes mellitus
+Glioblastoma
+Glioblastoma multiforme
+Glioma
+Heart disease
+Hepatic steatosis
+Hepatoblastoma
+Hepatocellular carcinoma
+Hirschsprung disease
+Hypertension
+Hypopharyngeal squamous cell carcinoma
+Immunosenescence
+Infantile hemangioma
+Intervertebral disc degeneration
+Intracranial aneurysms
+Ischaemic heart disease
+Kidney clear cell carcinoma
+Laryngeal squamous cell cancer tissues
+Leukoaraiosis
+Liver cancer
+Lung adenocarcinoma
+Lung cancer
+Lupus nephritis
+Major depressive disorder
+Moyamoya disease
+Multiple sclerosis
+Multiple system atrophy
+Myocardial infarction
+Myocardial senescence
+Nervous inflammatory diseases or immune disorders
+Non-small cell lung cancer
+Oral squamous cell carcinoma
+Oral squamous cell carcinomas
+Osteoarthritis
+Osteosarcoma
+Ovarian endometriosis
+Pancreatic cancer
+Pancreatic ductal adenocarcinoma
+Papillary thyroid carcinoma
+Pre-eclampsia
+Primary biliary cholangitis
+Primary great saphenous vein varicosities
+Primary hepatic carcinoma
+Prostate adenocarcinoma
+Prostate cancer
+Pulmonary tuberculosis
+Radiation-induced liver fibrosis
+Repeated implantation failure
+Rheumatoid arthritis
+Silicosis
+Systemic lupus erythematosus
+T2DM with depression
+Thoracic aortic dissection
+Triple negative breast cancer
+Tuberculosis
+Type 2 diabetes mellitus
