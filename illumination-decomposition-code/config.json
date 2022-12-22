@@ -1,6 +1,0 @@
-{
-  "train_path": "/mnt/d/sdb/liutong/datasets/train",
-  "test_path": "/mnt/d/sdb/liutong/datasets/test",
-  "save_path": "./save_models",
-  "test_img_save_path": "./test_save"
-}
