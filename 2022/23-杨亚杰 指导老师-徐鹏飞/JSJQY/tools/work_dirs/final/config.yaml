@@ -1,0 +1,257 @@
+BZ: 8
+checkpoint_interval: 1
+dataset:
+  test:
+    batch_size: 1
+    dataset_type: FAIR1M_1_5
+    images_dir: /root/autodl-tmp/oriented-rcnn/preprocessed_without_ms/test_600_150_1.0
+    num_workers: 4
+    transforms:
+    - max_size: 1536
+      min_size: 512
+      type: RotatedResize
+    - size_divisor: 32
+      type: Pad
+    - mean:
+      - 94.804085
+      - 97.84007
+      - 87.4389
+      std:
+      - 37.954533
+      - 34.162033
+      - 31.796747
+      to_bgr: false
+      type: Normalize
+    type: ImageDataset
+  train:
+    balance_category: false
+    batch_size: 8
+    dataset_dir: /root/autodl-tmp/oriented-rcnn/preprocessed_without_ms/trainval_600_150_1.0
+    filter_empty_gt: false
+    num_workers: 4
+    shuffle: true
+    transforms:
+    - max_size: 1536
+      min_size: 512
+      type: RotatedResize
+    - direction: horizontal
+      prob: 0.5
+      type: RotatedRandomFlip
+    - direction: vertical
+      prob: 0.5
+      type: RotatedRandomFlip
+    - random_rotate_on: true
+      type: RandomRotateAug
+    - size_divisor: 32
+      type: Pad
+    - mean:
+      - 94.804085
+      - 97.84007
+      - 87.4389
+      std:
+      - 37.954533
+      - 34.162033
+      - 31.796747
+      to_bgr: false
+      type: Normalize
+    type: DOTADataset
+  val:
+    batch_size: 8
+    dataset_dir: /root/autodl-tmp/oriented-rcnn/preprocessed_without_ms/trainval_600_150_1.0
+    num_workers: 4
+    shuffle: false
+    transforms:
+    - max_size: 1536
+      min_size: 512
+      type: RotatedResize
+    - size_divisor: 32
+      type: Pad
+    - mean:
+      - 94.804085
+      - 97.84007
+      - 87.4389
+      std:
+      - 37.954533
+      - 34.162033
+      - 31.796747
+      to_bgr: false
+      type: Normalize
+    type: DOTADataset
+dataset_root: /root/autodl-tmp/oriented-rcnn
+eval_interval: 100
+log_interval: 50
+logger:
+  type: RunLogger
+max_epoch: 6
+model:
+  backbone:
+    frozen_stages: 1
+    pretrained: true
+    return_stages:
+    - layer1
+    - layer2
+    - layer3
+    - layer4
+    type: Resnet50
+  bbox_head:
+    assigner:
+      assigned_labels_filled: -1
+      ignore_iof_thr: -1
+      iou_calculator:
+        type: BboxOverlaps2D_rotated_v1
+      match_low_quality: false
+      min_pos_iou: 0.5
+      neg_iou_thr: 0.5
+      pos_iou_thr: 0.5
+      type: MaxIoUAssigner
+    bbox_coder:
+      target_means:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      target_stds:
+      - 0.1
+      - 0.1
+      - 0.2
+      - 0.2
+      - 0.1
+      type: OrientedDeltaXYWHTCoder
+    bbox_roi_extractor:
+      extend_factor: !!python/tuple
+      - 1.4
+      - 1.2
+      featmap_strides:
+      - 4
+      - 8
+      - 16
+      - 32
+      out_channels: 256
+      roi_layer:
+        output_size: 7
+        sampling_ratio: 2
+        type: ROIAlignRotated_v1
+      type: OrientedSingleRoIExtractor
+    end_bbox_type: obb
+    fc_out_channels: 1024
+    in_channels: 256
+    loss_bbox:
+      loss_weight: 1.0
+      type: SmoothL1Loss
+    loss_cls:
+      type: CrossEntropyLoss
+    num_classes: 16
+    pos_weight: -1
+    reg_class_agnostic: true
+    reg_decoded_bbox: false
+    reg_dim: null
+    sampler:
+      add_gt_as_proposals: true
+      neg_pos_ub: -1
+      num: 512
+      pos_fraction: 0.4
+      type: RandomSamplerRotated
+    score_thresh: 0.05
+    start_bbox_type: obb
+    type: OrientedHead
+    with_avg_pool: false
+    with_bbox: true
+    with_cls: true
+    with_reg: true
+    with_shared_head: false
+  neck:
+    in_channels:
+    - 256
+    - 512
+    - 1024
+    - 2048
+    num_outs: 5
+    out_channels: 256
+    type: PAFPN
+  rpn:
+    anchor_generator:
+      ratios:
+      - 0.25
+      - 0.5
+      - 1.0
+      - 2.0
+      - 4.0
+      scales:
+      - 6
+      strides:
+      - 4
+      - 8
+      - 16
+      - 32
+      - 64
+      type: AnchorGenerator
+    assigner:
+      assigned_labels_filled: -1
+      ignore_iof_thr: -1
+      match_low_quality: true
+      min_pos_iou: 0.3
+      neg_iou_thr: 0.3
+      pos_iou_thr: 0.7
+      type: MaxIoUAssigner
+    background_label: 0
+    bbox_coder:
+      target_means:
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      - 0.0
+      target_stds:
+      - 1.0
+      - 1.0
+      - 1.0
+      - 1.0
+      - 0.5
+      - 0.5
+      type: MidpointOffsetCoder
+    bbox_type: obb
+    feat_channels: 256
+    in_channels: 256
+    loss_bbox:
+      loss_weight: 1.0
+      type: SmoothL1Loss
+    loss_cls:
+      loss_weight: 1.0
+      type: CrossEntropyLossForRcnn
+      use_sigmoid: true
+    min_bbox_size: 5
+    nms_post: 2000
+    nms_pre: 2000
+    nms_thresh: 0.8
+    num_classes: 1
+    pos_weight: -1
+    reg_decoded_bbox: false
+    reg_dim: 6
+    sampler:
+      add_gt_as_proposals: false
+      neg_pos_ub: -1
+      num: 256
+      pos_fraction: 0.5
+      type: RandomSampler
+    type: OrientedRPNHead
+  type: OrientedRCNN
+name: final
+optimizer:
+  grad_clip:
+    max_norm: 35
+    norm_type: 2
+  lr: 0.005
+  momentum: 0.9
+  type: SGD
+  weight_decay: 0.0001
+scheduler:
+  milestones:
+  - 7
+  - 10
+  type: StepLR
+  warmup: linear
+  warmup_iters: 500
+  warmup_ratio: 0.001
+work_dir: work_dirs/final
