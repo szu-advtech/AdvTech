@@ -1,0 +1,79 @@
+<style type="text/css">
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}
+</style>
+
+<div class="row">
+	<div class="span12">
+		<div class="page-header">
+			<h1>Binding</h1>
+		</div>
+		<div id="test">
+			<table class="gridtable">
+				<thead>
+					<th>Mac</th>
+					<th>IPv6</th>
+					<th>SwPort</th>
+					<th>Time</th>
+				</thead>
+				<tbody id="data_body"></tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<div>
+	<button type="button" id="btnGet" onclick="get_bind();">start</button>
+</div>
+
+<script>
+	function get_bind(){
+		$.ajax({
+			type:'POST',
+			url : '/savi/config',
+			data : JSON.stringify({
+				"type":"get_binding"
+				}),
+			dataType : 'json',
+			contentType: 'application/json',
+			success : function(data) {
+				for(var i=0;i<data.length;i++){
+					var $tr = $("<tr></tr>");
+					var $td1 = $("<td></td>");
+					var $td2 = $("<td></td>");
+					var $td3 = $("<td></td>");
+					var $td4 = $("<td></td>");
+					$tr.append($td1.clone().text(data[i].mac));
+					$tr.append($td2.clone().text(data[i].ip));
+					$tr.append($td3.clone().text(data[i].swport));
+					$tr.append($td4.clone().text(data[i].time));
+					$tr.appendTo($("#data_body"));
+				}
+			},
+			error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.status);
+                alert(XMLHttpRequest.readyState);
+                alert(textStatus);
+        }
+		}); 
+	}  
+</script>
