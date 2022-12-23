@@ -1,0 +1,1 @@
+python ./main_node.py --user_id=0 --iid=1 --epoch=1 --address=0x6BE766b6a29FD1c88Db889eDC92D81B847FF2b6A --rpc_url=http://localhost:8545 --start_train_index=0 --end_train_index=10000 --start_test_index=0 --end_test_index=2000
