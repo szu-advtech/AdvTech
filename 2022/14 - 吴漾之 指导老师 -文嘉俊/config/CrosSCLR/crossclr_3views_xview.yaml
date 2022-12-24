@@ -1,0 +1,53 @@
+work_dir: work_dir/crossclr_3views/new_skeleton_agcn_1_xview_frame50_channel16_epoch300_cross150
+#感觉_args应该就是设置对应模块里面的一些参数
+# feeder
+train_feeder: feeder.ntu_feeder.Feeder_dual # 供应训练集，对数据集进行裁剪，翻转，填充帧数等操作
+train_feeder_args: # 给出数据和标签对应的位置
+  data_path: data/NTU60_frame50/xview/train_position.npy
+  label_path: data/NTU-RGB-D/xview/train_label.pkl 
+  shear_amplitude: 0.5 # 倾斜角度范围
+  temperal_padding_ratio: 6
+  mmap: True
+
+# model
+model: net.crossclr_3views.CrosSCLR # 使用我们设计的模型
+model_args:
+  base_encoder: net.new_skeleton_st_gcn.Model # 使用stgcn作为解码器
+  pretrain: True
+  feature_dim: 128
+  queue_size: 32768
+  momentum: 0.999
+  Temperature: 0.07
+  mlp: True
+  in_channels: 3
+  hidden_channels: 16 # 1/4 x channels of standard stgcn
+  hidden_dim: 256
+  num_class: 60
+  dropout: 0.5
+  graph_args:
+    labeling_mode: 'spatial'
+  edge_importance_weighting: True
+
+# optim 最优化参数设置
+nesterov: False
+weight_decay: 1e-4
+base_lr: 0.1
+optimizer: SGD
+step: [250]
+
+# training 训练参数配置
+device: [0]
+batch_size: 128
+test_batch_size: 128
+num_epoch: 300
+start_epoch: 0
+
+# cross training 交叉训练
+topk: 1
+view: 'all'
+cross_epoch: 150
+context: True
+
+# log
+save_interval: 5
+eval_interval: -1
