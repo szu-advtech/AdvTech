@@ -5,4 +5,4 @@ This is an implementation of FITing-Tree written in C++. For the original SIGMOD
 - git clone this project and execute `mkdir build` in it
 - enter the build directory and execute `cmake -DCMAKE\_BUILD\_TYPE=Release ..`, `make -j`
 - back to the root directory of the project and execute `chmod +x ./exp.sh`, `./exp.sh`
-- wait for the program to produce the experiment results
+- wait for the program to produce the experimental results
