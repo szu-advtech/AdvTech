@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.rocksdb:rocksdbjni:6.20.3:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/rocksdb/rocksdbjni/6.20.3/rocksdbjni-6.20.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

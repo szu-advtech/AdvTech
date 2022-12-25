@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: pl.edu.icm:JLargeArrays:1.5:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/pl/edu/icm/JLargeArrays/1.5/JLargeArrays-1.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
