@@ -1,11 +1,3 @@
-# RRNet: A Hybrid Detector for Object Detection in Drone-captured Images
-
-*Changrui Chen, Yu Zhang, Qingxuan LV, Shuo Wei, andd Xiaorui Wang*
-
-This repo is created for ICCV Drones Detection 2019. We proposed RRNet, which is an anchor-free detector with a re-regression module.
-
-🎉 We are the **Honorable Mention** to the challenge!
-
 ## Environment
 
 - PyTorch 1.1.0
@@ -26,6 +18,4 @@ python3 train.py
 cp scripts/RRNet/eval.py ./
 python3 eval.py
 ```
-
-
-CUDA_VISIBLE_DEVICES=0 /home/cheny/miniconda3/envs/zgm_RRnet/bin/python  train.py
+### CUDA_VISIBLE_DEVICES=0 /home/cheny/miniconda3/envs/zgm_RRnet/bin/python  train.py
