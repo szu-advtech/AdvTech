@@ -1,0 +1,8 @@
+{
+	"type":"Ascend Training",
+	"framework":"PyTorch",
+	"project_desc":"Training Project",
+	"target":"",
+	"target_id":"",
+	"adk_version":"1.81.22.2.220"
+}
