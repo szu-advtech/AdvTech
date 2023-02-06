@@ -23,6 +23,8 @@ We use modified versions of the [DBoW2](https://github.com/dorian3d/DBoW2) libra
 
 # Building
 
+Download the vovabulary at https://github.com/raulmur/ORB_SLAM2/tree/master/Vocabulary and put in Vocabulary
+
 Clone the repository:
 ```
 cd ORB_SLAM2_with_IMU
