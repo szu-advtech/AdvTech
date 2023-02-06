@@ -1,0 +1,13 @@
+Metadata-Version: 2.1
+Name: mrgcn
+Version: 2.1
+Summary: Multimodal Relational Graph Convolutional Network (MRGCN)
+Home-page: https://gitlab.com/wxwilcke/mrgcn
+Author: Xander Wilcke
+Author-email: w.x.wilcke@vu.nl
+License: GLP3
+Platform: UNKNOWN
+License-File: LICENSE
+
+UNKNOWN
+

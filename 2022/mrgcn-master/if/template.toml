@@ -1,0 +1,173 @@
+# Dataset configuration context
+
+# name of the dataset
+name = "<name>"
+
+[graph]
+context = "<file>.nt.gz"
+
+train = "<context>.nt.gz"
+valid = "<context>.nt.gz"
+test = "<context>.nt.gz"
+
+[graph.structural]
+include_inverse_properties = true
+exclude_properties = []  # use empty list to include all
+separate_literals = false
+multiprocessing = false
+
+[[graph.features]]
+datatype = 'xsd.numeric'
+include = true
+share_weights = false
+embedding_dim = 4
+p_dropout = 0.0
+gpu_acceleration = false
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.boolean'
+include = true
+share_weights = false
+p_dropout = 0.0
+gpu_acceleration = false
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.gYear'
+include = true
+share_weights = false
+embedding_dim = 1
+gpu_acceleration = false
+p_dropout = 0.0
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.date'
+include = true
+share_weights = false
+embedding_dim = 3
+gpu_acceleration = false
+p_dropout = 0.0
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.dateTime'
+include = true
+share_weights = false
+embedding_dim = 3
+gpu_acceleration = false
+p_dropout = 0.0
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.string'
+include = true
+share_weights = true
+trim_outliers = false
+remove_outliers = false
+embedding_dim = 16
+optim_lr = 0.001
+optim_momentum = 0.1
+p_dropout = 0.0
+gpu_acceleration = false
+
+model = [ "huggingface/pytorch-transformers",
+          "model",
+          "distilbert-base-multilingual-cased" ]
+tokenizer.config = [ "huggingface/pytorch-transformers",
+                     "tokenizer",
+                     "distilbert-base-multilingual-cased" ]
+tokenizer.pad_token = "[PAD]"
+
+[[graph.features]]
+datatype = 'xsd.anyURI'
+include = true
+share_weights = true
+trim_outliers = false
+remove_outliers = false
+embedding_dim = 16
+gpu_acceleration = false
+p_dropout = 0.0
+
+model = [ "huggingface/pytorch-transformers",
+          "model",
+          "distilbert-base-multilingual-cased" ]
+tokenizer.config = [ "huggingface/pytorch-transformers",
+                     "tokenizer",
+                     "distilbert-base-multilingual-cased" ]
+tokenizer.pad_token = "[PAD]"
+
+[[graph.features]]
+datatype = 'blob.image'
+include = true
+share_weights = false
+trim_outliers = false
+remove_outliers = false
+embedding_dim = 128
+p_dropout = 0.0
+gpu_acceleration = false
+p_noise = 0.0
+noise_multiplier = 0.0
+model = [ "pytorch/vision:v0.10.0",
+          "mobilenet_v2",
+          "MobileNet_V2_Weights.IMAGENET1K_V1" ]
+transform.mode = "RGB"
+transform.interpolationMode = "BILINEAR"
+transform.resizeSize = 232
+transform.centerCrop = 224
+transform.mean = [0.485, 0.456, 0.406]
+transform.std = [0.229, 0.224, 0.225]
+
+[[graph.features]]
+datatype = 'ogc.wktLiteral'
+include = true
+share_weights = false
+remove_outliers = false
+embedding_dim = 16
+p_dropout = 0.0
+gpu_acceleration = false
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[task]
+# node classification
+# type = classification
+target_property = '<URI>'
+target_property_inv = '<URI>'
+
+# link prediction
+type = 'link prediction'
+eval_interval = 10
+lprank_gpu_acceleration = false
+filter_ranks = true
+test_batchsize = 500
+mrr_batchsize = 50
+
+seed = -1  # use < 0 for random
+gcn_batchsize = 32  # < 0 for full batch
+gcn_gpu_acceleration = false
+early_stopping.patience = -1
+early_stopping.tolerance = 0.01
+
+[model]
+epoch = 50
+learning_rate = 0.01
+num_bases = 0
+p_dropout = 0.0
+weight_decay = 0.0
+l1_lambda = 0.0
+l2_lambda = 0.0
+bias = false
+
+[[model.layers]]
+type = 'mrgcn'
+hidden_nodes = 16
+
+[[model.layers]]
+type = 'mrgcn'
