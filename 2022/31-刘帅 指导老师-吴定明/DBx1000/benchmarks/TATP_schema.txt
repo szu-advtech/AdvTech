@@ -1,0 +1,86 @@
+//size, type, name
+TABLE=SUBSCRIBER
+	4,int64_t,s_id
+	15,string,sub_nbr
+	1,int64_t,bit_1
+	1,int64_t,bit_2
+	1,int64_t,bit_3
+	1,int64_t,bit_4
+	1,int64_t,bit_5
+	1,int64_t,bit_6
+	1,int64_t,bit_7
+	1,int64_t,bit_8
+	1,int64_t,bit_9
+	1,int64_t,bit_10
+	1,int64_t,hex_1
+	1,int64_t,hex_2
+	1,int64_t,hex_3
+	1,int64_t,hex_4
+	1,int64_t,hex_5
+	1,int64_t,hex_6
+	1,int64_t,hex_7
+	1,int64_t,hex_8
+	1,int64_t,hex_9
+	1,int64_t,hex_10
+	2,int64_t,bytes2_1
+	2,int64_t,bytes2_2
+	2,int64_t,bytes2_3
+	2,int64_t,bytes2_4
+	2,int64_t,bytes2_5
+	2,int64_t,bytes2_6
+	2,int64_t,bytes2_7
+	2,int64_t,bytes2_8
+	2,int64_t,bytes2_9
+	2,int64_t,bytes2_10
+  4,int64_t,msc_location
+  4,int64_t,vlr_location
+
+TABLE=ACCESS_INFO
+  4,int64_t,s_id
+  1,int64_t,ai_type
+  2,int64_t,data1
+  2,int64_t,data2
+  3,string,data3
+  5,string,data4
+
+TABLE=SPECIAL_FACILITY
+  4,int64_t,s_id
+  1,int64_t,sf_type
+  1,int64_t,is_active
+  2,int64_t,error_cntrl
+  2,int64_t,data_a
+  5,string,data_b
+
+TABLE=CALL_FORWARDING
+  4,int64_t,s_id
+  1,int64_t,sf_type
+  1,int64_t,start_time
+  1,int64_t,end_time
+  15,string,numberx
+
+// The below is scaled by TATP_SCALE_FACTOR
+
+// indexed by s_id, unique
+// NUM_SUBSCRIBERS
+INDEX=HASH_SUBSCRIBER_IDX
+SUBSCRIBER,100000
+
+// indexed by sub_nbr, unique
+// NUM_SUBSCRIBERS
+INDEX=HASH_SUBSCRIBER_SUB_NBR_IDX
+SUBSCRIBER,100000
+
+// indexed by (s_id, ai_type); unique
+// NUM_SUBSCRIBERS * E([1...4])
+INDEX=HASH_ACCESS_INFO_IDX
+ACCESS_INFO,250000
+
+// indexed by (s_id, sf_type); unique
+// NUM_SUBSCRIBERS * E([1...4])
+INDEX=HASH_SPECIAL_FACILITY_IDX
+SPECIAL_FACILITY,250000
+
+// indexed by (s_id, sf_type); non-unique (up to 4 duplicates); mutable
+// NUM_SUBSCRIBERS * E([1...4]) * E([0...3])
+INDEX=ORDERED_CALL_FORWARDING_IDX
+CALL_FORWARDING,375000
