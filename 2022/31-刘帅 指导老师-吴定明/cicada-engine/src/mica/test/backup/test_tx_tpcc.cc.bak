@@ -1,0 +1,3330 @@
+
+#include <cstdio>
+#include <thread>
+#include <random>
+#include "mica/transaction/db.h"
+#include "mica/util/lcore.h"
+#include "mica/util/zipf.h"
+#include "mica/util/rand.h"
+#include "mica/test/test_tx_conf.h"
+
+#include <city>
+
+typedef DBConfig::Alloc Alloc;
+typedef DBConfig::PmemAlloc PmemAlloc;
+typedef DBConfig::LoggerInterface LoggerInterface;
+typedef DBConfig::Logger Logger;
+typedef DBConfig::PmemLogger PmemLogger;
+typedef DBConfig::Timestamp Timestamp;
+typedef DBConfig::ConcurrentTimestamp ConcurrentTimestamp;
+typedef DBConfig::Timing Timing;
+typedef ::mica::transaction::PagePool<DBConfig> PagePool;
+typedef ::mica::transaction::DB<DBConfig> DB;
+typedef ::mica::transaction::Table<DBConfig> Table;
+typedef DB::HashIndexUniqueU64 HashIndex;
+typedef DB::BTreeIndexUniqueU64 BTreeIndex;
+typedef ::mica::transaction::RowVersion<DBConfig> RowVersion;
+typedef ::mica::transaction::RowAccessHandle<DBConfig> RowAccessHandle;
+typedef ::mica::transaction::RowAccessHandlePeekOnly<DBConfig>
+        RowAccessHandlePeekOnly;
+typedef ::mica::transaction::PmemRowAccessHandle<DBConfig> PmemRowAccessHandle;
+typedef ::mica::transaction::PmemRowAccessHandlePeekOnly<DBConfig>
+        PmemRowAccessHandlePeekOnly;
+typedef ::mica::transaction::Transaction<DBConfig> Transaction;
+typedef ::mica::transaction::PmemTransaction<DBConfig> PmemTransaction;
+typedef ::mica::transaction::Result Result;
+static ::mica::util::Stopwatch sw;
+
+//==================================================================================
+
+// Part 1: data structure for row version data
+
+struct row_warehouse {
+  int64_t w_id;
+  char    w_name[10];
+  char    w_street_1[20];
+  char    w_street_2[20];
+  char    w_city[20];
+  char    w_state[2];
+  char    w_zip[9];
+  double  w_tax;
+  double  w_ytd;
+};
+
+struct row_district {
+  int64_t d_id;
+  int64_t d_w_id;
+  char    d_name[10];
+  char    d_street_1[20];
+  char    d_street_2[20];
+  char    d_city[20];
+  char    d_state[2];
+  char    d_zip[9];
+  double  d_tax;
+  double  d_ytd;
+  int64_t d_next_o_id;
+};
+
+struct row_customer {
+  int64_t c_id;
+  int64_t c_d_id;
+  int64_t c_w_id;
+  char    c_first[16];
+  char    c_middle[2];
+  char    c_last[16];
+  char    c_street_1[20];
+  char    c_street_2[20];
+  char    c_city[20];
+  char    c_state[2];
+  char    c_zip[9];
+  char    c_phone[9];
+  int64_t c_since;
+  char    c_credit[2];
+  double  c_credit_limit;
+  double  c_discount;
+  double  c_balance;
+  double  c_ytd_payment;
+  int64_t c_payment_cnt;
+  int64_t c_delivery_cnt;
+  char    c_data[500];
+};
+
+struct row_history {
+  int64_t h_c_id;
+  int64_t h_c_d_id;
+  int64_t h_c_w_id;
+  int64_t h_d_id;
+  int64_t h_w_id;
+  int64_t h_date;
+  double  h_amount;
+  char    h_data[24];
+};
+
+struct row_new_order {
+  int64_t no_o_id;
+  int64_t no_d_id;
+  int64_t no_w_id;
+};
+
+struct row_order {
+  int64_t o_id;
+  int64_t o_c_id;
+  int64_t o_d_id;
+  int64_t o_w_id;
+  int64_t o_entry_d;
+  int64_t o_carrier_id;
+  int64_t o_ol_cnt;
+  int64_t o_all_local;
+};
+
+struct row_order_line {
+  int64_t ol_o_id;
+  int64_t ol_d_id;
+  int64_t ol_w_id;
+  int64_t ol_number;
+  int64_t ol_i_id;
+  int64_t ol_supply_w_id;
+  int64_t ol_delivery_d;
+  int64_t ol_quantity;
+  double  ol_amount;
+  char    ol_dist_info[24];
+};
+
+struct row_item {
+  int64_t i_id;
+  int64_t i_im_id;
+  char    i_name[24];
+  double  i_price;
+  char    i_data[50];
+};
+
+struct row_stock {
+  int64_t s_i_id;
+  int64_t s_w_id;
+  int64_t s_quantity;
+  char    s_dist_01[24];
+  char    s_dist_02[24];
+  char    s_dist_03[24];
+  char    s_dist_04[24];
+  char    s_dist_05[24];
+  char    s_dist_06[24];
+  char    s_dist_07[24];
+  char    s_dist_08[24];
+  char    s_dist_09[24];
+  char    s_dist_10[24];
+  int64_t s_ytd;
+  int64_t s_order_cnt;
+  int64_t s_remote_cnt;
+  char    s_data[50];
+};
+
+// Part 2 tpcc query
+
+#define ATOM_FETCH_ADD(dest, value) \
+	__sync_fetch_and_add(&(dest), value)
+
+drand48_data** tpcc_buffer;
+uint64_t C_255, C_1023, C_8191;
+
+struct tpcc_query_payment {
+  uint64_t w_id;
+  uint64_t d_id;
+  uint64_t c_w_id;
+  uint64_t c_d_id;
+  double h_amount;
+  uint64_t h_date;
+
+  bool by_last_name;
+  uint64_t c_id;              // by_last_name == true
+  char c_last[LASTNAME_LEN];  // by_last_name == false
+};
+
+struct tpcc_query_new_order {
+  uint64_t w_id;
+  uint64_t d_id;
+  uint64_t c_id;
+  uint64_t ol_cnt;
+  uint64_t o_entry_d;
+  struct Item_no* items;
+  bool rollback;
+  bool all_local;
+};
+
+struct Item_no {
+  uint64_t ol_i_id;
+  uint64_t ol_supply_w_id;
+  uint64_t ol_quantity;
+};
+
+struct tpcc_query_order_status {
+  uint64_t w_id;
+  uint64_t d_id;
+
+  bool by_last_name;
+  uint64_t c_id;              // by_last_name == true
+  char c_last[LASTNAME_LEN];  // by_last_name == false
+};
+
+struct tpcc_query_stock_level {
+  uint64_t w_id;
+  uint64_t d_id;
+  uint64_t threshold;
+};
+
+struct tpcc_query_delivery {
+  uint64_t w_id;
+  uint64_t o_carrier_id;
+  uint64_t ol_delivery_d;
+};
+
+enum TPCCTxnType {
+  TPCC_ALL=0,
+  TPCC_PAYMENT,
+  TPCC_NEW_ORDER,
+  TPCC_ORDER_STATUS,
+  TPCC_DELIVERY,
+  TPCC_STOCK_LEVEL
+};
+
+class tpcc_query {
+ public:
+  void init(uint64_t thd_id, workload* h_wl) {
+    double x = (double)URand(0, 99, thd_id) / 100.0;
+#if !TPCC_FULL
+    if (x < g_perc_payment)
+      gen_payment(thd_id);
+    else
+      gen_new_order(thd_id);
+#else
+    if (x < 0.04)
+      gen_stock_level(thd_id);
+    else if (x < 0.04 + 0.04)
+      gen_delivery(thd_id);
+    else if (x < 0.04 + 0.04 + 0.04)
+      gen_order_status(thd_id);
+    else if (x < 0.04 + 0.04 + 0.04 + 0.43)
+      gen_payment(thd_id);
+    else
+      gen_new_order(thd_id);
+#endif
+  }
+  TPCCTxnType type;
+  union {
+    tpcc_query_payment payment;
+    tpcc_query_new_order new_order;
+    tpcc_query_order_status order_status;
+    tpcc_query_stock_level stock_level;
+    tpcc_query_delivery delivery;
+  } args;
+
+  tpcc_query (Alloc *alloc) : alloc_(alloc) {}
+
+ private:
+  Alloc *alloc_;  
+
+  // warehouse id to partition id mapping
+  //	uint64_t wh_to_part(uint64_t wid);
+  void gen_payment(uint64_t thd_id) {
+
+  type = TPCC_PAYMENT;
+  tpcc_query_payment& arg = args.payment;
+
+  if (FIRST_PART_LOCAL) {
+    if (g_num_wh <= g_thread_cnt)
+      arg.w_id = thd_id % g_num_wh + 1;
+    else {
+      do {
+        arg.w_id = RAND((g_num_wh + g_thread_cnt - 1) / g_thread_cnt, thd_id) *
+                       g_thread_cnt +
+                   thd_id + 1;
+      } while (arg.w_id > g_num_wh);
+      assert((arg.w_id - 1) % g_thread_cnt == thd_id);
+    }
+  } else
+    arg.w_id = URand(1, g_num_wh, thd_id);
+
+  arg.d_id = URand(1, DIST_PER_WARE, thd_id);
+  arg.h_amount = URand(1, 5000, thd_id);
+  arg.h_date = 2013;
+
+  int x = URand(1, 100, thd_id);
+  int y = URand(1, 100, thd_id);
+  if (x <= 85) {
+    // home warehouse
+    arg.c_d_id = arg.d_id;
+    arg.c_w_id = arg.w_id;
+  } else {
+    // remote warehouse
+    arg.c_d_id = URand(1, g_district_per_wearehouse, thd_id);
+    if (g_num_wh > 1) {
+      while ((arg.c_w_id = URand(1, g_num_wh, thd_id)) == arg.w_id) {
+      }
+    } else
+      arg.c_w_id = arg.w_id;
+  }
+  if (y <= 60) {
+    // by last name
+    arg.by_last_name = true;
+    Lastname(NURand(255, 0, 999, thd_id), arg.c_last);
+  } else {
+    // by cust id
+    arg.by_last_name = false;
+    arg.c_id = NURand(1023, 1, g_cust_per_dist, thd_id);
+  }
+  } // end of gen_payment
+
+  void gen_new_order(uint64_t thd_id) {
+
+  type = TPCC_NEW_ORDER;
+  tpcc_query_new_order& arg = args.new_order;
+
+  if (FIRST_PART_LOCAL) {
+    if (g_num_wh <= g_thread_cnt)
+      arg.w_id = thd_id % g_num_wh + 1;
+    else {
+      do {
+        arg.w_id = RAND((g_num_wh + g_thread_cnt - 1) / g_thread_cnt, thd_id) *
+                       g_thread_cnt +
+                   thd_id + 1;
+      } while (arg.w_id > g_num_wh);
+      assert((arg.w_id - 1) % g_thread_cnt == thd_id);
+    }
+  } else
+    arg.w_id = URand(1, g_num_wh, thd_id);
+  arg.d_id = URand(1, DIST_PER_WARE, thd_id);
+  arg.c_id = NURand(1023, 1, g_cust_per_dist, thd_id);
+  arg.ol_cnt = URand(5, 15, thd_id);
+  arg.o_entry_d = 2013;
+  arg.items = (Item_no*) alloc_->malloc_contiguous (sizeof(Item_no) * arg.ol_cnt, thd_id);
+  arg.all_local = true;
+
+  for (UInt32 oid = 0; oid < arg.ol_cnt; oid++) {
+    arg.items[oid].ol_i_id = NURand(8191, 1, g_max_items, thd_id);
+    UInt32 x = URand(1, 100, thd_id);
+    if (x > 1 || g_num_wh == 1)
+      arg.items[oid].ol_supply_w_id = arg.w_id;
+    else {
+      while ((arg.items[oid].ol_supply_w_id = URand(1, g_num_wh, thd_id)) ==
+             arg.w_id) {
+      }
+      arg.all_local = false;
+    }
+    arg.items[oid].ol_quantity = URand(1, 10, thd_id);
+  }
+  // Remove duplicate items
+  for (UInt32 i = 0; i < arg.ol_cnt; i++) {
+    for (UInt32 j = 0; j < i; j++) {
+      if (arg.items[i].ol_i_id == arg.items[j].ol_i_id) {
+        for (UInt32 k = i; k < arg.ol_cnt - 1; k++)
+          arg.items[k] = arg.items[k + 1];
+        arg.ol_cnt--;
+        i--;
+      }
+    }
+  }
+  for (UInt32 i = 0; i < arg.ol_cnt; i++)
+    for (UInt32 j = 0; j < i; j++)
+      assert(arg.items[i].ol_i_id != arg.items[j].ol_i_id);
+
+  // "1% of new order gives wrong itemid"
+  // We cannot do this because DBx1000 cannot distinguish user aborts from conflict aborts.
+  // if (URand(0, 99, thd_id) == 0)
+  //   arg.items[URand(0, arg.ol_cnt - 1, thd_id)].ol_i_id = -1;
+
+  }
+  void gen_order_status(uint64_t thd_id) {
+  type = TPCC_ORDER_STATUS;
+  tpcc_query_order_status& arg = args.order_status;
+
+  if (FIRST_PART_LOCAL) {
+    if (g_num_wh <= g_thread_cnt)
+      arg.w_id = thd_id % g_num_wh + 1;
+    else {
+      do {
+        arg.w_id = RAND((g_num_wh + g_thread_cnt - 1) / g_thread_cnt, thd_id) *
+                       g_thread_cnt +
+                   thd_id + 1;
+      } while (arg.w_id > g_num_wh);
+      assert((arg.w_id - 1) % g_thread_cnt == thd_id);
+    }
+  } else
+    arg.w_id = URand(1, g_num_wh, thd_id);
+  arg.d_id = URand(1, DIST_PER_WARE, thd_id);
+
+  int y = URand(1, 100, thd_id);
+  if (y <= 60) {
+    // by last name
+    arg.by_last_name = true;
+    Lastname(NURand(255, 0, 999, thd_id), arg.c_last);
+  } else {
+    // by cust id
+    arg.by_last_name = false;
+    arg.c_id = NURand(1023, 1, g_cust_per_dist, thd_id);
+  }
+  } // end of gen_order_status
+
+  void gen_stock_level(uint64_t thd_id) {
+  type = TPCC_STOCK_LEVEL;
+  tpcc_query_stock_level& arg = args.stock_level;
+
+  if (FIRST_PART_LOCAL) {
+    if (g_num_wh <= g_thread_cnt)
+      arg.w_id = thd_id % g_num_wh + 1;
+    else {
+      do {
+        arg.w_id = RAND((g_num_wh + g_thread_cnt - 1) / g_thread_cnt, thd_id) *
+                       g_thread_cnt +
+                   thd_id + 1;
+      } while (arg.w_id > g_num_wh);
+      assert((arg.w_id - 1) % g_thread_cnt == thd_id);
+    }
+  } else
+    arg.w_id = URand(1, g_num_wh, thd_id);
+  arg.d_id = URand(1, DIST_PER_WARE, thd_id);
+  arg.threshold = URand(10, 20, thd_id);
+  } // end of gen_stock_level
+
+  void gen_delivery(uint64_t thd_id) {
+  type = TPCC_DELIVERY;
+  tpcc_query_delivery& arg = args.delivery;
+
+  if (FIRST_PART_LOCAL) {
+    if (g_num_wh <= g_thread_cnt)
+      arg.w_id = thd_id % g_num_wh + 1;
+    else {
+      do {
+        arg.w_id = RAND((g_num_wh + g_thread_cnt - 1) / g_thread_cnt, thd_id) *
+                       g_thread_cnt +
+                   thd_id + 1;
+      } while (arg.w_id > g_num_wh);
+      assert((arg.w_id - 1) % g_thread_cnt == thd_id);
+    }
+  } else
+    arg.w_id = URand(1, g_num_wh, thd_id);
+  arg.o_carrier_id = URand(1, g_district_per_wearehouse, thd_id);
+  arg.ol_delivery_d = 2013;
+  } // end of gen_delivery
+};
+
+// All the querise for a particular thread.
+class Query_thd {
+ public:
+  Query_thd (Alloc *alloc) : alloc_ (alloc) {}
+
+  void init(tpcc_wl * h_wl, int thread_id) {
+    uint64_t request_cnt;
+    q_idx = 0;
+    // request_cnt = WARMUP / g_thread_cnt + MAX_TXN_PER_PART + 4;
+    request_cnt = WARMUP + MAX_TXN_PER_PART + ABORT_BUFFER_SIZE * 2;
+    queries = (tpcc_query *) alloc_->malloc_contiguous(sizeof(tpcc_query) * request_cnt);
+
+    for (UInt32 qid = 0; qid < request_cnt; qid ++) {
+      new(&queries[qid]) tpcc_query();
+      queries[qid].init(thread_id, h_wl);
+    }
+  }
+
+  tpcc_query * get_next_query() {
+    tpcc_query * query = &queries[q_idx++];
+    return query;
+  }
+
+  uint64_t q_idx;
+  tpcc_query * queries;
+  char pad[CL_SIZE - sizeof(void *) - sizeof(int)];
+  drand48_data buffer;
+};
+
+// TODO we assume a separate task queue for each thread in order to avoid 
+// contention in a centralized query queue. In reality, more sofisticated 
+// queue model might be implemented.
+class Query_queue {
+public:
+  Query_queue (Alloc *alloc) : alloc_(alloc) {}
+
+  void init(tpcc_wl * h_wl) {
+    all_queries = alloc_->malloc_contiguous(sizeof(Query_thd*) * g_thread_cnt);
+    _wl = h_wl;
+    _next_tid = 0;
+
+    assert(tpcc_buffer != NULL);
+
+    // int64_t begin = get_server_clock();
+    pthread_t p_thds[g_thread_cnt - 1];
+    for (UInt32 i = 0; i < g_thread_cnt - 1; i++) {
+      pthread_create(&p_thds[i], NULL, threadInitQuery, this);
+    }
+    threadInitQuery(this);
+    for (uint32_t i = 0; i < g_thread_cnt - 1; i++)
+      pthread_join(p_thds[i], NULL);
+    // int64_t end = get_server_clock();
+    printf("Query Queue Init Finish!\n");
+    // printf("Query Queue Init Time %f\n", 1.0 * (end - begin) / 1000000000UL);
+  }
+
+  void init_per_thread(int thread_id) {
+    all_queries[thread_id] = (Query_thd *) alloc_->malloc_contiguous(sizeof(Query_thd));
+    all_queries[thread_id]->init(_wl, thread_id);
+  }
+  tpcc_query * get_next_query(uint64_t thd_id) {
+    tpcc_query* query = all_queries[thd_id]->get_next_query();
+    return query;
+  }
+
+private:
+  static void *threadInitQuery(void * This) {
+    Query_queue * query_queue = (Query_queue *)This;
+    uint32_t tid = ATOM_FETCH_ADD(_next_tid, 1);
+
+    ::mica::util::lcore.pin_thread(tid);
+
+    query_queue->init_per_thread(tid);
+    return nullptr;
+  }
+
+  Query_thd      **all_queries;
+  tpcc_wl         *_wl;
+  static uint64_t  _next_tid;
+};
+
+// Part 3 tpcc workload
+
+// ITEM_IDX
+uint64_t itemKey(uint64_t i_id);
+// WAREHOUSE_IDX
+uint64_t warehouseKey(uint64_t w_id);
+// DISTRICT_IDX
+uint64_t distKey(uint64_t d_id, uint64_t d_w_id);
+// CUSTOMER_ID_IDX
+uint64_t custKey(uint64_t c_id, uint64_t c_d_id, uint64_t c_w_id);
+// CUSTOMER_LAST_IDX
+uint64_t custNPKey(uint64_t c_d_id, uint64_t c_w_id, const char* c_last);
+// STOCK_IDX
+uint64_t stockKey(uint64_t s_i_id, uint64_t s_w_id);
+// ORDER_IDX
+uint64_t orderKey(int64_t o_id, uint64_t o_d_id, uint64_t o_w_id);
+// ORDER_CUST_IDX
+uint64_t orderCustKey(int64_t o_id, uint64_t o_c_id, uint64_t o_d_id,
+                      uint64_t o_w_id);
+// NEWORDER_IDX
+uint64_t neworderKey(int64_t o_id, uint64_t o_d_id, uint64_t o_w_id);
+// ORDERED_ORDERLINE_IDX
+uint64_t orderlineKey(uint64_t ol_number, int64_t ol_o_id, uint64_t ol_d_id, uint64_t ol_w_id);
+uint64_t Lastname(uint64_t num, char* name);
+
+// return random data from [0, max-1]
+uint64_t RAND(uint64_t max, uint64_t thd_id);
+// random number from [x, y]
+uint64_t URand(uint64_t x, uint64_t y, uint64_t thd_id);
+// non-uniform random number
+void InitNURand(uint64_t thd_id);
+uint64_t NURand(uint64_t A, uint64_t x, uint64_t y, uint64_t thd_id);
+// random string with random length beteen min and max.
+uint64_t MakeAlphaString(int min, int max, char* str, uint64_t thd_id);
+uint64_t MakeNumberString(int min, int max, char* str, uint64_t thd_id);
+uint64_t itemKey(uint64_t i_id) { return i_id; }
+uint64_t warehouseKey(uint64_t w_id) { return w_id; }
+uint64_t distKey(uint64_t d_id, uint64_t d_w_id) {
+  return d_w_id * DIST_PER_WARE + d_id;
+}
+uint64_t custKey(uint64_t c_id, uint64_t c_d_id, uint64_t c_w_id) {
+  return distKey(c_d_id, c_w_id) * g_cust_per_dist + c_id;
+}
+uint64_t custNPKey(uint64_t c_d_id, uint64_t c_w_id, const char* c_last) {
+  return CityHash64(c_last, strlen(c_last)) * g_num_wh * DIST_PER_WARE +
+         distKey(c_d_id, c_w_id);
+}
+uint64_t stockKey(uint64_t s_i_id, uint64_t s_w_id) {
+  return s_w_id * g_max_items + s_i_id;
+}
+uint64_t orderKey(int64_t o_id, uint64_t o_d_id, uint64_t o_w_id) {
+  // Use negative o_id to allow reusing the current index interface.
+  return distKey(o_d_id, o_w_id) * g_max_orderline + (g_max_orderline - o_id);
+}
+uint64_t orderCustKey(int64_t o_id, uint64_t o_c_id, uint64_t o_d_id,
+                      uint64_t o_w_id) {
+  // Use negative o_id to allow reusing the current index interface.
+  return distKey(o_d_id, o_w_id) * g_cust_per_dist * g_max_orderline +
+         o_c_id * g_max_orderline + (g_max_orderline - o_id);
+}
+uint64_t neworderKey(int64_t o_id, uint64_t o_d_id, uint64_t o_w_id) {
+  return distKey(o_d_id, o_w_id) * g_max_orderline + (g_max_orderline - o_id);
+}
+uint64_t orderlineKey(uint64_t ol_number, int64_t ol_o_id, uint64_t ol_d_id,
+                      uint64_t ol_w_id) {
+  // Use negative ol_o_id to allow reusing the current index interface.
+  return distKey(ol_d_id, ol_w_id) * g_max_orderline * 15 +
+         (g_max_orderline - ol_o_id) * 15 + ol_number;
+}
+
+uint64_t Lastname(uint64_t num, char* name) {
+  static const char* n[] = {"BAR", "OUGHT", "ABLE",  "PRI",   "PRES",
+                            "ESE", "ANTI",  "CALLY", "ATION", "EING"};
+  strcpy(name, n[num / 100]);
+  strcat(name, n[(num / 10) % 10]);
+  strcat(name, n[num % 10]);
+  return strlen(name);
+}
+
+uint64_t RAND(uint64_t max, uint64_t thd_id) {
+  int64_t rint64 = 0;
+  lrand48_r(tpcc_buffer[thd_id], &rint64);
+  return rint64 % max;
+}
+
+uint64_t URand(uint64_t x, uint64_t y, uint64_t thd_id) {
+  return x + RAND(y - x + 1, thd_id);
+}
+
+void InitNURand(uint64_t thd_id) {
+  C_255 = (uint64_t)URand(0, 255, thd_id);
+  C_1023 = (uint64_t)URand(0, 1023, thd_id);
+  C_8191 = (uint64_t)URand(0, 8191, thd_id);
+}
+
+uint64_t NURand(uint64_t A, uint64_t x, uint64_t y, uint64_t thd_id) {
+  int C = 0;
+  switch (A) {
+    case 255:
+      C = C_255;
+      break;
+    case 1023:
+      C = C_1023;
+      break;
+    case 8191:
+      C = C_8191;
+      break;
+    default:
+      M_ASSERT(false, "Error! NURand\n");
+      exit(-1);
+  }
+  return (((URand(0, A, thd_id) | URand(x, y, thd_id)) + C) % (y - x + 1)) + x;
+}
+
+uint64_t MakeAlphaString(int min, int max, char* str, uint64_t thd_id) {
+  char char_list[] = {'1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
+                      'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+                      'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x',
+                      'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+                      'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+                      'U', 'V', 'W', 'X', 'Y', 'Z'};
+  uint64_t cnt = URand(min, max, thd_id);
+  for (uint32_t i = 0; i < cnt; i++) str[i] = char_list[URand(0L, 60L, thd_id)];
+  for (int i = cnt; i < max; i++) str[i] = '\0';
+
+  return cnt;
+}
+
+uint64_t MakeNumberString(int min, int max, char* str, uint64_t thd_id) {
+  uint64_t cnt = URand(min, max, thd_id);
+  for (UInt32 i = 0; i < cnt; i++) {
+    uint64_t r = URand(0L, 9L, thd_id);
+    str[i] = '0' + r;
+  }
+  return cnt;
+}
+
+class tpcc_wl {
+ public:
+  Table *t_warehouse;
+  Table *t_district;
+  Table *t_customer;
+  Table *t_history;
+  Table *t_neworder;
+  Table *t_order;
+  Table *t_orderline;
+  Table *t_item;
+  Table *t_stock;
+
+  HashIndex  *i_item;
+  HashIndex  *i_warehouse;
+  HashIndex  *i_district;
+  HashIndex  *i_customer_id;
+  HashIndex  *i_customer_last;
+  HashIndex  *i_stock;
+
+  BTreeIndex *i_order;
+  BTreeIndex *i_order_cust;
+  BTreeIndex *i_neworder;
+  BTreeIndex *i_orderline;
+
+  tpcc_wl (DB *db, Alloc *alloc) : db_(db), alloc_(alloc), num_wh(g_num_wh) {}
+  bool init() {
+    // create table
+    uint64_t expected_row_warehouse = num_wh;
+    db_->create_table ("warehouse", 1, {sizeof(row_warehouse)}, expected_row_warehouse);
+    t_warehouse = db_->get_table ("warehouse");
+    uint64_t expected_row_district = num_wh*g_district_per_wearehouse;
+    db_->create_table ("district", 1, {sizeof(row_district)}, expected_row_district);
+    t_district = db_->get_table ("district");
+    uint64_t expected_row_customer = num_wh*g_district_per_wearehouse*g_customer_per_district;
+    db_->create_table ("customer", 1, {sizeof(row_customer)}, expected_row_customer);
+    t_customer = db_->get_table ("customer");
+    uint64_t expected_row_history = expexted_row_customer;
+    db_->create_table ("history", 1, {sizeof(row_history)}, expected_row_history);
+    t_history = db_->get_table ("history");
+    uint64_t expected_row_neworder = expexted_row_customer;
+    db_->create_table ("neworder", 1, {sizeof(row_new_order)}, expected_row_neworder);
+    t_neworder = db_->get_table ("neworder");
+    uint64_t expected_row_order = expected_row_customer;
+    db_->create_table ("order", 1, {sizeof(row_order)}, expected_row_order);
+    t_order = db_->get_table ("order");
+    uint64_t expected_row_orderline = expected_row_order*g_average_items_per_order;
+    db_->create_table ("orderline", 1, {sizeof(row_order_line)}, expected_row_orderline);
+    t_orderline = db_->get_table ("orderline");
+    uint64_t expected_row_item = g_max_items;
+    db_->create_table ("item", 1, {sizeof(row_item)}, expected_row_item);
+    t_item = db_->get_table ("item");
+    uint64_t expected_row_stock = num_wh*g_max_items;
+    db_->create_table ("stock", 1, {sizeof(row_stock)}, expected_row_stock);
+    t_item = db_->get_table ("stock");
+
+    // create hash index
+    db_->create_hash_index_unique_u64 ("i_item", t_item, expected_row_item);
+    i_item = db_->get_hash_index_unique_u64 ("i_item");
+    db_->create_hash_index_unique_u64 ("i_warehouse", t_warehouse, expected_row_warehouse);
+    i_warehouse = db_->get_hash_index_unique_u64 ("i_warehouse");
+    db_->create_hash_index_unique_u64 ("i_district", t_district, expected_row_warehouse);
+    i_district = db_->get_hash_index_unique_u64 ("i_district");
+    db_->create_hash_index_unique_u64 ("i_customer_id", t_customer, expected_row_customer);
+    i_customer_id = db_->get_hash_index_unique_u64 ("i_customer_id");
+    db_->create_hash_index_unique_u64 ("i_customer_last", t_customer, expected_row_customer);
+    i_customer_last = db_->get_hash_index_unique_u64 ("i_customer_last");
+    db_->create_hash_index_unique_u64 ("i_stock", t_district, expected_row_stock);
+    i_stock = db_->get_hash_index_unique_u64 ("i_stock");
+
+    // create btree index
+    db_->create_btree_index_unique_u64 ("ib_order", t_order);
+    i_order = db_->get_btree_index_unique_u64 ("ib_order");
+    db_->create_btree_index_unique_u64 ("ib_order_cust", t_order);
+    i_order_cust = db_->get_btree_index_unique_u64 ("ib_order_cust");
+    db_->create_btree_index_unique_u64 ("ib_neworder", t_neworder);
+    i_neworder = db_->get_btree_index_unique_u64 ("i_neworder");
+    db_->create_btree_index_unique_u64 ("ib_orderline", t_orderline);
+    i_orderline = db_->get_btree_index_unique_u64 ("ib_orderline");
+  }
+
+  bool init_table() {
+    int wh_thd_max = std::max(g_num_wh, g_thread_cnt);
+    tpcc_buffer = new drand48_data*[wh_thd_max];
+
+    for (int i = 0; i < wh_thd_max; i++) {
+      tpcc_buffer[i] =
+          (drand48_data*)alloc_.malloc_contiguous(sizeof(drand48_data));
+      srand48_r(i + 1, tpcc_buffer[i]);
+    }
+    InitNURand(0);
+    pthread_t* p_thds = new pthread_t[g_num_wh - 1];
+    for (uint32_t i = 0; i < g_num_wh; i++) tid_lock[i] = 0;
+    for (uint32_t i = 0; i < g_num_wh - 1; i++) {
+      pthread_create(&p_thds[i], NULL, threadInitWarehouse, this);
+    }
+    threadInitWarehouse(this);
+    for (uint32_t i = 0; i < g_num_wh - 1; i++) pthread_join(p_thds[i], NULL);
+    printf("TPCC Data Initialization Complete!\n");
+    return true;
+  }
+
+ private:
+  DB *db_;
+  Alloc *alloc_;
+  uint64_t num_wh;
+
+  uint32_t next_tid;
+  uint32_t tid_lock[256];
+
+  void init_tab_item() {
+
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+        const uint64_t kBatchSize = 16;
+        for (uint64_t i = 1; i <= g_max_items; i += kBatchSize) {
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+            auto i_end = std::min(i + kBatchSize, g_max_items);
+            for (uint64_t j = i; j <= i_end; j++) {
+
+              uint64_t i_id = j;
+              uint64_t i_im_id = URand(1L, 10000L, 0);
+              char i_name[24];
+              MakeAlphaString(14, 24, i_name, 0);
+              double i_price = (double)URand(100L, 10000L, 0) / 100.0;
+              char i_data[50];
+              int len = MakeAlphaString(26, 50, i_data, 0);
+              if (RAND(10, 0) == 0) {
+                uint64_t startORIGINAL = URand(2, (len - 8), 0);
+                memcpy(i_data + startORIGINAL, "ORIGINAL", 8);
+              }
+
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_item, 0, Transaction::kNewRowID, true,
+                               sizeof(row_item))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_item, 0, Transaction::kNewRowID, i_id, true,
+                                   sizeof(row_item))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+
+              auto ret = i_item->insert(&tx, i_id, rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_item *item = reinterpret_cast<row_item*>(data);
+              item->i_id = i_id;
+              item->i_im_id = i_im_id;
+              strncpy (item->i_name, i_name, 24);
+              item->i_price = i_price;
+              strncpy (item->i_data, i_data, 50);
+            }
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+        }
+  }
+
+  void init_tab_wh(uint32_t wid) {
+    assert(wid >= 1 && wid <= g_num_wh);
+
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+
+              uint64_t w_id = wid;
+              char name[10];
+              MakeAlphaString(6, 10, name, wid - 1);
+              char street_1[20];
+              MakeAlphaString(10, 20, street_1, wid - 1);
+              char street_2[20];
+              MakeAlphaString(10, 20, street_2, wid - 1);
+              char city[20];
+              MakeAlphaString(10, 20, city, wid - 1);
+              char state[2];
+              MakeAlphaString(2, 2, state, wid - 1); /* State */
+              char zip[9];
+              MakeNumberString(9, 9, zip, wid - 1); /* Zip */
+              double tax = (double)URand(0L, 2000L, wid - 1) / 10000.0;
+              double w_ytd = 300000.00;
+
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_warehouse, 0, Transaction::kNewRowID, true,
+                               sizeof(row_warehouse))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_warehouse, 0, Transaction::kNewRowID, w_id, true,
+                                   sizeof(row_warehouse))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+
+              auto ret = i_warehouse->insert(&tx, w_id, rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_item *item = reinterpret_cast<row_warehouse*>(data);
+
+              item->w_id = w_id;
+              strncpy (item->w_name, name, 10);
+              strncpy (item->w_street_1, street_1, 20);
+              strncpy (item->w_street_2, street_2, 20);
+              strncpy (item->w_city, city, 20);
+              strncpy (item->w_state, state, 2);
+              strncpy (item->w_zip, zip, 9);
+              item->w_tax = tax;
+              item->w_ytd = w_ytd;
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+  }
+
+  void init_tab_dist(uint64_t wid) {
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+        for (uint64_t did=1; did<= g_district_per_wearehouse; did++) {
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+
+              uint64_t w_id = wid;
+              uint64_t d_id = did;
+ 
+              char name[10];
+              MakeAlphaString(6, 10, name, wid - 1);
+              char street_1[20];
+              MakeAlphaString(10, 20, street_1, wid - 1);
+              char street_2[20];
+              MakeAlphaString(10, 20, street_2, wid - 1);
+              char city[20];
+              MakeAlphaString(10, 20, city, wid - 1);
+              char state[2];
+              MakeAlphaString(2, 2, state, wid - 1); /* State */
+              char zip[9];
+              MakeNumberString(9, 9, zip, wid - 1); /* Zip */
+              double tax = (double)URand(0L, 2000L, wid - 1) / 10000.0;
+              double d_ytd = 300000.00;
+              uint64_t d_next_o_id = 3001;
+
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_district, 0, Transaction::kNewRowID, true,
+                               sizeof(row_district))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_district, 0, Transaction::kNewRowID, 
+                                   distKey(d_id,w_id), true,
+                                   sizeof(row_district))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+
+              auto ret = i_district->insert(&tx, distKey(d_id,w_id), rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_item *item = reinterpret_cast<row_district*>(data);
+
+              item->d_id = d_id;
+              item->d_w_id = w_id;
+              strncpy (item->d_name, name, 10);
+              strncpy (item->d_street_1, street_1, 20);
+              strncpy (item->d_street_2, street_2, 20);
+              strncpy (item->d_city, city, 20);
+              strncpy (item->d_state, state, 2);
+              strncpy (item->d_zip, zip, 9);
+              item->d_tax = tax;
+              item->d_ytd = d_ytd;
+              item->d_next_o_id = d_next_o_id;
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+        }
+  }
+
+  void init_tab_stock(uint64_t w_id) {
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+        const uint64_t kBatchSize = 16;
+        for (uint64_t i = 1; i <= g_max_items; i += kBatchSize) {
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+            auto i_end = std::min(i + kBatchSize, g_max_items);
+            for (uint64_t j = i; j <= i_end; j++) {
+
+              uint64_t s_i_id = j;
+              uint64_t s_w_id = w_id;
+              uint64_t s_quantity = URand(10, 100, wid - 1);
+              char s_dist[10][24];
+              for (int i=1;i<=10;i++) {
+                MakeAlphaString(24, 24, s_dist[i-1], wid - 1);
+              }
+              uint64_t s_remote_cnt = 0;    
+              uint64_t s_ytd = 0;
+              uint64_t s_order_cnt = 0;
+              char s_data[50];
+              int len = MakeAlphaString(26, 50, s_data, wid - 1);
+              if (RAND(10, wid - 1) == 0) {
+                uint64_t startORIGINAL = URand(2, (len - 8), wid - 1);
+                memcpy(s_data + startORIGINAL, "ORIGINAL", 8);
+              }
+
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_stock, 0, Transaction::kNewRowID, true,
+                               sizeof(row_stock))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_stock, 0, Transaction::kNewRowID, 
+                                   stockKey(s_i__id, w_id), true,
+                                   sizeof(row_stock))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+
+              auto ret = i_stock->insert(&tx, stockKey(s_i_id, w_id), rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_stock *item = reinterpret_cast<row_stock*>(data);
+              item->s_i_id = s_i_id;
+              item->s_w_id = w_id;
+              item->s_quantity = s_quantity;
+              strncpy (item->s_dist_01, s_dist[0], 24);
+              strncpy (item->s_dist_02, s_dist[1], 24);
+              strncpy (item->s_dist_03, s_dist[2], 24);
+              strncpy (item->s_dist_04, s_dist[3], 24);
+              strncpy (item->s_dist_05, s_dist[4], 24);
+              strncpy (item->s_dist_06, s_dist[5], 24);
+              strncpy (item->s_dist_07, s_dist[6], 24);
+              strncpy (item->s_dist_08, s_dist[7], 24);
+              strncpy (item->s_dist_09, s_dist[8], 24);
+              strncpy (item->s_dist_10, s_dist[9], 24);
+              item->s_ytd = s_ytd;
+              item->s_order_cnt = s_order_cnt;
+              item->s_remote_cnt = s_remote_cnt;
+              strncpy (item->s_data, s_data, 50); 
+            }
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+        }
+  }
+
+  void init_tab_cust(uint64_t did, uint64_t wid) {
+    assert (g_customer_per_district >= 1000);
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+        const uint64_t kBatchSize = 16;
+        for (uint64_t i = 1; i <= g_customer_per_district; i += kBatchSize) {
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+            auto i_end = std::min(i + kBatchSize, g_max_items);
+            for (uint64_t j = i; j <= i_end; j++) {
+
+              uint64_t c_id = j;
+              uint64_t c_d_id = did;
+              uint64_t c_w_id = wid;
+              char c_last[LASTNAME_LEN];
+              if (cid <= 1000)
+                Lastname(cid - 1, c_last);
+              else
+                Lastname(NURand(255, 0, 999, wid - 1), c_last);
+              const char c_middle = "OE";
+              char c_first[FIRSTNAME_LEN];
+              MakeAlphaString(FIRSTNAME_MINLEN, sizeof(c_first), c_first, wid - 1);
+
+              char street_1[20];
+              MakeAlphaString(10, 20, street_1, wid - 1);
+              char street_2[20];
+              MakeAlphaString(10, 20, street_2, wid - 1);
+              char city[20];
+              MakeAlphaString(10, 20, city, wid - 1);
+              char state[2];
+              MakeAlphaString(2, 2, state, wid - 1); /* State */
+              char zip[9];
+              MakeNumberString(9, 9, zip, wid - 1); /* Zip */
+              char phone[16];
+              MakeNumberString(16, 16, phone, wid - 1); /* Phone */
+              uint64_t c_since = 0;
+              double c_credit_lim = 50000.0;
+              char c_data[500];
+              MakeAlphaString(300, 500, c_data, wid - 1);
+              
+              char c_credit[2];
+              if (RAND(10, wid - 1) == 0) {
+                strncpy (c_credit, "GC", 2);
+              } else {
+                strncpy (c_credit, "BC", 2);
+              }
+              double c_discount = (double)URand(1, 5000, wid - 1) / 10000.0;
+              double c_balance  = -10.0;
+              double c_ytd_payment = 10.0;
+              uint64_t c_payment_cnt = 1;
+              uint64_t c_delivery_cnt = 0;
+ 
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_customer, 0, Transaction::kNewRowID, true,
+                               sizeof(row_customer))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_customer, 0, Transaction::kNewRowID, 
+                                   custKey(c_id, d_id, w_id), true,
+                                   sizeof(row_customer))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+              auto ret = i_customer_id->insert(&tx, custKey(c_id, d_id, w_id), rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              ret = i_customer_last->insert(&tx, custNPKey(d_id, w_id, c_last), 
+                                                 custKey(c_id, d_id, w_id));
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_customer *item = reinterpret_cast<row_customer*>(data);
+
+              item->c_id = c_id;
+              item->d_id = c_id;
+              item->w_id = w_id;
+             
+              strncpy (item->c_first, c_first, 16);
+              strncpy (item->c_middle, c_middle, 2);
+              strncpy (item->c_last, c_last, 16);
+              strncpy (item->c_street_1, street_1, 20);
+              strncpy (item->c_street_2, street_2, 20);
+              strncpy (item->c_city, city, 20);
+              strncpy (item->c_state, state, 20);
+              strncpy (item->c_zip, zip, 9);
+              strncpy (item->c_phone, phone, 16);
+              item->c_since = c_since;
+              strncpy (item->c_credit, c_credit);
+              item->c_credit_lim = c_credit_lim;
+              item->c_discount = c_discount;
+              item->c_balance  = c_balance;
+              item->c_ytd_payment = c_ytd_payment;
+              item->c_payment_cnt = c_payment_cnt;
+              item->c_delivery_cnt = c_delivery_cnt;
+              strncpy (item->c_data, c_data, 500);
+            }
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+        }
+  }
+  void init_tab_hist(uint64_t c_id, uint64_t d_id, uint64_t w_id) {
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+
+              char h_data[24];
+              MakeAlphaString(12, 24, h_data, w_id - 1);
+ 
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_history, 0, Transaction::kNewRowID, true,
+                               sizeof(row_history))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_history, 0, Transaction::kNewRowID, 0, true,
+                                   sizeof(row_history))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_history *item = reinterpret_cast<row_history*>(data);
+
+              item->h_c_id = c_id;
+              item->h_c_d_id = d_id;
+              item->h_d_id = d_id;
+              item->h_c_w_id = w_id;
+              item->h_w_id = w_id;
+              item->h_date = 0;
+              item->h_amount = 10.0;
+              strncpy (item->h_data, h_data, 24);
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+ 
+  }
+  void init_tab_order(uint64_t d_id, uint64_t w_id) {
+    uint64_t perm[g_cust_per_dist];
+    init_permutation(perm, wid); /* initialize permutation of customer numbers */
+
+#if defined (test) || defined (CWBL)
+        Transaction tx(db_->context());
+#elif defined (CZEN)
+        PmemTransaction tx(db_->context());
+#endif
+        for (uint64_t i = 1; i <= g_customer_per_district; i ++) {
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+
+              uint64_t c_id = perm[i-1];
+              uint64_t o_id = i;
+              uint64_t o_c_id = c_id;
+              uint64_t o_d_id = d_id;
+              uint64_t o_w_id = w_id;
+              uint64_t o_entry_d = 2013;
+              uint64_t o_carrier_id = 0;
+              if (o_id < 2101) {
+                o_carrier_id = URand(1, 10, wid - 1);
+              } 
+              else {
+                o_carrier_id = 0UL;
+              }
+              uint64_t o_ol_cnt = URand(5, 15, wid - 1);
+              uint64_t o_all_local = 1UL;
+ 
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_order, 0, Transaction::kNewRowID, true,
+                               sizeof(row_order))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_order, 0, Transaction::kNewRowID, i_id, true,
+                                   sizeof(row_order))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+              auto ret = i_order->insert(&tx, orderKey(o_id, d_id, w_id), rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              auto ret = i_order_cust->insert(&tx, orderCustKey(o_id, c_id, d_id, w_id), 
+                                              orderKey(o_id, d_id, w_id));
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_order *item = reinterpret_cast<row_order*>(data);
+
+              item->o_id = o_id;
+              item->o_c_id = o_c_id;
+              item->o_d_id = o_d_id;
+              item->o_w_id = o_w_id;
+              item->o_entry_d = o_entry_d;
+              item->o_carrier_id = o_carrier_id;
+              item->o_ol_cnt = o_ol_cnt;
+              item->o_all_local = o_all_local;
+
+              for (uint64_t ol=1; ol<= o_ol_cnt; ol++) {
+ 
+#if defined (test) || defined (CWBL)
+                RowAccessHandle rah(&tx);
+                if (!rah.new_row(t_orderline, 0, Transaction::kNewRowID, true,
+                                 sizeof(row_order_line))) {
+                  // printf("failed to insert rows at new_row(), row = %" PRIu64
+                  //        "\n",
+                  //        j);
+                  aborted = true;
+                  tx.abort();
+                  break;
+                }
+#elif defined (CZEN)
+                PmemRowAccessHandle rah(&tx);
+                if (!rah.aep_new_row(t_orderline, 0, Transaction::kNewRowID, 
+                                     orderlineKey(ol,o_id,d_id,w_id), true,
+                                     sizeof(row_order_line))) {
+                  // printf("failed to insert rows at new_row(), row = %" PRIu64
+                  //        "\n",
+                  //        j);
+                  aborted = true;
+                  tx.aep_abort();
+                  break;
+                }
+#endif
+                auto ret = i_orderline->insert(&tx, orderlineKey(ol, o_id, d_id, w_id), 
+                                               rah.row_id());
+                if (ret != 1) {
+                  // printf("failed to update index row = %" PRIu64 "\n", j);
+                  aborted = true;
+                  tx.abort();
+                  break;
+                }
+                char *data = rah.data();
+                assert (data != nullptr);
+                row_order_line *item = reinterpret_cast<row_order_line*>(data);
+                item->ol_o_id = o_id;
+                item->ol_d_id = d_id;
+                item->ol_w_id = w_id;
+                item->ol_number = ol;
+                item->ol_i_id = URand(1, g_max_items, wid - 1);
+                item->ol_supply_w_id = w_id;
+                if (o_id <2101) {
+                  item->ol_delivery_d = o_entry_d;
+                  item->ol_amount = 0.0;
+                }
+                else {
+                  item->ol_delivery_d = 0UL;
+                  item->ol_amount = (double)URand(1, 999999, wid - 1) / 100.0;
+                }
+                item->ol_quantity = 5UL;
+                char ol_dist_info[24];
+                MakeAlphaString(24, 24, ol_dist_info, wid - 1);
+                strncpy (item->ol_dist_info, ol_dist_info, 24);
+              }
+
+              // New Order
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(t_neworder, 0, Transaction::kNewRowID, true,
+                               sizeof(row_new_order))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(t_neworder, 0, Transaction::kNewRowID, 
+                                   neworderKey(o_id,d_id,w_id), true,
+                                   sizeof(row_new_order))) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+#endif
+              auto ret = i_neworder->insert(&tx, neworderKey(o_id, d_id, w_id), 
+                                            rah.row_id());
+              if (ret != 1) {
+                // printf("failed to update index row = %" PRIu64 "\n", j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+              char *data = rah.data();
+              assert (data != nullptr);
+              row_new_order *item = reinterpret_cast<row_new_order*>(data);
+              item->no_o_id = o_id;
+              item->no_d_id = d_id;
+              item->no_w_id = w_id;
+            }
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+        }
+      }
+  }
+
+  void init_permutation(uint64_t* perm_c_id, uint64_t wid) {
+    uint64_t i;
+    // Init with consecutive values
+    for (i = 0; i < g_cust_per_dist; i++) perm_c_id[i] = i + 1;
+    // shuffle
+    for (i = 0; i < g_cust_per_dist - 1; i++) {
+      uint64_t j = URand(i + 1, g_customer_per_district - 1, wid - 1);
+      uint64_t tmp = perm_c_id[i];
+      perm_c_id[i] = perm_c_id[j];
+      perm_c_id[j] = tmp;
+    }
+  }
+
+  // static void* threadInitItem(void* This);
+  // static void* threadInitWh(void* This);
+  // static void* threadInitDist(void* This);
+  // static void* threadInitStock(void* This);
+  // static void* threadInitCust(void* This);
+  // static void* threadInitHist(void* This);
+  // static void* threadInitOrder(void* This);
+
+  static void* threadInitWarehouse(void* This) {
+    tpcc_wl* wl = (tpcc_wl*)This;
+    int tid = ATOM_FETCH_ADD(wl->next_tid, 1);
+    ::mica::util::lcore.pin_thread(tid % g_thread_cnt);
+    while (__sync_lock_test_and_set(&wl->tid_lock[tid % g_thread_cnt], 1) == 1)
+      usleep(100);
+    db_->activate(static_cast<uint16_t>(tid % g_thread_cnt));
+    uint32_t wid = tid + 1;
+    if (tid == 0) {
+      wl->init_tab_item();
+    }
+    wl->init_tab_wh(wid);
+    wl->init_tab_dist(wid);
+    wl->init_tab_stock(wid);
+    for (uint64_t did = 1; did <= DIST_PER_WARE; did++) {
+      wl->init_tab_cust(did, wid);
+      wl->init_tab_order(did, wid);
+      for (uint64_t cid = 1; cid <= g_cust_per_dist; cid++)
+        wl->init_tab_hist(cid, did, wid);
+    }
+    wl->mica_db->deactivate(static_cast<uint16_t>(tid % g_thread_cnt));
+    __sync_lock_release(&wl->tid_lock[tid % g_thread_cnt]);
+    return nullptr;
+  }
+};
+
+// Part 4 tpcc transaction
+
+static void FAIL_ON_ABORT() {}
+
+class tpcc_txn_man {
+ public:
+  tpcc_txn_man (tpcc_wl* h_wl, Query_queue **query_queue, DB *db, uint16_t thd_id) 
+                : _wl(h_wl), _query_queue(query_queue), _db(db), _thd_id(thd_id) {
+#if defined (test) || defined (CWBL)
+    mica_tx = new Transaction(db->context(thd_id));
+#elif defined (CZEN)
+    mica_tx = new PmemTransaction(db->context(thd_id));
+#endif
+  }
+  ~tpcc_txn_man () { delete mica_tx; } 
+
+  RC run_txn(tpcc_query* query) {
+    RC rc;
+    tpcc_query* m_query = (tpcc_query*)query;
+    switch (m_query->type) {
+    case TPCC_PAYMENT:
+#if defined (test) || defined (CWBL)
+      mica_tx->begin(false);
+#elif defined (CZEN)
+      mica_tx->aep_begin(false);
+#endif
+      rc = run_payment(m_query);
+      break;
+    case TPCC_NEW_ORDER:
+#if defined (test) || defined (CWBL)
+      mica_tx->begin(false);
+#elif defined (CZEN)
+      mica_tx->aep_begin(false);
+#endif
+      rc = run_new_order(m_query);
+      break;
+    case TPCC_ORDER_STATUS:  // peek_only
+#if defined (test) || defined (CWBL)
+      mica_tx->begin(true);
+#elif defined (CZEN)
+      mica_tx->aep_begin(true);
+#endif
+      rc = run_order_status(m_query);
+      break;
+    case TPCC_DELIVERY:
+#if defined (test) || defined (CWBL)
+      mica_tx->begin(false);
+#elif defined (CZEN)
+      mica_tx->aep_begin(false);
+#endif
+      rc = run_delivery(m_query);
+      break;
+    case TPCC_STOCK_LEVEL:   // peek_only
+#if defined (test) || defined (CWBL)
+      mica_tx->begin(true);
+#elif defined (CZEN)
+      mica_tx->aep_begin(true);
+#endif
+      rc = run_stock_level(m_query);
+      break;
+    default:
+      rc = ERROR;
+      assert(false);
+    }
+    return rc;
+  }  // end of run_txn
+
+ private:
+
+  tpcc_wl* _wl;
+  Query_queue **_query_queue;
+  DB *_db;
+  uint16_t _thd_id;
+
+#if defined (test) || defined (CWBL)
+  Transaction *mica_tx;
+#elif defined (CZEN)
+  PmemTransaction *mica_tx;
+#endif
+
+  RC finish (RC rc) {
+    if (rc == RCOK) {
+#if defined (test) || defined (CWBL)
+      bool result = mica_tx->commit ();
+#elif defined (CZEN)
+      bool result = mica_tx->aep_commit ();
+#endif
+      assert (result == true);
+      return RCOK;
+    }
+    else if (rc == Abort) {
+#if defined (test) || defined (CWBL)
+      bool result = mica_tx->abort ();
+#elif defined (CZEN)
+      bool result = mica_tx->aep_abort ();
+#endif
+      assert (result == true);
+      return Abort;      
+    }
+  }
+
+  RC run_payment(tpcc_query* m_query) {
+    auto& arg = query->args.payment;
+
+    // auto warehouse = payment_getWarehouse(arg.w_id);
+    uint64_t row_id;
+    auto look_result = _wl->i_warehouse->lookup(
+                                 mica_tx, row_id, kSkipValidationForIndexAccess,
+                                 [&row_id](auto& k, auto& v) {
+                                 (void)k;
+                                 row_id = v;
+                                 return false;});
+    if (look_result != 1 || look_result == kHaveToAbort) {
+      printf ("error: payment_getWarehouse!\n");
+      return finish (Abort);
+    }
+
+#if defined (test) || defined (CWBL)
+    RowAccessHandle rah(mica_tx);
+#elif defined (CZEN)
+    PmemRowAccessHandle rah(mica_tx);
+#endif
+   
+#if defined (test) || defined (CWBL)
+
+#elif defined (CZEN)
+
+#endif
+    payment_updateWarehouseBalance(warehouse, arg.h_amount);
+
+    auto district = payment_getDistrict(arg.w_id, arg.d_id);
+    if (district == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+    payment_updateDistrictBalance(district, arg.h_amount);
+
+    auto c_id = arg.c_id;
+    row_t* customer;
+    if (!arg.by_last_name)
+      customer = payment_getCustomerByCustomerId(arg.w_id, arg.d_id, arg.c_id);
+    else
+      customer =
+          payment_getCustomerByLastName(arg.w_id, arg.d_id, arg.c_last, &c_id);
+    if (customer == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+    if (!payment_updateCustomer(customer, c_id, arg.c_d_id, arg.c_w_id, arg.d_id,
+                                arg.w_id, arg.h_amount)) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    }
+
+#if TPCC_INSERT_ROWS
+    char w_name[11];
+    char* tmp_str = warehouse->get_value(W_NAME);
+    memcpy(w_name, tmp_str, 10);
+    w_name[10] = '\0';
+
+    char d_name[11];
+    tmp_str = district->get_value(D_NAME);
+    memcpy(d_name, tmp_str, 10);
+    d_name[10] = '\0';
+
+    char h_data[25];
+    strcpy(h_data, w_name);
+    int length = strlen(h_data);
+    strcpy(&h_data[length], "    ");
+    strcpy(&h_data[length + 4], d_name);
+    h_data[length + 14] = '\0';
+
+    if (!payment_insertHistory(c_id, arg.c_d_id, arg.c_w_id, arg.d_id, arg.w_id,
+                               arg.h_date, arg.h_amount, h_data)) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+#endif
+
+    return finish(RCOK);
+  }
+
+  RC run_new_order(tpcc_query* m_query) {
+    auto& arg = query->args.new_order;
+
+    row_t* items[15];
+    assert(arg.ol_cnt <= sizeof(items) / sizeof(items[0]));
+    for (uint64_t ol_number = 1; ol_number <= arg.ol_cnt; ol_number++) {
+      items[ol_number - 1] =
+        new_order_getItemInfo(arg.items[ol_number - 1].ol_i_id);
+      // printf("ol_i_id %d\n", (int)arg.items[ol_number - 1].ol_i_id);
+      if (items[ol_number - 1] == NULL) {
+        assert(false);
+        // FAIL_ON_ABORT();
+        return finish(Abort);
+      };
+    }
+
+    auto warehouse = new_order_getWarehouseTaxRate(arg.w_id);
+    if (warehouse == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+    // double w_tax;
+    // warehouse->get_value(W_TAX, w_tax);
+
+    auto district = new_order_getDistrict(arg.d_id, arg.w_id);
+    if (district == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+    // double d_tax;
+    // r_dist_local->get_value(D_TAX, d_tax);
+
+    int64_t o_id;
+    new_order_incrementNextOrderId(district, &o_id);
+
+    auto customer = new_order_getCustomer(arg.w_id, arg.d_id, arg.c_id);
+    if (customer == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+    // uint64_t c_discount;
+    // customer->get_value(C_DISCOUNT, c_discount);
+
+#if TPCC_INSERT_ROWS
+    uint64_t o_carrier_id = 0;
+    if (!new_order_createOrder(o_id, arg.d_id, arg.w_id, arg.c_id, arg.o_entry_d,
+                               o_carrier_id, arg.ol_cnt, arg.all_local)) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+    if (!new_order_createNewOrder(o_id, arg.d_id, arg.w_id)) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+#endif
+
+    for (uint64_t ol_number = 1; ol_number <= arg.ol_cnt; ol_number++) {
+      uint64_t ol_i_id = arg.items[ol_number - 1].ol_i_id;
+      uint64_t ol_supply_w_id = arg.items[ol_number - 1].ol_supply_w_id;
+      uint64_t ol_quantity = arg.items[ol_number - 1].ol_quantity;
+
+      auto stock = new_order_getStockInfo(ol_i_id, ol_supply_w_id);
+      if (stock == NULL) {
+        FAIL_ON_ABORT();
+        return finish(Abort);
+      };
+      bool remote = ol_supply_w_id != arg.w_id;
+      new_order_updateStock(stock, ol_quantity, remote);
+
+#if TPCC_INSERT_ROWS
+      double i_price;
+      items[ol_number - 1]->get_value(I_PRICE, i_price);
+      double ol_amount = ol_quantity * i_price;
+      assert(arg.d_id >= 1 && arg.d_id <= DIST_PER_WARE);
+      const char* ol_dist_info = stock->get_value(S_DIST_01 + arg.d_id - 1);
+      if (!new_order_createOrderLine(o_id, arg.d_id, arg.w_id, ol_number, ol_i_id,
+                                     ol_supply_w_id, arg.o_entry_d, ol_quantity,
+                                     ol_amount, ol_dist_info)) {
+        FAIL_ON_ABORT();
+        return finish(Abort);
+      };
+#endif
+    }
+    return finish(RCOK);
+  }
+
+  RC run_order_status(tpcc_query* query) {
+#if TPCC_FULL
+    auto& arg = query->args.order_status;
+
+    auto c_id = arg.c_id;
+    row_t* customer;
+    if (!arg.by_last_name)
+      customer =
+          order_status_getCustomerByCustomerId(arg.w_id, arg.d_id, arg.c_id);
+    else
+      customer = order_status_getCustomerByLastName(arg.w_id, arg.d_id,
+                                                  arg.c_last, &c_id);
+    if (customer == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    };
+
+    auto order = order_status_getLastOrder(arg.w_id, arg.d_id, c_id);
+    if (order != NULL) {
+      int64_t o_id;
+      order->get_value(O_ID, o_id);
+
+      if (!order_status_getOrderLines(arg.w_id, arg.d_id, o_id)) {
+        FAIL_ON_ABORT();
+        return finish(Abort);
+      };
+    }
+#endif
+    return finish(RCOK);
+  }
+
+  RC run_delivery(tpcc_query* query) {
+#if TPCC_FULL
+    auto& arg = query->args.delivery;
+
+    for (uint64_t d_id = 1; d_id <= g_district_per_wearehouse; d_id++)
+    {
+      int64_t o_id;
+      if (!delivery_getNewOrder_deleteNewOrder(d_id, arg.w_id, &o_id)) {
+        // printf("oops0\n");
+        FAIL_ON_ABORT();
+        // INC_STATS_ALWAYS(get_thd_id(), debug1, 1);
+        return finish(Abort);
+      }
+      // No new order for this district.
+      if (o_id == -1) {
+        // printf("skipping w_id=%" PRIu64 " d_id=%" PRIu64 " for no new order\n",
+        //        arg.w_id, d_id);
+        continue;
+      }
+
+      auto order = delivery_getCId(o_id, d_id, arg.w_id);
+      if (order == NULL) {
+        // There is no guarantee that we will see a order row even after seeing a related new_order row in this read-write transaction.
+        // printf("oops1\n");
+        FAIL_ON_ABORT();
+        return finish(Abort);
+      }
+      uint64_t c_id;
+      order->get_value(O_C_ID, c_id);
+
+      delivery_updateOrders(order, arg.o_carrier_id);
+
+      double ol_total;
+
+#ifndef TPCC_CAVALIA_NO_OL_UPDATE
+      if (!delivery_updateOrderLine_sumOLAmount(arg.ol_delivery_d, o_id, d_id,
+                                              arg.w_id, &ol_total)) {
+        // printf("oops2\n");
+        FAIL_ON_ABORT();
+        // INC_STATS_ALWAYS(get_thd_id(), debug2, 1);
+        return finish(Abort);
+      }
+#else
+      ol_total = 1.;
+#endif
+
+      if (!delivery_updateCustomer(ol_total, c_id, d_id, arg.w_id)) {
+        // printf("oops3\n");
+        FAIL_ON_ABORT();
+        // INC_STATS_ALWAYS(get_thd_id(), debug3, 1);
+        return finish(Abort);
+      }
+    }
+    auto rc = finish(RCOK);
+    // if (rc != RCOK) INC_STATS_ALWAYS(get_thd_id(), debug4, 1);
+    return rc;
+
+#else  // !TPCC_FULL
+    return finish(RCOK);
+#endif
+  }
+
+  RC run_stock_level(tpcc_query* query) {
+#if TPCC_FULL
+    auto& arg = query->args.stock_level;
+
+    auto district = stock_level_getOId(arg.w_id, arg.d_id);
+    if (district == NULL) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    }
+    int64_t o_id;
+    district->get_value(D_NEXT_O_ID, o_id);
+
+    uint64_t distinct_count;
+    if (!stock_level_getStockCount(arg.w_id, arg.d_id, o_id, arg.w_id,
+                                   arg.threshold, &distinct_count)) {
+      FAIL_ON_ABORT();
+      return finish(Abort);
+    }
+    (void)distinct_count;
+#endif
+    return finish(RCOK);
+  }
+
+  row_t* payment_getWarehouse(uint64_t w_id);
+  void payment_updateWarehouseBalance(row_t* row, double h_amount);
+  row_t* payment_getDistrict(uint64_t d_w_id, uint64_t d_id);
+  void payment_updateDistrictBalance(row_t* row, double h_amount);
+  row_t* payment_getCustomerByCustomerId(uint64_t w_id, uint64_t d_id,
+                                         uint64_t c_id);
+  row_t* payment_getCustomerByLastName(uint64_t w_id, uint64_t d_id,
+                                       const char* c_last, uint64_t* out_c_id);
+  bool payment_updateCustomer(row_t* row, uint64_t c_id, uint64_t c_d_id,
+                              uint64_t c_w_id, uint64_t d_id, uint64_t w_id,
+                              double h_amount);
+  bool payment_insertHistory(uint64_t c_id, uint64_t c_d_id, uint64_t c_w_id,
+                             uint64_t d_id, uint64_t w_id, uint64_t h_date,
+                             double h_amount, const char* h_data);
+
+  row_t* new_order_getWarehouseTaxRate(uint64_t w_id);
+  row_t* new_order_getDistrict(uint64_t d_id, uint64_t d_w_id);
+  void new_order_incrementNextOrderId(row_t* row, int64_t* out_o_id);
+  row_t* new_order_getCustomer(uint64_t w_id, uint64_t d_id, uint64_t c_id);
+  bool new_order_createOrder(int64_t o_id, uint64_t d_id, uint64_t w_id,
+                             uint64_t c_id, uint64_t o_entry_d,
+                             uint64_t o_carrier_id, uint64_t ol_cnt,
+                             bool all_local);
+  bool new_order_createNewOrder(int64_t o_id, uint64_t d_id, uint64_t w_id);
+  row_t* new_order_getItemInfo(uint64_t ol_i_id);
+  row_t* new_order_getStockInfo(uint64_t ol_i_id, uint64_t ol_supply_w_id);
+  void new_order_updateStock(row_t* row, uint64_t ol_quantity, bool remote);
+  bool new_order_createOrderLine(int64_t o_id, uint64_t d_id, uint64_t w_id,
+                                 uint64_t ol_number, uint64_t ol_i_id,
+                                 uint64_t ol_supply_w_id,
+                                 uint64_t ol_delivery_d, uint64_t ol_quantity,
+                                 double ol_amount, const char* ol_dist_info);
+
+  row_t* order_status_getCustomerByCustomerId(uint64_t w_id, uint64_t d_id,
+                                              uint64_t c_id);
+  row_t* order_status_getCustomerByLastName(uint64_t w_id, uint64_t d_id,
+                                            const char* c_last,
+                                            uint64_t* out_c_id);
+  row_t* order_status_getLastOrder(uint64_t w_id, uint64_t d_id, uint64_t c_id);
+  bool order_status_getOrderLines(uint64_t w_id, uint64_t d_id, int64_t o_id);
+
+  bool delivery_getNewOrder_deleteNewOrder(uint64_t d_id, uint64_t w_id,
+                                           int64_t* out_o_id);
+  row_t* delivery_getCId(int64_t no_o_id, uint64_t d_id, uint64_t w_id);
+  void delivery_updateOrders(row_t* row, uint64_t o_carrier_id);
+  bool delivery_updateOrderLine_sumOLAmount(uint64_t o_entry_d, int64_t no_o_id,
+                                            uint64_t d_id, uint64_t w_id,
+                                            double* out_ol_total);
+  bool delivery_updateCustomer(double ol_total, uint64_t c_id, uint64_t d_id,
+                               uint64_t w_id);
+
+  row_t* stock_level_getOId(uint64_t d_w_id, uint64_t d_id);
+  bool stock_level_getStockCount(uint64_t ol_w_id, uint64_t ol_d_id,
+                                 int64_t ol_o_id, uint64_t s_w_id,
+                                 uint64_t threshold,
+                                 uint64_t* out_distinct_count);
+};
+
+//==================================================================================
+
+struct Task {
+  DB* db;
+
+  tpcc_wl *wl;
+  tpcc_query **query;
+
+  uint64_t thread_id;
+  uint64_t num_threads;
+
+  // Workload.
+  uint64_t wh_num;
+  uint64_t tx_count;
+  uint64_t thread_cnt;
+
+  // State (for VerificationLogger).
+  uint64_t tx_i;
+  uint64_t req_i;
+  uint64_t commit_i;
+
+  // Results.
+  struct timeval tv_start;
+  struct timeval tv_end;
+
+  uint64_t committed;
+  uint64_t committed_neworeder;
+  uint64_t committed_payment;
+  uint64_t committed_delivery;
+  uint64_t committed_orderstatus;
+  uint64_t committed_stocklevel;
+
+  // Transaction log for verification.
+  uint64_t* commit_tx_i;
+  Timestamp* commit_ts;
+  Timestamp* read_ts;
+  Timestamp* write_ts;
+
+} __attribute__((aligned(64)));
+
+template <class StaticConfig>
+class VerificationLogger
+    : public ::mica::transaction::LoggerInterface<StaticConfig> {
+ public:
+  VerificationLogger() : tasks(nullptr) {}
+
+  bool log(const ::mica::transaction::Transaction<StaticConfig>* tx) {
+    if (tasks == nullptr) return true;
+
+    auto task = &((*tasks)[tx->context()->thread_id()]);
+    auto tx_i = task->tx_i;
+    auto req_i = task->req_i;
+    auto commit_i = task->commit_i;
+
+    task->commit_tx_i[commit_i] = tx_i;
+    task->commit_ts[tx_i] = tx->ts();
+
+    // XXX: Assume we have the same row ordering in the read/write set.
+    uint64_t req_j = 0;
+    for (auto j = 0; j < tx->access_size(); j++) {
+      if (tx->accesses()[j].state == ::mica::transaction::RowAccessState::kPeek)
+        continue;
+
+      assert(req_j < task->req_counts[tx_i]);
+
+      task->read_ts[req_i + req_j] = tx->accesses()[j].read_rv->wts;
+      if (tx->accesses()[j].write_rv != nullptr)
+        task->write_ts[req_i + req_j] = tx->accesses()[j].write_rv->wts;
+      else
+        task->write_ts[req_i + req_j] = task->read_ts[req_i + req_j];
+      req_j++;
+    }
+    assert(req_j == task->req_counts[tx_i]);
+    return true;
+  }
+
+  std::vector<Task>* tasks;
+};
+
+template <class Logger>
+void setup_logger(Logger* logger, std::vector<Task>* tasks) {
+  (void)logger;
+  (void)tasks;
+}
+
+template <>
+void setup_logger(VerificationLogger<DBConfig>* logger,
+                  std::vector<Task>* tasks) {
+  logger->tasks = tasks;
+}
+
+static volatile uint16_t running_threads;
+static volatile uint8_t stopping;
+
+void worker_proc(Task* task) {
+  ::mica::util::lcore.pin_thread(static_cast<uint16_t>(task->thread_id));
+
+  auto ctx = task->db->context();
+  auto tbl = task->tbl;
+  auto hash_idx = task->hash_idx;
+  auto btree_idx = task->btree_idx;
+
+  __sync_add_and_fetch(&running_threads, 1);
+  while (running_threads < task->num_threads) ::mica::util::pause();
+
+  Timing t(ctx->timing_stack(), &::mica::transaction::Stats::worker);
+
+  gettimeofday(&task->tv_start, nullptr);
+
+  uint64_t next_tx_i = 0;
+  uint64_t next_req_i = 0;
+  uint64_t commit_i = 0;
+  uint64_t scanned = 0;
+
+  task->db->activate(static_cast<uint16_t>(task->thread_id));
+  while (task->db->active_thread_count() < task->num_threads) {
+    ::mica::util::pause();
+    task->db->idle(static_cast<uint16_t>(task->thread_id));
+  }
+
+  if (kVerbose) printf("lcore %" PRIu64 "\n", task->thread_id);
+
+#if defined (test) || defined (CWBL)
+  Transaction tx(ctx);
+#elif defined (CZEN)
+  PmemTransaction tx(ctx);
+#endif
+
+  while (next_tx_i < task->tx_count && !stopping) {
+    uint64_t tx_i;
+    uint64_t req_i;
+
+    tx_i = next_tx_i++;
+    req_i = next_req_i;
+    next_req_i += task->req_counts[tx_i];
+
+    task->tx_i = tx_i;
+    task->req_i = req_i;
+    task->commit_i = commit_i;
+
+    while (true) {
+      bool aborted = false;
+
+      uint64_t v = 0;
+
+      bool use_peek_only = kUseSnapshot && task->read_only_tx[tx_i];
+
+#if defined (test) || defined (CWBL)
+      bool ret = tx.begin(use_peek_only);
+#elif defined (CZEN)
+      bool ret = tx.aep_begin(use_peek_only);
+#endif
+
+      assert(ret);
+      (void)ret;
+
+      for (uint64_t req_j = 0; req_j < task->req_counts[tx_i]; req_j++) {
+        uint64_t row_id = task->row_ids[req_i + req_j];
+        uint8_t column_id = task->column_ids[req_i + req_j];
+        bool is_read = task->op_types[req_i + req_j] == 0;
+        bool is_rmw = task->op_types[req_i + req_j] == 1;
+
+        if (hash_idx != nullptr) {
+          auto lookup_result =
+              hash_idx->lookup(&tx, row_id, kSkipValidationForIndexAccess,
+                               [&row_id](auto& k, auto& v) {
+                                 (void)k;
+                                 row_id = v;
+                                 return false;
+                               });
+          if (lookup_result != 1 || lookup_result == HashIndex::kHaveToAbort) {
+            assert(false);
+
+#if defined (test) || defined (CWBL)
+            tx.abort();
+#elif defined (CZEN)
+            printf ("abort because of hash index lookup!\n");
+            tx.aep_abort();
+#endif
+
+            aborted = true;
+            break;
+          }
+        } else if (btree_idx != nullptr) {
+          auto lookup_result =
+              btree_idx->lookup(&tx, row_id, kSkipValidationForIndexAccess,
+                                [&row_id](auto& k, auto& v) {
+                                  (void)k;
+                                  row_id = v;
+                                  return false;
+                                });
+          if (lookup_result != 1 || lookup_result == BTreeIndex::kHaveToAbort) {
+            assert(false);
+
+#if defined (test) || defined (CWBL)
+            tx.abort();
+#elif defined (CZEN)
+            printf ("abort because of btree index lookup!\n");
+            tx.aep_abort();
+#endif
+
+            aborted = true;
+            break;
+          }
+        }
+
+        if (!use_peek_only) {
+
+#if defined (test) || defined (CWBL)
+          RowAccessHandle rah(&tx);
+          if (is_read) {
+            if (!rah.peek_row(tbl, 0, row_id, false, true, false) ||
+                !rah.read_row()) {
+              tx.abort();
+              aborted = true;
+              break;
+            }
+
+            const char* data =
+                rah.cdata() + static_cast<uint64_t>(column_id) * kColumnSize;
+            for (uint64_t j = 0; j < kColumnSize; j += 64)
+              v += static_cast<uint64_t>(data[j]);
+            v += static_cast<uint64_t>(data[kColumnSize - 1]);
+          } else {
+            if (is_rmw) {
+              if (!rah.peek_row(tbl, 0, row_id, false, true, true) ||
+                  !rah.read_row() || !rah.write_row(kDataSize)) {
+                tx.abort();
+                aborted = true;
+                break;
+              }
+            } else {
+              if (!rah.peek_row(tbl, 0, row_id, false, false, true) ||
+                  !rah.write_row(kDataSize)) {
+                tx.abort();
+                aborted = true;
+                break;
+              }
+            }
+
+            char* data =
+                rah.data() + static_cast<uint64_t>(column_id) * kColumnSize;
+            for (uint64_t j = 0; j < kColumnSize; j += 64) {
+              v += static_cast<uint64_t>(data[j]);
+              data[j] = static_cast<char>(v);
+            }
+            v += static_cast<uint64_t>(data[kColumnSize - 1]);
+            data[kColumnSize - 1] = static_cast<char>(v);
+          }
+#elif defined (CZEN)
+          PmemRowAccessHandle rah(&tx);
+          if (is_read) {
+            if (!rah.aep_peek_row(tbl, 0, row_id, false, true, false) ||
+                !rah.aep_read_row()) {
+
+              // printf ("abort because of peek read lookup! 290\n");
+ 
+              tx.aep_abort();
+              aborted = true;
+              break;
+            }
+
+            const char* data =
+                rah.cdata() + static_cast<uint64_t>(column_id) * kColumnSize;
+            for (uint64_t j = 0; j < kColumnSize; j += 64)
+              v += static_cast<uint64_t>(data[j]);
+            v += static_cast<uint64_t>(data[kColumnSize - 1]);
+          } else {
+            if (is_rmw) {
+              if (!rah.aep_peek_row(tbl, 0, row_id, false, true, true) ||
+                  !rah.aep_read_row() || !rah.aep_write_row(kDataSize)) {
+
+                // printf ("abort because of peek read write lookup! 307\n");
+
+                tx.aep_abort();
+                aborted = true;
+                break;
+              }
+            } else {
+              if (!rah.aep_peek_row(tbl, 0, row_id, false, false, true) ||
+                  !rah.aep_write_row(kDataSize)) {
+
+                // printf ("abort because of peek write lookup! 317\n");
+
+                tx.aep_abort();
+                aborted = true;
+                break;
+              }
+            }
+
+            char* data =
+                rah.data() + static_cast<uint64_t>(column_id) * kColumnSize;
+            for (uint64_t j = 0; j < kColumnSize; j += 64) {
+              v += static_cast<uint64_t>(data[j]);
+              data[j] = static_cast<char>(v);
+            }
+            v += static_cast<uint64_t>(data[kColumnSize - 1]);
+            data[kColumnSize - 1] = static_cast<char>(v);
+          }
+#endif
+
+        } else {
+          if (!kUseScan) {
+
+#if defined (test) || defined (CWBL)
+            RowAccessHandlePeekOnly rah(&tx);
+            if (!rah.peek_row(tbl, 0, row_id, false, false, false)) {
+              tx.abort();
+              aborted = true;
+              break;
+            }
+            const char* data =
+                rah.cdata() + static_cast<uint64_t>(column_id) * kColumnSize;
+            for (uint64_t j = 0; j < kColumnSize; j += 64)
+              v += static_cast<uint64_t>(data[j]);
+            v += static_cast<uint64_t>(data[kColumnSize - 1]);
+#elif defined (CZEN)
+            PmemRowAccessHandlePeekOnly rah(&tx);
+            if (!rah.aep_peek_row(tbl, 0, row_id, false, false, false)) {
+              tx.abort();
+              aborted = true;
+              break;
+            }
+            const char* data =
+                rah.cdata() + static_cast<uint64_t>(column_id) * kColumnSize;
+            for (uint64_t j = 0; j < kColumnSize; j += 64)
+              v += static_cast<uint64_t>(data[j]);
+            v += static_cast<uint64_t>(data[kColumnSize - 1]);
+#endif
+
+          } else if (!kUseFullTableScan) {
+
+#if defined (test) || defined (CWBL)
+            RowAccessHandlePeekOnly rah(&tx);
+
+            uint64_t next_row_id = row_id;
+            uint64_t next_next_raw_row_id = task->row_ids[req_i + req_j] + 1;
+            if (next_next_raw_row_id == task->num_rows)
+              next_next_raw_row_id = 0;
+
+            uint32_t scan_len = task->scan_lens[tx_i];
+            for (uint32_t scan_i = 0; scan_i < scan_len; scan_i++) {
+              uint64_t this_row_id = next_row_id;
+
+              // TODO: Support btree_idx.
+              assert(hash_idx != nullptr);
+
+              // Lookup index for next row.
+              auto lookup_result =
+                  hash_idx->lookup(&tx, next_next_raw_row_id, true,
+                                   [&next_row_id](auto& k, auto& v) {
+                                     (void)k;
+                                     next_row_id = v;
+                                     return false;
+                                   });
+              if (lookup_result != 1 ||
+                  lookup_result == HashIndex::kHaveToAbort) {
+                tx.abort();
+                aborted = true;
+                break;
+              }
+
+              // Prefetch index for next next row.
+              next_next_raw_row_id++;
+              if (next_next_raw_row_id == task->num_rows)
+                next_next_raw_row_id = 0;
+              hash_idx->prefetch(&tx, next_next_raw_row_id);
+
+              // Prefetch next row.
+              rah.prefetch_row(tbl, 0, next_row_id,
+                               static_cast<uint64_t>(column_id) * kColumnSize,
+                               kColumnSize);
+
+              // Access current row.
+              if (!rah.peek_row(tbl, 0, this_row_id, false, false, false)) {
+                tx.abort();
+                aborted = true;
+                break;
+              }
+
+              const char* data =
+                  rah.cdata() + static_cast<uint64_t>(column_id) * kColumnSize;
+              for (uint64_t j = 0; j < kColumnSize; j += 64)
+                v += static_cast<uint64_t>(data[j]);
+              v += static_cast<uint64_t>(data[kColumnSize - 1]);
+
+              rah.reset();
+            }
+#elif defined (CZEN)
+            PmemRowAccessHandlePeekOnly rah(&tx);
+
+            uint64_t next_row_id = row_id;
+            uint64_t next_next_raw_row_id = task->row_ids[req_i + req_j] + 1;
+            if (next_next_raw_row_id == task->num_rows)
+              next_next_raw_row_id = 0;
+
+            uint32_t scan_len = task->scan_lens[tx_i];
+            for (uint32_t scan_i = 0; scan_i < scan_len; scan_i++) {
+              uint64_t this_row_id = next_row_id;
+
+              // TODO: Support btree_idx.
+              assert(hash_idx != nullptr);
+
+              // Lookup index for next row.
+              auto lookup_result =
+                  hash_idx->lookup(&tx, next_next_raw_row_id, true,
+                                   [&next_row_id](auto& k, auto& v) {
+                                     (void)k;
+                                     next_row_id = v;
+                                     return false;
+                                   });
+              if (lookup_result != 1 ||
+                  lookup_result == HashIndex::kHaveToAbort) {
+                tx.aep_abort();
+                aborted = true;
+                break;
+              }
+
+              // Prefetch index for next next row.
+              next_next_raw_row_id++;
+              if (next_next_raw_row_id == task->num_rows)
+                next_next_raw_row_id = 0;
+              hash_idx->prefetch(&tx, next_next_raw_row_id);
+
+              // Prefetch next row.
+              // rah.prefetch_row(tbl, 0, next_row_id,
+              //                  static_cast<uint64_t>(column_id) * kColumnSize,
+              //                  kColumnSize);
+
+              // Access current row.
+
+              if (!rah.aep_peek_row(tbl, 0, this_row_id, false, false, false)) {
+                tx.aep_abort();
+                aborted = true;
+                break;
+              }
+
+              const char* data =
+                  rah.cdata() + static_cast<uint64_t>(column_id) * kColumnSize;
+              for (uint64_t j = 0; j < kColumnSize; j += 64)
+                v += static_cast<uint64_t>(data[j]);
+              v += static_cast<uint64_t>(data[kColumnSize - 1]);
+
+              rah.reset();
+            }
+
+#endif
+            if (aborted) break;
+          } else /*if (kUseFullTableScan)*/ {
+
+#if defined (test) || defined (CWBL)
+            if (!tbl->scan(&tx, 0,
+                           static_cast<uint64_t>(column_id) * kColumnSize,
+                           kColumnSize, [&v, column_id](auto& rah) {
+                             const char* data =
+                                 rah.cdata() +
+                                 static_cast<uint64_t>(column_id) * kColumnSize;
+                             for (uint64_t j = 0; j < kColumnSize; j += 64)
+                               v += static_cast<uint64_t>(data[j]);
+                             v += static_cast<uint64_t>(data[kColumnSize - 1]);
+                           })) {
+              tx.abort();
+              aborted = true;
+              break;
+            }
+#elif defined (CZEN)
+            // TODO PmemTable Full Scan
+#endif
+
+          }
+        }
+      }
+
+      if (aborted) continue;
+
+      Result result;
+
+#if defined (test) || defined (CWBL)
+      if (!tx.commit(&result)) continue;
+#elif defined (CZEN)
+      if (!tx.aep_commit(&result)) continue;
+#endif
+
+      assert(result == Result::kCommitted);
+
+      commit_i++;
+      if (kUseScan && use_peek_only) {
+        if (!kUseFullTableScan)
+          scanned += task->scan_lens[tx_i];
+        else
+          scanned += task->num_rows;
+      }
+
+      break;
+    }
+  }
+
+  task->db->deactivate(static_cast<uint16_t>(task->thread_id));
+
+  if (!stopping) stopping = 1;
+
+  task->committed = commit_i;
+  task->scanned = scanned;
+
+  gettimeofday(&task->tv_end, nullptr);
+}
+
+int main(int argc, const char* argv[]) {
+  if (argc != 4) {
+    printf("%s WH_NUM TX-COUNT THREAD-COUNT\n", argv[0]);
+    return EXIT_FAILURE;
+  }
+
+  uint64_t wh_num = static_cast<uint64_t>(atol(argv[1]));
+  uint64_t tx_count = static_cast<uint64_t>(atol(argv[2]));
+  uint64_t num_threads = static_cast<uint64_t>(atol(argv[3]));
+
+  Alloc alloc;
+  PmemAlloc aep_alloc;
+
+  PagePool* page_pools[2];
+  // if (num_threads == 1) {
+  //   page_pools[0] = new PagePool(&alloc, page_pool_size, 0);
+  //   page_pools[1] = nullptr;
+  // } else {
+  page_pools[0] = new PagePool(&alloc, 0);
+  page_pools[1] = new PagePool(&aep_alloc, 0);
+  // }
+
+  printf ("pagepool    = %p\n", page_pools[0]);
+  printf ("aeppagepool = %p\n\n", page_pools[1]);
+
+  ::mica::util::lcore.pin_thread(0);
+
+  sw.init_start();
+  sw.init_end();
+
+  printf("wh_num = %" PRIu64 "\n", wh_num);
+  printf("tx_count = %" PRIu64 "\n", tx_count);
+  printf("num_threads = %" PRIu64 "\n", num_threads);
+
+#ifndef NDEBUG
+  printf("!NDEBUG\n");
+#endif
+  printf("\n");
+
+#if defined (test) || defined (CWBL)
+  PmemLogger logger(page_pools[1]);
+#elif defined (CZEN)
+  Logger logger;
+#endif
+
+  DB db(page_pools, &logger, &sw, static_cast<uint16_t>(num_threads));
+
+  const bool kVerify =
+      typeid(typename DBConfig::Logger) == typeid(VerificationLogger<DBConfig>);
+
+  const uint64_t data_sizes[] = {kDataSize};
+  bool ret = db.create_table("main", 1, data_sizes, num_rows);
+  assert(ret);
+  (void)ret;
+
+  auto tbl = db.get_table("main");
+
+  db.activate(0);
+
+  HashIndex* hash_idx = nullptr;
+  if (kUseHashIndex) {
+    bool ret = db.create_hash_index_unique_u64("main_idx", tbl, num_rows);
+    assert(ret);
+    (void)ret;
+
+    hash_idx = db.get_hash_index_unique_u64("main_idx");
+    Transaction tx(db.context(0));
+    hash_idx->init(&tx);
+  }
+
+  BTreeIndex* btree_idx = nullptr;
+  if (kUseBTreeIndex) {
+    bool ret = db.create_btree_index_unique_u64("main_idx", tbl);
+    assert(ret);
+    (void)ret;
+
+    btree_idx = db.get_btree_index_unique_u64("main_idx");
+    Transaction tx(db.context(0));
+    btree_idx->init(&tx);
+  }
+
+  {
+    printf("initializing table\n");
+
+    std::vector<std::thread> threads;
+    uint64_t init_num_threads = std::min(uint64_t(1), num_threads);
+    for (uint64_t thread_id = 0; thread_id < init_num_threads; thread_id++) {
+      threads.emplace_back([&, thread_id] {
+        ::mica::util::lcore.pin_thread(thread_id);
+
+        db.activate(static_cast<uint16_t>(thread_id));
+        while (db.active_thread_count() < init_num_threads) {
+          ::mica::util::pause();
+          db.idle(static_cast<uint16_t>(thread_id));
+        }
+
+        // Randomize the data layout by shuffling row insert order.
+        std::mt19937 g(thread_id);
+        std::vector<uint64_t> row_ids;
+        row_ids.reserve((num_rows + init_num_threads - 1) / init_num_threads);
+        for (uint64_t i = thread_id; i < num_rows; i += init_num_threads)
+          row_ids.push_back(i);
+        std::shuffle(row_ids.begin(), row_ids.end(), g);
+
+#if defined (test) || defined (CWBL)
+        Transaction tx(db.context(static_cast<uint16_t>(thread_id)));
+#elif defined (CZEN)
+        PmemTransaction tx(db.context(static_cast<uint16_t>(thread_id)));
+#endif
+
+        const uint64_t kBatchSize = 16;
+        for (uint64_t i = 0; i < row_ids.size(); i += kBatchSize) {
+          while (true) {
+#if defined (test) || defined (CWBL)
+            bool ret = tx.begin();
+#elif defined (CZEN)
+            bool ret = tx.aep_begin();
+#endif
+            if (!ret) {
+              printf("failed to start a transaction\n");
+              continue;
+            }
+
+            bool aborted = false;
+            auto i_end = std::min(i + kBatchSize, row_ids.size());
+            for (uint64_t j = i; j < i_end; j++) {
+
+#if defined (test) || defined (CWBL)
+              RowAccessHandle rah(&tx);
+              if (!rah.new_row(tbl, 0, Transaction::kNewRowID, true,
+                               kDataSize)) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.abort();
+                break;
+              }
+
+              if (kUseHashIndex) {
+                auto ret = hash_idx->insert(&tx, row_ids[j], rah.row_id());
+                if (ret != 1 || ret == HashIndex::kHaveToAbort) {
+                  // printf("failed to update index row = %" PRIu64 "\n", j);
+                  aborted = true;
+                  tx.abort();
+                  break;
+                }
+              }
+              if (kUseBTreeIndex) {
+                auto ret = btree_idx->insert(&tx, row_ids[j], rah.row_id());
+                if (ret != 1 || ret == BTreeIndex::kHaveToAbort) {
+                  // printf("failed to update index row = %" PRIu64 "\n", j);
+                  aborted = true;
+                  tx.abort();
+                  break;
+                }
+              }
+#elif defined (CZEN)
+              PmemRowAccessHandle rah(&tx);
+              if (!rah.aep_new_row(tbl, 0, Transaction::kNewRowID, row_ids[j], true,
+                                   kDataSize)) {
+                // printf("failed to insert rows at new_row(), row = %" PRIu64
+                //        "\n",
+                //        j);
+                aborted = true;
+                tx.aep_abort();
+                break;
+              }
+
+              if (kUseHashIndex) {
+                auto ret = hash_idx->insert(&tx, row_ids[j], rah.row_id());
+                if (ret != 1 || ret == HashIndex::kHaveToAbort) {
+                  // printf("failed to update index row = %" PRIu64 "\n", j);
+                  aborted = true;
+                  tx.aep_abort();
+                  break;
+                }
+              }
+              if (kUseBTreeIndex) {
+                auto ret = btree_idx->insert(&tx, row_ids[j], rah.row_id());
+                if (ret != 1 || ret == BTreeIndex::kHaveToAbort) {
+                  // printf("failed to update index row = %" PRIu64 "\n", j);
+                  aborted = true;
+                  tx.aep_abort();
+                  break;
+                }
+              }
+              // printf ("init insert: key=%lu val=%lu\n", row_ids[j],rah.row_id());
+#endif
+            }
+
+            if (aborted) continue;
+            Result result;
+
+#if defined (test) || defined (CWBL)
+            if (!tx.commit(&result)) {
+#elif defined (CZEN)
+            if (!tx.aep_commit(&result)) {
+#endif
+              // printf("failed to insert rows at commit(), row = %" PRIu64
+              //        "; result=%d\n",
+              //        i_end - 1, static_cast<int>(result));
+              continue;
+            }
+            break;
+          }
+        }
+
+
+/*        
+        // check the table is initialized as think
+        {
+          printf ("check initilize process \n");
+          for (uint64_t i=0; i< num_rows; i++) {
+            PmemTransaction tx(db.context(static_cast<uint16_t>(0)));
+            tx.aep_begin();
+            uint64_t vrow_id;
+            auto lookup_result =
+              hash_idx->lookup(&tx, i, kSkipValidationForIndexAccess,
+                               [&vrow_id](auto& k, auto& v) {
+                                 (void)k;
+                                 vrow_id = v;
+                                 return false;
+                               });
+            if (lookup_result != 1 || lookup_result == HashIndex::kHaveToAbort) {
+              assert(false);
+            }
+
+            // printf ("key=%lu\tval=%lu\n", i, vrow_id); 
+ 
+            PmemRowAccessHandle rah(&tx);
+
+            if (!rah.aep_peek_row(tbl, 0, vrow_id, false, true, false) ||
+                !rah.aep_read_row()) {
+
+              // printf ("abort because of peek read lookup! key=%lu\tval=%lu\n", i, vrow_id);
+              tx.aep_abort();
+              break;
+            }
+
+            printf ("key=%lu\tval=%lu\tval=%p\trah.row_id()=%lu\thead->primkey=%lu\tread_rv=%p\twrite_rv=%p\taep_rv=%p\taep_rv->pkey=%lu\n",
+                     i, 
+                     vrow_id,
+                     reinterpret_cast<void*>(vrow_id),
+                     rah.row_id(),
+                     tbl->head(0, rah.row_id())->pkey,
+                     rah.row_access_item()->read_rv,
+                     rah.row_access_item()->write_rv,
+                     rah.row_access_item()->write_rv?
+                       rah.row_access_item()->write_rv->aep_rv:
+                       rah.row_access_item()->read_rv->aep_rv,
+                     rah.row_access_item()->write_rv?
+                       rah.row_access_item()->write_rv->aep_rv->pkey:
+                       rah.row_access_item()->read_rv->aep_rv->pkey);
+
+            tx.aep_commit();
+          }
+        }
+*/
+
+        db.deactivate(static_cast<uint16_t>(thread_id));
+        return 0;
+      });
+    }
+
+    while (threads.size() > 0) {
+      threads.back().join();
+      threads.pop_back();
+    }
+
+    // TODO: Use multiple threads to renew rows for more balanced memory access.
+
+    db.activate(0);
+    {
+      uint64_t i = 0;
+      tbl->renew_rows(db.context(0), 0, i, static_cast<uint64_t>(-1), false);
+    }
+    if (hash_idx != nullptr) {
+      uint64_t i = 0;
+      hash_idx->index_table()->renew_rows(db.context(0), 0, i,
+                                          static_cast<uint64_t>(-1), false);
+    }
+    if (btree_idx != nullptr) {
+      uint64_t i = 0;
+      btree_idx->index_table()->renew_rows(db.context(0), 0, i,
+                                           static_cast<uint64_t>(-1), false);
+    }
+    db.deactivate(0);
+
+    db.reset_stats();
+    db.reset_backoff();
+  }
+
+  // tbl->print_table_status ();
+  // return 0;
+
+  std::vector<Task> tasks(num_threads);
+  setup_logger(&logger, &tasks);
+  {
+    printf("generating workload\n");
+
+    for (uint64_t thread_id = 0; thread_id < num_threads; thread_id++) {
+      tasks[thread_id].thread_id = static_cast<uint16_t>(thread_id);
+      tasks[thread_id].num_threads = num_threads;
+      tasks[thread_id].db = &db;
+      tasks[thread_id].tbl = tbl;
+      tasks[thread_id].hash_idx = hash_idx;
+      tasks[thread_id].btree_idx = btree_idx;
+    }
+
+    if (kUseContendedSet) zipf_theta = 0.;
+
+    for (uint64_t thread_id = 0; thread_id < num_threads; thread_id++) {
+      auto req_counts = reinterpret_cast<uint16_t*>(
+          alloc.malloc_contiguous(sizeof(uint16_t) * tx_count));
+      auto read_only_tx = reinterpret_cast<uint8_t*>(
+          alloc.malloc_contiguous(sizeof(uint8_t) * tx_count));
+      uint32_t* scan_lens = nullptr;
+      if (kUseScan)
+        scan_lens = reinterpret_cast<uint32_t*>(
+            alloc.malloc_contiguous(sizeof(uint32_t) * tx_count));
+      auto row_ids = reinterpret_cast<uint64_t*>(alloc.malloc_contiguous(
+          sizeof(uint64_t) * tx_count * reqs_per_tx));
+      auto column_ids = reinterpret_cast<uint8_t*>(alloc.malloc_contiguous(
+          sizeof(uint8_t) * tx_count * reqs_per_tx));
+      auto op_types = reinterpret_cast<uint8_t*>(alloc.malloc_contiguous(
+          sizeof(uint8_t) * tx_count * reqs_per_tx));
+      assert(req_counts);
+      assert(row_ids);
+      assert(column_ids);
+      assert(op_types);
+      tasks[thread_id].num_rows = num_rows;
+      tasks[thread_id].tx_count = tx_count;
+      tasks[thread_id].req_counts = req_counts;
+      tasks[thread_id].read_only_tx = read_only_tx;
+      tasks[thread_id].scan_lens = scan_lens;
+      tasks[thread_id].row_ids = row_ids;
+      tasks[thread_id].column_ids = column_ids;
+      tasks[thread_id].op_types = op_types;
+
+      if (kVerify) {
+        auto commit_tx_i = reinterpret_cast<uint64_t*>(
+            alloc.malloc_contiguous(sizeof(uint64_t) * tx_count));
+        auto commit_ts = reinterpret_cast<Timestamp*>(
+            alloc.malloc_contiguous(sizeof(Timestamp) * tx_count));
+        auto read_ts = reinterpret_cast<Timestamp*>(alloc.malloc_contiguous(
+            sizeof(Timestamp) * tx_count * reqs_per_tx));
+        auto write_ts = reinterpret_cast<Timestamp*>(alloc.malloc_contiguous(
+            sizeof(Timestamp) * tx_count * reqs_per_tx));
+        assert(commit_tx_i);
+        assert(commit_ts);
+        assert(read_ts);
+        ::mica::util::memset(commit_tx_i, 0, sizeof(uint64_t) * tx_count);
+        ::mica::util::memset(commit_ts, 0, sizeof(Timestamp) * tx_count);
+        ::mica::util::memset(read_ts, 0,
+                             sizeof(Timestamp) * tx_count * reqs_per_tx);
+        ::mica::util::memset(write_ts, 0,
+                             sizeof(Timestamp) * tx_count * reqs_per_tx);
+        tasks[thread_id].commit_tx_i = commit_tx_i;
+        tasks[thread_id].commit_ts = commit_ts;
+        tasks[thread_id].read_ts = read_ts;
+        tasks[thread_id].write_ts = write_ts;
+      }
+    }
+
+    std::vector<std::thread> threads;
+    for (uint64_t thread_id = 0; thread_id < num_threads; thread_id++) {
+      threads.emplace_back([&, thread_id] {
+        ::mica::util::lcore.pin_thread(thread_id);
+
+        uint64_t seed = 4 * thread_id * ::mica::util::rdtsc();
+        uint64_t seed_mask = (uint64_t(1) << 48) - 1;
+        ::mica::util::ZipfGen zg(num_rows, zipf_theta, seed & seed_mask);
+        ::mica::util::Rand op_type_rand((seed + 1) & seed_mask);
+        ::mica::util::Rand column_id_rand((seed + 2) & seed_mask);
+        ::mica::util::Rand scan_len_rand((seed + 3) & seed_mask);
+        uint32_t read_threshold =
+            (uint32_t)(read_ratio * (double)((uint32_t)-1));
+        uint32_t rmw_threshold =
+            (uint32_t)(kReadModifyWriteRatio * (double)((uint32_t)-1));
+
+        uint64_t req_offset = 0;
+
+        for (uint64_t tx_i = 0; tx_i < tx_count; tx_i++) {
+          bool read_only_tx = true;
+
+          for (uint64_t req_i = 0; req_i < reqs_per_tx; req_i++) {
+            size_t row_id;
+            while (true) {
+              if (kUseContendedSet) {
+                if (req_i < kContendedReqPerTX)
+                  row_id =
+                      (zg.next() * 0x9ddfea08eb382d69ULL) % kContendedSetSize;
+                else
+                  row_id = (zg.next() * 0x9ddfea08eb382d69ULL) %
+                               (num_rows - kContendedSetSize) +
+                           kContendedSetSize;
+              } else {
+                row_id = (zg.next() * 0x9ddfea08eb382d69ULL) % num_rows;
+              }
+              // Avoid duplicate row IDs in a single transaction.
+              uint64_t req_j;
+              for (req_j = 0; req_j < req_i; req_j++)
+                if (tasks[thread_id].row_ids[req_offset + req_j] == row_id)
+                  break;
+              if (req_j == req_i) break;
+            }
+            uint8_t column_id = static_cast<uint8_t>(column_id_rand.next_u32() %
+                                                     (kDataSize / kColumnSize));
+            tasks[thread_id].row_ids[req_offset + req_i] = row_id;
+            tasks[thread_id].column_ids[req_offset + req_i] = column_id;
+
+            if (op_type_rand.next_u32() <= read_threshold)
+              tasks[thread_id].op_types[req_offset + req_i] = 0;
+            else {
+              tasks[thread_id].op_types[req_offset + req_i] =
+                  op_type_rand.next_u32() <= rmw_threshold ? 1 : 2;
+              read_only_tx = false;
+            }
+          }
+          tasks[thread_id].req_counts[tx_i] =
+              static_cast<uint16_t>(reqs_per_tx);
+          tasks[thread_id].read_only_tx[tx_i] =
+              static_cast<uint8_t>(read_only_tx);
+          if (kUseScan) {
+            tasks[thread_id].scan_lens[tx_i] =
+                scan_len_rand.next_u32() % (kMaxScanLen - 1) + 1;
+          }
+          req_offset += reqs_per_tx;
+        }
+      });
+    }
+
+    while (threads.size() > 0) {
+      threads.back().join();
+      threads.pop_back();
+    }
+  }
+
+  // tbl->print_table_status();
+  //
+  // if (kShowPoolStats) db.print_pool_status();
+
+  // For verification.
+  std::vector<Timestamp> table_ts;
+
+  for (auto phase = 0; phase < 2; phase++) {
+    // if (kVerify && phase == 0) {
+    //   printf("skipping warming up\n");
+    //   continue;
+    // }
+
+    if (kVerify && phase == 1) {
+      for (uint64_t row_id = 0; row_id < num_rows; row_id++) {
+        auto rv = tbl->latest_rv(0, row_id);
+        table_ts.push_back(rv->wts);
+      }
+    }
+
+    if (phase == 0)
+      printf("warming up\n");
+    else {
+      db.reset_stats();
+      printf("executing workload\n");
+    }
+
+    running_threads = 0;
+    stopping = 0;
+
+    ::mica::util::memory_barrier();
+
+    std::vector<std::thread> threads;
+    for (uint64_t thread_id = 1; thread_id < num_threads; thread_id++)
+      threads.emplace_back(worker_proc, &tasks[thread_id]);
+
+    if (phase != 0 && kRunPerf) {
+      int r = system("perf record -a sleep 1 &");
+      // int r = system("perf record -a -g sleep 1 &");
+      (void)r;
+    }
+
+    worker_proc(&tasks[0]);
+
+    while (threads.size() > 0) {
+      threads.back().join();
+      threads.pop_back();
+    }
+  }
+  printf("\n");
+
+  {
+    double diff;
+    {
+      double min_start = 0.;
+      double max_end = 0.;
+      for (size_t thread_id = 0; thread_id < num_threads; thread_id++) {
+        double start = (double)tasks[thread_id].tv_start.tv_sec * 1. +
+                       (double)tasks[thread_id].tv_start.tv_usec * 0.000001;
+        double end = (double)tasks[thread_id].tv_end.tv_sec * 1. +
+                     (double)tasks[thread_id].tv_end.tv_usec * 0.000001;
+        if (thread_id == 0 || min_start > start) min_start = start;
+        if (thread_id == 0 || max_end < end) max_end = end;
+      }
+
+      diff = max_end - min_start;
+    }
+    double total_time = diff * static_cast<double>(num_threads);
+
+    uint64_t total_committed = 0;
+    uint64_t total_scanned = 0;
+    for (size_t thread_id = 0; thread_id < num_threads; thread_id++) {
+      total_committed += tasks[thread_id].committed;
+      if (kUseScan) total_scanned += tasks[thread_id].scanned;
+    }
+    printf("throughput:                   %7.3lf M/sec\n",
+           static_cast<double>(total_committed) / diff * 0.000001);
+    if (kUseScan)
+      printf("scan throughput:              %7.3lf M/sec\n",
+             static_cast<double>(total_scanned) / diff * 0.000001);
+
+    db.print_stats(diff, total_time);
+
+    tbl->print_table_status();
+
+    if (hash_idx != nullptr) hash_idx->index_table()->print_table_status();
+    if (btree_idx != nullptr) btree_idx->index_table()->print_table_status();
+
+    if (kShowPoolStats) db.print_pool_status();
+  }
+
+
+  {
+        // check the table after transactions is initialized as think
+        {
+          db.activate(static_cast<uint16_t>(0));
+          printf ("check initilize process after transactions\n");
+          for (uint64_t i=0; i< num_rows; i++) {
+            PmemTransaction tx(db.context(static_cast<uint16_t>(0)));
+            tx.aep_begin();
+            uint64_t vrow_id;
+            auto lookup_result =
+              hash_idx->lookup(&tx, i, kSkipValidationForIndexAccess,
+                               [&vrow_id](auto& k, auto& v) {
+                                 (void)k;
+                                 vrow_id = v;
+                                 return false;
+                               });
+            if (lookup_result != 1 || lookup_result == HashIndex::kHaveToAbort) {
+              assert(false);
+            }
+
+            // printf ("key=%lu\tval=%lu\n", i, vrow_id); 
+ 
+            PmemRowAccessHandle rah(&tx);
+
+            if (!rah.aep_peek_row(tbl, 0, vrow_id, false, true, false) ||
+                !rah.aep_read_row()) {
+
+              // printf ("abort because of peek read lookup! key=%lu\tval=%lu\n", i, vrow_id);
+              tx.aep_abort();
+              break;
+            }
+
+            printf ("key=%lu\tval=%lu\tval=%p\trah.row_id()=%lu\thead->primkey=%lu\tread_rv=%p\twrite_rv=%p\taep_rv=%p\taep_rv->pkey=%lu\n",
+                     i, 
+                     vrow_id,
+                     reinterpret_cast<void*>(vrow_id),
+                     rah.row_id(),
+                     tbl->head(0, rah.row_id())->pkey,
+                     rah.row_access_item()->read_rv,
+                     rah.row_access_item()->write_rv,
+                     rah.row_access_item()->write_rv?
+                     rah.row_access_item()->write_rv->aep_rv:
+                     rah.row_access_item()->read_rv->aep_rv,
+                     rah.row_access_item()->write_rv?
+                     rah.row_access_item()->write_rv->aep_rv->pkey:
+                     rah.row_access_item()->read_rv->aep_rv->pkey);
+
+            tx.aep_commit();
+          }
+          db.deactivate(0);
+        }
+  }
+
+
+  if (kVerify) {
+    printf("verifying\n");
+    const bool print_verification = false;
+    // const bool print_verification = true;
+
+    if (kUseSnapshot)
+      printf(
+          "warning: verification currently does not support transactions using "
+          "snapshots\n");
+
+    uint64_t total_tx_i = 0;
+    uint64_t current_commit_i[num_threads];
+    for (uint64_t thread_id = 0; thread_id < num_threads; thread_id++)
+      current_commit_i[thread_id] = 0;
+
+    while (true) {
+      // Simple but slow way to find the next executed transaction.
+      uint64_t next_thread_id = static_cast<uint64_t>(-1);
+      Timestamp next_ts = Timestamp::make(0, 0, 0);
+      for (uint64_t thread_id = 0; thread_id < num_threads; thread_id++) {
+        Task* task = &tasks[thread_id];
+
+        if (current_commit_i[thread_id] >= task->committed) continue;
+
+        uint64_t tx_i = task->commit_tx_i[current_commit_i[thread_id]];
+        if (next_ts > task->commit_ts[tx_i] ||
+            next_thread_id == static_cast<uint64_t>(-1)) {
+          next_thread_id = thread_id;
+          next_ts = task->commit_ts[tx_i];
+        }
+      }
+      if (next_thread_id == static_cast<uint64_t>(-1)) break;
+
+      Task* task = &tasks[next_thread_id];
+      uint64_t tx_i = task->commit_tx_i[current_commit_i[next_thread_id]];
+      // XXX: Assume the constant number of reqs per tx.
+      uint64_t total_req_i = reqs_per_tx * tx_i;
+
+      if (print_verification)
+        printf("thread=%2" PRIu64 " tx=%" PRIu64 " commit_ts=0x%" PRIx64 "\n",
+               next_thread_id, tx_i, next_ts.t2);
+
+      for (uint64_t req_j = 0; req_j < task->req_counts[tx_i]; req_j++) {
+        const Timestamp& read_ts = task->read_ts[total_req_i + req_j];
+        const Timestamp& write_ts = task->write_ts[total_req_i + req_j];
+        uint64_t row_id = task->row_ids[total_req_i + req_j];
+        bool is_read = task->op_types[total_req_i + req_j] == 0;
+        bool is_rmw = task->op_types[total_req_i + req_j] == 1;
+
+        if (print_verification)
+          printf("  req %2" PRIu64 " row=%9" PRIu64
+                 " is_read=%d read_ts=0x%" PRIx64 "\n",
+                 req_j, row_id, is_read ? 1 : 0, read_ts.t2);
+
+        // The read set timestamp must be smaller than the commit timestamp
+        // (consistency).
+        if (read_ts >= next_ts) {
+          printf("verification failed at %" PRIu64
+                 " (read ts must predate commit ts)\n",
+                 total_tx_i);
+          assert(false);
+          return 1;
+        }
+
+        if (is_read || is_rmw) {
+          // There must be no extra version between the read and commit
+          // timestamp unless it is a write-only operation (atomicity).
+          const Timestamp& stored_ts = table_ts[row_id];
+          if (stored_ts != read_ts) {
+            printf("verification failed at %" PRIu64
+                   " (read ts mismatch; expected 0x%" PRIx64 ", got 0x%" PRIx64
+                   ")\n",
+                   total_tx_i, read_ts.t2, stored_ts.t2);
+            assert(false);
+            return 1;
+          }
+        }
+
+        // Register the new version.  It is guranteed to be the latest version
+        // because we chose the transaction in their commit ts order.
+        // if (!is_read) table_ts[row_id] = next_ts;
+        // Since we now have a promotion, a read may be actually a write.
+        // It keeps the old timestamp or updated to the transaction's timestamp.
+        assert(write_ts == read_ts || write_ts == next_ts);
+        table_ts[row_id] = write_ts;
+      }
+
+      current_commit_i[next_thread_id]++;
+      total_tx_i++;
+    }
+
+    // Final check.
+    for (uint64_t row_id = 0; row_id < num_rows; row_id++) {
+      auto stored_ts = table_ts[row_id];
+      auto rv = tbl->latest_rv(0, row_id);
+      auto read_ts = rv->wts;
+
+      if (stored_ts != read_ts) {
+        printf("verification failed at %" PRIu64
+               " (read ts mismatch; expected 0x%" PRIx64 ", got 0x%" PRIx64
+               ")\n",
+               total_tx_i, read_ts.t2, stored_ts.t2);
+        assert(false);
+        return 1;
+      }
+    }
+
+    printf("passed verification\n");
+    printf("\n");
+  }
+
+  {
+    printf("cleaning up\n");
+    for (uint64_t thread_id = 0; thread_id < num_threads; thread_id++) {
+      alloc.free_contiguous(tasks[thread_id].req_counts);
+      alloc.free_contiguous(tasks[thread_id].read_only_tx);
+      if (kUseScan) alloc.free_contiguous(tasks[thread_id].scan_lens);
+      alloc.free_contiguous(tasks[thread_id].row_ids);
+      alloc.free_contiguous(tasks[thread_id].column_ids);
+      alloc.free_contiguous(tasks[thread_id].op_types);
+      if (kVerify) {
+        alloc.free_contiguous(tasks[thread_id].commit_tx_i);
+        alloc.free_contiguous(tasks[thread_id].commit_ts);
+        alloc.free_contiguous(tasks[thread_id].read_ts);
+        alloc.free_contiguous(tasks[thread_id].write_ts);
+      }
+    }
+  }
+
+  return EXIT_SUCCESS;
+}
