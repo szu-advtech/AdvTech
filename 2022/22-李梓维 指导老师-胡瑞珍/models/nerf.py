@@ -59,23 +59,7 @@ class NeRF(nn.Module):
                  encode_appearance=False, in_channels_a=48,
                  encode_transient=False, in_channels_t=16,
                  beta_min=0.03):
-        """
-        ---Parameters for the original NeRF---
-        D: number of layers for density (sigma) encoder
-        W: number of hidden units in each layer
-        skips: add skip connection in the Dth layer
-        in_channels_xyz: number of input channels for xyz (3+3*10*2=63 by default)
-        in_channels_dir: number of input channels for direction (3+3*4*2=27 by default)
-        in_channels_t: number of input channels for t
 
-        ---Parameters for NeRF-W (used in fine model only as per section 4.3)---
-        ---cf. Figure 3 of the paper---
-        encode_appearance: whether to add appearance encoding as input (NeRF-A)
-        in_channels_a: appearance embedding dimension. n^(a) in the paper
-        encode_transient: whether to add transient encoding as input (NeRF-U)
-        in_channels_t: transient embedding dimension. n^(tau) in the paper
-        beta_min: minimum pixel color variance
-        """
         super().__init__()
         self.typ = typ
         self.D = D
@@ -211,14 +195,6 @@ class NeRF(nn.Module):
             self.transient_beta = nn.Sequential(nn.Linear(64, 1), nn.Softplus())
 
     def density(self, x, return_feat=False):
-        """
-        Inputs:
-            x: (N, 3) xyz in [-scale, scale]
-            return_feat: whether to return intermediate feature
-
-        Outputs:
-            sigmas: (N)
-        """
         x = (x - self.xyz_min) / (self.xyz_max - self.xyz_min)
         h = self.xyz_encoder(x)
         sigmas = TruncExp.apply(h[0])
@@ -226,23 +202,6 @@ class NeRF(nn.Module):
         return sigmas
 
     def forward(self, x, sigma_only=False, output_transient=True):
-        """
-        Encodes input (xyz+dir) to rgb+sigma (not ready to render yet).
-        For rendering this ray, please see rendering.py
-
-        Inputs:
-            x: the embedded vector of position (+ direction + appearance + transient)
-            sigma_only: whether to infer sigma only.
-            has_transient: whether to infer the transient component.
-
-        Outputs (concatenated):
-            if sigma_ony:
-                static_sigma
-            elif output_transient:
-                static_rgb, static_sigma, transient_rgb, transient_sigma, transient_beta
-            else:
-                static_rgb, static_sigma
-        """
 
         if sigma_only:
             input_xyz = x

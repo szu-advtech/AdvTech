@@ -15,21 +15,11 @@ from .colmap_utils import \
 
 class PhototourismDataset(Dataset):
     def __init__(self, root_dir, split='train', img_downscale=1, val_num=1, use_cache=False):
-        """
-        img_downscale: how much scale to downsample the training images.
-                       The original image sizes are around 500~100, so value of 1 or 2
-                       are recommended.
-                       ATTENTION! Value of 1 will consume large CPU memory,
-                       about 40G for brandenburg gate.
-        val_num: number of val images (used for multigpu, validate same image for all gpus)
-        use_cache: during data preparation, use precomputed rays (useful to accelerate
-                   data loading, especially for multigpu!)
-        """
         self.root_dir = root_dir
         self.split = split
         assert img_downscale >= 1, 'image can only be downsampled, please set img_downscale>=1!'
         self.img_downscale = img_downscale
-        if split == 'val': # image downscale=1 will cause OOM in val mode
+        if split == 'val':
             self.img_downscale = max(2, self.img_downscale)
         self.val_num = max(1, val_num) # at least 1
         self.use_cache = use_cache
@@ -39,16 +29,12 @@ class PhototourismDataset(Dataset):
         self.white_back = False
 
     def read_meta(self):
-        # read all files in the tsv first (split to train and test later)
         tsv = glob.glob(os.path.join(self.root_dir, '*.tsv'))[0]
         self.scene_name = os.path.basename(tsv)[:-4]
         self.files = pd.read_csv(tsv, sep='\t')
-        self.files = self.files[~self.files['id'].isnull()] # remove data without id
+        self.files = self.files[~self.files['id'].isnull()]
         self.files.reset_index(inplace=True, drop=True)
 
-        # Step 1. load image paths
-        # Attention! The 'id' column in the tsv is BROKEN, don't use it!!!!
-        # Instead, read the id from images.bin using image file name!
         if self.use_cache:
             with open(os.path.join(self.root_dir, f'cache/img_ids.pkl'), 'rb') as f:
                 self.img_ids = pickle.load(f)
@@ -60,13 +46,12 @@ class PhototourismDataset(Dataset):
             for v in imdata.values():
                 img_path_to_id[v.name] = v.id
             self.img_ids = []
-            self.image_paths = {} # {id: filename}
+            self.image_paths = {}
             for filename in list(self.files['filename']):
                 id_ = img_path_to_id[filename]
                 self.image_paths[id_] = filename
                 self.img_ids += [id_]
 
-        # Step 2: read and rescale camera intrinsics
         if self.use_cache:
             with open(os.path.join(self.root_dir, f'cache/Ks{self.img_downscale}.pkl'), 'rb') as f:
                 self.Ks = pickle.load(f)
@@ -85,7 +70,6 @@ class PhototourismDataset(Dataset):
                 K[2, 2] = 1
                 self.Ks[id_] = K
 
-        # Step 3: read c2w poses (of the images in tsv file only) and correct the order
         if self.use_cache:
             self.poses = np.load(os.path.join(self.root_dir, 'cache/poses.npy'))
         else:
@@ -96,12 +80,10 @@ class PhototourismDataset(Dataset):
                 R = im.qvec2rotmat()
                 t = im.tvec.reshape(3, 1)
                 w2c_mats += [np.concatenate([np.concatenate([R, t], 1), bottom], 0)]
-            w2c_mats = np.stack(w2c_mats, 0) # (N_images, 4, 4)
-            self.poses = np.linalg.inv(w2c_mats)[:, :3] # (N_images, 3, 4)
-            # Original poses has rotation in form "right down front", change to "right up back"
+            w2c_mats = np.stack(w2c_mats, 0)
+            self.poses = np.linalg.inv(w2c_mats)[:, :3]
             self.poses[..., 1:3] *= -1
 
-        # Step 4: correct scale
         if self.use_cache:
             self.xyz_world = np.load(os.path.join(self.root_dir, 'cache/xyz_world.npy'))
             with open(os.path.join(self.root_dir, f'cache/nears.pkl'), 'rb') as f:
@@ -112,16 +94,15 @@ class PhototourismDataset(Dataset):
             pts3d = read_points3d_binary(os.path.join(self.root_dir, 'dense/sparse/points3D.bin'))
             self.xyz_world = np.array([pts3d[p_id].xyz for p_id in pts3d])
             xyz_world_h = np.concatenate([self.xyz_world, np.ones((len(self.xyz_world), 1))], -1)
-            # Compute near and far bounds for each image individually
-            self.nears, self.fars = {}, {} # {id_: distance}
+            self.nears, self.fars = {}, {}
             for i, id_ in enumerate(self.img_ids):
-                xyz_cam_i = (xyz_world_h @ w2c_mats[i].T)[:, :3] # xyz in the ith cam coordinate
-                xyz_cam_i = xyz_cam_i[xyz_cam_i[:, 2]>0] # filter out points that lie behind the cam
+                xyz_cam_i = (xyz_world_h @ w2c_mats[i].T)[:, :3]
+                xyz_cam_i = xyz_cam_i[xyz_cam_i[:, 2]>0]
                 self.nears[id_] = np.percentile(xyz_cam_i[:, 2], 0.1)
                 self.fars[id_] = np.percentile(xyz_cam_i[:, 2], 99.9)
 
             max_far = np.fromiter(self.fars.values(), np.float32).max()
-            scale_factor = max_far/5 # so that the max far is scaled to 5
+            scale_factor = max_far/5
             self.poses[..., 3] /= scale_factor
             for k in self.nears:
                 self.nears[k] /= scale_factor
@@ -129,8 +110,7 @@ class PhototourismDataset(Dataset):
                 self.fars[k] /= scale_factor
             self.xyz_world /= scale_factor
         self.poses_dict = {id_: self.poses[i] for i, id_ in enumerate(self.img_ids)}
-            
-        # Step 5. split the img_ids (the number of images is verfied to match that in the paper)
+
         self.img_ids_train = [id_ for i, id_ in enumerate(self.img_ids) 
                                     if self.files.loc[i, 'split']=='train']
         self.img_ids_test = [id_ for i, id_ in enumerate(self.img_ids)
@@ -138,7 +118,7 @@ class PhototourismDataset(Dataset):
         self.N_images_train = len(self.img_ids_train)
         self.N_images_test = len(self.img_ids_test)
 
-        if self.split == 'train': # create buffer of all rays and rgb data
+        if self.split == 'train':
             if self.use_cache:
                 all_rays = np.load(os.path.join(self.root_dir,
                                                 f'cache/rays{self.img_downscale}.npy'))
@@ -159,8 +139,8 @@ class PhototourismDataset(Dataset):
                         img_w = img_w//self.img_downscale
                         img_h = img_h//self.img_downscale
                         img = img.resize((img_w, img_h), Image.LANCZOS)
-                    img = self.transform(img) # (3, h, w)
-                    img = img.view(3, -1).permute(1, 0) # (h*w, 3) RGB
+                    img = self.transform(img)
+                    img = img.view(3, -1).permute(1, 0)
                     self.all_rgbs += [img]
                     
                     directions = get_ray_directions(img_h, img_w, self.Ks[id_])
@@ -171,16 +151,15 @@ class PhototourismDataset(Dataset):
                                                 self.nears[id_]*torch.ones_like(rays_o[:, :1]),
                                                 self.fars[id_]*torch.ones_like(rays_o[:, :1]),
                                                 rays_t],
-                                                1)] # (h*w, 8)
+                                                1)]
                                     
-                self.all_rays = torch.cat(self.all_rays, 0) # ((N_images-1)*h*w, 8)
-                self.all_rgbs = torch.cat(self.all_rgbs, 0) # ((N_images-1)*h*w, 3)
+                self.all_rays = torch.cat(self.all_rays, 0)
+                self.all_rgbs = torch.cat(self.all_rgbs, 0)
         
-        elif self.split in ['val', 'test_train']: # use the first image as val image (also in train)
+        elif self.split in ['val', 'test_train']:
             self.val_id = self.img_ids_train[0]
 
-        else: # for testing, create a parametric rendering path
-            # test poses and appearance index are defined in eval.py
+        else:
             pass
 
     def define_transforms(self):

@@ -1,15 +1,12 @@
 import torch
-# optimizer
 from torch.optim import SGD, Adam
 import torch_optimizer as optim
-# scheduler
 from torch.optim.lr_scheduler import CosineAnnealingLR, MultiStepLR
 from .warmup_scheduler import GradualWarmupScheduler
 
 from .visualization import *
 
 def get_parameters(models):
-    """Get all model parameters recursively."""
     parameters = []
     if isinstance(models, list):
         for model in models:
@@ -17,7 +14,7 @@ def get_parameters(models):
     elif isinstance(models, dict):
         for model in models.values():
             parameters += get_parameters(model)
-    else: # models is actually a single pytorch model
+    else:
         parameters += list(models.parameters())
     return parameters
 

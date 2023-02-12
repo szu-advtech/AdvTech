@@ -15,24 +15,6 @@ def normalize(v):
 
 
 def average_poses(poses):
-    """
-    Calculate the average pose, which is then used to center all poses
-    using @center_poses. Its computation is as follows:
-    1. Compute the center: the average of pose centers.
-    2. Compute the z axis: the normalized average z axis.
-    3. Compute axis y': the average y axis.
-    4. Compute x' = y' cross product z, then normalize it as the x axis.
-    5. Compute the y axis: z cross product x.
-    
-    Note that at step 3, we cannot directly use y' as y axis since it's
-    not necessarily orthogonal to z axis. We need to pass from x to y.
-
-    Inputs:
-        poses: (N_images, 3, 4)
-
-    Outputs:
-        pose_avg: (3, 4) the average pose
-    """
     # 1. Compute the center
     center = poses[..., 3].mean(0) # (3)
 
@@ -54,17 +36,6 @@ def average_poses(poses):
 
 
 def center_poses(poses):
-    """
-    Center the poses so that we can use NDC.
-    See https://github.com/bmild/nerf/issues/34
-
-    Inputs:
-        poses: (N_images, 3, 4)
-
-    Outputs:
-        poses_centered: (N_images, 3, 4) the centered poses
-        pose_avg: (3, 4) the average pose
-    """
 
     pose_avg = average_poses(poses) # (3, 4)
     pose_avg_homo = np.eye(4)
@@ -81,20 +52,6 @@ def center_poses(poses):
 
 
 def create_spiral_poses(radii, focus_depth, n_poses=120):
-    """
-    Computes poses that follow a spiral path for rendering purpose.
-    See https://github.com/Fyusion/LLFF/issues/19
-    In particular, the path looks like:
-    https://tinyurl.com/ybgtfns3
-
-    Inputs:
-        radii: (3) radii of the spiral for each axis
-        focus_depth: float, the depth that the spiral poses look at
-        n_poses: int, number of poses to create along the path
-
-    Outputs:
-        poses_spiral: (n_poses, 3, 4) the poses in the spiral path
-    """
 
     poses_spiral = []
     for t in np.linspace(0, 4*np.pi, n_poses+1)[:-1]: # rotate 4pi (2 rounds)
@@ -116,14 +73,6 @@ def create_spiral_poses(radii, focus_depth, n_poses=120):
 
 
 def create_spheric_poses(radius, n_poses=120):
-    """
-    Create circular poses around z axis.
-    Inputs:
-        radius: the (negative) height and the radius of the circle.
-
-    Outputs:
-        spheric_poses: (n_poses, 3, 4) the poses in the circular path
-    """
     def spheric_pose(theta, phi, radius):
         trans_t = lambda t : np.array([
             [1,0,0,0],
@@ -158,11 +107,6 @@ def create_spheric_poses(radius, n_poses=120):
 
 class LLFFDataset(Dataset):
     def __init__(self, root_dir, split='train', img_wh=(504, 378), spheric_poses=False, val_num=1):
-        """
-        spheric_poses: whether the images are taken in a spheric inward-facing manner
-                       default: False (forward-facing)
-        val_num: number of val images (used for multigpu training, validate same image for all gpus)
-        """
         self.root_dir = root_dir
         self.split = split
         self.img_wh = img_wh
@@ -237,9 +181,6 @@ class LLFFDataset(Dataset):
                     near, far = 0, 1
                     rays_o, rays_d = get_ndc_rays(self.img_wh[1], self.img_wh[0],
                                                   self.focal, 1.0, rays_o, rays_d)
-                                     # near plane is always at 1.0
-                                     # near and far in NDC are always 0 and 1
-                                     # See https://github.com/bmild/nerf/issues/34
                 else:
                     near = self.bounds.min()
                     far = min(8 * near, self.bounds.max()) # focus on central object only
