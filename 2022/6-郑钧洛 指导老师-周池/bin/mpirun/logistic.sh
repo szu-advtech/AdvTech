@@ -1,0 +1,1 @@
+mpirun -np 3 ../logistic ../../setup/MNIST
