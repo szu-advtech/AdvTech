@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1cffb788-37c5-457c-906a-34c0422c0e2d" name="Changes" comment="change">
+      <change beforePath="$PROJECT_DIR$/2022/City4_log/dianping/RAW_MSE_CAML_FN_FM/log_file.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/.ipynb-checkpoint" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/City_4-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/City_4_concepts_0-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/City_4_concepts_1-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/category-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/dianping-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/label-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/word_cloud-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/word_cloud_all-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/word_cloud_concept-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/.ipynb_checkpoints/yelp_category_clean-checkpoint.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/City_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/City_4_concepts_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/City_4_concepts_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/category.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/data/businesses_clean.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/data/yelp_business.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/data/yelp_business_category_label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/dianping.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/.ipynb_checkpoints/dianping_0-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/.ipynb_checkpoints/dianping_1-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/.ipynb_checkpoints/dianping_category-checkpoint.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/Dianping_Category.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/Dianping_City.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/Dianping_City_Failure.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/dianping_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/dianping_Distribution.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/dianping_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/figure/yelp_cloud.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/font/Times-Roman.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/font/simheittf.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/label.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/word_cloud.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/word_cloud_all.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/word_cloud_concept.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/yelp_business_category_label.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/analysis/yelp_category_clean.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/data/data_path.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/.result.txt.swp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/AZ_09_10_12_59_09_bleu_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/AZ_09_10_12_59_09_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/AZ_bleu_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City2_29_08_10_53_39_2_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City2_29_08_10_53_39_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City4_13-12-22-55-04_bleu_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City4_15-12-14-05-20-UniLM_bleu_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City4_29_08_10_46_40_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City4_dianping_RAW_MSE_CAML_FN_FM_40.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/City_2_bleu_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/NV_08_10_02_17_30_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/NV_bleu_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/RELEASE-NOTE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/ROUGE-1.5.5.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/AttDef.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/AttlistDecl.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Attr.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/CDATASection.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/CharacterData.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Comment.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/DOMException.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/DOMImplementation.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Document.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/DocumentFragment.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/DocumentType.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Element.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/ElementDecl.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Entity.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/EntityReference.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/NamedNodeMap.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/NamedNodeMap.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Node.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/NodeList.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/NodeList.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Notation.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Parser.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/PerlSAX.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/ProcessingInstruction.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/Text.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/DOM/XMLDecl.pod" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/Handler/BuildDOM.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/XML/RegExp.pm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-1.6-Exceptions/adj.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-1.6-Exceptions/adv.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-1.6-Exceptions/buildExeptionDB.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-1.6-Exceptions/noun.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-1.6-Exceptions/verb.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/WordNet-2.0.exc.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/adj.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/adv.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/buildExeptionDB.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/noun.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0-Exceptions/verb.exc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/WordNet-2.0.exc.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/data/smart_common_words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/runROUGE-test.pl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/ROUGE-1.5.5/test_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/compute_bert_s.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/compute_bleu.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/convert_to_rouge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/dianping_AZ_09_10_12_59_09_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/dianping_NV_gl0.01_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/dianping_city4_gl0.01_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/dianping_city4_gl0.02_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/dianping_city4_gl0.03_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/dianping_city_4_rouge_result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/example_evaluation.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/evaluate/rouge.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/illustrate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/item_review_1_encode.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/logs_FM.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/parser_CAML.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/test_CAML.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tf_models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tf_models/caml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tf_models/logs.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tf_models/model_caml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tf_models/utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/train_CAML.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/exp/exp_ops.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/exp/experiment_caml.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/exp/metrics.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/exp/utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/lib/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/lib/att_op.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/lib/cnn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/lib/compose_op.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/lib/nn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/tylib/lib/seq_op.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/utilities.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2022/word_index.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="5f362390-8a53-4349-8b7c-c8702df520cd" />
+        <option name="url" value="https://github.com/Luuuk12321/AdvTech.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Lfy2D6Y44HR82CiKL57pQfMaAb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "true",
+    "last_opened_file_path": "D:/projects/AdvTech",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\projects\AdvTech\2022" />
+      <recent name="D:\projects\AdvTech" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1cffb788-37c5-457c-906a-34c0422c0e2d" name="Changes" comment="" />
+      <created>1676276221688</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1676276221688</updated>
+      <workItem from="1676276223623" duration="1860000" />
+    </task>
+    <task id="LOCAL-00001" summary="master">
+      <created>1676276371130</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1676276371130</updated>
+    </task>
+    <task id="LOCAL-00002" summary="master">
+      <created>1676276482386</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1676276482386</updated>
+    </task>
+    <task id="LOCAL-00003" summary="change">
+      <created>1676277231136</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1676277231136</updated>
+    </task>
+    <task id="LOCAL-00004" summary="change">
+      <created>1676277410412</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1676277410412</updated>
+    </task>
+    <task id="LOCAL-00005" summary="change">
+      <created>1676277572885</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676277572885</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="master" />
+    <MESSAGE value="change" />
+    <option name="LAST_COMMIT_MESSAGE" value="change" />
+  </component>
+</project>
