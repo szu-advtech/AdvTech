@@ -48,7 +48,8 @@ class ProtoModule(pl.LightningModule):
                  prototype_vector_path=None,
                  attention_vector_path=None,
                  eval_buckets=None,
-                 seed=7
+                 seed=7,
+                 contrastive_loss = True
                  ):
 
         super().__init__()
@@ -75,6 +76,8 @@ class ProtoModule(pl.LightningModule):
         self.prototype_vector_path = prototype_vector_path
         self.eval_buckets = eval_buckets
 
+        #对比学习模块
+        self.contrastive_loss = contrastive_loss
         # 模型架构设置 #
 
         pl.utilities.seed.seed_everything(seed=seed)
@@ -306,7 +309,28 @@ class ProtoModule(pl.LightningModule):
             total_loss = train_loss
 
         return total_loss
+    def Contrastive_Loss(self,targets,bert_output,Tempreture=10):
+        beta = torch.einsum('bn,cn->bc',targets.float(),targets.float()) # bs*bs
+        # 去掉
+        
+        beta = beta-torch.diag_embed(torch.diag(beta))
+        beta = F.normalize(beta,p=1,dim=1,eps=1e-8)
+        disance_matrix = -torch.einsum('btn,ctn->bc',bert_output,bert_output)
+        disance_matrix = disance_matrix - torch.diag_embed(torch.diag(disance_matrix))
+        # bs * bs 
+        # 温度系数
+        disance_matrix /= Tempreture
 
+        # labels = torch.zeros(disance_matrix.shape[0],dtype=torch.long).cuda()
+        # loss = F.cross_entropy(disance_matrix,labels)
+        
+        loss_matrix = -beta*F.log_softmax(disance_matrix,dim=1) 
+        # mask = beta.nonzero
+        # loss_matrix = loss_matrix*mask
+        loss = torch.sum(loss_matrix)
+        
+        return loss
+    
     def forward(self, batch):
         attention_mask = batch["attention_masks"]
         input_ids = batch["input_ids"]

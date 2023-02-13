@@ -23,6 +23,7 @@ def run_training(train_file,
                  lr_others=2e-2,
                  lr_features=2e-6,
                  num_warmup_steps=100,
+                 gamma = 1e-5,
                  max_length=512,
                  num_training_steps=5000,
                  check_val_every_n_epoch=1,
@@ -47,12 +48,15 @@ def run_training(train_file,
                  use_prototype_loss=False,
                  eval_bucket_path=None,
                  few_shot_experiment=False):
+    moco_queue = batch_size*100
     pl.utilities.seed.seed_everything(seed=seed)
 
     tokenizer = AutoTokenizer.from_pretrained(pretrained_model)
-    
-    # dataset的读取
-    dataset = OutcomeDiagnosesDataset
+    # 不同的experiment有不同的读取方式
+    if few_shot_experiment:
+        dataset = FilteredDiagnosesDataset
+    else:
+        dataset = OutcomeDiagnosesDataset
 
     train_dataset = dataset(train_file, tokenizer, max_length=max_length, all_codes_path=all_labels_path)
     val_dataset = dataset(val_file, tokenizer, max_length=max_length, all_codes_path=all_labels_path)
@@ -62,16 +66,16 @@ def run_training(train_file,
         dataloader[split] = torch.utils.data.DataLoader(dataset,
                                                         collate_fn=collate_batch,
                                                         batch_size=batch_size,
-                                                        num_workers=0,
+                                                        num_workers=4,
                                                         pin_memory=True,
                                                         shuffle=split == "train",
                                                         sampler=RandomSampler(dataset,
                                                                               replacement=True,
                                                                               num_samples=num_val_samples)
                                                         if split != "train" else None)
-    # 测试指标
+
     eval_buckets = load_eval_buckets(eval_bucket_path)
-    # 模型初始化
+
     if model_type is "BERT":
         model = BertModule(pretrained_model=pretrained_model,
                            num_classes=dataset.get_num_classes(),
@@ -108,23 +112,23 @@ def run_training(train_file,
                             prototype_vector_path=prototype_vector_path,
                             attention_vector_path=attention_vector_path,
                             seed=seed,
-                            eval_buckets=eval_buckets
+                            moco_queue = 300,
+                            eval_buckets=eval_buckets,
+                            gamma=gamma
                             )
 
     else:
         raise Exception(f"{model_type} not found. Please choose a valid model_type.")
-    # tensor board
+
     tb_logger = TensorBoardLogger(save_dir, name="lightning_logs")
-    # 学习率初始化
+
     lr_monitor = LearningRateMonitor(logging_interval='step')
-    # 参数文件保存位置
     checkpoint_callback = ModelCheckpoint(monitor='val/auroc_macro',
                                           mode='max',
                                           save_last=True,
                                           save_top_k=1,
                                           dirpath=os.path.join(tb_logger.log_dir, 'checkpoints'),
                                           filename='ckpt-{epoch:02d}')
-    # 早停设置
     early_stop_callback = EarlyStopping(monitor="val/auroc_macro",
                                         patience=25,
                                         mode="max")
@@ -133,7 +137,8 @@ def run_training(train_file,
     if projector_callback:
         embedding_projector_callback = ProjectorCallback(dataloader["train"], project_n_batches=project_n_batches)
         callbacks.append(embedding_projector_callback)
-    # 设置训练的参数
+
+    
     trainer = pl.Trainer(callbacks=callbacks,
                          logger=tb_logger,
                          default_root_dir=save_dir,
@@ -141,14 +146,15 @@ def run_training(train_file,
                          check_val_every_n_epoch=check_val_every_n_epoch,
                          deterministic=True,
                          accelerator="ddp",
+                         precision=32,
                          resume_from_checkpoint=resume_from_checkpoint
                          )
-    # 开始训练
+
+
     trainer.fit(model, dataloader["train"], dataloader["val"])
-    # 开始测试
     trainer.test(dataloaders=dataloader["test"], ckpt_path="best")
 
 
 if __name__ == '__main__':
-    #通过Fire模块使得能够在命令行进行参数的调整
+    
     fire.Fire(run_training)
