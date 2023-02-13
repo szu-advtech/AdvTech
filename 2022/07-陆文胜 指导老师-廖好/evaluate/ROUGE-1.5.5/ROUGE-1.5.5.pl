@@ -1,8 +1,4 @@
 #!/usr/bin/perl -w
-# Add current dir to include
-use File::Basename;
-use lib dirname (__FILE__);
-
 # Version:     ROUGE v1.5.5
 # Date:        05/26/2005,05/19/2005,04/26/2005,04/03/2005,10/28/2004,10/25/2004,10/21/2004
 # Author:      Chin-Yew Lin

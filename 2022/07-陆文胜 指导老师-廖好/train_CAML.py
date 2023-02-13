@@ -1,4 +1,6 @@
 from __future__ import absolute_import
+import os
+os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 
 import keras.utils
 from sklearn.metrics import mean_absolute_error
@@ -29,7 +31,6 @@ import time
 from tylib.exp.metrics import *
 from utilities import *
 from tqdm import tqdm
-import os
 # from __future__ import division
 # from __future__ import print_function
 
@@ -54,8 +55,6 @@ PAD = "<PAD>"
 UNK = "<UNK>"
 SOS = "<SOS>"
 EOS = "<EOS>"
-
-os.environ['CUDA_VISIBLE_DEVICES'] = "0"
 
 
 def batchify(data, i, bsz, max_sample):
@@ -700,8 +699,11 @@ class CFExperiment(Experiment):
         #     '%s/train_text_UniLM.txt' % data_dir, 'rb', 'utf-8').readlines()
 
         lines_unilm_review = []
+        text_feature = 'UniLM'
+        if self.args.bert == 1:
+            text_feature = 'bert_50'
         # with open('%s/train_text_UniLM.txt' % (data_dir), 'r') as u_v:
-        with open('%s/train_text_UniLM.txt' % (data_dir), 'r') as u_v:
+        with open('%s/train_text_%s.txt' % (data_dir, text_feature), 'r') as u_v:
             for line in u_v.readlines():
                 line = line.split()
                 temp = []
@@ -1002,18 +1004,17 @@ class CFExperiment(Experiment):
             for i in tqdm(range(0, num_batches+1)):
                 # batch = batchify_e(neg_data, pos_data, i, self.args.batch_size, max_sample=len(data))
                 batch = batchify(data, i, self.args.batch_size, max_sample=len(data))
-
-                if len(batch) == 0:
+                
+                if(len(batch) == 0):
                     continue
                 # 准备caml模型的需要用到的数据，包括各个输入向量
                 batch = self._prepare_set('train', i, batch)
                 feed_dict = self.mdl.get_feed_dict(batch)  # 为tensorflow各个量赋值
                 train_op = self.mdl.train_op  # 返回一个执行梯度更新的ops
-                run_options = tf.RunOptions(timeout_in_ms=10000)  # 配置运行时需要记录的信息
+                run_options = tf.RunOptions(
+                    timeout_in_ms=10000)  # 配置运行时需要记录的信息
                 _, loss, gen_loss, gen_acc = self.sess.run([train_op, self.mdl.cost, self.mdl.gen_loss, self.mdl.gen_acc],
                                                            feed_dict)  # 获取训练后的损失值
-                if np.isnan(loss):
-                    print(loss)
                 '''print('--------------------------------max_before_input_a----------------------------------')
                 print(max_before_input_a)
                 print('--------------------------------max_input_a----------------------------------')
@@ -1086,24 +1087,31 @@ class CFExperiment(Experiment):
                 self.args.gpu,
                 self.args.emb_size))
 
-            if epoch % self.args.eval == 0:
+            if(epoch % self.args.eval == 0):
 
                 self.sess.run(tf.assign(self.mdl.is_train, self.mdl.false))
 
                 loss, dev_preds = self.evaluate(self.dev_set,
                                                 self.args.batch_size, epoch, set_type='Dev')
-                self.mdl.saver.save(self.sess, '%s/model.ckpt' %(self.out_dir), global_step=epoch)
+                self.mdl.saver.save(self.sess, '%s/model.ckpt' %
+                                    (self.out_dir), global_step=epoch)
                 if min_loss > loss:
-                    self.mdl.saver.save(self.sess, '%s/model_best.ckpt' % (self.out_dir))
+                    self.mdl.saver.save(
+                        self.sess, '%s/model_best.ckpt' % (self.out_dir))
                     min_loss = loss
-                self._show_metrics(epoch, self.eval_dev, self.show_metrics, name='Dev')
+                self._show_metrics(epoch, self.eval_dev,
+                                   self.show_metrics,
+                                   name='Dev')
                 best_epoch1, cur_dev = self._select_test_by_dev(epoch,
                                                                 self.eval_dev,
                                                                 {},
                                                                 no_test=True,
                                                                 lower_is_better=True)
-                _, test_preds = self.evaluate(self.test_set, self.args.batch_size, epoch, set_type='Test')
-                self._show_metrics(epoch, self.eval_test, self.show_metrics, name='Test')
+                _, test_preds = self.evaluate(self.test_set,
+                                              self.args.batch_size, epoch, set_type='Test')
+                self._show_metrics(epoch, self.eval_test,
+                                   self.show_metrics,
+                                   name='Test')
                 stop, max_e, best_epoch = self._select_test_by_dev(
                     epoch,
                     self.eval_dev,

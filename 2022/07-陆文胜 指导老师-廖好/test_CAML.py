@@ -917,6 +917,7 @@ class CFExperiment(Experiment):
         return np.mean(losses), all_preds
     
 
+
     def infer(self):
         scores = []
         all_preds = []
@@ -1027,181 +1028,181 @@ class CFExperiment(Experiment):
         _stat_al = [math.ceil(x) for x in actual_labels]
         _stat_pred = [math.ceil(x) for x in all_preds]
 
-    # def train(self):
-    #     """ Main training loop
-    #     """
-    #     scores = []
-    #     best_score = -1
-    #     best_dev = -1
-    #     best_epoch = -1
-    #     counter = 0
-    #     min_loss = 1e+7
-    #     epoch_scores = {}
-    #     self.eval_list = []
-    #     data = self._combine_reviews(self.train_rating_set, self.train_reviews)
-    #     self.test_set = self._combine_reviews(
-    #         self.test_rating_set, self.test_reviews)
-    #     self.dev_set = self._combine_reviews(
-    #         self.dev_rating_set, self.dev_reviews)
-    #     #data = self._prepare_set(self.train_rating_set, self.train_reviews)
-    #     #self.test_set = self._prepare_set(self.test_rating_set, self.test_reviews)
-    #     #self.dev_set = self._prepare_set(self.dev_rating_set, self.dev_reviews)
-    #     #print("Training Interactions={}".format(len(data)))
-    #     # self.sess.run(tf.assign(self.mdl.is_train,self.mdl.true))
-    #
-    #     self.mdl.saver.save(self.sess, '%s/model.ckpt' %
-    #                         (self.out_dir), global_step=0)
-    #
-    #     print("Training Interactions={}".format(len(data)))
-    #     self.sess.run(tf.assign(self.mdl.is_train, self.mdl.true))
-    #     for epoch in range(1, self.args.epochs+1):
-    #
-    #         all_att_dict = {}
-    #         pos_val, neg_val = [], []
-    #         t0 = time.clock()
-    #         self.write_to_file("=====================================")
-    #         losses = []
-    #         review_losses = []
-    #         random.shuffle(data)
-    #         num_batches = int(len(data) / self.args.batch_size)
-    #         norms = []
-    #         all_acc = 0
-    #         review_acc = 0
-    #         user_entropies = []
-    #         item_entropies = []
-    #         user_review_hits = []
-    #         item_review_hits = []
-    #
-    #         for i in tqdm(range(0, num_batches+1)):
-    #             batch = batchify(data, i, self.args.batch_size,
-    #                              max_sample=len(data))
-    #
-    #             #print (len(batch), len(batch[0]))
-    #
-    #             if(len(batch) == 0):
-    #                 continue
-    #
-    #             #print (1)
-    #             batch = self._prepare_set(batch)
-    #             feed_dict = self.mdl.get_feed_dict(batch)
-    #             train_op = self.mdl.train_op
-    #             run_options = tf.RunOptions(timeout_in_ms=10000)
-    #
-    #             #print (2)
-    #
-    #             # _, loss,gen_loss, gen_acc  = self.sess.run([train_op,
-    #             #                                         self.mdl.cost, self.mdl.gen_loss, self.mdl.gen_acc],
-    #             #                                         feed_dict)
-    #
-    #             _, loss, gen_loss, gen_acc, att1, att2, word_att1, word_att2 = self.sess.run([train_op,
-    #                                                                                           self.mdl.cost, self.mdl.gen_loss, self.mdl.gen_acc, self.mdl.att1, self.mdl.att2, self.mdl.word_att1, self.mdl.word_att2],
-    #                                                                                          feed_dict)
-    #
-    #             for k in range(len(batch)):
-    #                 ent_user = 0.0
-    #                 ent_item = 0.0
-    #                 user_hit = 0.0
-    #                 item_hit = 0.0
-    #                 for j in range(self.args.num_heads):
-    #                     probs = np.array(
-    #                         word_att1[j][k], dtype=np.float32) + 1E-10
-    #                     ent_user += np.sum(probs * np.log(probs))
-    #                     probs = np.array(
-    #                         word_att2[j][k], dtype=np.float32) + 1E-10
-    #                     ent_item += np.sum(probs * np.log(probs))
-    #
-    #                     if self.args.data_prepare == 1:
-    #                         if np.argmax(np.array(att1[j][k], dtype=np.float32)) == 0:
-    #                             user_hit = 1.0
-    #                         if np.argmax(np.array(att2[j][k], dtype=np.float32)) == 0:
-    #                             item_hit = 1.0
-    #
-    #                 if self.args.data_prepare == 1:
-    #                     user_review_hits.append(user_hit)
-    #                     item_review_hits.append(item_hit)
-    #
-    #                 user_entropies.append(ent_user/self.args.num_heads)
-    #                 item_entropies.append(ent_item/self.args.num_heads)
-    #
-    #             if('TNET' in self.args.rnn_type):
-    #                 # TransNet secondary review-loss
-    #                 loss2 = self.sess.run([self.mdl.trans_loss], feed_dict)
-    #
-    #             # For visualisation purposes only
-    #             # if(self.args.show_att == 1):
-    #             #     a1, a2 = self.sess.run(
-    #             #         [self.mdl.att1, self.mdl.att2], feed_dict)
-    #             #     show_att(a1)
-    #             # if(self.args.show_affinity == 1):
-    #             #     afm = self.sess.run([self.mdl.afm], feed_dict)
-    #             #     show_afm(afm)
-    #
-    #             all_acc += (loss * len(batch))
-    #             review_acc += (gen_acc * len(batch))
-    #             # if(self.args.tensorboard):
-    #             #     self.train_writer.add_summary(summary, counter)
-    #             counter += 1
-    #
-    #             losses.append(loss)
-    #             review_losses.append(gen_loss)
-    #
-    #         t1 = time.clock()
-    #         self.write_to_file("[{}] [Epoch {}] [{}] loss={} gen_loss={} acc={} gen_acc={}".format(
-    #             self.args.dataset, epoch, self.model_name,
-    #             np.mean(losses), np.mean(review_losses), all_acc / len(data), review_acc / len(data)))
-    #
-    #         if self.args.data_prepare == 1:
-    #             self.write_to_file("user reviews hit = {} || item reviews hit = {}".format(
-    #                 np.mean(user_review_hits),
-    #                 np.mean(item_review_hits)))
-    #
-    #         self.write_to_file("word entropy of user={} | | word entropy of item={}".format(
-    #             np.mean(user_entropies),
-    #             np.mean(item_entropies)))
-    #
-    #         self.write_to_file("GPU={} | | d={}".format(
-    #             self.args.gpu,
-    #             self.args.emb_size))
-    #
-    #         # if min_loss > np.mean(losses):
-    #         #self.mdl.saver.save(sess, '%s/model_best.ckpt' % (self.mdl.out_dir))
-    #         #min_loss = l/dev_batch_number
-    #
-    #         if(epoch % self.args.eval == 0):
-    #             self.sess.run(tf.assign(self.mdl.is_train, self.mdl.false))
-    #             loss, dev_preds = self.evaluate(self.dev_set,
-    #                                             self.args.batch_size, epoch, set_type='Dev')
-    #
-    #             self.mdl.saver.save(self.sess, '%s/model.ckpt' %
-    #                                 (self.out_dir), global_step=epoch)
-    #
-    #             if min_loss > loss:
-    #                 self.mdl.saver.save(
-    #                     self.sess, '%s/model_best.ckpt' % (self.out_dir))
-    #                 min_loss = loss
-    #
-    #             self._show_metrics(epoch, self.eval_dev,
-    #                                self.show_metrics,
-    #                                name='Dev')
-    #             best_epoch1, cur_dev = self._select_test_by_dev(epoch,
-    #                                                             self.eval_dev,
-    #                                                             {},
-    #                                                             no_test=True,
-    #                                                             lower_is_better=True)
-    #
-    #             _, test_preds = self.evaluate(self.test_set,
-    #                                           self.args.batch_size, epoch, set_type='Test')
-    #             self._show_metrics(epoch, self.eval_test,
-    #                                self.show_metrics,
-    #                                name='Test')
-    #             stop, max_e, best_epoch = self._select_test_by_dev(
-    #                 epoch,
-    #                 self.eval_dev,
-    #                 self.eval_test,
-    #                 lower_is_better=True)
-    #             if(epoch-best_epoch > self.args.early_stop and self.args.early_stop > 0):
-    #                 print("Ended at early stop")
-    #                 sys.exit(0)
+    def train(self):
+        """ Main training loop
+        """
+        scores = []
+        best_score = -1
+        best_dev = -1
+        best_epoch = -1
+        counter = 0
+        min_loss = 1e+7
+        epoch_scores = {}
+        self.eval_list = []
+        data = self._combine_reviews(self.train_rating_set, self.train_reviews)
+        self.test_set = self._combine_reviews(
+            self.test_rating_set, self.test_reviews)
+        self.dev_set = self._combine_reviews(
+            self.dev_rating_set, self.dev_reviews)
+        #data = self._prepare_set(self.train_rating_set, self.train_reviews)
+        #self.test_set = self._prepare_set(self.test_rating_set, self.test_reviews)
+        #self.dev_set = self._prepare_set(self.dev_rating_set, self.dev_reviews)
+        #print("Training Interactions={}".format(len(data)))
+        # self.sess.run(tf.assign(self.mdl.is_train,self.mdl.true))
+
+        self.mdl.saver.save(self.sess, '%s/model.ckpt' %
+                            (self.out_dir), global_step=0)
+
+        print("Training Interactions={}".format(len(data)))
+        self.sess.run(tf.assign(self.mdl.is_train, self.mdl.true))
+        for epoch in range(1, self.args.epochs+1):
+
+            all_att_dict = {}
+            pos_val, neg_val = [], []
+            t0 = time.clock()
+            self.write_to_file("=====================================")
+            losses = []
+            review_losses = []
+            random.shuffle(data)
+            num_batches = int(len(data) / self.args.batch_size)
+            norms = []
+            all_acc = 0
+            review_acc = 0
+            user_entropies = []
+            item_entropies = []
+            user_review_hits = []
+            item_review_hits = []
+
+            for i in tqdm(range(0, num_batches+1)):
+                batch = batchify(data, i, self.args.batch_size,
+                                 max_sample=len(data))
+
+                #print (len(batch), len(batch[0]))
+
+                if(len(batch) == 0):
+                    continue
+
+                #print (1)
+                batch = self._prepare_set(batch)
+                feed_dict = self.mdl.get_feed_dict(batch)
+                train_op = self.mdl.train_op
+                run_options = tf.RunOptions(timeout_in_ms=10000)
+
+                #print (2)
+
+                # _, loss,gen_loss, gen_acc  = self.sess.run([train_op,
+                #                                         self.mdl.cost, self.mdl.gen_loss, self.mdl.gen_acc],
+                #                                         feed_dict)
+
+                _, loss, gen_loss, gen_acc, att1, att2, word_att1, word_att2 = self.sess.run([train_op,
+                                                                                              self.mdl.cost, self.mdl.gen_loss, self.mdl.gen_acc, self.mdl.att1, self.mdl.att2, self.mdl.word_att1, self.mdl.word_att2],
+                                                                                             feed_dict)
+
+                for k in range(len(batch)):
+                    ent_user = 0.0
+                    ent_item = 0.0
+                    user_hit = 0.0
+                    item_hit = 0.0
+                    for j in range(self.args.num_heads):
+                        probs = np.array(
+                            word_att1[j][k], dtype=np.float32) + 1E-10
+                        ent_user += np.sum(probs * np.log(probs))
+                        probs = np.array(
+                            word_att2[j][k], dtype=np.float32) + 1E-10
+                        ent_item += np.sum(probs * np.log(probs))
+
+                        if self.args.data_prepare == 1:
+                            if np.argmax(np.array(att1[j][k], dtype=np.float32)) == 0:
+                                user_hit = 1.0
+                            if np.argmax(np.array(att2[j][k], dtype=np.float32)) == 0:
+                                item_hit = 1.0
+
+                    if self.args.data_prepare == 1:
+                        user_review_hits.append(user_hit)
+                        item_review_hits.append(item_hit)
+
+                    user_entropies.append(ent_user/self.args.num_heads)
+                    item_entropies.append(ent_item/self.args.num_heads)
+
+                if('TNET' in self.args.rnn_type):
+                    # TransNet secondary review-loss
+                    loss2 = self.sess.run([self.mdl.trans_loss], feed_dict)
+
+                # For visualisation purposes only
+                # if(self.args.show_att == 1):
+                #     a1, a2 = self.sess.run(
+                #         [self.mdl.att1, self.mdl.att2], feed_dict)
+                #     show_att(a1)
+                # if(self.args.show_affinity == 1):
+                #     afm = self.sess.run([self.mdl.afm], feed_dict)
+                #     show_afm(afm)
+
+                all_acc += (loss * len(batch))
+                review_acc += (gen_acc * len(batch))
+                # if(self.args.tensorboard):
+                #     self.train_writer.add_summary(summary, counter)
+                counter += 1
+
+                losses.append(loss)
+                review_losses.append(gen_loss)
+
+            t1 = time.clock()
+            self.write_to_file("[{}] [Epoch {}] [{}] loss={} gen_loss={} acc={} gen_acc={}".format(
+                self.args.dataset, epoch, self.model_name,
+                np.mean(losses), np.mean(review_losses), all_acc / len(data), review_acc / len(data)))
+
+            if self.args.data_prepare == 1:
+                self.write_to_file("user reviews hit = {} || item reviews hit = {}".format(
+                    np.mean(user_review_hits),
+                    np.mean(item_review_hits)))
+
+            self.write_to_file("word entropy of user={} | | word entropy of item={}".format(
+                np.mean(user_entropies),
+                np.mean(item_entropies)))
+
+            self.write_to_file("GPU={} | | d={}".format(
+                self.args.gpu,
+                self.args.emb_size))
+
+            # if min_loss > np.mean(losses):
+            #self.mdl.saver.save(sess, '%s/model_best.ckpt' % (self.mdl.out_dir))
+            #min_loss = l/dev_batch_number
+
+            if(epoch % self.args.eval == 0):
+                self.sess.run(tf.assign(self.mdl.is_train, self.mdl.false))
+                loss, dev_preds = self.evaluate(self.dev_set,
+                                                self.args.batch_size, epoch, set_type='Dev')
+
+                self.mdl.saver.save(self.sess, '%s/model.ckpt' %
+                                    (self.out_dir), global_step=epoch)
+
+                if min_loss > loss:
+                    self.mdl.saver.save(
+                        self.sess, '%s/model_best.ckpt' % (self.out_dir))
+                    min_loss = loss
+
+                self._show_metrics(epoch, self.eval_dev,
+                                   self.show_metrics,
+                                   name='Dev')
+                best_epoch1, cur_dev = self._select_test_by_dev(epoch,
+                                                                self.eval_dev,
+                                                                {},
+                                                                no_test=True,
+                                                                lower_is_better=True)
+
+                _, test_preds = self.evaluate(self.test_set,
+                                              self.args.batch_size, epoch, set_type='Test')
+                self._show_metrics(epoch, self.eval_test,
+                                   self.show_metrics,
+                                   name='Test')
+                stop, max_e, best_epoch = self._select_test_by_dev(
+                    epoch,
+                    self.eval_dev,
+                    self.eval_test,
+                    lower_is_better=True)
+                if(epoch-best_epoch > self.args.early_stop and self.args.early_stop > 0):
+                    print("Ended at early stop")
+                    sys.exit(0)
 
 
 if __name__ == '__main__':

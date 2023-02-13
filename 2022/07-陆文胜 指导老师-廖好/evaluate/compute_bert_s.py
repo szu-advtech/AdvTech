@@ -57,5 +57,5 @@ for exp in os.listdir(log_path):
     print('*********************************{}*********************************'.format(exp))
     print('BLEU score:' + str(score * 100))
     print(rouge(gen_sentence_rouge, true_sentence_rouge))
-    print('Bert_s score:' + bert_s(gen_sentence_rouge, true_sentence_rouge))
+    print('Bert_s score:' + str(bert_s(gen_sentence_rouge, true_sentence_rouge)))
 

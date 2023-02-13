@@ -22,5 +22,5 @@
 #python convert_to_rouge.py --ref_data_dir ../ERCP_C_City2_log/29:08:10:53:39/explanation --gen_data_dir ../ERCP_C_City2_log/29:08:10:53:39/explanation --test_number 1656
 #ROUGE-1.5.5/ROUGE-1.5.5.pl -e ROUGE-1.5.5/data/ -n 4 -m -2 4 -u -c 95 -r 1000 -f B -p 0.5 -t 0 config.xml > City2_29:08:10:53:39:2_rouge_result.txt None
 
-python convert_to_rouge.py --ref_data_dir ../ERCP_C_AZ_log/09:10:12:59:09/explanation --gen_data_dir ../ERCP_C_AZ_log/09:10:12:59:09/explanation --test_number 2366
+python convert_to_rouge.py --ref_data_dir ../City4_log/dianping/RAW_MSE_CAML_FN_FM/City4/expalanation --gen_data_dir ../City4_log/dianping/RAW_MSE_CAML_FN_FM/City4/expalanation
 ROUGE-1.5.5/ROUGE-1.5.5.pl -e ROUGE-1.5.5/data/ -n 4 -m -2 4 -u -c 95 -r 1000 -f B -p 0.5 -t 0 config.xml > AZ_09:10:12:59:09_rouge_result.txt None

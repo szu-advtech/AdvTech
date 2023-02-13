@@ -373,7 +373,6 @@ class Model:
         # # _dim = s
         # q1_output  = tf.reshape(q1_output, [-1, self.args.dmax, self.args.dmax])
         # q2_output  = tf.reshape(q2_output, [-1, self.args.dmax, self.args.dmax])
-
         q1_output, q2_output, max_row, max_col, max_att_row, max_att_col, a1, a2, sa1, sa2, swa1, swa2, q1_mask, q2_mask, review_concept1, review_concept2, max_before_input_a, max_input_a = multi_pointer_coattention_networks(
             self,
             q1_output, q2_output,
@@ -404,7 +403,6 @@ class Model:
         self.max_input_a = max_input_a
         self.review_concept1 = review_concept1
         self.review_concept2 = review_concept2
-
         try:
             # For summary statistics
             self.max_norm = tf.reduce_max(tf.norm(q1_output,
@@ -1562,4 +1560,4 @@ class Model:
 
                 # save model
                 self.saver = tf.train.Saver(
-                    tf.trainable_variables(), max_to_keep=1)
+                    tf.trainable_variables(), max_to_keep=21)

@@ -200,6 +200,8 @@ def build_parser():
     ps('--view_output', dest='view_output', type=str,
        default='City4_log/explanation', help='view output')
     ps('--lba', dest='lba', type=int,
-       default='0', help='local based attention')
+       default=0, help='local based attention')
+    ps('--bert', dest='bert', type=int,
+       default=0, help='bert feature')
     # default='all_cities_logs/explanation', help='view output')
     return parser

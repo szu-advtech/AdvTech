@@ -23,29 +23,29 @@ Univeristy of Southern California/Information Sciences Institute
     format by using option "-3", standing for BE triple. There are 6
     different modes in BE scoring. We suggest using *"-3 HMR"* on BEs
     extracted from Minipar parse trees based on our correlation analysis
-    of BE-based scoring vs. human judgements on DUC 2002 & 2003 automatic
+    of BE-based scoring vs. human judgments on DUC 2002 & 2003 automatic
     summaries.
 (5) ROUGE now generates three scores (recall, precision and F-measure)
     for each evaluation. Previously, only one score is generated
     (recall). Precision and F-measure scores are useful when the target
     summary length is not enforced. Only recall scores were necessary since 
-    DUC guideline dictated the limit on summary length. For comparison to
+    DUC guideline dictated the limit on summary length. For comparsion to
     previous DUC results, please use the recall scores. The default alpha
     weighting for computing F-measure is 0.5. Users can specify a
     particular alpha weighting that fits their application scenario using
-    option "-p alpha-weight". Where *alpha-weight* is a number between 0
+    option "-p alpha-weight". Where *alpah-weight* is a number between 0
     and 1 inclusively.
 (6) Pre-1.5 version of ROUGE used model average to compute the overall
     ROUGE scores when there are multiple references. Starting from v1.5+,
     ROUGE provides an option to use the best matching score among the
-    references as the final score. The model average option is specified
+    referenes as the final score. The model average option is specified
     using "-f A" (for Average) and the best model option is specified
     using "-f B" (for the Best). The "-f A" option is better when use
     ROUGE in summarization evaluations; while "-f B" option is better when
     use ROUGE in machine translation (MT) and definition
     question-answering (DQA) evaluations since in a typical MT or DQA
     evaluation scenario matching a single reference translation or
-    definition answer is sufficient. However, it is very likely that
+    defintion answer is sufficient. However, it is very likely that
     multiple different but equally good summaries exist in summarization
     evaluation.
 (7) ROUGE v1.5+ also provides the option to specify whether model unit
@@ -60,7 +60,7 @@ Univeristy of Southern California/Information Sciences Institute
     file. The input format of the summary files are specified using the
     "-z INPUT-FORMAT" option. The INPUT-FORMAT can be SEE, SPL, ISI or
     SIMPLE. When "-z" is specified, ROUGE assumed that the ROUGE
-    evaluation configuration file is a file list with each evaluation
+    evalution configuration file is a file list with each evaluation
     instance per line in the following format:
 
 peer_path1 model_path1 model_path2 ... model_pathN

@@ -1,6 +1,6 @@
 import argparse
 import codecs
-
+import os
 parser = argparse.ArgumentParser()
 parser.add_argument('--ref_data_dir',                   type=str,   default='data/tinyshakespeare')
 parser.add_argument('--gen_data_dir',                   type=str,   default='data/tinyshakespeare')
@@ -12,7 +12,9 @@ f = open('config.xml', 'w+')
     
 f.write('<ROUGE-EVAL version="1.55">')
 
-for i in range(args.test_number):
+for i in range(9999999):
+    if not os.path.exists('{}/gen_review.{}.txt'.format(args.gen_data_dir, i)):
+        break
     peer_elems = "<P ID=\"{id}\">{name}</P>".format(id=None, name= 'gen_review.' + str(i) + '.txt')
     model_elems = "<M ID=\"{id}\">{name}</M>".format(id='A', name= 'true_review.A.' + str(i) + '.txt')
     eval_string = """
