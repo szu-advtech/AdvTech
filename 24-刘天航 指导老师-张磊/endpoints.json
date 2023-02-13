@@ -1,0 +1,143 @@
+{
+    "facebook": {
+        "100KB": "https://scontent.xx.fbcdn.net/speedtest-100KB",
+        "1MB": "https://scontent.xx.fbcdn.net/speedtest-1MB",
+        "5MB": "https://scontent.xx.fbcdn.net/speedtest-5MB",
+        "small": {
+            "url": "https://about.instagram.com/sitemap/",
+            "numResources": 18,
+            "size": 0.43
+        },
+        "medium": {
+            "url": "https://www.facebook.com/",
+            "numResources": 59,
+            "size": 1.08
+        },
+        "large": {
+            "url": "https://www.facebook.com/business/marketing-partners/",
+            "numResources": 99,
+            "size": 1.75
+        }
+    },
+    "google": {
+        "100KB": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_android_auto_color_2x_web_512dp.max-600x600.png",
+        "1MB": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/logo_accessibility_color_192dp.max-2800x2800.png",
+        "5MB": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google-cafe.max-2800x2800.jpg",
+        "small": {
+            "url": "https://www.google.com",
+            "numResources": 27,
+            "size": 0.40
+        },
+        "medium": {
+            "url": "https://careers.google.com/teams/",
+            "numResources": 37,
+            "size": 1.53
+        },
+        "large": {
+            "url": "https://store.google.com/us/category/phones?hl=en-US",
+            "numResources": 98,
+            "size": 1.81
+        }
+    },
+    "cloudflare": {
+        "100KB": "https://www.cloudflare.com/static/62be1e90548b73499af230bddbb847f5/image_hero_people-page-reduced.jpg",
+        "1MB": "https://www.cloudflare.com/static/19ce817452f544a952f72ae1f71e688c/NET-OB-Photo-190913-PRESS-4.jpg",
+        "5MB": "https://cloudflare-quic.com/5MB.png",
+        "small": {
+            "url": "https://www.cloudflare.com/zh-cn/trust-hub/abuse-approach/",
+            "numResources": 10,
+            "size": 0.50
+        },
+        "medium": {
+            "url": "https://www.cloudflare.com/zh-cn/logo/",
+            "numResources": 97,
+            "size": 1.09
+        },
+        "large": {
+            "url": "https://www.cloudflare.com/zh-cn/about-overview/",
+            "numResources": 44,
+            "size": 1.95
+        }
+    },
+    "chaos": {
+        "small": {
+            "url": "https://www.xiapilu.com/web/web-tutorial/quic-http-3.html",
+            "numResources": 80,
+            "size": 0.5
+        },
+        "medium": {
+            "url": "https://www.gksec.com/knowledge-web/",
+            "numResources": 16,
+            "size": 0.6
+        },
+        "large": {
+            "url": "https://tensorflow.google.cn/",
+            "numResources": 200,
+            "size": 26
+        }
+    },"baidu": {
+        "100KB": "https://img.alicdn.com/imgextra/i1/O1CN01j0stVf1dHEAD5Gdnt_!!6000000003710-0-tps-1180-130.jpg",
+        "1MB": "https://img.alicdn.com/imgextra/i2/O1CN01YK6TRX1TvOlDeVHAF_!!6000000002444-0-tps-3408-2005.jpg",
+        "5MB": "https://img.alicdn.com/imgextra/i3/O1CN01I97WdU1loDdT9C6yo_!!6000000004865-0-tps-4000-2658.jpg",
+        "small": {
+            "url": "https://www.baidu.com/",
+            "numResources": 66,
+            "size": 0.84
+        },
+        "medium": {
+            "url": "http://home.baidu.com/home/index/news_detail/id/17991",
+            "numResources": 39,
+            "size": 1.2
+            
+        },
+        "large": {
+            "url": "https://fanyi.baidu.com/#auto/zh/",
+            "numResources": 64,
+            "size": 3.2
+        }
+    },
+    "litespeed": {
+        "100KB": "https://www.litespeedtech.com/images/hero/lsws-v6a.png",
+        "1MB": "https://www.litespeedtech.com/images/photos/ls-spring.png",
+        "5MB": "https://www.litespeedtech.com/images/blog/jt03.png",
+        "small": {
+            "url": "https://www.litespeedtech.com/open-source/quic-http3-library",
+            "numResources": 33,
+            "size": 0.42
+        },
+        "medium": {
+            "url": "https://www.litespeedtech.com/partners",
+            "numResources": 69,
+            "size": 1.88
+        },
+        "large": {
+            "url": "https://www.litespeedtech.com/solutions/cluster-managers",
+            "numResources": 40,
+            "size": 0.43
+        }
+    },
+    "local": {
+        "100KB": "https://127.0.0.1:443/cgi-bin/helloworld",
+        "1MB": "https://127.0.0.1:443",
+        "5MB": "https://127.0.0.1:443",
+        "small": {
+            "url": "https://test.xquic.com:443",
+            "numResources": 2,
+            "size": 0.12
+        },
+        "medium": {
+            "url": "https://127.0.0.1:443",
+            "numResources": 2,
+            "size": 0.12
+        },
+        "large": {
+            "url": "https://127.0.0.1:443",
+            "numResources": 2,
+            "size": 0.12
+        }
+    },
+    "brown": {
+        "100KB": "https://quic.cs.brown.edu:30000/102400",
+        "200KB": "https://quic.cs.brown.edu:30000/quic-hero.png"
+    }
+}
