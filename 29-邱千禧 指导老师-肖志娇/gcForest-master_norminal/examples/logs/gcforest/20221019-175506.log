@@ -1,0 +1,5 @@
+[ 2022-10-19 17:55:06,491][cascade_classifier.fit_transform] X_groups_train.shape=[(60000, 1, 28, 28)],y_train.shape=(60000,),X_groups_test.shape=no_test,y_test.shape=no_test
+[ 2022-10-19 17:55:06,507][cascade_classifier.fit_transform] group_dims=[784]
+[ 2022-10-19 17:55:06,507][cascade_classifier.fit_transform] group_starts=[0]
+[ 2022-10-19 17:55:06,507][cascade_classifier.fit_transform] group_ends=[784]
+[ 2022-10-19 17:55:06,507][cascade_classifier.fit_transform] X_train.shape=(60000, 784),X_test.shape=(0, 784)
