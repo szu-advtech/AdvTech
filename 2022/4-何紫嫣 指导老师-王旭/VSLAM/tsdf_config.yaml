@@ -1,0 +1,29 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# TSDF Fusion Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+
+tsdf_thresh: 0.1
+weight_thresh: 0.8
+
+# Camera image resolution
+Camera.width: 1024
+Camera.height: 512
+
+# TSDF Parameters
+# VoxelSize
+VoxelSize: 0.008
+
+#Truncation in meter
+Truncation: 0.2
+
+# Resolution
+Resolution: 10
+
+# GridSize
+GridSizex: 300
+GridSizey: 30
+GridSizez: 24
+
+KFnum: 20
