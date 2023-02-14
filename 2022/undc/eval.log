@@ -1,0 +1,1309 @@
+[2022-12-01 20:15:02,873][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-01 20:15:02,887][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-01 20:15:02,888][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-01 20:15:02,888][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-01 20:15:57,191][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-01 20:15:57,198][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-01 20:15:57,198][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-01 20:15:57,198][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-01 20:15:57,245][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-01 20:15:57,844][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-01 20:15:57,874][__main__][INFO] - Instantiating loggers...
+[2022-12-01 20:15:57,874][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-01 20:15:57,874][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-01 20:15:58,320][__main__][INFO] - Starting testing!
+[2022-12-01 20:15:58,323][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-01 20:15:58,326][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-01 20:15:58,326][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-01 20:15:58,327][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-01 20:15:58,327][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-01 20:15:58,328][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-01 20:32:33,973][src.utils.utils][INFO] - Closing loggers...
+[2022-12-01 20:32:33,976][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-01_20-15-57
+[2022-12-03 18:34:37,624][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-03 18:34:37,640][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-03 18:34:37,641][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-03 18:34:37,641][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-03 18:34:37,738][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-03 18:34:38,830][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-03 18:34:38,900][__main__][INFO] - Instantiating loggers...
+[2022-12-03 18:34:38,901][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-03 18:34:38,901][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-03 18:34:39,413][__main__][INFO] - Starting testing!
+[2022-12-03 18:34:39,418][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-03 18:34:39,424][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-03 18:34:39,424][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-03 18:34:39,427][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-03 18:34:39,427][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-03 18:34:39,429][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-03 18:35:13,250][src.utils.utils][INFO] - Closing loggers...
+[2022-12-03 18:35:13,252][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-03_18-34-37
+[2022-12-03 18:44:04,175][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-03 18:44:04,183][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-03 18:44:04,184][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-03 18:44:04,184][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-03 18:44:04,233][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-03 18:44:04,861][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-03 18:44:04,893][__main__][INFO] - Instantiating loggers...
+[2022-12-03 18:44:04,893][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-03 18:44:04,893][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-03 18:44:05,681][__main__][INFO] - Starting testing!
+[2022-12-03 18:44:37,417][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 648, in _call_and_handle_interrupt
+    return self.strategy.launcher.launch(trainer_fn, *args, trainer=self, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/launchers/multiprocessing.py", line 103, in launch
+    mp.start_processes(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
+    while not context.join():
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 160, in join
+    raise ProcessRaisedException(msg, error_index, failed_process.pid)
+torch.multiprocessing.spawn.ProcessRaisedException: 
+
+-- Process 5 terminated with the following error:
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1163, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/queue.py", line 179, in get
+    self.not_empty.wait(remaining)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/threading.py", line 306, in wait
+    gotit = waiter.acquire(True, timeout)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/utils/data/_utils/signal_handling.py", line 66, in handler
+    _error_if_any_worker_fails()
+RuntimeError: DataLoader worker (pid 9304) is killed by signal: Interrupt. 
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
+    fn(i, *args)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/launchers/multiprocessing.py", line 129, in _wrapping_function
+    results = function(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1168, in _run
+    results = self._run_stage()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1251, in _run_stage
+    return self._run_evaluate()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1297, in _run_evaluate
+    eval_loop_results = self._evaluation_loop.run()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 155, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 127, in advance
+    batch = next(data_fetcher)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 185, in __next__
+    return self.fetching_function()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 264, in fetching_function
+    self._fetch_next_batch(self.dataloader_iter)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/utilities/fetching.py", line 278, in _fetch_next_batch
+    batch = next(iterator)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 681, in __next__
+    data = self._next_data()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1359, in _next_data
+    idx, data = self._get_data()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1315, in _get_data
+    success, data = self._try_get_data()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1176, in _try_get_data
+    raise RuntimeError('DataLoader worker (pid(s) {}) exited unexpectedly'.format(pids_str)) from e
+RuntimeError: DataLoader worker (pid(s) 9304) exited unexpectedly
+
+[2022-12-03 18:44:37,422][src.utils.utils][INFO] - Closing loggers...
+[2022-12-03 18:45:08,533][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-03 18:45:08,541][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-03 18:45:08,541][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-03 18:45:08,541][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-03 18:45:08,590][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-03 18:45:09,201][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-03 18:45:09,229][__main__][INFO] - Instantiating loggers...
+[2022-12-03 18:45:09,230][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-03 18:45:09,230][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-03 18:45:09,979][__main__][INFO] - Starting testing!
+[2022-12-03 18:47:01,505][src.utils.utils][INFO] - Closing loggers...
+[2022-12-03 18:47:01,509][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-03_18-45-08
+[2022-12-03 18:48:00,301][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-03 18:48:00,308][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-03 18:48:00,309][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-03 18:48:00,309][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-03 18:48:00,356][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-03 18:48:00,926][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-03 18:48:00,955][__main__][INFO] - Instantiating loggers...
+[2022-12-03 18:48:00,955][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-03 18:48:00,956][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-03 18:48:01,723][__main__][INFO] - Starting testing!
+[2022-12-03 18:48:01,869][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-03 18:48:01,872][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-03 18:48:01,872][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-03 18:48:01,873][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-03 18:48:01,873][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-03 18:48:01,874][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-03 18:53:14,918][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1168, in _run
+    results = self._run_stage()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1251, in _run_stage
+    return self._run_evaluate()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1297, in _run_evaluate
+    eval_loop_results = self._evaluation_loop.run()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 155, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 143, in advance
+    output = self._evaluation_step(**kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 240, in _evaluation_step
+    output = self.trainer._call_strategy_hook(hook_name, *kwargs.values())
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1706, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 379, in test_step
+    return self.model.test_step(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module.py", line 166, in test_step
+    bool_loss, bool_acc, pred_bool, float_loss, pred_float = self.step(batch)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module.py", line 92, in step
+    pred_output_bool, pred_output_float = self.net(pc_KNN_idx,pc_KNN_xyz, voxel_xyz_int,voxel_KNN_idx,voxel_KNN_xyz)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/components/undc_pc_net.py", line 131, in forward
+    out = self.pc_conv_6(out, voxel_KNN_idx, voxel_KNN_xyz)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/components/undc_pc_net.py", line 52, in forward
+    output = torch.cat([output,KNN_xyz],1)
+RuntimeError: CUDA out of memory. Tried to allocate 184.00 MiB (GPU 0; 23.88 GiB total capacity; 4.61 GiB already allocated; 33.44 MiB free; 4.84 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
+[2022-12-03 18:53:14,924][src.utils.utils][INFO] - Closing loggers...
+[2022-12-03 18:58:02,234][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-03 18:58:02,241][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-03 18:58:02,242][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-03 18:58:02,242][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-03 18:58:02,290][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-03 18:58:02,927][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-03 18:58:02,959][__main__][INFO] - Instantiating loggers...
+[2022-12-03 18:58:02,959][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-03 18:58:02,959][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-03 18:58:03,731][__main__][INFO] - Starting testing!
+[2022-12-03 19:03:58,531][src.utils.utils][INFO] - Closing loggers...
+[2022-12-03 19:03:58,534][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-03_18-58-02
+[2022-12-03 19:04:39,914][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-03 19:04:39,921][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-03 19:04:39,922][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-03 19:04:39,922][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-03 19:04:39,969][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-03 19:04:40,551][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-03 19:04:40,582][__main__][INFO] - Instantiating loggers...
+[2022-12-03 19:04:40,582][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-03 19:04:40,583][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-03 19:04:41,346][__main__][INFO] - Starting testing!
+[2022-12-03 19:06:46,647][src.utils.utils][INFO] - Closing loggers...
+[2022-12-03 19:06:46,650][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-03_19-04-39
+[2022-12-07 19:00:06,249][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-07 19:00:06,256][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-07 19:00:06,256][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-07 19:00:06,257][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-07 19:00:06,304][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-07 19:00:07,034][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-07 19:00:07,083][__main__][INFO] - Instantiating loggers...
+[2022-12-07 19:00:07,084][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-07 19:00:07,084][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-07 19:00:07,808][__main__][INFO] - Starting testing!
+[2022-12-07 19:00:07,938][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-07 19:00:07,940][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-07 19:00:07,940][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-07 19:00:07,942][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-07 19:00:07,942][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-07 19:00:07,943][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-07 19:00:44,095][src.utils.utils][INFO] - Closing loggers...
+[2022-12-07 19:00:44,098][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-07_19-00-06
+[2022-12-07 19:02:06,310][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-07 19:02:06,318][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-07 19:02:06,318][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-07 19:02:06,319][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-07 19:02:06,369][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-07 19:02:07,061][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-07 19:02:07,096][__main__][INFO] - Instantiating loggers...
+[2022-12-07 19:02:07,096][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-07 19:02:07,096][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-07 19:02:07,861][__main__][INFO] - Starting testing!
+[2022-12-07 19:02:07,991][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-07 19:02:07,993][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-07 19:02:07,994][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-07 19:02:07,995][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-07 19:02:07,995][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-07 19:02:07,996][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-07 19:07:44,944][src.utils.utils][INFO] - Closing loggers...
+[2022-12-07 19:07:44,963][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-07_19-02-06
+[2022-12-07 22:02:29,798][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-07 22:02:29,805][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-07 22:02:29,806][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-07 22:02:29,806][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-07 22:02:29,853][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-07 22:02:30,431][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-07 22:02:30,460][__main__][INFO] - Instantiating loggers...
+[2022-12-07 22:02:30,460][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-07 22:02:30,460][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-07 22:02:31,213][__main__][INFO] - Starting testing!
+[2022-12-07 22:02:31,372][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-07 22:02:31,376][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-07 22:02:31,376][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-07 22:02:31,378][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-07 22:02:31,378][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-07 22:02:31,380][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-07 22:08:49,049][src.utils.utils][INFO] - Closing loggers...
+[2022-12-07 22:08:49,050][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-07_22-02-29
+[2022-12-09 10:22:38,309][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 10:22:38,316][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 10:22:38,317][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 10:22:38,317][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 10:22:38,362][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 10:22:39,040][__main__][INFO] - Instantiating model <src.models.undc_module.UNDCLitModule>
+[2022-12-09 10:22:39,045][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument 'out_bool'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 334, in instantiate_node
+    value = instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 339, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.components.undc_pc_net.local_pointnet':
+TypeError("__init__() got an unexpected keyword argument 'out_bool'")
+full_key: model.net
+[2022-12-09 10:22:39,047][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 10:22:57,389][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 10:22:57,395][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 10:22:57,396][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 10:22:57,396][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 10:22:57,439][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 10:22:57,929][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 10:22:57,960][__main__][INFO] - Instantiating loggers...
+[2022-12-09 10:22:57,961][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 10:22:57,961][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 10:23:38,821][__main__][INFO] - Starting testing!
+[2022-12-09 10:23:44,260][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-09 10:23:44,265][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-09 10:23:44,265][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-09 10:23:44,266][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:23:44,266][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-09 10:23:44,268][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:23:48,801][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1168, in _run
+    results = self._run_stage()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1251, in _run_stage
+    return self._run_evaluate()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1297, in _run_evaluate
+    eval_loop_results = self._evaluation_loop.run()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 155, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 143, in advance
+    output = self._evaluation_step(**kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 240, in _evaluation_step
+    output = self.trainer._call_strategy_hook(hook_name, *kwargs.values())
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1706, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 379, in test_step
+    return self.model.test_step(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 153, in test_step
+    self.gen_obj(pred_bool, pred_float, batch, batch_idx)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 212, in gen_obj
+    pred_bool = postprocessing(pred_bool)
+  File "/home/fubao/dev/my-ndc/src/utils/ndc_utils.py", line 651, in postprocessing
+    gridedge_x_outedge_y_0 = pred_output_bool[:-1, :,   :-1, 0]
+IndexError: too many indices for tensor of dimension 2
+[2022-12-09 10:23:48,810][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 10:25:46,027][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 10:25:46,033][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 10:25:46,034][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 10:25:46,034][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 10:25:46,081][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 10:25:46,690][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 10:25:46,727][__main__][INFO] - Instantiating loggers...
+[2022-12-09 10:25:46,727][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 10:25:46,728][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 10:26:27,577][__main__][INFO] - Starting testing!
+[2022-12-09 10:26:33,246][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-09 10:26:33,252][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-09 10:26:33,252][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-09 10:26:33,253][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:26:33,253][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-09 10:26:33,255][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:26:38,137][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1168, in _run
+    results = self._run_stage()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1251, in _run_stage
+    return self._run_evaluate()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1297, in _run_evaluate
+    eval_loop_results = self._evaluation_loop.run()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 155, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 143, in advance
+    output = self._evaluation_step(**kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 240, in _evaluation_step
+    output = self.trainer._call_strategy_hook(hook_name, *kwargs.values())
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1706, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 379, in test_step
+    return self.model.test_step(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 153, in test_step
+    self.gen_obj(pred_bool, pred_float, batch, batch_idx)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 214, in gen_obj
+    pred_bool = postprocessing(pred_bool)
+  File "/home/fubao/dev/my-ndc/src/utils/ndc_utils.py", line 651, in postprocessing
+    gridedge_x_outedge_y_0 = pred_output_bool[:-1, :,   :-1, 0]
+IndexError: too many indices for tensor of dimension 2
+[2022-12-09 10:26:38,145][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 10:32:38,387][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 10:32:38,394][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 10:32:38,394][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 10:32:38,394][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 10:32:38,440][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 10:32:39,087][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 10:32:39,123][__main__][INFO] - Instantiating loggers...
+[2022-12-09 10:32:39,123][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 10:32:39,123][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 10:33:19,650][__main__][INFO] - Starting testing!
+[2022-12-09 10:33:25,213][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-09 10:33:25,221][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-09 10:33:25,222][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-09 10:33:25,224][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:33:25,224][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-09 10:33:25,226][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:33:30,098][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1168, in _run
+    results = self._run_stage()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1251, in _run_stage
+    return self._run_evaluate()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1297, in _run_evaluate
+    eval_loop_results = self._evaluation_loop.run()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 155, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 143, in advance
+    output = self._evaluation_step(**kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 240, in _evaluation_step
+    output = self.trainer._call_strategy_hook(hook_name, *kwargs.values())
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1706, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 379, in test_step
+    return self.model.test_step(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 153, in test_step
+    self.gen_obj(pred_bool, pred_float, batch, batch_idx)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 220, in gen_obj
+    self.generate_obj_test(voxel_xyz_int_np,gt_output_bool_np,gt_output_float_np,batch_idx, "gt")
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 201, in generate_obj_test
+    pred_bool_numpy = postprocessing(pred_bool_numpy)
+  File "/home/fubao/dev/my-ndc/src/utils/ndc_utils.py", line 666, in postprocessing
+    boundary_x_flag = (outedge_x==1).int()
+AttributeError: 'numpy.ndarray' object has no attribute 'int'
+[2022-12-09 10:33:30,105][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 10:52:36,913][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 10:52:36,919][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 10:52:36,920][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 10:52:36,920][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 10:52:36,962][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 10:52:37,577][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 10:52:37,606][__main__][INFO] - Instantiating loggers...
+[2022-12-09 10:52:37,606][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 10:52:37,606][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 10:53:18,445][__main__][INFO] - Starting testing!
+[2022-12-09 10:53:24,297][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-09 10:53:24,303][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-09 10:53:24,303][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-09 10:53:24,304][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:53:24,304][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-09 10:53:24,305][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 10:53:29,063][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1168, in _run
+    results = self._run_stage()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1251, in _run_stage
+    return self._run_evaluate()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1297, in _run_evaluate
+    eval_loop_results = self._evaluation_loop.run()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/dataloader/evaluation_loop.py", line 155, in advance
+    dl_outputs = self.epoch_loop.run(self._data_fetcher, dl_max_batches, kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/loop.py", line 200, in run
+    self.advance(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 143, in advance
+    output = self._evaluation_step(**kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/loops/epoch/evaluation_epoch_loop.py", line 240, in _evaluation_step
+    output = self.trainer._call_strategy_hook(hook_name, *kwargs.values())
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1706, in _call_strategy_hook
+    output = fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 379, in test_step
+    return self.model.test_step(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 153, in test_step
+    self.gen_obj(pred_bool, pred_float, batch, batch_idx)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 216, in gen_obj
+    self.generate_obj_test(voxel_xyz_int,gt_output_bool,gt_output_float,batch_idx, "gt")
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 191, in generate_obj_test
+    pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3],  dtype=device)
+TypeError: zeros() received an invalid combination of arguments - got (list, dtype=torch.device), but expected one of:
+ * (tuple of ints size, *, tuple of names names, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+ * (tuple of ints size, *, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+
+[2022-12-09 10:53:29,073][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 10:57:21,815][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 10:57:21,821][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 10:57:21,822][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 10:57:21,822][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 10:57:21,874][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 10:57:22,494][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 10:57:22,499][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 639, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.models' has no attribute 'undc_module2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 645, in _locate
+    obj = import_module(mod)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 976, in get_code
+  File "<frozen importlib._bootstrap_external>", line 906, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 191
+    pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3], dtype=torch.int32, dtype=device)
+                                                                                             ^
+SyntaxError: keyword argument repeated
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.models.undc_module2.UNDCLitModule':
+SyntaxError('keyword argument repeated', ('/home/fubao/dev/my-ndc/src/models/undc_module2.py', 191, 98, '        pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3], dtype=torch.int32, dtype=device)\n'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 325, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.models.undc_module2.UNDCLitModule', see chained exception above.
+full_key: model
+[2022-12-09 10:57:22,501][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 11:01:45,379][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 11:01:45,386][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 11:01:45,386][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 11:01:45,387][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 11:01:45,430][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 11:01:45,919][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 11:01:45,923][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 639, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.models' has no attribute 'undc_module2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 645, in _locate
+    obj = import_module(mod)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 976, in get_code
+  File "<frozen importlib._bootstrap_external>", line 906, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 191
+    pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3], dtype=torch.int32, dtype=device)
+                                                                                             ^
+SyntaxError: keyword argument repeated
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.models.undc_module2.UNDCLitModule':
+SyntaxError('keyword argument repeated', ('/home/fubao/dev/my-ndc/src/models/undc_module2.py', 191, 98, '        pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3], dtype=torch.int32, dtype=device)\n'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 325, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.models.undc_module2.UNDCLitModule', see chained exception above.
+full_key: model
+[2022-12-09 11:01:45,925][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 11:02:03,256][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 11:02:03,262][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 11:02:03,262][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 11:02:03,263][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 11:02:03,307][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 11:02:03,849][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 11:02:03,853][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 639, in _locate
+    obj = getattr(obj, part)
+AttributeError: module 'src.models' has no attribute 'undc_module2'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 645, in _locate
+    obj = import_module(mod)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 839, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 976, in get_code
+  File "<frozen importlib._bootstrap_external>", line 906, in source_to_code
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/home/fubao/dev/my-ndc/src/models/undc_module2.py", line 191
+    pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3], dtype=torch.int32, dtype=device)
+                                                                                             ^
+SyntaxError: keyword argument repeated
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 134, in _resolve_target
+    target = _locate(target)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/utils.py", line 653, in _locate
+    raise ImportError(
+ImportError: Error loading 'src.models.undc_module2.UNDCLitModule':
+SyntaxError('keyword argument repeated', ('/home/fubao/dev/my-ndc/src/models/undc_module2.py', 191, 98, '        pred_bool_grid = torch.zeros([grid_size+1,grid_size+1,grid_size+1,3], dtype=torch.int32, dtype=device)\n'))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 325, in instantiate_node
+    _target_ = _resolve_target(node.get(_Keys.TARGET), full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 139, in _resolve_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error locating target 'src.models.undc_module2.UNDCLitModule', see chained exception above.
+full_key: model
+[2022-12-09 11:02:03,855][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 11:03:38,330][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 11:03:38,337][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 11:03:38,337][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 11:03:38,338][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 11:03:38,380][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 11:03:38,926][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 11:03:38,955][__main__][INFO] - Instantiating loggers...
+[2022-12-09 11:03:38,956][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 11:03:38,956][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 11:03:48,007][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 11:04:07,283][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 11:04:07,290][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 11:04:07,290][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 11:04:07,291][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 11:04:07,333][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 11:04:07,996][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 11:04:08,035][__main__][INFO] - Instantiating loggers...
+[2022-12-09 11:04:08,037][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 11:04:08,038][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 11:04:49,317][__main__][INFO] - Starting testing!
+[2022-12-09 11:04:54,957][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-09 11:04:54,961][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-09 11:04:54,961][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-09 11:04:54,962][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 11:04:54,962][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-09 11:04:54,963][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 11:06:23,432][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 11:06:23,434][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-09_11-04-07
+[2022-12-09 11:07:16,850][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2022-12-09 11:07:16,857][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2022-12-09 11:07:16,857][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2022-12-09 11:07:16,857][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2022-12-09 11:07:16,900][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule>
+[2022-12-09 11:07:17,506][__main__][INFO] - Instantiating model <src.models.undc_module2.UNDCLitModule>
+[2022-12-09 11:07:17,536][__main__][INFO] - Instantiating loggers...
+[2022-12-09 11:07:17,537][src.utils.utils][WARNING] - Logger config is empty.
+[2022-12-09 11:07:17,537][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2022-12-09 11:07:58,699][__main__][INFO] - Starting testing!
+[2022-12-09 11:08:04,203][src.datamodules.undc_pc_datamodule][INFO] - Loading Train dataset...
+[2022-12-09 11:08:04,207][src.datamodules.undc_pc_datamodule][INFO] - Train dataset [ABC_pc_hdf5] of size 8560 had been created.
+[2022-12-09 11:08:04,208][src.datamodules.undc_pc_datamodule][INFO] - Loading Val dataset...
+[2022-12-09 11:08:04,209][src.datamodules.undc_pc_datamodule][INFO] - Val dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 11:08:04,209][src.datamodules.undc_pc_datamodule][INFO] - Loading Test dataset...
+[2022-12-09 11:08:04,211][src.datamodules.undc_pc_datamodule][INFO] - Test dataset [ABC_pc_hdf5] of size 1071 had been created.
+[2022-12-09 11:09:30,777][src.utils.utils][INFO] - Closing loggers...
+[2022-12-09 11:09:30,779][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2022-12-09_11-07-16
+[2023-01-22 19:43:48,785][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 19:43:48,792][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 19:43:48,793][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 19:43:48,793][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 19:43:48,835][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 62, in evaluate
+    assert cfg.ckpt_path
+AssertionError
+[2023-01-22 19:43:48,836][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 19:43:58,082][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 19:43:58,089][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 19:43:58,090][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 19:43:58,090][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 19:43:58,133][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 62, in evaluate
+    assert cfg.ckpt_path
+AssertionError
+[2023-01-22 19:43:58,135][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 19:44:48,090][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 19:44:48,097][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 19:44:48,098][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 19:44:48,098][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 19:44:48,139][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 62, in evaluate
+    assert cfg.ckpt_path
+AssertionError
+[2023-01-22 19:44:48,141][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 19:46:37,195][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 19:46:37,202][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 19:46:37,203][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 19:46:37,203][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 19:46:37,245][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-22 19:46:37,681][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-22 19:46:37,728][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module_pre.py", line 41, in __init__
+    self.net_bool.load_state_dict(torch.load(net_bool_pth),strict=False)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/serialization.py", line 699, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: '/home/fubao/dev/my-ndc/logs/train/runs/save_bool/net_bool-25.pth'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 339, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.undc_module_pre.UNDCLitModule':
+FileNotFoundError(2, 'No such file or directory')
+full_key: model
+[2023-01-22 19:46:37,730][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 19:47:24,364][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 19:47:24,371][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 19:47:24,372][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 19:47:24,372][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 19:47:24,413][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-22 19:47:24,834][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-22 19:47:26,974][__main__][INFO] - Instantiating loggers...
+[2023-01-22 19:47:26,975][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-22 19:47:26,975][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-22 19:47:27,438][__main__][INFO] - Starting testing!
+[2023-01-22 19:47:27,443][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-22 19:47:27,555][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-22 19:47:27,555][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-22 19:47:27,610][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 19:47:27,610][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-22 19:47:27,664][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 19:47:27,816][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1112, in _run
+    self._restore_modules_and_callbacks(ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1067, in _restore_modules_and_callbacks
+    self._checkpoint_connector.restore_model()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/checkpoint_connector.py", line 182, in restore_model
+    self.trainer.strategy.load_model_state_dict(self._loaded_checkpoint)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 343, in load_model_state_dict
+    self.lightning_module.load_state_dict(checkpoint["state_dict"])
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1604, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for UNDCLitModule:
+	size mismatch for net.pc_conv_0.linear_1.weight: copying a param with shape torch.Size([256, 3]) from checkpoint, the shape in current model is torch.Size([128, 3]).
+	size mismatch for net.pc_conv_0.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_0.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_0.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_1.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_1.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_1.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_1.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_1.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net.pc_conv_1.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_1.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_1.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_2.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_2.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_2.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_2.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_2.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net.pc_conv_2.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_2.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_2.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_3.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_3.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_3.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_3.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_3.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net.pc_conv_3.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_3.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_3.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_4.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_4.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_4.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_4.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_4.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net.pc_conv_4.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_4.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_4.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_5.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_5.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_5.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_5.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_5.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net.pc_conv_5.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_5.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_5.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_6.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_6.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_6.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_6.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_6.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net.pc_conv_6.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_6.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_conv_6.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_7.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_7.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_res_7.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.pc_res_7.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.conv_1.weight: copying a param with shape torch.Size([256, 256, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3, 3]).
+	size mismatch for net.conv_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.conv_2.weight: copying a param with shape torch.Size([256, 256, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3, 3]).
+	size mismatch for net.conv_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.conv_3.weight: copying a param with shape torch.Size([256, 256, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3, 3]).
+	size mismatch for net.conv_3.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.conv_4.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.conv_4.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.conv_5.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net.conv_5.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net.pc_conv_out_bool.weight: copying a param with shape torch.Size([3, 256]) from checkpoint, the shape in current model is torch.Size([3, 128]).
+	size mismatch for net.pc_conv_out_float.weight: copying a param with shape torch.Size([3, 256]) from checkpoint, the shape in current model is torch.Size([3, 128]).
+	size mismatch for net_bool.pc_conv_0.linear_1.weight: copying a param with shape torch.Size([256, 3]) from checkpoint, the shape in current model is torch.Size([128, 3]).
+	size mismatch for net_bool.pc_conv_0.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_0.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_0.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_1.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_1.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_1.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_1.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_1.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net_bool.pc_conv_1.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_1.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_1.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_2.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_2.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_2.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_2.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_2.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net_bool.pc_conv_2.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_2.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_2.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_3.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_3.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_3.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_3.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_3.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net_bool.pc_conv_3.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_3.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_3.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_4.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_4.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_4.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_4.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_4.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net_bool.pc_conv_4.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_4.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_4.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_5.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_5.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_5.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_5.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_5.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net_bool.pc_conv_5.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_5.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_5.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_6.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_6.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_6.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_6.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_6.linear_1.weight: copying a param with shape torch.Size([256, 259]) from checkpoint, the shape in current model is torch.Size([128, 131]).
+	size mismatch for net_bool.pc_conv_6.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_6.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_conv_6.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_7.linear_1.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_7.linear_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_res_7.linear_2.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.pc_res_7.linear_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.conv_1.weight: copying a param with shape torch.Size([256, 256, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3, 3]).
+	size mismatch for net_bool.conv_1.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.conv_2.weight: copying a param with shape torch.Size([256, 256, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3, 3]).
+	size mismatch for net_bool.conv_2.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.conv_3.weight: copying a param with shape torch.Size([256, 256, 3, 3, 3]) from checkpoint, the shape in current model is torch.Size([128, 128, 3, 3, 3]).
+	size mismatch for net_bool.conv_3.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.conv_4.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.conv_4.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.conv_5.weight: copying a param with shape torch.Size([256, 256]) from checkpoint, the shape in current model is torch.Size([128, 128]).
+	size mismatch for net_bool.conv_5.bias: copying a param with shape torch.Size([256]) from checkpoint, the shape in current model is torch.Size([128]).
+	size mismatch for net_bool.pc_conv_out_bool.weight: copying a param with shape torch.Size([3, 256]) from checkpoint, the shape in current model is torch.Size([3, 128]).
+	size mismatch for net_bool.pc_conv_out_float.weight: copying a param with shape torch.Size([3, 256]) from checkpoint, the shape in current model is torch.Size([3, 128]).
+[2023-01-22 19:47:27,823][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 20:25:37,537][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 20:25:37,543][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 20:25:37,544][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 20:25:37,544][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 20:25:37,587][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-22 20:25:38,030][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-22 20:25:40,259][__main__][INFO] - Instantiating loggers...
+[2023-01-22 20:25:40,260][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-22 20:25:40,260][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-22 20:25:40,606][__main__][INFO] - Starting testing!
+[2023-01-22 20:25:40,610][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-22 20:25:40,691][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-22 20:25:40,691][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-22 20:25:40,745][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 20:25:40,745][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-22 20:25:40,799][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 20:30:28,278][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 20:30:28,281][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2023-01-22_20-25-37
+[2023-01-22 20:47:39,374][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 20:47:39,381][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 20:47:39,381][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 20:47:39,381][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 20:47:39,424][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-22 20:47:39,879][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-22 20:47:42,090][__main__][INFO] - Instantiating loggers...
+[2023-01-22 20:47:42,092][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-22 20:47:42,092][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-22 20:47:42,450][__main__][INFO] - Starting testing!
+[2023-01-22 20:47:42,453][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-22 20:47:42,526][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-22 20:47:42,527][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-22 20:47:42,574][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 20:47:42,574][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-22 20:47:42,620][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 20:51:10,061][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 20:51:10,064][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2023-01-22_20-47-39
+[2023-01-22 20:53:29,261][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 20:53:29,268][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 20:53:29,269][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 20:53:29,269][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 20:53:29,311][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-22 20:53:29,754][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-22 20:53:31,946][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+  File "/home/fubao/dev/my-ndc/src/models/undc_module_pre.py", line 44, in __init__
+    self.net_bool.load_state_dict(torch.load(pre_bool_pth),strict=True)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1604, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for local_pointnet:
+	Missing key(s) in state_dict: "pc_conv_out_float.weight", "pc_conv_out_float.bias". 
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 339, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.undc_module_pre.UNDCLitModule':
+RuntimeError('Error(s) in loading state_dict for local_pointnet:\n\tMissing key(s) in state_dict: "pc_conv_out_float.weight", "pc_conv_out_float.bias". ')
+full_key: model
+[2023-01-22 20:53:31,950][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 20:54:25,009][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-22 20:54:25,019][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-22 20:54:25,019][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-22 20:54:25,020][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-22 20:54:25,071][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-22 20:54:25,643][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-22 20:54:27,806][__main__][INFO] - Instantiating loggers...
+[2023-01-22 20:54:27,807][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-22 20:54:27,807][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-22 20:54:28,123][__main__][INFO] - Starting testing!
+[2023-01-22 20:54:28,128][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-22 20:54:28,230][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-22 20:54:28,230][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-22 20:54:28,286][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 20:54:28,286][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-22 20:54:28,339][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-22 21:01:41,689][src.utils.utils][INFO] - Closing loggers...
+[2023-01-22 21:01:41,690][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2023-01-22_20-54-24
+[2023-01-23 00:08:21,942][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-23 00:08:21,950][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-23 00:08:21,950][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-23 00:08:21,951][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-23 00:08:21,992][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-23 00:08:22,473][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-23 00:08:22,484][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 92, in _call_target
+    return _target_(*args, **kwargs)
+TypeError: __init__() missing 2 required positional arguments: 'out_bool' and 'out_float'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 68, in evaluate
+    model: LightningModule = hydra.utils.instantiate(cfg.model)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 222, in instantiate
+    return instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 334, in instantiate_node
+    value = instantiate_node(
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 339, in instantiate_node
+    return _call_target(_target_, partial, args, kwargs, full_key)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/hydra/_internal/instantiate/_instantiate2.py", line 97, in _call_target
+    raise InstantiationException(msg) from e
+hydra.errors.InstantiationException: Error in call to target 'src.models.components.undc_pc_net_base.local_pointnet':
+TypeError("__init__() missing 2 required positional arguments: 'out_bool' and 'out_float'")
+full_key: model.net
+[2023-01-23 00:08:22,486][src.utils.utils][INFO] - Closing loggers...
+[2023-01-23 00:11:05,664][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-23 00:11:05,671][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-23 00:11:05,671][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-23 00:11:05,672][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-23 00:11:05,714][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-23 00:11:06,176][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-23 00:11:08,477][__main__][INFO] - Instantiating loggers...
+[2023-01-23 00:11:08,478][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-23 00:11:08,478][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-23 00:11:08,928][__main__][INFO] - Starting testing!
+[2023-01-23 00:11:08,933][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-23 00:11:09,038][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-23 00:11:09,038][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-23 00:11:09,112][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 00:11:09,112][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-23 00:11:09,167][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 00:11:09,251][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1112, in _run
+    self._restore_modules_and_callbacks(ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1067, in _restore_modules_and_callbacks
+    self._checkpoint_connector.restore_model()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/checkpoint_connector.py", line 182, in restore_model
+    self.trainer.strategy.load_model_state_dict(self._loaded_checkpoint)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 343, in load_model_state_dict
+    self.lightning_module.load_state_dict(checkpoint["state_dict"])
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1604, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for UNDCLitModule:
+	Unexpected key(s) in state_dict: "net.pc_conv_out_bool.weight", "net.pc_conv_out_bool.bias", "net_bool.pc_conv_out_float.weight", "net_bool.pc_conv_out_float.bias". 
+[2023-01-23 00:11:09,255][src.utils.utils][INFO] - Closing loggers...
+[2023-01-23 00:13:17,469][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-23 00:13:17,476][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-23 00:13:17,477][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-23 00:13:17,477][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-23 00:13:17,523][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-23 00:13:17,966][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-23 00:13:20,211][__main__][INFO] - Instantiating loggers...
+[2023-01-23 00:13:20,212][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-23 00:13:20,212][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-23 00:13:20,651][__main__][INFO] - Starting testing!
+[2023-01-23 00:13:20,657][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-23 00:13:20,771][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-23 00:13:20,771][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-23 00:13:20,827][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 00:13:20,828][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-23 00:13:20,882][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 00:13:20,972][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1112, in _run
+    self._restore_modules_and_callbacks(ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1067, in _restore_modules_and_callbacks
+    self._checkpoint_connector.restore_model()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/checkpoint_connector.py", line 182, in restore_model
+    self.trainer.strategy.load_model_state_dict(self._loaded_checkpoint)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 343, in load_model_state_dict
+    self.lightning_module.load_state_dict(checkpoint["state_dict"])
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1604, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for UNDCLitModule:
+	Unexpected key(s) in state_dict: "net.pc_conv_out_bool.weight", "net.pc_conv_out_bool.bias", "net_bool.pc_conv_out_float.weight", "net_bool.pc_conv_out_float.bias". 
+[2023-01-23 00:13:20,978][src.utils.utils][INFO] - Closing loggers...
+[2023-01-23 00:13:34,419][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-23 00:13:34,426][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-23 00:13:34,426][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-23 00:13:34,427][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-23 00:13:34,470][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-23 00:13:34,917][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-23 00:13:37,077][__main__][INFO] - Instantiating loggers...
+[2023-01-23 00:13:37,078][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-23 00:13:37,079][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-23 00:13:37,490][__main__][INFO] - Starting testing!
+[2023-01-23 00:13:37,495][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-23 00:13:37,613][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-23 00:13:37,613][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-23 00:13:37,669][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 00:13:37,669][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-23 00:13:37,722][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 00:13:37,809][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 89, in evaluate
+    trainer.test(model=model, datamodule=datamodule, ckpt_path=cfg.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 864, in test
+    return self._call_and_handle_interrupt(self._test_impl, model, dataloaders, ckpt_path, verbose, datamodule)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 650, in _call_and_handle_interrupt
+    return trainer_fn(*args, **kwargs)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 911, in _test_impl
+    results = self._run(model, ckpt_path=self.ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1112, in _run
+    self._restore_modules_and_callbacks(ckpt_path)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/trainer.py", line 1067, in _restore_modules_and_callbacks
+    self._checkpoint_connector.restore_model()
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/trainer/connectors/checkpoint_connector.py", line 182, in restore_model
+    self.trainer.strategy.load_model_state_dict(self._loaded_checkpoint)
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/pytorch_lightning/strategies/strategy.py", line 343, in load_model_state_dict
+    self.lightning_module.load_state_dict(checkpoint["state_dict"])
+  File "/home/fubao/anaconda3/envs/ndc/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1604, in load_state_dict
+    raise RuntimeError('Error(s) in loading state_dict for {}:\n\t{}'.format(
+RuntimeError: Error(s) in loading state_dict for UNDCLitModule:
+	Unexpected key(s) in state_dict: "net.pc_conv_out_bool.weight", "net.pc_conv_out_bool.bias", "net_bool.pc_conv_out_float.weight", "net_bool.pc_conv_out_float.bias". 
+[2023-01-23 00:13:37,813][src.utils.utils][INFO] - Closing loggers...
+[2023-01-23 00:29:37,715][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-23 00:29:37,722][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-23 00:29:37,722][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-23 00:29:37,723][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-23 00:29:37,765][src.utils.utils][ERROR] - 
+Traceback (most recent call last):
+  File "/home/fubao/dev/my-ndc/src/utils/utils.py", line 39, in wrap
+    metric_dict, object_dict = task_func(cfg=cfg)
+  File "src/eval.py", line 62, in evaluate
+    assert cfg.ckpt_path
+AssertionError
+[2023-01-23 00:29:37,766][src.utils.utils][INFO] - Closing loggers...
+[2023-01-23 01:03:38,857][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-01-23 01:03:38,864][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-01-23 01:03:38,865][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-01-23 01:03:38,865][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-01-23 01:03:38,909][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-01-23 01:03:39,343][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-01-23 01:03:41,410][__main__][INFO] - Instantiating loggers...
+[2023-01-23 01:03:41,411][src.utils.utils][WARNING] - Logger config is empty.
+[2023-01-23 01:03:41,411][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-01-23 01:03:41,730][__main__][INFO] - Starting testing!
+[2023-01-23 01:03:41,769][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-01-23 01:03:41,856][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-01-23 01:03:41,857][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-01-23 01:03:41,900][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 01:03:41,900][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-01-23 01:03:41,942][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-01-23 01:10:46,134][src.utils.utils][INFO] - Closing loggers...
+[2023-01-23 01:10:46,137][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2023-01-23_01-03-38
+[2023-02-06 04:53:12,258][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-02-06 04:53:12,265][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-02-06 04:53:12,266][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-02-06 04:53:12,266][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-02-06 04:53:12,317][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-02-06 04:53:13,258][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-02-06 04:53:20,998][__main__][INFO] - Instantiating loggers...
+[2023-02-06 04:53:21,000][src.utils.utils][WARNING] - Logger config is empty.
+[2023-02-06 04:53:21,000][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-02-06 04:53:21,430][__main__][INFO] - Starting testing!
+[2023-02-06 04:53:21,475][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-02-06 04:53:21,593][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-02-06 04:53:21,593][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-02-06 04:53:21,649][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-02-06 04:53:21,649][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-02-06 04:53:21,703][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-02-06 04:53:31,582][src.utils.utils][INFO] - Closing loggers...
+[2023-02-06 04:53:31,585][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2023-02-06_04-53-12
+[2023-02-06 05:01:19,663][src.utils.utils][INFO] - Enforcing tags! <cfg.extras.enforce_tags=True>
+[2023-02-06 05:01:19,669][src.utils.utils][INFO] - Printing config tree with Rich! <cfg.extras.print_config=True>
+[2023-02-06 05:01:19,670][src.utils.rich_utils][WARNING] - Field 'callbacks' not found in config. Skipping 'callbacks' config printing...
+[2023-02-06 05:01:19,670][src.utils.rich_utils][WARNING] - Field 'logger' not found in config. Skipping 'logger' config printing...
+[2023-02-06 05:01:19,714][__main__][INFO] - Instantiating datamodule <src.datamodules.undc_pc_datamodule_fight.UNDC_PC_DataModule>
+[2023-02-06 05:01:20,153][__main__][INFO] - Instantiating model <src.models.undc_module_pre.UNDCLitModule>
+[2023-02-06 05:01:27,462][__main__][INFO] - Instantiating loggers...
+[2023-02-06 05:01:27,464][src.utils.utils][WARNING] - Logger config is empty.
+[2023-02-06 05:01:27,464][__main__][INFO] - Instantiating trainer <pytorch_lightning.Trainer>
+[2023-02-06 05:01:27,921][__main__][INFO] - Starting testing!
+[2023-02-06 05:01:27,968][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Train dataset...
+[2023-02-06 05:01:28,066][src.datamodules.undc_pc_datamodule_fight][INFO] - Train dataset [ABC_pc_hdf5] of size 2352 had been created.
+[2023-02-06 05:01:28,066][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Val dataset...
+[2023-02-06 05:01:28,122][src.datamodules.undc_pc_datamodule_fight][INFO] - Val dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-02-06 05:01:28,123][src.datamodules.undc_pc_datamodule_fight][INFO] - Loading Test dataset...
+[2023-02-06 05:01:28,179][src.datamodules.undc_pc_datamodule_fight][INFO] - Test dataset [ABC_pc_hdf5] of size 135 had been created.
+[2023-02-06 05:01:30,520][src.utils.utils][INFO] - Closing loggers...
+[2023-02-06 05:01:30,522][src.utils.utils][INFO] - Output dir: /home/fubao/dev/my-ndc/logs/eval/runs/2023-02-06_05-01-19
