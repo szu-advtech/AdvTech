@@ -14,9 +14,6 @@ This is a PyTorch implementation of the [MoCo paper](https://arxiv.org/abs/1911.
 
 Install PyTorch and ImageNet dataset following the [official PyTorch ImageNet training code](https://github.com/pytorch/examples/tree/master/imagenet).
 
-This repo aims to be minimal modifications on that code. Check the modifications by:
-
-
 ### Unsupervised Training
 
 This implementation only supports **multi-gpu**, **DistributedDataParallel** training, which is faster and simpler; single-gpu or DataParallel training is not supported.
