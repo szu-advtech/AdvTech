@@ -1,7 +1,7 @@
 ## MoCo: Momentum Contrast for Unsupervised Visual Representation Learning
 
 This is a PyTorch implementation of the [MoCo paper](https://arxiv.org/abs/1911.05722):
-```
+
 @Article{he2019moco,
   author  = {Kaiming He and Haoqi Fan and Yuxin Wu and Saining Xie and Ross Girshick},
   title   = {Momentum Contrast for Unsupervised Visual Representation Learning},
