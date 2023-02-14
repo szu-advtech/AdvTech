@@ -1,0 +1,29 @@
+{
+    "exp_dir": "pixel_classifiers/cell/ddpm",
+    "model_type": "ddpm",
+    
+    "category": "cell",
+    "number_class": 2,
+    "ignore_label": 255,
+  
+    "training_path": "datasets/cell/train",
+    "validation_path": "datasets/cell/test",
+    "testing_path": "datasets/cell/test",
+    "model_path": "epoch=21-step=19249.ckpt",
+  
+    "dim": [256, 256, 1792],
+    "steps": [50, 150, 250],
+    "blocks": [5, 6, 7, 8, 12],
+  
+    "model_num": 3,
+    "batch_size": 35,
+    "max_training": 30,
+    
+    "training_number": 35,
+    "testing_number": 7,
+  
+    "upsample_mode":"bilinear",
+    "share_noise": true,
+    "input_activations": false
+}
+  
