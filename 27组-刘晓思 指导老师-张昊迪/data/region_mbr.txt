@@ -1,4 +1,0 @@
-max_lat:30.7400123
-max_lon:104.13
-min_lat:30.64
-min_lon:104.03
