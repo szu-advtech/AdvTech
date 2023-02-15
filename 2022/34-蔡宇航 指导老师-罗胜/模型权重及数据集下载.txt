@@ -1,0 +1,7 @@
+1.Yolov4 预训练权重（包含voc数据集权重、coco数据集权重还有Backbone主干网络权重）
+链接：https://pan.baidu.com/s/152sk74oNb63086fs8wIULw 
+提取码：6666
+
+2.VOC07+12数据集
+链接：https://pan.baidu.com/s/1iCf9AK0blbldgRCXyleEuA 
+提取码：6666
