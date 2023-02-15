@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="d26681a7-a8dd-44c9-ba07-76f84640212e" name="icml2022">
+        <fileTransfer accessType="SFTP" host="172.31.234.134" port="22" sshConfigId="66ee2b18-3771-4ef8-9b1d-39951ee168d9" sshConfig="suxiaoxin@172.31.234.134:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
