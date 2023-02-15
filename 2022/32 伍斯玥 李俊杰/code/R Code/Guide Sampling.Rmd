@@ -1,0 +1,241 @@
+---
+title: "Guide sampling"
+output: html_document
+date: "2022-11-30"
+---
+# 读入图处理数据包
+```{r}
+library(BiocGenerics)
+library(igraph)
+library(Rgraphviz)
+library(grid)
+library(philentropy)
+library(ggplot2)
+```
+# 定义函数
+## 函数准备
+### 栈的定义
+```{r}
+# 加元素
+stack.put <- function(stack,item){
+  n=length(stack)
+  stack[n+1]=item
+  return(stack)
+}
+```
+```{r}
+# 获得元素
+stack.get <- function(stack){
+  n=length(stack)
+  item=stack[n]
+  return(item)
+}
+```
+```{r}
+# 去掉元素
+stack.pop <- function(stack){
+  n=length(stack)
+  stack=stack[-n]
+  return(stack)
+}
+```
+### 初始化栈
+```{r}
+stack.create <- function(graph,start_node=NULL) 
+  {
+  stack=c()
+  if(!is.null(start_node))
+    {
+    if((start_node > 0||start_node = 0)&&start_node <vcount(graph))
+      {
+      stack=stack.put(stack,item)
+      }
+    else
+      {
+          print("Starting node index is out of range.")
+          return("error")
+      }
+    }
+  else
+    {
+    start_node=sample(1:vcount(graph),1)
+    stack=stack.put(stack,start_node)
+    }
+  return(stack)
+}
+
+```
+### 将邻接点按度排序
+```{r}
+G.rank_neighbor <- function(graph, source)
+  {
+  # 按将邻接点按度顺序排列
+    neighbors = graph[[source]]
+    neighbors=as.vector(neighbors[[1]])
+    deg = igraph::degree(graph)
+    neighbors_num=deg[source]
+    if (neighbors_num!=0)
+    {
+      neighbors_degree = matrix(rep(0,neighbors_num*2),nrow=neighbors_num)
+    for (i in 1:neighbors_num)
+      {
+      neighbors_degree[i,1]=neighbors[i]
+      neighbors_degree[i,2]=deg[neighbors[i]]
+      }
+    k = neighbors_degree[order(neighbors_degree[,2]),,drop=F]
+    return(k[,1,drop=F])
+    }
+    else
+    {
+      return(NULL)
+      }
+    
+    }
+```
+### 将节点加入队列
+```{r}
+nodes.add <- function(nodes,source){
+  nodes[length(nodes)+1]=source
+  return(nodes)
+}
+```
+### 基于修改后DFS诱导子图抽样 
+```{r}
+ModDFS_induce <- function(graph, start_node=NULL,rate=0.01,seed=42)
+  {
+  # 为了有重复性，可以设置随机种子
+  set.seed(seed)
+  # *************************开始抽样***************************************
+  # 计算抽样节点数目
+  number_of_samples = round(vcount(graph) * rate)
+  # 初始化节点序列
+  stack=stack.create(graph, start_node)
+  nodes = c()  # 创建抽取节点集（无序）
+  # 开始抽样
+  while(length(nodes) < number_of_samples) 
+  {
+    source=stack.get(stack)# 从队列里取节点
+    stack=stack.pop(stack)
+    if(!(source %in% nodes))#source是下一步的起始节点，只有节点没有被取过才能作为source,source如果已经被遍历过，if 不成立就会跳回上一步重新在队列里面去节点
+    {
+     neighbors=G.rank_neighbor(graph, source)#获得已经按照度顺序排列好邻节点集
+     if (!is.null(neighbors))
+       {
+       nodes=nodes.add(nodes,source)
+       for (j in 1:length(neighbors))# 将现节点的所有邻居加进队列
+        {
+        stack=stack.put(stack,neighbors[j])
+       }
+     }
+    }
+    }
+  newgraph = igraph::induced.subgraph(graph,nodes)  # 返回子图
+  return (newgraph)
+}
+  
+```
+### 计算权重
+```{r}
+weight <- function(edge_init,graph)
+  {
+  # 初始化权重列表
+  weight=c()
+  # 为需要删除的每条边计算权重,权重其实是该边对全图聚类系数的影响程度
+  for (i in 1:(dim(edge_init)[1]))
+    {
+    # 获得能与该边形成三角形的节点数目，该边通过影响这些节点的聚类系数从而影响全图聚类系数
+    n1 = edge_init[i,1]
+    n2 = edge_init[i,2]
+    if (n1!=n2)# 去掉自环，自环定义为w=0
+      {
+      nn1=as.matrix(graph[[n1]][[1]])
+      nn2=as.matrix(graph[[n2]][[1]])
+      n=intersect(nn1,nn2)
+    }
+    else
+    {
+      n=c()
+      }
+    # 计算该边的权重
+    w = 0
+    deg=igraph::degree(graph)
+    if (length(n)>0)
+    {
+      for (j in 1:length(n))
+      {
+        k=deg[n[j]]
+         w=w+(2/(k*(k-1)))
+      }
+    }
+     weight[length(weight)+1]=w
+  }
+  # 合并边与对应权重
+  edge_weight=cbind(edge_init,weight)
+  # 将边按照权重降序排列
+  edge_weight = edge_weight[order(edge_weight[,3],decreasing = TRUE),,drop=F]
+  return(edge_weight)
+}
+```
+
+## 指导抽样---------------------------------------------------------------------
+**指导抽样(Guide Sampling)：可以输入待抽样图graph，指导度值d_org，指导聚类系数c_org，抽样比例rate，指定起始抽样点start_node**
+```{r}
+Guidesampling <- function(graph,d_org,c_org,rate=0.01,seed=1,start_node=NULL)
+  {
+  # 为原图进行ModDFS抽样后再诱导所有边
+    ModDFS_induce = ModDFS_induce(graph,start_node=start_node,rate=rate,seed=seed)
+    sampler=ModDFS_induce
+    VS_NUM=vcount(sampler)
+    ES_NUM=ecount(sampler)
+    # ModDFS样本图的边
+    edge_init = get.edgelist(sampler)
+    # 为ModDFS样本图的边，基于原图计算权重（可以每条边都计算，为了减少运算量，只计算需要删除的边）
+    edge_weight=weight(edge_init,graph)
+    # 计算需要删除的边数目
+    e_extra=round(ES_NUM-d_org*VS_NUM/2)
+    # 此时的聚类系数
+    c_init=transitivity(sampler, type="average")
+    # 已经删除的节点数
+    e_del=0
+    # 剩下的还需要删除边的占比
+    e_ratio=1
+    #目前的聚类系数值
+    c_curr=c_init
+    # 目前聚类系数完成目标比例
+    c_ratio=c_org/c_curr
+    # 利用斜率判断需要需要删除的边的位置
+    slope=(c_curr-c_org)/(c_org*e_extra)
+    # 聚类系数希望在本次删边后的的期望值
+    c_exp=c_init-(slope*e_del*c_org)
+    # 不能删除权值为0的边，以免造成孤立点
+    zero_weight = sum(edge_weight[,3]==0)
+    ES_NUM=ES_NUM-zero_weight
+    mid = ES_NUM /2 
+    while (e_del<e_extra)# 只要没删够就一直删
+      {
+      # 高于50%为高权值，低于50%为低权值
+    # 如果权重是等差那么slope是定值，且每次删边后c_exp每次都能达到，如果c_curr比c_exp表示这次选择的边权重太小，下次增大，反正同理
+        if(c_curr>c_exp && c_curr>c_org)
+          { 
+          index=round(mid*c_ratio*e_ratio)
+          }else
+          {
+          index=round(mid+mid*e_ratio)
+          }
+           if (index >0)
+           {
+             
+            edge_weight=edge_weight[-index,,drop=F]
+            sampler=graph_from_data_frame(edge_weight[,1:2], directed=FALSE)
+            # del_edge=edge_weight[index,1:2]
+            # sampler=delete.edges(sampler,del_edge)
+            e_del=e_del+1
+            c_curr=transitivity(sampler, type="average")
+            c_ratio=c_org/c_curr
+            e_ratio=(e_extra-e_del)/e_extra
+            c_exp=c_init-(slope*e_del*c_org)
+            }
+    }
+    return(sampler) 
+}
+```

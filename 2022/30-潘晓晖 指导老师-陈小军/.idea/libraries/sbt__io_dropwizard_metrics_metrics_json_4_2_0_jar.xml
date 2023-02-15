@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: io.dropwizard.metrics:metrics-json:4.2.0:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/io/dropwizard/metrics/metrics-json/4.2.0/metrics-json-4.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/io/dropwizard/metrics/metrics-json/4.2.0/metrics-json-4.2.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/io/dropwizard/metrics/metrics-json/4.2.0/metrics-json-4.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

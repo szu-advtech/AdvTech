@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaSbtSettings">
+    <option name="customLauncherEnabled" value="true" />
+    <option name="customLauncherPath" value="D:\work\sbt\bin\sbt-launch.jar" />
+    <option name="customVMEnabled" value="true" />
+    <option name="customVMPath" value="$PROJECT_DIR$/../../../../Java/jdk1.8" />
+    <option name="linkedExternalProjectsSettings">
+      <SbtProjectSettings>
+        <option name="converterVersion" value="1" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/project" />
+          </set>
+        </option>
+        <option name="sbtVersion" value="1.4.7" />
+      </SbtProjectSettings>
+    </option>
+    <option name="maximumHeapSize" value="768" />
+    <option name="vmParameters" value="-Dsbt.override.build.repos=true -Dconsold.encoding=UTF-8 -Dsbt.repository.config=D:\work\sbt\conf\repo.properties -Dsbt.ivy.home=D:\work\sbt\.ivy -Dsbt.boot.directory=D:\work\sbt\boot -Dsbt.global.base=D:\work\sbt\.sbt -Dsbt.coursier.home=D:\work\sbt\coursier" />
+  </component>
+</project>
