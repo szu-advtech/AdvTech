@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-1
+spec:
+  selector:
+    matchLabels:
+      app: test-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-pod
+    spec:
+      schedulerName: boreas-scheduler
+      containers:
+      - name: test-container-1
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 7.5
+            memory: 512Mi
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-2
+spec:
+  selector:
+    matchLabels:
+      app: test-pod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: test-pod
+    spec:
+      schedulerName: boreas-scheduler
+      containers:
+      - name: test-container-2
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 5
+            memory: 512Mi

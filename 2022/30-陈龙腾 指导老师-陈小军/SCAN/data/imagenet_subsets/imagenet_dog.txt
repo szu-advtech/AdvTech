@@ -1,0 +1,15 @@
+n02085936 Maltese_dog
+n02086646 Blenheim_spaniel
+n02088238 basset
+n02091467 Norwegian_elkhound
+n02097130 giant_schnauzer
+n02099601 golden_retriever
+n02101388 Brittany_spaniel
+n02101556 clumber
+n02102177 Welsh_springer_spaniel
+n02105056 groenendael
+n02105412 kelpie
+n02105855 Shetland_sheepdog
+n02107142 Doberman
+n02110958 pug
+n02112137 chow

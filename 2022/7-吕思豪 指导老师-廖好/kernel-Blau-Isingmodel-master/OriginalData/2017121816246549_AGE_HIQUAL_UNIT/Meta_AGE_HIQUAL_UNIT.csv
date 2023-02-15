@@ -1,0 +1,121 @@
+CDU_FIELD_NAME,CENSUS_CELLNAME,TOPIC,CATEGORY,TOPIC_DESCRIPTION,
+F186,QS501EW0001,Age,Age 16 and over,"Age is derived from the date of birth question and is a person's age at their last birthday, at 27 March 2011. Dates of birth that imply an age over 115 are treated as invalid and the person's age is imputed. Infants less than one year old are classified as 0 years of age.",
+F186,QS501EW0001,"Qualification, highest level of",Total\ Highest level of qualification,"The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent.
+<br/>
+There were 12 response options (plus 'no qualifications') covering professional and vocational qualifications, and a range of academic qualifications
+These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated).
+<br/>
+<br/>
+No Qualifications: No academic or professional qualifications.
+<br/>
+Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills.
+<br/>
+Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma
+Apprenticeship.
+<br/>
+Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma.
+<br/>
+Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy).
+<br/>
+Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).",
+F186,QS501EW0001,Unit,Persons,The unit is for a particular count (e.g. people or households),
+F187,QS501EW0002,Age,Age 16 and over,"Age is derived from the date of birth question and is a person's age at their last birthday, at 27 March 2011. Dates of birth that imply an age over 115 are treated as invalid and the person's age is imputed. Infants less than one year old are classified as 0 years of age.",
+F187,QS501EW0002,"Qualification, highest level of",No qualifications,"The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent.
+<br/>
+There were 12 response options (plus 'no qualifications') covering professional and vocational qualifications, and a range of academic qualifications
+These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated).
+<br/>
+<br/>
+No Qualifications: No academic or professional qualifications.
+<br/>
+Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills.
+<br/>
+Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma
+Apprenticeship.
+<br/>
+Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma.
+<br/>
+Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy).
+<br/>
+Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).",
+F187,QS501EW0002,Unit,Persons,The unit is for a particular count (e.g. people or households),
+F188,QS501EW0003,Age,Age 16 and over,"Age is derived from the date of birth question and is a person's age at their last birthday, at 27 March 2011. Dates of birth that imply an age over 115 are treated as invalid and the person's age is imputed. Infants less than one year old are classified as 0 years of age.",
+F188,QS501EW0003,"Qualification, highest level of",Level 1 qualifications,"The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent.
+<br/>
+There were 12 response options (plus 'no qualifications') covering professional and vocational qualifications, and a range of academic qualifications
+These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated).
+<br/>
+<br/>
+No Qualifications: No academic or professional qualifications.
+<br/>
+Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills.
+<br/>
+Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma
+Apprenticeship.
+<br/>
+Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma.
+<br/>
+Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy).
+<br/>
+Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).",
+F188,QS501EW0003,Unit,Persons,The unit is for a particular count (e.g. people or households),
+F189,QS501EW0004,Age,Age 16 and over,"Age is derived from the date of birth question and is a person's age at their last birthday, at 27 March 2011. Dates of birth that imply an age over 115 are treated as invalid and the person's age is imputed. Infants less than one year old are classified as 0 years of age.",
+F189,QS501EW0004,"Qualification, highest level of",Level 2 qualifications,"The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent.
+<br/>
+There were 12 response options (plus 'no qualifications') covering professional and vocational qualifications, and a range of academic qualifications
+These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated).
+<br/>
+<br/>
+No Qualifications: No academic or professional qualifications.
+<br/>
+Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills.
+<br/>
+Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma
+Apprenticeship.
+<br/>
+Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma.
+<br/>
+Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy).
+<br/>
+Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).",
+F189,QS501EW0004,Unit,Persons,The unit is for a particular count (e.g. people or households),
+F191,QS501EW0006,Age,Age 16 and over,"Age is derived from the date of birth question and is a person's age at their last birthday, at 27 March 2011. Dates of birth that imply an age over 115 are treated as invalid and the person's age is imputed. Infants less than one year old are classified as 0 years of age.",
+F191,QS501EW0006,"Qualification, highest level of",Level 3 qualifications,"The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent.
+<br/>
+There were 12 response options (plus 'no qualifications') covering professional and vocational qualifications, and a range of academic qualifications
+These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated).
+<br/>
+<br/>
+No Qualifications: No academic or professional qualifications.
+<br/>
+Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills.
+<br/>
+Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma
+Apprenticeship.
+<br/>
+Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma.
+<br/>
+Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy).
+<br/>
+Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).",
+F191,QS501EW0006,Unit,Persons,The unit is for a particular count (e.g. people or households),
+F192,QS501EW0007,Age,Age 16 and over,"Age is derived from the date of birth question and is a person's age at their last birthday, at 27 March 2011. Dates of birth that imply an age over 115 are treated as invalid and the person's age is imputed. Infants less than one year old are classified as 0 years of age.",
+F192,QS501EW0007,"Qualification, highest level of",Level 4 qualifications and above,"The highest level of qualification is derived from the question asking people to indicate all types of qualifications held. People were also asked if they held foreign qualifications and to indicate the closest equivalent.
+<br/>
+There were 12 response options (plus 'no qualifications') covering professional and vocational qualifications, and a range of academic qualifications
+These are combined into five categories for the highest level of qualification, plus a category for no qualifications and one for other qualifications (which includes vocational or work-related qualifications, and for foreign qualifications where an equivalent qualification was not indicated).
+<br/>
+<br/>
+No Qualifications: No academic or professional qualifications.
+<br/>
+Level 1 qualifications: 1-4 O Levels/CSE/GCSEs (any grades), Entry Level, Foundation Diploma, NVQ level 1, Foundation GNVQ, Basic/Essential Skills.
+<br/>
+Level 2 qualifications: 5+ O Level (Passes)/CSEs (Grade 1)/GCSEs (Grades A*-C), School Certificate, 1 A Level/ 2-3 AS Levels/VCEs, Intermediate/Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First/General Diploma, RSA Diploma
+Apprenticeship.
+<br/>
+Level 3 qualifications: 2+ A Levels/VCEs, 4+ AS Levels, Higher School Certificate, Progression/Advanced Diploma, Welsh Baccalaureate Advanced Diploma, NVQ Level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma.
+<br/>
+Level 4+ qualifications: Degree (for example BA, BSc), Higher Degree (for example MA, PhD, PGCE), NVQ Level 4-5, HNC, HND, RSA Higher Diploma, BTEC Higher level, Foundation degree (NI), Professional qualifications (for example teaching, nursing, accountancy).
+<br/>
+Other qualifications: Vocational/Work-related Qualifications, Foreign Qualifications (Not stated/ level unknown).",
+F192,QS501EW0007,Unit,Persons,The unit is for a particular count (e.g. people or households),

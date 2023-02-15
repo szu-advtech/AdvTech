@@ -1,0 +1,3 @@
+EVAL:
+  EXAMPLES_TO_PLOT: 10
+  WEIGHTS: 'storage/logs/echonet_cycle/EFGCN/r3d_18/1125115202/weights_echonet_cycle_EFGCN_best_kptsErr.pth'

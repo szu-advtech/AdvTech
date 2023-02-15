@@ -1,0 +1,14 @@
+dataset/caption_data/caption_test.tsv
+--user-dir=ofa_module
+--path=./run_scripts/caption/stage1_checkpoints/1_0.06_6000/checkpoint_best.pt
+--task=caption
+--batch-size=16
+--log-format=simple --log-interval=10
+--seed=7
+--results-path=results/caption
+--beam=5
+--max-len-b=16
+--no-repeat-ngram-size=3
+--fp16
+--num-workers=0
+--model-overrides="{\"data\":\"dataset/caption_data/caption_test.tsv\",\"bpe_dir\":\"utils/BPE\",\"eval_cider\":False,\"selected_cols\":\"1,4,2\"}"

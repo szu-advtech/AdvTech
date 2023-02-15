@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.apache.commons:commons-math3:3.4.1:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/commons/commons-math3/3.4.1/commons-math3-3.4.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

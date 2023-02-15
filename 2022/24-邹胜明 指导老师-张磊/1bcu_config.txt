@@ -1,0 +1,12 @@
+receptor=1bcu_protein.pdbqt
+ligand=1bcu_ligand.pdbqt
+target=1bcu_ligand.pdbqt
+
+center_x=9.507
+center_y=19.64
+center_z=51.029
+
+size_x=14
+size_y=12
+size_z=12
+

@@ -1,0 +1,12 @@
+-Guide sampling test.html
+如果没有R编译器可以直接打开该文档，里面展示了Guide sampling函数细节及一个例子
+
+-Guide Sampling.Rmd
+本模块直接读取可以载入相关包以及Guide sampling函数
+
+-test.Rmd
+读入Guide Sampling.Rmd后才可以读入本模块，用于展示Guide sampling函数效果
+
+
+
+

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "mutex": "cpp",
+        "condition_variable": "cpp",
+        "*.ipp": "cpp"
+    }
+}

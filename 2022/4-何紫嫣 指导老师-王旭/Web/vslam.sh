@@ -1,0 +1,1 @@
+/home/code/openvslam-comments/build/run_video_slam -v /home/code/openvslam-comments/orb_vocab/orb_vocab.dbow2 -t /home/code/openvslam-comments/tsdf_config.yaml -m /home/code/web/upload/video.mp4 -c /home/code/openvslam-comments/aist_living_lab_1/config.yaml --frame-skip 3 --no-sleep --map-db map.msg

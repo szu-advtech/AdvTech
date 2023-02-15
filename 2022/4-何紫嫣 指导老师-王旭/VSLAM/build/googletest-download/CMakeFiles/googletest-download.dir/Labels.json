@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/CMakeFiles/googletest-download"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/CMakeFiles/googletest-download.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/CMakeFiles/googletest-download-complete.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-build.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-configure.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-download.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-install.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-mkdir.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-patch.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-test.rule"
+		},
+		{
+			"file" : "/home/code/openvslam-comments/build/googletest-download/googletest-download-prefix/src/googletest-download-stamp/googletest-download-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-download"
+		],
+		"name" : "googletest-download"
+	}
+}

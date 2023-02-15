@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "fuzzer_scripts",
+    "find_literal",
+]

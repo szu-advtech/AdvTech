@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: javax.activation:activation:1.1.1:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/javax/activation/activation/1.1.1/activation-1.1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/javax/activation/activation/1.1.1/activation-1.1.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
