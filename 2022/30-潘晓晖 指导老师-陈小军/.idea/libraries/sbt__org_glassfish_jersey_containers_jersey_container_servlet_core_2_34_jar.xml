@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.glassfish.jersey.containers:jersey-container-servlet-core:2.34:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/glassfish/jersey/containers/jersey-container-servlet-core/2.34/jersey-container-servlet-core-2.34.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/glassfish/jersey/containers/jersey-container-servlet-core/2.34/jersey-container-servlet-core-2.34-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/glassfish/jersey/containers/jersey-container-servlet-core/2.34/jersey-container-servlet-core-2.34-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

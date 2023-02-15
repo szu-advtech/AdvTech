@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: com.google.protobuf:protobuf-java:3.14.0:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/google/protobuf/protobuf-java/3.14.0/protobuf-java-3.14.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/google/protobuf/protobuf-java/3.14.0/protobuf-java-3.14.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/google/protobuf/protobuf-java/3.14.0/protobuf-java-3.14.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
