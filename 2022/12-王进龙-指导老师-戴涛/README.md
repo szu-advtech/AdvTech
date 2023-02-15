@@ -1,0 +1,1 @@
+运行文件夹classify_and_decode_basecall_free中的classify_and_decode.ipynb 即可
