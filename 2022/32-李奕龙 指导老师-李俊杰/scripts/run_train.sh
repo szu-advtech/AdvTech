@@ -1,0 +1,16 @@
+python -m paddle.distributed.launch --selected_gpus='0' run_tydi.py \
+  --train_input_dir=data/tydi/train.h5df \
+  --do_train \
+  --max_seq_length=2048 \
+  --train_batch_size=16 \
+  --learning_rate=5e-5 \
+  --num_train_epochs=3 \
+  --warmup_proportion=0.1 \
+  --logging_steps=1000\
+  --checkout_steps=9000 \
+  --seed=2020 \
+  --fp16 \
+  --scale_loss=4096 \
+  --dev_split_ratio=0.002 \
+  --gradient_accumulation_steps=1 \
+  --output_dir=data/tydiqa_baseline_model/train
