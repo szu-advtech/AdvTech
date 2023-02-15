@@ -1,3 +1,15 @@
+本人是学yechenlin的代码，源代码网站是如下：
+
+https://github.com/yenchenlin/nerf-pytorch
+
+本人是学yechenlin的代码，源代码网站是如下：
+
+https://github.com/yenchenlin/nerf-pytorch
+
+本人是学yechenlin的代码，源代码网站是如下：
+
+https://github.com/yenchenlin/nerf-pytorch
+
 # NeRF-pytorch
 
 
@@ -18,7 +30,7 @@ pip install -r requirements.txt
 
 <details>
   <summary> Dependencies (click to expand) </summary>
-  
+
   ## Dependencies
   - PyTorch 1.4
   - matplotlib
@@ -26,11 +38,11 @@ pip install -r requirements.txt
   - imageio
   - imageio-ffmpeg
   - configargparse
-  
+
 The LLFF data loader requires ImageMagick.
 
 You will also need the [LLFF code](http://github.com/fyusion/llff) (and COLMAP) set up to compute poses if you want to run on your own real data.
-  
+
 </details>
 
 ## How To Run?
@@ -131,7 +143,7 @@ py.test
  [Ren Ng](https://www2.eecs.berkeley.edu/Faculty/Homepages/yirenng.html)<sup>1</sup> <br>
  <sup>1</sup>UC Berkeley, <sup>2</sup>Google Research, <sup>3</sup>UC San Diego  
   \*denotes equal contribution  
-  
+
 <img src='imgs/pipeline.jpg'/>
 
 > A neural radiance field is a simple fully connected network (weights are ~5MB) trained to reproduce input views of a single scene using a rendering loss. The network directly maps from spatial location and viewing direction (5D input) to color and opacity (4D output), acting as the "volume" so we can use volume rendering to differentiably render new views
