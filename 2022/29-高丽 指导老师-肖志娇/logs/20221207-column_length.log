@@ -1,0 +1,991 @@
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.169999837875,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: CC(R|F|N)
+ Samples: LKR,BGN,BBD,RUB,XPF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0700001716614,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: CC(D|E|N)
+ Samples: MAD,UZS,JEP,TTD,CVE
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0599999427795,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: CC(P|C|D)
+ Samples: SVC,KMF,COP,MRO,TWD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.789999961853,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: (C|P)L(P|N)
+ Samples: PLN,CLP,YER,KPW,NAD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.740000009537,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: C(R|N|H)(D|Y)|(T|U)(J|Z)S
+ Samples: UZS,SYP,RSD,INR,VND
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.370000123978,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: SCR,ALL,VEF,PEN,TOP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0999999046326,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (V|B|M)C(D|R|F)
+ Samples: VND,MUR,VEF,BAM,IDR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.210000038147,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: CO(P|F)|C(A|M)C
+ Samples: TOP,ALL,SGD,UAH,MMK
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.180000066757,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: (H|S)CC|(C|T|L)C(P|C|F)
+ Samples: HUF,TOP,LTL,CHF,CUC
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.19000005722,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: C(H|A|C)(D|K|R)
+ Samples: BHD,KHR,KPW,SCR,CHF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.409999847412,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: (P|S)HP|CC(D|L)
+ Samples: PHP,IQD,BRL,BND,KMF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.370000123978,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: CC(D|G)|(L|A|I)(A|O|B)(R|A|P)
+ Samples: LAK,QAR,LBP,AOA,AOA
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,3.79999995232
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0599999427795,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: (B|K|S)C(D|B|K)
+ Samples: KWD,BOB,SPL,PGK,BGN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0599999427795,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: TTD,BSD,SEK,YER,GIP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.140000104904,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: (N|P)(G|L|I)N|C(O|G|A)(P|F)
+ Samples: NGN,NGN,KMF,TOP,BOB
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.72000002861,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: (Z|I)(M|N)(W|D)
+ Samples: ZMW,MGA,ISK,TND,ILS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.75,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: MRO|(B|C|G)CC
+ Samples: MRO,BWP,JMD,HRK,BIF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.329999923706,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: BHD,MMK,AFN,JEP,SCR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0899999141693,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: SGD,BAM,VEF,AFN,COP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: (H|C|D)(U|O)(F|P)
+ Samples: HUF,CUP,PGK,XCD,VEF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: (K|T|A|B|H)(H|A|E|O)(R|K|D)
+ Samples: KHR,HRK,SAR,TVD,BYR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.400000095367,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: (C|V)(U|V)(V|P|C)|(L|A|I)C(R|K|D)
+ Samples: VUV,LAK,LKR,AWG,ISK
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.389999866486,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: (L|G)(S|T|I)(L|K)
+ Samples: LTL,GIP,NIO,LSL,GHS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: CC(F|D|L)
+ Samples: DJF,GNF,IQD,BIF,VUV
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,3.63999986649
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0499999523163,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: CC(D|C|K)
+ Samples: CUC,MMK,DKK,GTQ,KWD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.140000104904,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: CC(N|W|C|D)
+ Samples: KPW,GGP,SDG,AUD,YER
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.129999876022,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: (N|M|L)(G|O|Z|F|H)(N|A|D|K)
+ Samples: NGN,MZN,THB,NPR,LSL
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.390000104904,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: C(G|A)(D|N)
+ Samples: SGD,NGN,BGN,MAD,PGK
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.730000019073,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: (A|M)R(S|O)
+ Samples: MRO,ARS,LAK,MDL,UGX
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.740000009537,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: (I|K)(L|G)(S|D)
+ Samples: ILS,KHR,AUD,MGA,BIF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.19000005722,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (G|L|B)(T|Z)(Q|L|D)
+ Samples: GTQ,LTL,AZN,SBD,HNL
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.199999809265,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: (P|Z|A|K|M)(Y|O|A)(G|N|A|D|L)
+ Samples: PYG,AOA,ZAR,PYG,MZN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.189999818802,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: C(Z|U|A|G|O)(L|P|R)
+ Samples: SZL,GGP,EUR,LSL,XPF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.390000104904,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: (C|B|J)CC|M(V|Y)R
+ Samples: MYR,CLP,WST,BWP,CRC
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.359999895096,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: CC(D|R|N)|(C|K)(Z|R|C)(K|D|C)
+ Samples: CZK,GIP,CDF,CRC,XCD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.399999856949,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: SOS|C(Z|N)C
+ Samples: SOS,VUV,BRL,TZS,ANG
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,4.04999995232
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0499999523163,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: C(I|Z|E)(P|D)
+ Samples: DZD,PGK,NIO,GIP,KWD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0599999427795,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: CC(K|N|D)
+ Samples: DKK,MAD,PEN,MMK,SZL
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.140000104904,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: ETB|CC(P|F|D)
+ Samples: ETB,TOP,GGP,TWD,PLN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.730000019073,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: C(M|N|A)C|XPF
+ Samples: XPF,HNL,YER,KMF,AFN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.740000009537,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: (G|A|C|B|I)(T|L|A|F|H)(Q|L|N|B)
+ Samples: GTQ,JPY,MAD,ALL,AFN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.710000038147,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: (M|C|H|K)(Z|A|E)(N|D|S)
+ Samples: MZN,KGS,TZS,SZL,XPF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0799999237061,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (S|G|B)C(D|P|N)
+ Samples: SBD,KZT,JMD,SOS,BWP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: (H|J|A|B)C(L|D|G|R)
+ Samples: HNL,IRR,HTG,JPY,AOA
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.19000005722,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: CC(D|C|N)|(T|C|B)OP
+ Samples: BOB,THB,KWD,MDL,CUC
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.19000005722,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: DJF,GGP,HTG,AUD,TTD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: (M|S|B)C(D|K)
+ Samples: MAD,SRD,UGX,ISK,GTQ
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.401000022888,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: (B|S|Z)(Y|A|U)(R|C)
+ Samples: BYR,SVC,ZAR,SHP,RUB
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,3.81100010872
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.130000114441,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: VUV|(C|G)CC
+ Samples: VUV,ALL,CZK,CUC,BYR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.140000104904,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: P(E|L)N|CC(D|R)
+ Samples: PLN,QAR,SBD,LKR,TTD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.129999876022,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: (G|C|M|L|N)(B|G|O|N|W)(P|F|N)
+ Samples: GBP,UYU,SVC,MXN,GNF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.360000133514,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: CC(D|L|N)
+ Samples: TTD,SRD,GHS,MXN,PKR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.689999818802,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: (T|B|E)C(R|S|D)|H(N|R|P)(L|K)
+ Samples: HNL,EUR,THB,PKR,XAF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.730000019073,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: (I|S)L(S|L)
+ Samples: SLL,ILS,DKK,QAR,NGN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.210000038147,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (H|B|M)C(P|D)|C(M|E)(K|D|F)
+ Samples: MMK,FKP,IMP,MUR,FJD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0900001525879,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: CC(D|P|K)
+ Samples: CUP,KWD,GNF,STD,TTD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0899999141693,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: CC(F|D|G)
+ Samples: CHF,GMD,XOF,SDG,MVR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.400000095367,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: (R|A|S)(U|Z|A|G)(B|S|R)
+ Samples: RUB,KHR,ARS,EGP,ANG
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.189999818802,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: (C|M|A)CC
+ Samples: MDL,CRC,SGD,CNY,NIO
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.410000085831,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: (G|S|M)(T|H|D|G|K)(Q|T|E|D|G)
+ Samples: GTQ,CVE,SGD,SDG,GHS
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,3.69000005722
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0499999523163,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: CC(D|N|F)
+ Samples: BBD,MXN,DZD,HUF,NGN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0599999427795,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: (S|P)C(D|P|B)
+ Samples: SBD,SAR,PAB,PHP,TWD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.140000104904,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: (K|C|T)C(P|S|B|D)
+ Samples: KGS,THB,SYP,CZK,TND
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.72000002861,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: (W|N|C)(S|A|T)(T|D)
+ Samples: WST,LTL,KMF,BND,GTQ
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.759999990463,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: RUB|CC(D|S|C)
+ Samples: RUB,UZS,ARS,SBD,TVD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.819999933243,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: TJS|CC(D|N)
+ Samples: TJS,CHF,AUD,PYG,TVD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.19000005722,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (M|B)(N|A|O)(D|T|M|P)
+ Samples: BND,MOP,VND,BAM,THB
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.100000143051,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: IQD,CVE,TRY,JPY,NOK
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.209999799728,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: (L|I|S|B)(S|E|K|O)(L|K|R|D)
+ Samples: ISK,RSD,LSL,SEK,ILS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.431999921799,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: C(Z|Y|A)(D|R)|(M|N)C(O|R|B)
+ Samples: MRO,NAD,SZL,MZN,BZD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.517999887466,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: NIO|CC(N|R|D)
+ Samples: NIO,THB,XCD,MZN,AFN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.22000002861,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: (B|S|G)C(R|D|G)
+ Samples: BYR,YER,XDR,BAM,GIP
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,4.34999990463
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.140000104904,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: C(U|A|B|E|N)(R|L|P)
+ Samples: MUR,HNL,CZK,LBP,SYP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.150000095367,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: AOA|CC(D|P|K)
+ Samples: AOA,SBD,KZT,CUP,NIO
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.149999856949,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: KMF|CC(P|C|N)
+ Samples: KMF,NGN,SVC,COP,LBP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.400000095367,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: C(N|S)C
+ Samples: VND,WST,TOP,GNF,XCD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.369999885559,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: CC(D|P)
+ Samples: NAD,ARS,GIP,TTD,EGP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.751000165939,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: (K|G|F)(M|A|B)(F|D)
+ Samples: KMF,GBP,SAR,FJD,MGA
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.22000002861,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (B|L|C)CC|THB
+ Samples: THB,BAM,MVR,BTN,JEP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0899999141693,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: SBD,KMF,BSD,JPY,TOP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: (Z|M|C|B|G)(A|D|G|M|L)(R|D|P)
+ Samples: ZAR,GMD,MDL,TND,KGS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.5,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: (L|G)BP|CC(D|B|N)
+ Samples: LBP,MZN,JPY,BDT,KGS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.400000095367,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: (M|C|N)(W|O|G|J)(K|C|D|G)
+ Samples: MWK,COP,CUC,FJD,PYG
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.379999876022,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: (M|A|C|B)(M|R|C|K)(K|D|G)
+ Samples: MMK,HTG,IRR,MXN,NZD
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,3.88100004196
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.129999876022,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: (M|E|V)(O|U|D)(P|R|V)
+ Samples: MOP,TZS,EGP,KHR,VUV
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0499999523163,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: CC(D|G)
+ Samples: SDG,TTD,CUP,UZS,SBD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.160000085831,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: (M|K|C|E|D)(G|M|C|I|L)(A|N|P|E)
+ Samples: MGA,DOP,IMP,ERN,SCR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.769999980927,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: B(G|L)(N|P)
+ Samples: BGN,AMD,BWP,GYD,PLN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.77999997139,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: (N|H)(P|N|I)(R|O|D)|(C|S|B)C(D|K|F)
+ Samples: NPR,GYD,SBD,BIF,CDF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.769999980927,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: JPY|CC(D|L|N)
+ Samples: JPY,ALL,LRD,BDT,SCR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.210000038147,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (N|C|M|E)(O|H|A|N|P)(K|D|S|B)
+ Samples: NOK,CVE,MAD,KPW,ETB
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0900001525879,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: (S|K|C)CC
+ Samples: SRD,KPW,SCR,KMF,PYG
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.210000038147,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: CC(P|D|F)|KZT
+ Samples: KZT,COP,BMD,JEP,DJF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.399999856949,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: (M|K)(N|Z)(T|D)
+ Samples: KZT,MNT,JOD,OMR,FKP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: CC(D|P)
+ Samples: BSD,LBP,SRD,GTQ,COP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.460000038147,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: CCC
+ Samples: TJS,HUF,CNY,GTQ,MVR
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,4.33999991417
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0499999523163,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: CC(C|D|F)
+ Samples: SVC,KES,BMD,GIP,MRO
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.120000123978,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: (S|L|B|M)(B|A|Z|H)(D|P|A|K)
+ Samples: LBP,SBD,BAM,AOA,MXN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0599999427795,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: CC(P|T|N)
+ Samples: COP,HRK,PHP,BDT,CVE
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.44000005722,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: CC(D|Y)
+ Samples: CNY,MDL,TTD,GMD,GYD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.379999876022,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: CC(R|D)
+ Samples: XDR,CUP,THB,BBD,SCR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.789999961853,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: JPY|CC(D|N)
+ Samples: JPY,BTN,MKD,BMD,CUP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0799999237061,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: CC(D|A)
+ Samples: GMD,PYG,FKP,DZD,CAD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.180000066757,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: (M|K|A|S)(Y|G|F|R|A|C)(D|R|N|A)
+ Samples: MYR,MGA,KYD,VND,MZN
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.210000038147,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: X(A|O)F|CC(D|K)
+ Samples: XAF,GMD,RSD,ZAR,BBD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.399999856949,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: (M|S)(N|Y|C)(T|F|R)
+ Samples: MNT,LSL,BIF,SCR,CRC
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.200000047684,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: CC(F|S|D)
+ Samples: DJF,HKD,SZL,KES,UZS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.22000002861,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: (C|D|F)C(P|K|S)
+ Samples: DKK,KES,CUP,FJD,VND
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,3.26999998093
+Namespace(directory='synthetic_datasets/fixed_row_size/structured_text_currency_codes', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.119999885559,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code01.txt - ETB
+STRUCT. SCORE: True
+ MODEL: (S|K|D|E|P)(T|Z|G|E)(D|S|K|L)
+ Samples: STD,SEK,CZK,KMF,LTL
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0600001811981,100,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code02.txt - GGP
+STRUCT. SCORE: True
+ MODEL: (C|B|D)C(D|C|L)
+ Samples: CUC,KPW,JMD,BYR,CUP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.149999856949,100,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col100-currency_code03.txt - KES
+STRUCT. SCORE: True
+ MODEL: C(O|E|Q)C|LSL
+ Samples: LSL,AOA,BYR,IQD,RON
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.710000038147,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code01.txt - MRO
+STRUCT. SCORE: True
+ MODEL: (S|M|C)(P|D|U)(L|K|R)
+ Samples: SPL,CUP,KPW,GEL,MUR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.400000095367,1000,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code02.txt - BMD
+STRUCT. SCORE: True
+ MODEL: C(Z|H|L)C
+ Samples: AZN,KZT,KHR,UZS,LTL
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.730000019073,1000,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col1000-currency_code03.txt - BTN
+STRUCT. SCORE: True
+ MODEL: CC(P|D)|K(E|G)S
+ Samples: KGS,KHR,COP,STD,TOP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.0899999141693,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code01.txt - SZL
+STRUCT. SCORE: True
+ MODEL: (B|G|C)C(P|D|K)
+ Samples: BND,BDT,GGP,KES,MWK
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.19000005722,200,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code02.txt - XDR
+STRUCT. SCORE: True
+ MODEL: C(M|U|A|E)(R|D|F)
+ Samples: OMR,JMD,VEF,AMD,HUF
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.210000038147,200,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col200-currency_code03.txt - BRL
+STRUCT. SCORE: True
+ MODEL: C(O|J|S)(P|D|L)|(G|T)(H|B|N)(P|B|D)
+ Samples: THB,FJD,TOP,NOK,MOP
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.47000002861,500,3.0,0,0,2
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code01.txt - JEP
+STRUCT. SCORE: True
+ MODEL: JPY|CC(D|L|T)
+ Samples: JPY,SEK,MDL,XDR,SPL
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.44000005722,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code02.txt - YER
+STRUCT. SCORE: True
+ MODEL: (L|A|B|G)(T|R|E|G|J)(L|A|D)
+ Samples: LTL,TJS,GEL,MGA,IRR
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.439999818802,500,3.0,0,0,1
+synthetic_datasets/fixed_row_size/structured_text_currency_codes/20160913-row3-col500-currency_code03.txt - HUF
+STRUCT. SCORE: True
+ MODEL: (K|B)(P|E|M)(W|D|Y)
+ Samples: KPW,HTG,KES,BIF,TRY
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,4.14999985695
+1 loops, best of 10: 4.01 sec per loop
