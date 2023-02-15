@@ -1,0 +1,1 @@
+srun -N 3 -n 3 ../conv ../../setup/MNIST
