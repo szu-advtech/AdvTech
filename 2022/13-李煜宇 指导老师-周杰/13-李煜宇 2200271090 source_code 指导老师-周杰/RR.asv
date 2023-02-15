@@ -1,0 +1,3 @@
+function P_RR = RR(X, Y)
+    PP_RR = X*Y';
+end
