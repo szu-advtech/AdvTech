@@ -1,0 +1,1176 @@
+aug: True
+base_lr: 0.006
+batch_size: 8
+batch_size_test: 4
+batch_size_val: 4
+channels: [48, 96, 192, 384, 384]
+classes: 20
+concat_xyz: True
+data_name: scannetv2
+data_root: /home/xinlai/dataset/scannetv2_mini_backup
+data_root_val: /home/xinlai/dataset/scannetv2_mini_backup/val
+depths: [3, 3, 9, 3, 3]
+dist_backend: nccl
+dist_url: tcp://127.0.0.1:6789
+downsample_scale: 4
+drop_path_rate: 0.3
+drop_rate: 0.5
+epochs: 100
+eval_freq: 1
+evaluate: True
+fea_dim: 6
+grid_size: 0.02
+ignore_label: -100
+k: 16
+loop: 6
+manual_seed: 123
+max_batch_points: 250000
+max_num_neighbors: 34
+model_path: /home/xinlai/3dsemseg_scannet/pointseg9/runs/run_swin_fpsdownsample_item_kpconv_adamw0.006_wd0.05_aug_no_jitter_warmup3k_opt_voxelsize0.02_b33933_optv2_winsize5_rpe111_swin_sparser_swin_down4/model/model_best.pth
+momentum: 0.9
+multiplier: 0.1
+multiprocessing_distributed: True
+names_path: data/scannet/scannet_names.txt
+num_heads: [3, 6, 12, 24, 24]
+num_layers: 5
+optimizer: AdamW
+patch_size: 1
+print_freq: 1
+quant_size: 0.005
+rank: 0
+ratio: 0.25
+rel_key: True
+rel_query: True
+rel_value: True
+resume: None
+save_folder: /home/xinlai/3dsemseg_scannet/pointseg9/runs/run_swin_fpsdownsample_item_kpconv_adamw0.006_wd0.05_aug_no_jitter_warmup3k_opt_voxelsize0.02_b33933_optv2_winsize5_rpe111_swin_sparser_swin_down4/npy_ensemble_none+perm+rot90+rot180+rot270
+save_freq: 1
+save_path: runs/sacnnetv2_stratified_transformer
+scheduler: MultiStepWithWarmup
+scheduler_update: step
+split: val
+start_epoch: 0
+stem_transformer: False
+step_epoch: 30
+sync_bn: True
+test_gpu: [0]
+test_workers: 4
+train_gpu: [0, 1, 2, 3]
+transformer_lr_scale: 0.1
+up_k: 3
+use_amp: True
+use_xyz: True
+voxel_max: 120000
+voxel_size: 0.02
+warmup: linear
+warmup_iters: 3000
+warmup_ratio: 1e-06
+weight: None
+weight_decay: 0.05
+window_size: 5
+workers: 16
+world_size: 1
+[2022-03-27 14:16:18,557 INFO test_aug_ensemble.py line 55 22427] => creating model ...
+[2022-03-27 14:16:18,557 INFO test_aug_ensemble.py line 56 22427] Classes: 20
+/home/xinlai/miniconda3_cuda10.1/lib/python3.7/site-packages/MinkowskiEngine/__init__.py:42: UserWarning: The environment variable `OMP_NUM_THREADS` not set. MinkowskiEngine will automatically set `OMP_NUM_THREADS=16`. If you want to set `OMP_NUM_THREADS` manually, please export it on the command line before running a python script. e.g. `export OMP_NUM_THREADS=12; python your_program.py`. It is recommended to set it below 24.
+  "It is recommended to set it below 24.",
+[2022-03-27 14:16:24,325 INFO test_aug_ensemble.py line 94 22427] Stratified(
+  (stem_layer): ModuleList(
+    (0): KPConvSimpleBlock(
+      (kpconv): KPConvLayer(InF: 6, OutF: 48, kernel_pts: 15, radius: 0.03, KP_influence: linear, Add_one: False)
+      (bn): FastBatchNorm1d(
+        (batch_norm): BatchNorm1d(48, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+      )
+      (activation): LeakyReLU(negative_slope=0.2)
+    )
+    (1): KPConvResBlock(
+      (unary_1): Sequential(
+        (0): Linear(in_features=48, out_features=12, bias=False)
+        (1): FastBatchNorm1d(
+          (batch_norm): BatchNorm1d(12, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (unary_2): Sequential(
+        (0): Linear(in_features=12, out_features=48, bias=False)
+        (1): FastBatchNorm1d(
+          (batch_norm): BatchNorm1d(48, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+        )
+        (2): LeakyReLU(negative_slope=0.2)
+      )
+      (kpconv): KPConvLayer(InF: 12, OutF: 12, kernel_pts: 15, radius: 0.03, KP_influence: linear, Add_one: False)
+      (bn): FastBatchNorm1d(
+        (batch_norm): BatchNorm1d(48, eps=1e-05, momentum=0.02, affine=True, track_running_stats=True)
+      )
+      (activation): LeakyReLU(negative_slope=0.2)
+      (shortcut_op): Identity()
+    )
+  )
+  (downsample): TransitionDown(
+    (norm): LayerNorm((48,), eps=1e-05, elementwise_affine=True)
+    (linear): Linear(in_features=48, out_features=96, bias=False)
+    (pool): MaxPool1d(kernel_size=16, stride=16, padding=0, dilation=1, ceil_mode=False)
+  )
+  (layers): ModuleList(
+    (0): BasicLayer(
+      (blocks): ModuleList(
+        (0): SwinTransformerBlock(
+          (norm1): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=96, out_features=288, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=96, out_features=96, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=96, out_features=384, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=384, out_features=96, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (1): SwinTransformerBlock(
+          (norm1): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=96, out_features=288, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=96, out_features=96, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=96, out_features=384, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=384, out_features=96, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (2): SwinTransformerBlock(
+          (norm1): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=96, out_features=288, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=96, out_features=96, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=96, out_features=384, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=384, out_features=96, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+      )
+      (downsample): TransitionDown(
+        (norm): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+        (linear): Linear(in_features=96, out_features=192, bias=False)
+        (pool): MaxPool1d(kernel_size=16, stride=16, padding=0, dilation=1, ceil_mode=False)
+      )
+    )
+    (1): BasicLayer(
+      (blocks): ModuleList(
+        (0): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (1): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (2): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (3): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (4): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (5): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (6): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (7): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (8): SwinTransformerBlock(
+          (norm1): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=192, out_features=576, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=192, out_features=192, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=192, out_features=768, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=768, out_features=192, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+      )
+      (downsample): TransitionDown(
+        (norm): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+        (linear): Linear(in_features=192, out_features=384, bias=False)
+        (pool): MaxPool1d(kernel_size=16, stride=16, padding=0, dilation=1, ceil_mode=False)
+      )
+    )
+    (2): BasicLayer(
+      (blocks): ModuleList(
+        (0): SwinTransformerBlock(
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=384, out_features=1152, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=384, out_features=384, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=384, out_features=1536, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=1536, out_features=384, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (1): SwinTransformerBlock(
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=384, out_features=1152, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=384, out_features=384, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=384, out_features=1536, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=1536, out_features=384, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (2): SwinTransformerBlock(
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=384, out_features=1152, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=384, out_features=384, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=384, out_features=1536, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=1536, out_features=384, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+      )
+      (downsample): TransitionDown(
+        (norm): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (linear): Linear(in_features=384, out_features=384, bias=False)
+        (pool): MaxPool1d(kernel_size=16, stride=16, padding=0, dilation=1, ceil_mode=False)
+      )
+    )
+    (3): BasicLayer(
+      (blocks): ModuleList(
+        (0): SwinTransformerBlock(
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=384, out_features=1152, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=384, out_features=384, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=384, out_features=1536, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=1536, out_features=384, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (1): SwinTransformerBlock(
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=384, out_features=1152, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=384, out_features=384, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=384, out_features=1536, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=1536, out_features=384, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+        (2): SwinTransformerBlock(
+          (norm1): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (attn): WindowAttention(
+            (qkv): Linear(in_features=384, out_features=1152, bias=True)
+            (attn_drop): Dropout(p=0.0, inplace=True)
+            (proj): Linear(in_features=384, out_features=384, bias=True)
+            (proj_drop): Dropout(p=0.0, inplace=True)
+            (softmax): Softmax(dim=-1)
+          )
+          (drop_path): DropPath()
+          (norm2): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+          (mlp): Mlp(
+            (fc1): Linear(in_features=384, out_features=1536, bias=True)
+            (act): GELU()
+            (fc2): Linear(in_features=1536, out_features=384, bias=True)
+            (drop): Dropout(p=0.0, inplace=True)
+          )
+        )
+      )
+    )
+  )
+  (upsamples): ModuleList(
+    (0): Upsample(
+      (linear1): Sequential(
+        (0): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=384, out_features=384, bias=True)
+      )
+      (linear2): Sequential(
+        (0): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=384, out_features=384, bias=True)
+      )
+    )
+    (1): Upsample(
+      (linear1): Sequential(
+        (0): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=192, out_features=192, bias=True)
+      )
+      (linear2): Sequential(
+        (0): LayerNorm((384,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=384, out_features=192, bias=True)
+      )
+    )
+    (2): Upsample(
+      (linear1): Sequential(
+        (0): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=96, out_features=96, bias=True)
+      )
+      (linear2): Sequential(
+        (0): LayerNorm((192,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=192, out_features=96, bias=True)
+      )
+    )
+    (3): Upsample(
+      (linear1): Sequential(
+        (0): LayerNorm((48,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=48, out_features=48, bias=True)
+      )
+      (linear2): Sequential(
+        (0): LayerNorm((96,), eps=1e-05, elementwise_affine=True)
+        (1): Linear(in_features=96, out_features=48, bias=True)
+      )
+    )
+  )
+  (classifier): Sequential(
+    (0): Linear(in_features=48, out_features=48, bias=True)
+    (1): BatchNorm1d(48, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Linear(in_features=48, out_features=20, bias=True)
+  )
+)
+[2022-03-27 14:17:06,489 INFO test_aug_ensemble.py line 98 24626] => loading checkpoint '/home/xinlai/3dsemseg_scannet/pointseg9/runs/run_swin_fpsdownsample_item_kpconv_adamw0.006_wd0.05_aug_no_jitter_warmup3k_opt_voxelsize0.02_b33933_optv2_winsize5_rpe111_swin_sparser_swin_down4/model/model_best.pth'
+[2022-03-27 14:17:07,000 INFO test_aug_ensemble.py line 106 24626] => loaded checkpoint '/home/xinlai/3dsemseg_scannet/pointseg9/runs/run_swin_fpsdownsample_item_kpconv_adamw0.006_wd0.05_aug_no_jitter_warmup3k_opt_voxelsize0.02_b33933_optv2_winsize5_rpe111_swin_sparser_swin_down4/model/model_best.pth' (epoch 96)
+[2022-03-27 14:17:07,000 INFO test_aug_ensemble.py line 118 24626] augmentation roate
+[2022-03-27 14:17:07,000 INFO test_aug_ensemble.py line 119 24626] rotate_angle: 90
+[2022-03-27 14:17:07,001 INFO test_aug_ensemble.py line 124 24626] augmentation roate
+[2022-03-27 14:17:07,001 INFO test_aug_ensemble.py line 125 24626] rotate_angle: 180
+[2022-03-27 14:17:07,001 INFO test_aug_ensemble.py line 130 24626] augmentation roate
+[2022-03-27 14:17:07,001 INFO test_aug_ensemble.py line 131 24626] rotate_angle: 270
+[2022-03-27 14:17:07,001 INFO test_aug_ensemble.py line 200 24626] >>>>>>>>>>>>>>>> Start Evaluation >>>>>>>>>>>>>>>>
+Totally 312 samples in val set.
+[2022-03-27 14:17:07,003 INFO test_aug_ensemble.py line 218 24626] 1/312: scene0011_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,025 INFO test_aug_ensemble.py line 299 24626] Test: [1/312]-237360 Batch 0.022 (0.022) Accuracy 0.8959.
+[2022-03-27 14:17:07,025 INFO test_aug_ensemble.py line 218 24626] 2/312: scene0011_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,047 INFO test_aug_ensemble.py line 299 24626] Test: [2/312]-239261 Batch 0.021 (0.022) Accuracy 0.8837.
+[2022-03-27 14:17:07,047 INFO test_aug_ensemble.py line 218 24626] 3/312: scene0015_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,065 INFO test_aug_ensemble.py line 299 24626] Test: [3/312]-217086 Batch 0.018 (0.020) Accuracy 0.9600.
+[2022-03-27 14:17:07,065 INFO test_aug_ensemble.py line 218 24626] 4/312: scene0019_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,076 INFO test_aug_ensemble.py line 299 24626] Test: [4/312]-136769 Batch 0.011 (0.018) Accuracy 0.7713.
+[2022-03-27 14:17:07,076 INFO test_aug_ensemble.py line 218 24626] 5/312: scene0019_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,090 INFO test_aug_ensemble.py line 299 24626] Test: [5/312]-165356 Batch 0.013 (0.017) Accuracy 0.7612.
+[2022-03-27 14:17:07,090 INFO test_aug_ensemble.py line 218 24626] 6/312: scene0025_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,105 INFO test_aug_ensemble.py line 299 24626] Test: [6/312]-173392 Batch 0.015 (0.017) Accuracy 0.9369.
+[2022-03-27 14:17:07,105 INFO test_aug_ensemble.py line 218 24626] 7/312: scene0025_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,120 INFO test_aug_ensemble.py line 299 24626] Test: [7/312]-165720 Batch 0.014 (0.016) Accuracy 0.8985.
+[2022-03-27 14:17:07,120 INFO test_aug_ensemble.py line 218 24626] 8/312: scene0025_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,135 INFO test_aug_ensemble.py line 299 24626] Test: [8/312]-177900 Batch 0.015 (0.016) Accuracy 0.9376.
+[2022-03-27 14:17:07,135 INFO test_aug_ensemble.py line 218 24626] 9/312: scene0030_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,163 INFO test_aug_ensemble.py line 299 24626] Test: [9/312]-293811 Batch 0.028 (0.018) Accuracy 0.9564.
+[2022-03-27 14:17:07,163 INFO test_aug_ensemble.py line 218 24626] 10/312: scene0030_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,189 INFO test_aug_ensemble.py line 299 24626] Test: [10/312]-284801 Batch 0.026 (0.018) Accuracy 0.9740.
+[2022-03-27 14:17:07,190 INFO test_aug_ensemble.py line 218 24626] 11/312: scene0030_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,216 INFO test_aug_ensemble.py line 299 24626] Test: [11/312]-284243 Batch 0.027 (0.019) Accuracy 0.9598.
+[2022-03-27 14:17:07,216 INFO test_aug_ensemble.py line 218 24626] 12/312: scene0046_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,234 INFO test_aug_ensemble.py line 299 24626] Test: [12/312]-186857 Batch 0.017 (0.019) Accuracy 0.9053.
+[2022-03-27 14:17:07,234 INFO test_aug_ensemble.py line 218 24626] 13/312: scene0046_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,253 INFO test_aug_ensemble.py line 299 24626] Test: [13/312]-198471 Batch 0.019 (0.019) Accuracy 0.8490.
+[2022-03-27 14:17:07,253 INFO test_aug_ensemble.py line 218 24626] 14/312: scene0046_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,272 INFO test_aug_ensemble.py line 299 24626] Test: [14/312]-199774 Batch 0.019 (0.019) Accuracy 0.8803.
+[2022-03-27 14:17:07,273 INFO test_aug_ensemble.py line 218 24626] 15/312: scene0050_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,292 INFO test_aug_ensemble.py line 299 24626] Test: [15/312]-211406 Batch 0.020 (0.019) Accuracy 0.7746.
+[2022-03-27 14:17:07,292 INFO test_aug_ensemble.py line 218 24626] 16/312: scene0050_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,310 INFO test_aug_ensemble.py line 299 24626] Test: [16/312]-199034 Batch 0.018 (0.019) Accuracy 0.7668.
+[2022-03-27 14:17:07,311 INFO test_aug_ensemble.py line 218 24626] 17/312: scene0050_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,329 INFO test_aug_ensemble.py line 299 24626] Test: [17/312]-196815 Batch 0.018 (0.019) Accuracy 0.8257.
+[2022-03-27 14:17:07,329 INFO test_aug_ensemble.py line 218 24626] 18/312: scene0063_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,336 INFO test_aug_ensemble.py line 299 24626] Test: [18/312]-76966 Batch 0.007 (0.018) Accuracy 0.9727.
+[2022-03-27 14:17:07,336 INFO test_aug_ensemble.py line 218 24626] 19/312: scene0064_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,357 INFO test_aug_ensemble.py line 299 24626] Test: [19/312]-230672 Batch 0.021 (0.018) Accuracy 0.8694.
+[2022-03-27 14:17:07,358 INFO test_aug_ensemble.py line 218 24626] 20/312: scene0064_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,375 INFO test_aug_ensemble.py line 299 24626] Test: [20/312]-195252 Batch 0.018 (0.018) Accuracy 0.9559.
+[2022-03-27 14:17:07,375 INFO test_aug_ensemble.py line 218 24626] 21/312: scene0077_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,384 INFO test_aug_ensemble.py line 299 24626] Test: [21/312]-92807 Batch 0.009 (0.018) Accuracy 0.8875.
+[2022-03-27 14:17:07,384 INFO test_aug_ensemble.py line 218 24626] 22/312: scene0077_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,393 INFO test_aug_ensemble.py line 299 24626] Test: [22/312]-90381 Batch 0.009 (0.018) Accuracy 0.9738.
+[2022-03-27 14:17:07,393 INFO test_aug_ensemble.py line 218 24626] 23/312: scene0081_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,398 INFO test_aug_ensemble.py line 299 24626] Test: [23/312]-51381 Batch 0.005 (0.017) Accuracy 0.9686.
+[2022-03-27 14:17:07,398 INFO test_aug_ensemble.py line 218 24626] 24/312: scene0081_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,414 INFO test_aug_ensemble.py line 299 24626] Test: [24/312]-179955 Batch 0.015 (0.017) Accuracy 0.9464.
+[2022-03-27 14:17:07,414 INFO test_aug_ensemble.py line 218 24626] 25/312: scene0081_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,427 INFO test_aug_ensemble.py line 299 24626] Test: [25/312]-153929 Batch 0.014 (0.017) Accuracy 0.9813.
+[2022-03-27 14:17:07,427 INFO test_aug_ensemble.py line 218 24626] 26/312: scene0084_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,438 INFO test_aug_ensemble.py line 299 24626] Test: [26/312]-116845 Batch 0.011 (0.017) Accuracy 0.9471.
+[2022-03-27 14:17:07,438 INFO test_aug_ensemble.py line 218 24626] 27/312: scene0084_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,449 INFO test_aug_ensemble.py line 299 24626] Test: [27/312]-111833 Batch 0.010 (0.016) Accuracy 0.9523.
+[2022-03-27 14:17:07,449 INFO test_aug_ensemble.py line 218 24626] 28/312: scene0084_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,458 INFO test_aug_ensemble.py line 299 24626] Test: [28/312]-98346 Batch 0.010 (0.016) Accuracy 0.9508.
+[2022-03-27 14:17:07,458 INFO test_aug_ensemble.py line 218 24626] 29/312: scene0086_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,470 INFO test_aug_ensemble.py line 299 24626] Test: [29/312]-124572 Batch 0.012 (0.016) Accuracy 0.9568.
+[2022-03-27 14:17:07,471 INFO test_aug_ensemble.py line 218 24626] 30/312: scene0086_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,482 INFO test_aug_ensemble.py line 299 24626] Test: [30/312]-124210 Batch 0.012 (0.016) Accuracy 0.9595.
+[2022-03-27 14:17:07,483 INFO test_aug_ensemble.py line 218 24626] 31/312: scene0086_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,495 INFO test_aug_ensemble.py line 299 24626] Test: [31/312]-124091 Batch 0.012 (0.016) Accuracy 0.9757.
+[2022-03-27 14:17:07,495 INFO test_aug_ensemble.py line 218 24626] 32/312: scene0088_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,511 INFO test_aug_ensemble.py line 299 24626] Test: [32/312]-166872 Batch 0.016 (0.016) Accuracy 0.9822.
+[2022-03-27 14:17:07,511 INFO test_aug_ensemble.py line 218 24626] 33/312: scene0088_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,523 INFO test_aug_ensemble.py line 299 24626] Test: [33/312]-145650 Batch 0.012 (0.016) Accuracy 0.8161.
+[2022-03-27 14:17:07,523 INFO test_aug_ensemble.py line 218 24626] 34/312: scene0088_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,540 INFO test_aug_ensemble.py line 299 24626] Test: [34/312]-170685 Batch 0.016 (0.016) Accuracy 0.9360.
+[2022-03-27 14:17:07,540 INFO test_aug_ensemble.py line 218 24626] 35/312: scene0088_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,552 INFO test_aug_ensemble.py line 299 24626] Test: [35/312]-136812 Batch 0.012 (0.016) Accuracy 0.9884.
+[2022-03-27 14:17:07,552 INFO test_aug_ensemble.py line 218 24626] 36/312: scene0095_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,572 INFO test_aug_ensemble.py line 299 24626] Test: [36/312]-214895 Batch 0.020 (0.016) Accuracy 0.8935.
+[2022-03-27 14:17:07,573 INFO test_aug_ensemble.py line 218 24626] 37/312: scene0095_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,592 INFO test_aug_ensemble.py line 299 24626] Test: [37/312]-216254 Batch 0.019 (0.016) Accuracy 0.9872.
+[2022-03-27 14:17:07,592 INFO test_aug_ensemble.py line 218 24626] 38/312: scene0100_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,598 INFO test_aug_ensemble.py line 299 24626] Test: [38/312]-52304 Batch 0.006 (0.015) Accuracy 0.9368.
+[2022-03-27 14:17:07,598 INFO test_aug_ensemble.py line 218 24626] 39/312: scene0100_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,603 INFO test_aug_ensemble.py line 299 24626] Test: [39/312]-51211 Batch 0.005 (0.015) Accuracy 0.9528.
+[2022-03-27 14:17:07,603 INFO test_aug_ensemble.py line 218 24626] 40/312: scene0100_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,608 INFO test_aug_ensemble.py line 299 24626] Test: [40/312]-50328 Batch 0.005 (0.015) Accuracy 0.9452.
+[2022-03-27 14:17:07,609 INFO test_aug_ensemble.py line 218 24626] 41/312: scene0131_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,625 INFO test_aug_ensemble.py line 299 24626] Test: [41/312]-177091 Batch 0.016 (0.015) Accuracy 0.9340.
+[2022-03-27 14:17:07,625 INFO test_aug_ensemble.py line 218 24626] 42/312: scene0131_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,644 INFO test_aug_ensemble.py line 299 24626] Test: [42/312]-172221 Batch 0.019 (0.015) Accuracy 0.9473.
+[2022-03-27 14:17:07,644 INFO test_aug_ensemble.py line 218 24626] 43/312: scene0131_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,657 INFO test_aug_ensemble.py line 299 24626] Test: [43/312]-140599 Batch 0.013 (0.015) Accuracy 0.8975.
+[2022-03-27 14:17:07,657 INFO test_aug_ensemble.py line 218 24626] 44/312: scene0139_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,664 INFO test_aug_ensemble.py line 299 24626] Test: [44/312]-72007 Batch 0.007 (0.015) Accuracy 0.8604.
+[2022-03-27 14:17:07,664 INFO test_aug_ensemble.py line 218 24626] 45/312: scene0144_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,676 INFO test_aug_ensemble.py line 299 24626] Test: [45/312]-126879 Batch 0.012 (0.015) Accuracy 0.8665.
+[2022-03-27 14:17:07,676 INFO test_aug_ensemble.py line 218 24626] 46/312: scene0144_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,688 INFO test_aug_ensemble.py line 299 24626] Test: [46/312]-116341 Batch 0.012 (0.015) Accuracy 0.8882.
+[2022-03-27 14:17:07,688 INFO test_aug_ensemble.py line 218 24626] 47/312: scene0146_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,694 INFO test_aug_ensemble.py line 299 24626] Test: [47/312]-60438 Batch 0.006 (0.015) Accuracy 0.8947.
+[2022-03-27 14:17:07,694 INFO test_aug_ensemble.py line 218 24626] 48/312: scene0146_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,699 INFO test_aug_ensemble.py line 299 24626] Test: [48/312]-59330 Batch 0.006 (0.014) Accuracy 0.9228.
+[2022-03-27 14:17:07,700 INFO test_aug_ensemble.py line 218 24626] 49/312: scene0146_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,706 INFO test_aug_ensemble.py line 299 24626] Test: [49/312]-64383 Batch 0.006 (0.014) Accuracy 0.9182.
+[2022-03-27 14:17:07,706 INFO test_aug_ensemble.py line 218 24626] 50/312: scene0149_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,723 INFO test_aug_ensemble.py line 299 24626] Test: [50/312]-162396 Batch 0.017 (0.014) Accuracy 0.9404.
+[2022-03-27 14:17:07,723 INFO test_aug_ensemble.py line 218 24626] 51/312: scene0153_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,728 INFO test_aug_ensemble.py line 299 24626] Test: [51/312]-47709 Batch 0.005 (0.014) Accuracy 0.9774.
+[2022-03-27 14:17:07,728 INFO test_aug_ensemble.py line 218 24626] 52/312: scene0153_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,733 INFO test_aug_ensemble.py line 299 24626] Test: [52/312]-49553 Batch 0.005 (0.014) Accuracy 0.9749.
+[2022-03-27 14:17:07,734 INFO test_aug_ensemble.py line 218 24626] 53/312: scene0164_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,743 INFO test_aug_ensemble.py line 299 24626] Test: [53/312]-94315 Batch 0.009 (0.014) Accuracy 0.9468.
+[2022-03-27 14:17:07,743 INFO test_aug_ensemble.py line 218 24626] 54/312: scene0164_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,752 INFO test_aug_ensemble.py line 299 24626] Test: [54/312]-88073 Batch 0.009 (0.014) Accuracy 0.9505.
+[2022-03-27 14:17:07,752 INFO test_aug_ensemble.py line 218 24626] 55/312: scene0164_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,762 INFO test_aug_ensemble.py line 299 24626] Test: [55/312]-92825 Batch 0.010 (0.014) Accuracy 0.9431.
+[2022-03-27 14:17:07,762 INFO test_aug_ensemble.py line 218 24626] 56/312: scene0164_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,771 INFO test_aug_ensemble.py line 299 24626] Test: [56/312]-89190 Batch 0.009 (0.014) Accuracy 0.8909.
+[2022-03-27 14:17:07,771 INFO test_aug_ensemble.py line 218 24626] 57/312: scene0169_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,795 INFO test_aug_ensemble.py line 299 24626] Test: [57/312]-239354 Batch 0.024 (0.014) Accuracy 0.9309.
+[2022-03-27 14:17:07,795 INFO test_aug_ensemble.py line 218 24626] 58/312: scene0169_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,815 INFO test_aug_ensemble.py line 299 24626] Test: [58/312]-228074 Batch 0.020 (0.014) Accuracy 0.8782.
+[2022-03-27 14:17:07,815 INFO test_aug_ensemble.py line 218 24626] 59/312: scene0187_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,829 INFO test_aug_ensemble.py line 299 24626] Test: [59/312]-173752 Batch 0.014 (0.014) Accuracy 0.9648.
+[2022-03-27 14:17:07,829 INFO test_aug_ensemble.py line 218 24626] 60/312: scene0187_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,841 INFO test_aug_ensemble.py line 299 24626] Test: [60/312]-144163 Batch 0.012 (0.014) Accuracy 0.9446.
+[2022-03-27 14:17:07,841 INFO test_aug_ensemble.py line 218 24626] 61/312: scene0193_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,850 INFO test_aug_ensemble.py line 299 24626] Test: [61/312]-101783 Batch 0.009 (0.014) Accuracy 0.9029.
+[2022-03-27 14:17:07,850 INFO test_aug_ensemble.py line 218 24626] 62/312: scene0193_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,859 INFO test_aug_ensemble.py line 299 24626] Test: [62/312]-93668 Batch 0.009 (0.014) Accuracy 0.8493.
+[2022-03-27 14:17:07,859 INFO test_aug_ensemble.py line 218 24626] 63/312: scene0196_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,873 INFO test_aug_ensemble.py line 299 24626] Test: [63/312]-146032 Batch 0.014 (0.014) Accuracy 0.9694.
+[2022-03-27 14:17:07,874 INFO test_aug_ensemble.py line 218 24626] 64/312: scene0203_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,892 INFO test_aug_ensemble.py line 299 24626] Test: [64/312]-205756 Batch 0.019 (0.014) Accuracy 0.7464.
+[2022-03-27 14:17:07,892 INFO test_aug_ensemble.py line 218 24626] 65/312: scene0203_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,911 INFO test_aug_ensemble.py line 299 24626] Test: [65/312]-206210 Batch 0.018 (0.014) Accuracy 0.8887.
+[2022-03-27 14:17:07,911 INFO test_aug_ensemble.py line 218 24626] 66/312: scene0203_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,932 INFO test_aug_ensemble.py line 299 24626] Test: [66/312]-238392 Batch 0.021 (0.014) Accuracy 0.8375.
+[2022-03-27 14:17:07,932 INFO test_aug_ensemble.py line 218 24626] 67/312: scene0207_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,961 INFO test_aug_ensemble.py line 299 24626] Test: [67/312]-304396 Batch 0.029 (0.014) Accuracy 0.8805.
+[2022-03-27 14:17:07,961 INFO test_aug_ensemble.py line 218 24626] 68/312: scene0207_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:07,986 INFO test_aug_ensemble.py line 299 24626] Test: [68/312]-269274 Batch 0.025 (0.014) Accuracy 0.9135.
+[2022-03-27 14:17:07,986 INFO test_aug_ensemble.py line 218 24626] 69/312: scene0207_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,019 INFO test_aug_ensemble.py line 299 24626] Test: [69/312]-347322 Batch 0.033 (0.015) Accuracy 0.9321.
+[2022-03-27 14:17:08,019 INFO test_aug_ensemble.py line 218 24626] 70/312: scene0208_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,054 INFO test_aug_ensemble.py line 299 24626] Test: [70/312]-407386 Batch 0.035 (0.015) Accuracy 0.8020.
+[2022-03-27 14:17:08,055 INFO test_aug_ensemble.py line 218 24626] 71/312: scene0217_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,066 INFO test_aug_ensemble.py line 299 24626] Test: [71/312]-126385 Batch 0.012 (0.015) Accuracy 0.9604.
+[2022-03-27 14:17:08,066 INFO test_aug_ensemble.py line 218 24626] 72/312: scene0221_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,083 INFO test_aug_ensemble.py line 299 24626] Test: [72/312]-185828 Batch 0.017 (0.015) Accuracy 0.9283.
+[2022-03-27 14:17:08,083 INFO test_aug_ensemble.py line 218 24626] 73/312: scene0221_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,099 INFO test_aug_ensemble.py line 299 24626] Test: [73/312]-170654 Batch 0.016 (0.015) Accuracy 0.9184.
+[2022-03-27 14:17:08,099 INFO test_aug_ensemble.py line 218 24626] 74/312: scene0222_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,123 INFO test_aug_ensemble.py line 299 24626] Test: [74/312]-234831 Batch 0.023 (0.015) Accuracy 0.9324.
+[2022-03-27 14:17:08,123 INFO test_aug_ensemble.py line 218 24626] 75/312: scene0222_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,145 INFO test_aug_ensemble.py line 299 24626] Test: [75/312]-235777 Batch 0.022 (0.015) Accuracy 0.9038.
+[2022-03-27 14:17:08,145 INFO test_aug_ensemble.py line 218 24626] 76/312: scene0231_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,185 INFO test_aug_ensemble.py line 299 24626] Test: [76/312]-419537 Batch 0.040 (0.015) Accuracy 0.9360.
+[2022-03-27 14:17:08,185 INFO test_aug_ensemble.py line 218 24626] 77/312: scene0231_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,225 INFO test_aug_ensemble.py line 299 24626] Test: [77/312]-438565 Batch 0.040 (0.016) Accuracy 0.9291.
+[2022-03-27 14:17:08,225 INFO test_aug_ensemble.py line 218 24626] 78/312: scene0231_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,256 INFO test_aug_ensemble.py line 299 24626] Test: [78/312]-353013 Batch 0.031 (0.016) Accuracy 0.8514.
+[2022-03-27 14:17:08,256 INFO test_aug_ensemble.py line 218 24626] 79/312: scene0246_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,273 INFO test_aug_ensemble.py line 299 24626] Test: [79/312]-201062 Batch 0.017 (0.016) Accuracy 0.8398.
+[2022-03-27 14:17:08,274 INFO test_aug_ensemble.py line 218 24626] 80/312: scene0249_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,303 INFO test_aug_ensemble.py line 299 24626] Test: [80/312]-331031 Batch 0.030 (0.016) Accuracy 0.9403.
+[2022-03-27 14:17:08,303 INFO test_aug_ensemble.py line 218 24626] 81/312: scene0251_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,322 INFO test_aug_ensemble.py line 299 24626] Test: [81/312]-226765 Batch 0.019 (0.016) Accuracy 0.9010.
+[2022-03-27 14:17:08,322 INFO test_aug_ensemble.py line 218 24626] 82/312: scene0256_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,332 INFO test_aug_ensemble.py line 299 24626] Test: [82/312]-108517 Batch 0.010 (0.016) Accuracy 0.8673.
+[2022-03-27 14:17:08,332 INFO test_aug_ensemble.py line 218 24626] 83/312: scene0256_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,342 INFO test_aug_ensemble.py line 299 24626] Test: [83/312]-111617 Batch 0.010 (0.016) Accuracy 0.8736.
+[2022-03-27 14:17:08,342 INFO test_aug_ensemble.py line 218 24626] 84/312: scene0256_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,351 INFO test_aug_ensemble.py line 299 24626] Test: [84/312]-92069 Batch 0.009 (0.016) Accuracy 0.8793.
+[2022-03-27 14:17:08,352 INFO test_aug_ensemble.py line 218 24626] 85/312: scene0257_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,369 INFO test_aug_ensemble.py line 299 24626] Test: [85/312]-180928 Batch 0.017 (0.016) Accuracy 0.8682.
+[2022-03-27 14:17:08,369 INFO test_aug_ensemble.py line 218 24626] 86/312: scene0277_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,376 INFO test_aug_ensemble.py line 299 24626] Test: [86/312]-79184 Batch 0.007 (0.016) Accuracy 0.9056.
+[2022-03-27 14:17:08,377 INFO test_aug_ensemble.py line 218 24626] 87/312: scene0277_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,384 INFO test_aug_ensemble.py line 299 24626] Test: [87/312]-82628 Batch 0.008 (0.016) Accuracy 0.8895.
+[2022-03-27 14:17:08,384 INFO test_aug_ensemble.py line 218 24626] 88/312: scene0277_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,393 INFO test_aug_ensemble.py line 299 24626] Test: [88/312]-82251 Batch 0.008 (0.016) Accuracy 0.8940.
+[2022-03-27 14:17:08,393 INFO test_aug_ensemble.py line 218 24626] 89/312: scene0278_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,401 INFO test_aug_ensemble.py line 299 24626] Test: [89/312]-77020 Batch 0.008 (0.016) Accuracy 0.9746.
+[2022-03-27 14:17:08,401 INFO test_aug_ensemble.py line 218 24626] 90/312: scene0278_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,409 INFO test_aug_ensemble.py line 299 24626] Test: [90/312]-83269 Batch 0.008 (0.015) Accuracy 0.8862.
+[2022-03-27 14:17:08,409 INFO test_aug_ensemble.py line 218 24626] 91/312: scene0300_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,423 INFO test_aug_ensemble.py line 299 24626] Test: [91/312]-140216 Batch 0.014 (0.015) Accuracy 0.8590.
+[2022-03-27 14:17:08,423 INFO test_aug_ensemble.py line 218 24626] 92/312: scene0300_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,439 INFO test_aug_ensemble.py line 299 24626] Test: [92/312]-173223 Batch 0.016 (0.015) Accuracy 0.9299.
+[2022-03-27 14:17:08,439 INFO test_aug_ensemble.py line 218 24626] 93/312: scene0304_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,454 INFO test_aug_ensemble.py line 299 24626] Test: [93/312]-164016 Batch 0.015 (0.015) Accuracy 0.9386.
+[2022-03-27 14:17:08,454 INFO test_aug_ensemble.py line 218 24626] 94/312: scene0307_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,489 INFO test_aug_ensemble.py line 299 24626] Test: [94/312]-371616 Batch 0.035 (0.016) Accuracy 0.7732.
+[2022-03-27 14:17:08,489 INFO test_aug_ensemble.py line 218 24626] 95/312: scene0307_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,525 INFO test_aug_ensemble.py line 299 24626] Test: [95/312]-412511 Batch 0.037 (0.016) Accuracy 0.7682.
+[2022-03-27 14:17:08,526 INFO test_aug_ensemble.py line 218 24626] 96/312: scene0307_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,560 INFO test_aug_ensemble.py line 299 24626] Test: [96/312]-408633 Batch 0.035 (0.016) Accuracy 0.7082.
+[2022-03-27 14:17:08,561 INFO test_aug_ensemble.py line 218 24626] 97/312: scene0314_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,568 INFO test_aug_ensemble.py line 299 24626] Test: [97/312]-87446 Batch 0.007 (0.016) Accuracy 0.6037.
+[2022-03-27 14:17:08,568 INFO test_aug_ensemble.py line 218 24626] 98/312: scene0316_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,575 INFO test_aug_ensemble.py line 299 24626] Test: [98/312]-78769 Batch 0.007 (0.016) Accuracy 0.9764.
+[2022-03-27 14:17:08,575 INFO test_aug_ensemble.py line 218 24626] 99/312: scene0328_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,586 INFO test_aug_ensemble.py line 299 24626] Test: [99/312]-111467 Batch 0.010 (0.016) Accuracy 0.9101.
+[2022-03-27 14:17:08,586 INFO test_aug_ensemble.py line 218 24626] 100/312: scene0329_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,618 INFO test_aug_ensemble.py line 299 24626] Test: [100/312]-355413 Batch 0.033 (0.016) Accuracy 0.9118.
+[2022-03-27 14:17:08,618 INFO test_aug_ensemble.py line 218 24626] 101/312: scene0329_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,650 INFO test_aug_ensemble.py line 299 24626] Test: [101/312]-368473 Batch 0.031 (0.016) Accuracy 0.9441.
+[2022-03-27 14:17:08,650 INFO test_aug_ensemble.py line 218 24626] 102/312: scene0329_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,681 INFO test_aug_ensemble.py line 299 24626] Test: [102/312]-358910 Batch 0.031 (0.016) Accuracy 0.8952.
+[2022-03-27 14:17:08,681 INFO test_aug_ensemble.py line 218 24626] 103/312: scene0334_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,696 INFO test_aug_ensemble.py line 299 24626] Test: [103/312]-197174 Batch 0.015 (0.016) Accuracy 0.9354.
+[2022-03-27 14:17:08,696 INFO test_aug_ensemble.py line 218 24626] 104/312: scene0334_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,715 INFO test_aug_ensemble.py line 299 24626] Test: [104/312]-226580 Batch 0.018 (0.016) Accuracy 0.9303.
+[2022-03-27 14:17:08,715 INFO test_aug_ensemble.py line 218 24626] 105/312: scene0334_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,731 INFO test_aug_ensemble.py line 299 24626] Test: [105/312]-211497 Batch 0.017 (0.016) Accuracy 0.9416.
+[2022-03-27 14:17:08,732 INFO test_aug_ensemble.py line 218 24626] 106/312: scene0338_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,741 INFO test_aug_ensemble.py line 299 24626] Test: [106/312]-106339 Batch 0.010 (0.016) Accuracy 0.9516.
+[2022-03-27 14:17:08,742 INFO test_aug_ensemble.py line 218 24626] 107/312: scene0338_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,750 INFO test_aug_ensemble.py line 299 24626] Test: [107/312]-85459 Batch 0.008 (0.016) Accuracy 0.9688.
+[2022-03-27 14:17:08,750 INFO test_aug_ensemble.py line 218 24626] 108/312: scene0338_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,758 INFO test_aug_ensemble.py line 299 24626] Test: [108/312]-84445 Batch 0.008 (0.016) Accuracy 0.9768.
+[2022-03-27 14:17:08,758 INFO test_aug_ensemble.py line 218 24626] 109/312: scene0342_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,767 INFO test_aug_ensemble.py line 299 24626] Test: [109/312]-89958 Batch 0.009 (0.016) Accuracy 0.9934.
+[2022-03-27 14:17:08,767 INFO test_aug_ensemble.py line 218 24626] 110/312: scene0343_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,782 INFO test_aug_ensemble.py line 299 24626] Test: [110/312]-165618 Batch 0.015 (0.016) Accuracy 0.8506.
+[2022-03-27 14:17:08,783 INFO test_aug_ensemble.py line 218 24626] 111/312: scene0351_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,798 INFO test_aug_ensemble.py line 299 24626] Test: [111/312]-172134 Batch 0.015 (0.016) Accuracy 0.9750.
+[2022-03-27 14:17:08,798 INFO test_aug_ensemble.py line 218 24626] 112/312: scene0351_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,814 INFO test_aug_ensemble.py line 299 24626] Test: [112/312]-170840 Batch 0.016 (0.016) Accuracy 0.9709.
+[2022-03-27 14:17:08,814 INFO test_aug_ensemble.py line 218 24626] 113/312: scene0353_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,834 INFO test_aug_ensemble.py line 299 24626] Test: [113/312]-208782 Batch 0.020 (0.016) Accuracy 0.9100.
+[2022-03-27 14:17:08,834 INFO test_aug_ensemble.py line 218 24626] 114/312: scene0353_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,853 INFO test_aug_ensemble.py line 299 24626] Test: [114/312]-203737 Batch 0.019 (0.016) Accuracy 0.7980.
+[2022-03-27 14:17:08,854 INFO test_aug_ensemble.py line 218 24626] 115/312: scene0353_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,871 INFO test_aug_ensemble.py line 299 24626] Test: [115/312]-191953 Batch 0.018 (0.016) Accuracy 0.7997.
+[2022-03-27 14:17:08,871 INFO test_aug_ensemble.py line 218 24626] 116/312: scene0354_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,881 INFO test_aug_ensemble.py line 299 24626] Test: [116/312]-110569 Batch 0.010 (0.016) Accuracy 0.9818.
+[2022-03-27 14:17:08,881 INFO test_aug_ensemble.py line 218 24626] 117/312: scene0355_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,894 INFO test_aug_ensemble.py line 299 24626] Test: [117/312]-136135 Batch 0.013 (0.016) Accuracy 0.9619.
+[2022-03-27 14:17:08,895 INFO test_aug_ensemble.py line 218 24626] 118/312: scene0355_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,900 INFO test_aug_ensemble.py line 299 24626] Test: [118/312]-67623 Batch 0.006 (0.016) Accuracy 0.9556.
+[2022-03-27 14:17:08,901 INFO test_aug_ensemble.py line 218 24626] 119/312: scene0356_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,911 INFO test_aug_ensemble.py line 299 24626] Test: [119/312]-81172 Batch 0.010 (0.016) Accuracy 0.9583.
+[2022-03-27 14:17:08,911 INFO test_aug_ensemble.py line 218 24626] 120/312: scene0356_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,920 INFO test_aug_ensemble.py line 299 24626] Test: [120/312]-96610 Batch 0.009 (0.016) Accuracy 0.9653.
+[2022-03-27 14:17:08,921 INFO test_aug_ensemble.py line 218 24626] 121/312: scene0356_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,929 INFO test_aug_ensemble.py line 299 24626] Test: [121/312]-83613 Batch 0.008 (0.016) Accuracy 0.9535.
+[2022-03-27 14:17:08,929 INFO test_aug_ensemble.py line 218 24626] 122/312: scene0357_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,942 INFO test_aug_ensemble.py line 299 24626] Test: [122/312]-136945 Batch 0.013 (0.016) Accuracy 0.7572.
+[2022-03-27 14:17:08,942 INFO test_aug_ensemble.py line 218 24626] 123/312: scene0357_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,955 INFO test_aug_ensemble.py line 299 24626] Test: [123/312]-133055 Batch 0.012 (0.016) Accuracy 0.7970.
+[2022-03-27 14:17:08,955 INFO test_aug_ensemble.py line 218 24626] 124/312: scene0377_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,965 INFO test_aug_ensemble.py line 299 24626] Test: [124/312]-111811 Batch 0.010 (0.016) Accuracy 0.8077.
+[2022-03-27 14:17:08,965 INFO test_aug_ensemble.py line 218 24626] 125/312: scene0377_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,978 INFO test_aug_ensemble.py line 299 24626] Test: [125/312]-131297 Batch 0.013 (0.016) Accuracy 0.9109.
+[2022-03-27 14:17:08,978 INFO test_aug_ensemble.py line 218 24626] 126/312: scene0377_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:08,989 INFO test_aug_ensemble.py line 299 24626] Test: [126/312]-113557 Batch 0.011 (0.016) Accuracy 0.9598.
+[2022-03-27 14:17:08,989 INFO test_aug_ensemble.py line 218 24626] 127/312: scene0378_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,006 INFO test_aug_ensemble.py line 299 24626] Test: [127/312]-156298 Batch 0.017 (0.016) Accuracy 0.9564.
+[2022-03-27 14:17:09,006 INFO test_aug_ensemble.py line 218 24626] 128/312: scene0378_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,026 INFO test_aug_ensemble.py line 299 24626] Test: [128/312]-196608 Batch 0.019 (0.016) Accuracy 0.9415.
+[2022-03-27 14:17:09,026 INFO test_aug_ensemble.py line 218 24626] 129/312: scene0378_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,042 INFO test_aug_ensemble.py line 299 24626] Test: [129/312]-161593 Batch 0.016 (0.016) Accuracy 0.9573.
+[2022-03-27 14:17:09,042 INFO test_aug_ensemble.py line 218 24626] 130/312: scene0382_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,051 INFO test_aug_ensemble.py line 299 24626] Test: [130/312]-100285 Batch 0.009 (0.016) Accuracy 0.9256.
+[2022-03-27 14:17:09,051 INFO test_aug_ensemble.py line 218 24626] 131/312: scene0382_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,060 INFO test_aug_ensemble.py line 299 24626] Test: [131/312]-96933 Batch 0.009 (0.016) Accuracy 0.8441.
+[2022-03-27 14:17:09,060 INFO test_aug_ensemble.py line 218 24626] 132/312: scene0389_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,080 INFO test_aug_ensemble.py line 299 24626] Test: [132/312]-201003 Batch 0.020 (0.016) Accuracy 0.9232.
+[2022-03-27 14:17:09,080 INFO test_aug_ensemble.py line 218 24626] 133/312: scene0406_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,086 INFO test_aug_ensemble.py line 299 24626] Test: [133/312]-48864 Batch 0.005 (0.016) Accuracy 0.9275.
+[2022-03-27 14:17:09,086 INFO test_aug_ensemble.py line 218 24626] 134/312: scene0406_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,091 INFO test_aug_ensemble.py line 299 24626] Test: [134/312]-45557 Batch 0.005 (0.015) Accuracy 0.9832.
+[2022-03-27 14:17:09,091 INFO test_aug_ensemble.py line 218 24626] 135/312: scene0406_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,095 INFO test_aug_ensemble.py line 299 24626] Test: [135/312]-41752 Batch 0.005 (0.015) Accuracy 0.9831.
+[2022-03-27 14:17:09,096 INFO test_aug_ensemble.py line 218 24626] 136/312: scene0412_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,112 INFO test_aug_ensemble.py line 299 24626] Test: [136/312]-175557 Batch 0.016 (0.015) Accuracy 0.8498.
+[2022-03-27 14:17:09,112 INFO test_aug_ensemble.py line 218 24626] 137/312: scene0412_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,123 INFO test_aug_ensemble.py line 299 24626] Test: [137/312]-133337 Batch 0.011 (0.015) Accuracy 0.7657.
+[2022-03-27 14:17:09,123 INFO test_aug_ensemble.py line 218 24626] 138/312: scene0414_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,142 INFO test_aug_ensemble.py line 299 24626] Test: [138/312]-192685 Batch 0.019 (0.015) Accuracy 0.9441.
+[2022-03-27 14:17:09,142 INFO test_aug_ensemble.py line 218 24626] 139/312: scene0423_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,147 INFO test_aug_ensemble.py line 299 24626] Test: [139/312]-53074 Batch 0.005 (0.015) Accuracy 0.9993.
+[2022-03-27 14:17:09,147 INFO test_aug_ensemble.py line 218 24626] 140/312: scene0423_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,151 INFO test_aug_ensemble.py line 299 24626] Test: [140/312]-41518 Batch 0.004 (0.015) Accuracy 0.9995.
+[2022-03-27 14:17:09,151 INFO test_aug_ensemble.py line 218 24626] 141/312: scene0423_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,156 INFO test_aug_ensemble.py line 299 24626] Test: [141/312]-60071 Batch 0.005 (0.015) Accuracy 0.9974.
+[2022-03-27 14:17:09,157 INFO test_aug_ensemble.py line 218 24626] 142/312: scene0426_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,169 INFO test_aug_ensemble.py line 299 24626] Test: [142/312]-135867 Batch 0.012 (0.015) Accuracy 0.9310.
+[2022-03-27 14:17:09,169 INFO test_aug_ensemble.py line 218 24626] 143/312: scene0426_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,182 INFO test_aug_ensemble.py line 299 24626] Test: [143/312]-137586 Batch 0.013 (0.015) Accuracy 0.9171.
+[2022-03-27 14:17:09,182 INFO test_aug_ensemble.py line 218 24626] 144/312: scene0426_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,194 INFO test_aug_ensemble.py line 299 24626] Test: [144/312]-125149 Batch 0.012 (0.015) Accuracy 0.9126.
+[2022-03-27 14:17:09,195 INFO test_aug_ensemble.py line 218 24626] 145/312: scene0426_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,207 INFO test_aug_ensemble.py line 299 24626] Test: [145/312]-126181 Batch 0.012 (0.015) Accuracy 0.9354.
+[2022-03-27 14:17:09,207 INFO test_aug_ensemble.py line 218 24626] 146/312: scene0427_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,214 INFO test_aug_ensemble.py line 299 24626] Test: [146/312]-74074 Batch 0.007 (0.015) Accuracy 0.9802.
+[2022-03-27 14:17:09,214 INFO test_aug_ensemble.py line 218 24626] 147/312: scene0430_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,234 INFO test_aug_ensemble.py line 299 24626] Test: [147/312]-210249 Batch 0.021 (0.015) Accuracy 0.9671.
+[2022-03-27 14:17:09,235 INFO test_aug_ensemble.py line 218 24626] 148/312: scene0430_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,245 INFO test_aug_ensemble.py line 299 24626] Test: [148/312]-126166 Batch 0.011 (0.015) Accuracy 0.9618.
+[2022-03-27 14:17:09,245 INFO test_aug_ensemble.py line 218 24626] 149/312: scene0432_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,249 INFO test_aug_ensemble.py line 299 24626] Test: [149/312]-39529 Batch 0.004 (0.015) Accuracy 0.9866.
+[2022-03-27 14:17:09,249 INFO test_aug_ensemble.py line 218 24626] 150/312: scene0432_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,253 INFO test_aug_ensemble.py line 299 24626] Test: [150/312]-37547 Batch 0.004 (0.015) Accuracy 0.9431.
+[2022-03-27 14:17:09,253 INFO test_aug_ensemble.py line 218 24626] 151/312: scene0435_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,278 INFO test_aug_ensemble.py line 299 24626] Test: [151/312]-254998 Batch 0.025 (0.015) Accuracy 0.9644.
+[2022-03-27 14:17:09,279 INFO test_aug_ensemble.py line 218 24626] 152/312: scene0435_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,304 INFO test_aug_ensemble.py line 299 24626] Test: [152/312]-273280 Batch 0.026 (0.015) Accuracy 0.9138.
+[2022-03-27 14:17:09,305 INFO test_aug_ensemble.py line 218 24626] 153/312: scene0435_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,323 INFO test_aug_ensemble.py line 299 24626] Test: [153/312]-210308 Batch 0.019 (0.015) Accuracy 0.9281.
+[2022-03-27 14:17:09,323 INFO test_aug_ensemble.py line 218 24626] 154/312: scene0435_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,342 INFO test_aug_ensemble.py line 299 24626] Test: [154/312]-203722 Batch 0.019 (0.015) Accuracy 0.9281.
+[2022-03-27 14:17:09,342 INFO test_aug_ensemble.py line 218 24626] 155/312: scene0441_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,350 INFO test_aug_ensemble.py line 299 24626] Test: [155/312]-86191 Batch 0.008 (0.015) Accuracy 0.9650.
+[2022-03-27 14:17:09,350 INFO test_aug_ensemble.py line 218 24626] 156/312: scene0458_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,357 INFO test_aug_ensemble.py line 299 24626] Test: [156/312]-65264 Batch 0.007 (0.015) Accuracy 0.9144.
+[2022-03-27 14:17:09,357 INFO test_aug_ensemble.py line 218 24626] 157/312: scene0458_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,364 INFO test_aug_ensemble.py line 299 24626] Test: [157/312]-69167 Batch 0.007 (0.015) Accuracy 0.9127.
+[2022-03-27 14:17:09,364 INFO test_aug_ensemble.py line 218 24626] 158/312: scene0461_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,369 INFO test_aug_ensemble.py line 299 24626] Test: [158/312]-59134 Batch 0.006 (0.015) Accuracy 0.9659.
+[2022-03-27 14:17:09,370 INFO test_aug_ensemble.py line 218 24626] 159/312: scene0462_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,384 INFO test_aug_ensemble.py line 299 24626] Test: [159/312]-156714 Batch 0.015 (0.015) Accuracy 0.8601.
+[2022-03-27 14:17:09,384 INFO test_aug_ensemble.py line 218 24626] 160/312: scene0474_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,402 INFO test_aug_ensemble.py line 299 24626] Test: [160/312]-182281 Batch 0.018 (0.015) Accuracy 0.9429.
+[2022-03-27 14:17:09,402 INFO test_aug_ensemble.py line 218 24626] 161/312: scene0474_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,423 INFO test_aug_ensemble.py line 299 24626] Test: [161/312]-213949 Batch 0.020 (0.015) Accuracy 0.8938.
+[2022-03-27 14:17:09,423 INFO test_aug_ensemble.py line 218 24626] 162/312: scene0474_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,446 INFO test_aug_ensemble.py line 299 24626] Test: [162/312]-252355 Batch 0.023 (0.015) Accuracy 0.9500.
+[2022-03-27 14:17:09,446 INFO test_aug_ensemble.py line 218 24626] 163/312: scene0474_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,464 INFO test_aug_ensemble.py line 299 24626] Test: [163/312]-195084 Batch 0.018 (0.015) Accuracy 0.8769.
+[2022-03-27 14:17:09,464 INFO test_aug_ensemble.py line 218 24626] 164/312: scene0474_04_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,481 INFO test_aug_ensemble.py line 299 24626] Test: [164/312]-178388 Batch 0.016 (0.015) Accuracy 0.8567.
+[2022-03-27 14:17:09,481 INFO test_aug_ensemble.py line 218 24626] 165/312: scene0474_05_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,493 INFO test_aug_ensemble.py line 299 24626] Test: [165/312]-131255 Batch 0.012 (0.015) Accuracy 0.9505.
+[2022-03-27 14:17:09,493 INFO test_aug_ensemble.py line 218 24626] 166/312: scene0488_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,504 INFO test_aug_ensemble.py line 299 24626] Test: [166/312]-108319 Batch 0.011 (0.015) Accuracy 0.9560.
+[2022-03-27 14:17:09,504 INFO test_aug_ensemble.py line 218 24626] 167/312: scene0488_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,515 INFO test_aug_ensemble.py line 299 24626] Test: [167/312]-109452 Batch 0.011 (0.015) Accuracy 0.9516.
+[2022-03-27 14:17:09,515 INFO test_aug_ensemble.py line 218 24626] 168/312: scene0490_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,528 INFO test_aug_ensemble.py line 299 24626] Test: [168/312]-131283 Batch 0.012 (0.015) Accuracy 0.9846.
+[2022-03-27 14:17:09,528 INFO test_aug_ensemble.py line 218 24626] 169/312: scene0494_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,534 INFO test_aug_ensemble.py line 299 24626] Test: [169/312]-62048 Batch 0.006 (0.015) Accuracy 0.9820.
+[2022-03-27 14:17:09,534 INFO test_aug_ensemble.py line 218 24626] 170/312: scene0496_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,552 INFO test_aug_ensemble.py line 299 24626] Test: [170/312]-192962 Batch 0.018 (0.015) Accuracy 0.9494.
+[2022-03-27 14:17:09,552 INFO test_aug_ensemble.py line 218 24626] 171/312: scene0500_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,590 INFO test_aug_ensemble.py line 299 24626] Test: [171/312]-396942 Batch 0.038 (0.015) Accuracy 0.9612.
+[2022-03-27 14:17:09,590 INFO test_aug_ensemble.py line 218 24626] 172/312: scene0500_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,620 INFO test_aug_ensemble.py line 299 24626] Test: [172/312]-352674 Batch 0.030 (0.015) Accuracy 0.9380.
+[2022-03-27 14:17:09,620 INFO test_aug_ensemble.py line 218 24626] 173/312: scene0518_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,632 INFO test_aug_ensemble.py line 299 24626] Test: [173/312]-130180 Batch 0.012 (0.015) Accuracy 0.8450.
+[2022-03-27 14:17:09,633 INFO test_aug_ensemble.py line 218 24626] 174/312: scene0527_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,639 INFO test_aug_ensemble.py line 299 24626] Test: [174/312]-65893 Batch 0.006 (0.015) Accuracy 0.7840.
+[2022-03-27 14:17:09,639 INFO test_aug_ensemble.py line 218 24626] 175/312: scene0535_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,647 INFO test_aug_ensemble.py line 299 24626] Test: [175/312]-90268 Batch 0.008 (0.015) Accuracy 0.8469.
+[2022-03-27 14:17:09,647 INFO test_aug_ensemble.py line 218 24626] 176/312: scene0549_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,662 INFO test_aug_ensemble.py line 299 24626] Test: [176/312]-161973 Batch 0.015 (0.015) Accuracy 0.9485.
+[2022-03-27 14:17:09,662 INFO test_aug_ensemble.py line 218 24626] 177/312: scene0549_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,681 INFO test_aug_ensemble.py line 299 24626] Test: [177/312]-200947 Batch 0.019 (0.015) Accuracy 0.9560.
+[2022-03-27 14:17:09,682 INFO test_aug_ensemble.py line 218 24626] 178/312: scene0550_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,693 INFO test_aug_ensemble.py line 299 24626] Test: [178/312]-127677 Batch 0.012 (0.015) Accuracy 0.8858.
+[2022-03-27 14:17:09,693 INFO test_aug_ensemble.py line 218 24626] 179/312: scene0552_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,705 INFO test_aug_ensemble.py line 299 24626] Test: [179/312]-123103 Batch 0.011 (0.015) Accuracy 0.9405.
+[2022-03-27 14:17:09,705 INFO test_aug_ensemble.py line 218 24626] 180/312: scene0552_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,714 INFO test_aug_ensemble.py line 299 24626] Test: [180/312]-91978 Batch 0.009 (0.015) Accuracy 0.9361.
+[2022-03-27 14:17:09,714 INFO test_aug_ensemble.py line 218 24626] 181/312: scene0553_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,720 INFO test_aug_ensemble.py line 299 24626] Test: [181/312]-62854 Batch 0.006 (0.015) Accuracy 0.8542.
+[2022-03-27 14:17:09,720 INFO test_aug_ensemble.py line 218 24626] 182/312: scene0553_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,726 INFO test_aug_ensemble.py line 299 24626] Test: [182/312]-61388 Batch 0.006 (0.015) Accuracy 0.9690.
+[2022-03-27 14:17:09,726 INFO test_aug_ensemble.py line 218 24626] 183/312: scene0553_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,732 INFO test_aug_ensemble.py line 299 24626] Test: [183/312]-67632 Batch 0.007 (0.015) Accuracy 0.9726.
+[2022-03-27 14:17:09,732 INFO test_aug_ensemble.py line 218 24626] 184/312: scene0558_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,742 INFO test_aug_ensemble.py line 299 24626] Test: [184/312]-92953 Batch 0.010 (0.015) Accuracy 0.9481.
+[2022-03-27 14:17:09,742 INFO test_aug_ensemble.py line 218 24626] 185/312: scene0558_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,757 INFO test_aug_ensemble.py line 299 24626] Test: [185/312]-141342 Batch 0.015 (0.015) Accuracy 0.9588.
+[2022-03-27 14:17:09,757 INFO test_aug_ensemble.py line 218 24626] 186/312: scene0558_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,774 INFO test_aug_ensemble.py line 299 24626] Test: [186/312]-173904 Batch 0.017 (0.015) Accuracy 0.9632.
+[2022-03-27 14:17:09,775 INFO test_aug_ensemble.py line 218 24626] 187/312: scene0559_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,783 INFO test_aug_ensemble.py line 299 24626] Test: [187/312]-89796 Batch 0.008 (0.015) Accuracy 0.9815.
+[2022-03-27 14:17:09,783 INFO test_aug_ensemble.py line 218 24626] 188/312: scene0559_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,790 INFO test_aug_ensemble.py line 299 24626] Test: [188/312]-81654 Batch 0.007 (0.015) Accuracy 0.9147.
+[2022-03-27 14:17:09,790 INFO test_aug_ensemble.py line 218 24626] 189/312: scene0559_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,802 INFO test_aug_ensemble.py line 299 24626] Test: [189/312]-118005 Batch 0.012 (0.015) Accuracy 0.9865.
+[2022-03-27 14:17:09,802 INFO test_aug_ensemble.py line 218 24626] 190/312: scene0565_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,818 INFO test_aug_ensemble.py line 299 24626] Test: [190/312]-167558 Batch 0.016 (0.015) Accuracy 0.7558.
+[2022-03-27 14:17:09,818 INFO test_aug_ensemble.py line 218 24626] 191/312: scene0568_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,839 INFO test_aug_ensemble.py line 299 24626] Test: [191/312]-232453 Batch 0.022 (0.015) Accuracy 0.9552.
+[2022-03-27 14:17:09,839 INFO test_aug_ensemble.py line 218 24626] 192/312: scene0568_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,861 INFO test_aug_ensemble.py line 299 24626] Test: [192/312]-239388 Batch 0.021 (0.015) Accuracy 0.9588.
+[2022-03-27 14:17:09,861 INFO test_aug_ensemble.py line 218 24626] 193/312: scene0568_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,882 INFO test_aug_ensemble.py line 299 24626] Test: [193/312]-232577 Batch 0.021 (0.015) Accuracy 0.9604.
+[2022-03-27 14:17:09,882 INFO test_aug_ensemble.py line 218 24626] 194/312: scene0574_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,888 INFO test_aug_ensemble.py line 299 24626] Test: [194/312]-55521 Batch 0.006 (0.015) Accuracy 0.8837.
+[2022-03-27 14:17:09,888 INFO test_aug_ensemble.py line 218 24626] 195/312: scene0574_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,893 INFO test_aug_ensemble.py line 299 24626] Test: [195/312]-53641 Batch 0.005 (0.015) Accuracy 0.8996.
+[2022-03-27 14:17:09,893 INFO test_aug_ensemble.py line 218 24626] 196/312: scene0574_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,900 INFO test_aug_ensemble.py line 299 24626] Test: [196/312]-62475 Batch 0.006 (0.015) Accuracy 0.9194.
+[2022-03-27 14:17:09,900 INFO test_aug_ensemble.py line 218 24626] 197/312: scene0575_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,918 INFO test_aug_ensemble.py line 299 24626] Test: [197/312]-194207 Batch 0.018 (0.015) Accuracy 0.9661.
+[2022-03-27 14:17:09,918 INFO test_aug_ensemble.py line 218 24626] 198/312: scene0575_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,935 INFO test_aug_ensemble.py line 299 24626] Test: [198/312]-201935 Batch 0.018 (0.015) Accuracy 0.9494.
+[2022-03-27 14:17:09,936 INFO test_aug_ensemble.py line 218 24626] 199/312: scene0575_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,953 INFO test_aug_ensemble.py line 299 24626] Test: [199/312]-202882 Batch 0.018 (0.015) Accuracy 0.9729.
+[2022-03-27 14:17:09,954 INFO test_aug_ensemble.py line 218 24626] 200/312: scene0578_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,967 INFO test_aug_ensemble.py line 299 24626] Test: [200/312]-147607 Batch 0.013 (0.015) Accuracy 0.9687.
+[2022-03-27 14:17:09,967 INFO test_aug_ensemble.py line 218 24626] 201/312: scene0578_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,977 INFO test_aug_ensemble.py line 299 24626] Test: [201/312]-114840 Batch 0.010 (0.015) Accuracy 0.9360.
+[2022-03-27 14:17:09,977 INFO test_aug_ensemble.py line 218 24626] 202/312: scene0578_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:09,990 INFO test_aug_ensemble.py line 299 24626] Test: [202/312]-128553 Batch 0.012 (0.015) Accuracy 0.9470.
+[2022-03-27 14:17:09,990 INFO test_aug_ensemble.py line 218 24626] 203/312: scene0580_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,005 INFO test_aug_ensemble.py line 299 24626] Test: [203/312]-158047 Batch 0.016 (0.015) Accuracy 0.8710.
+[2022-03-27 14:17:10,006 INFO test_aug_ensemble.py line 218 24626] 204/312: scene0580_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,022 INFO test_aug_ensemble.py line 299 24626] Test: [204/312]-165009 Batch 0.016 (0.015) Accuracy 0.8183.
+[2022-03-27 14:17:10,022 INFO test_aug_ensemble.py line 218 24626] 205/312: scene0583_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,035 INFO test_aug_ensemble.py line 299 24626] Test: [205/312]-146782 Batch 0.014 (0.015) Accuracy 0.8186.
+[2022-03-27 14:17:10,035 INFO test_aug_ensemble.py line 218 24626] 206/312: scene0583_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,044 INFO test_aug_ensemble.py line 299 24626] Test: [206/312]-98239 Batch 0.009 (0.015) Accuracy 0.7806.
+[2022-03-27 14:17:10,044 INFO test_aug_ensemble.py line 218 24626] 207/312: scene0583_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,053 INFO test_aug_ensemble.py line 299 24626] Test: [207/312]-89810 Batch 0.009 (0.015) Accuracy 0.7650.
+[2022-03-27 14:17:10,054 INFO test_aug_ensemble.py line 218 24626] 208/312: scene0591_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,072 INFO test_aug_ensemble.py line 299 24626] Test: [208/312]-175600 Batch 0.018 (0.015) Accuracy 0.9628.
+[2022-03-27 14:17:10,072 INFO test_aug_ensemble.py line 218 24626] 209/312: scene0591_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,090 INFO test_aug_ensemble.py line 299 24626] Test: [209/312]-190792 Batch 0.018 (0.015) Accuracy 0.9519.
+[2022-03-27 14:17:10,090 INFO test_aug_ensemble.py line 218 24626] 210/312: scene0591_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,108 INFO test_aug_ensemble.py line 299 24626] Test: [210/312]-187656 Batch 0.018 (0.015) Accuracy 0.9583.
+[2022-03-27 14:17:10,108 INFO test_aug_ensemble.py line 218 24626] 211/312: scene0593_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,128 INFO test_aug_ensemble.py line 299 24626] Test: [211/312]-211902 Batch 0.019 (0.015) Accuracy 0.9148.
+[2022-03-27 14:17:10,128 INFO test_aug_ensemble.py line 218 24626] 212/312: scene0593_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,144 INFO test_aug_ensemble.py line 299 24626] Test: [212/312]-179252 Batch 0.016 (0.015) Accuracy 0.9005.
+[2022-03-27 14:17:10,144 INFO test_aug_ensemble.py line 218 24626] 213/312: scene0595_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,156 INFO test_aug_ensemble.py line 299 24626] Test: [213/312]-142330 Batch 0.012 (0.015) Accuracy 0.8759.
+[2022-03-27 14:17:10,156 INFO test_aug_ensemble.py line 218 24626] 214/312: scene0598_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,169 INFO test_aug_ensemble.py line 299 24626] Test: [214/312]-145562 Batch 0.012 (0.015) Accuracy 0.7693.
+[2022-03-27 14:17:10,169 INFO test_aug_ensemble.py line 218 24626] 215/312: scene0598_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,180 INFO test_aug_ensemble.py line 299 24626] Test: [215/312]-91924 Batch 0.011 (0.015) Accuracy 0.9466.
+[2022-03-27 14:17:10,180 INFO test_aug_ensemble.py line 218 24626] 216/312: scene0598_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,196 INFO test_aug_ensemble.py line 299 24626] Test: [216/312]-176139 Batch 0.016 (0.015) Accuracy 0.9453.
+[2022-03-27 14:17:10,196 INFO test_aug_ensemble.py line 218 24626] 217/312: scene0599_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,210 INFO test_aug_ensemble.py line 299 24626] Test: [217/312]-141933 Batch 0.013 (0.015) Accuracy 0.9791.
+[2022-03-27 14:17:10,210 INFO test_aug_ensemble.py line 218 24626] 218/312: scene0599_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,224 INFO test_aug_ensemble.py line 299 24626] Test: [218/312]-149922 Batch 0.014 (0.015) Accuracy 0.9634.
+[2022-03-27 14:17:10,224 INFO test_aug_ensemble.py line 218 24626] 219/312: scene0599_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,235 INFO test_aug_ensemble.py line 299 24626] Test: [219/312]-122711 Batch 0.011 (0.015) Accuracy 0.9646.
+[2022-03-27 14:17:10,235 INFO test_aug_ensemble.py line 218 24626] 220/312: scene0606_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,251 INFO test_aug_ensemble.py line 299 24626] Test: [220/312]-164401 Batch 0.016 (0.015) Accuracy 0.7754.
+[2022-03-27 14:17:10,251 INFO test_aug_ensemble.py line 218 24626] 221/312: scene0606_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,265 INFO test_aug_ensemble.py line 299 24626] Test: [221/312]-152050 Batch 0.014 (0.015) Accuracy 0.8485.
+[2022-03-27 14:17:10,265 INFO test_aug_ensemble.py line 218 24626] 222/312: scene0606_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,281 INFO test_aug_ensemble.py line 299 24626] Test: [222/312]-167932 Batch 0.016 (0.015) Accuracy 0.8645.
+[2022-03-27 14:17:10,281 INFO test_aug_ensemble.py line 218 24626] 223/312: scene0607_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,291 INFO test_aug_ensemble.py line 299 24626] Test: [223/312]-113156 Batch 0.009 (0.015) Accuracy 0.9492.
+[2022-03-27 14:17:10,291 INFO test_aug_ensemble.py line 218 24626] 224/312: scene0607_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,298 INFO test_aug_ensemble.py line 299 24626] Test: [224/312]-78387 Batch 0.007 (0.015) Accuracy 0.9411.
+[2022-03-27 14:17:10,298 INFO test_aug_ensemble.py line 218 24626] 225/312: scene0608_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,318 INFO test_aug_ensemble.py line 299 24626] Test: [225/312]-186579 Batch 0.019 (0.015) Accuracy 0.8805.
+[2022-03-27 14:17:10,318 INFO test_aug_ensemble.py line 218 24626] 226/312: scene0608_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,336 INFO test_aug_ensemble.py line 299 24626] Test: [226/312]-191107 Batch 0.018 (0.015) Accuracy 0.8319.
+[2022-03-27 14:17:10,336 INFO test_aug_ensemble.py line 218 24626] 227/312: scene0608_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,358 INFO test_aug_ensemble.py line 299 24626] Test: [227/312]-235030 Batch 0.022 (0.015) Accuracy 0.7848.
+[2022-03-27 14:17:10,358 INFO test_aug_ensemble.py line 218 24626] 228/312: scene0609_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,365 INFO test_aug_ensemble.py line 299 24626] Test: [228/312]-78836 Batch 0.007 (0.015) Accuracy 0.8202.
+[2022-03-27 14:17:10,365 INFO test_aug_ensemble.py line 218 24626] 229/312: scene0609_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,374 INFO test_aug_ensemble.py line 299 24626] Test: [229/312]-115550 Batch 0.009 (0.015) Accuracy 0.8389.
+[2022-03-27 14:17:10,374 INFO test_aug_ensemble.py line 218 24626] 230/312: scene0609_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,387 INFO test_aug_ensemble.py line 299 24626] Test: [230/312]-134987 Batch 0.012 (0.015) Accuracy 0.9092.
+[2022-03-27 14:17:10,387 INFO test_aug_ensemble.py line 218 24626] 231/312: scene0609_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,393 INFO test_aug_ensemble.py line 299 24626] Test: [231/312]-69895 Batch 0.006 (0.015) Accuracy 0.9828.
+[2022-03-27 14:17:10,393 INFO test_aug_ensemble.py line 218 24626] 232/312: scene0616_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,423 INFO test_aug_ensemble.py line 299 24626] Test: [232/312]-310248 Batch 0.030 (0.015) Accuracy 0.7721.
+[2022-03-27 14:17:10,423 INFO test_aug_ensemble.py line 218 24626] 233/312: scene0616_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,450 INFO test_aug_ensemble.py line 299 24626] Test: [233/312]-297626 Batch 0.026 (0.015) Accuracy 0.8602.
+[2022-03-27 14:17:10,450 INFO test_aug_ensemble.py line 218 24626] 234/312: scene0618_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,469 INFO test_aug_ensemble.py line 299 24626] Test: [234/312]-232740 Batch 0.019 (0.015) Accuracy 0.9441.
+[2022-03-27 14:17:10,470 INFO test_aug_ensemble.py line 218 24626] 235/312: scene0621_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,492 INFO test_aug_ensemble.py line 299 24626] Test: [235/312]-250821 Batch 0.023 (0.015) Accuracy 0.9796.
+[2022-03-27 14:17:10,492 INFO test_aug_ensemble.py line 218 24626] 236/312: scene0629_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,515 INFO test_aug_ensemble.py line 299 24626] Test: [236/312]-255083 Batch 0.022 (0.015) Accuracy 0.8616.
+[2022-03-27 14:17:10,515 INFO test_aug_ensemble.py line 218 24626] 237/312: scene0629_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,536 INFO test_aug_ensemble.py line 299 24626] Test: [237/312]-244962 Batch 0.021 (0.015) Accuracy 0.8250.
+[2022-03-27 14:17:10,536 INFO test_aug_ensemble.py line 218 24626] 238/312: scene0629_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,556 INFO test_aug_ensemble.py line 299 24626] Test: [238/312]-225983 Batch 0.019 (0.015) Accuracy 0.8476.
+[2022-03-27 14:17:10,556 INFO test_aug_ensemble.py line 218 24626] 239/312: scene0633_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,565 INFO test_aug_ensemble.py line 299 24626] Test: [239/312]-101007 Batch 0.009 (0.015) Accuracy 0.9154.
+[2022-03-27 14:17:10,565 INFO test_aug_ensemble.py line 218 24626] 240/312: scene0633_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,574 INFO test_aug_ensemble.py line 299 24626] Test: [240/312]-99171 Batch 0.009 (0.015) Accuracy 0.6909.
+[2022-03-27 14:17:10,574 INFO test_aug_ensemble.py line 218 24626] 241/312: scene0643_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,591 INFO test_aug_ensemble.py line 299 24626] Test: [241/312]-167360 Batch 0.017 (0.015) Accuracy 0.8804.
+[2022-03-27 14:17:10,591 INFO test_aug_ensemble.py line 218 24626] 242/312: scene0644_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,620 INFO test_aug_ensemble.py line 299 24626] Test: [242/312]-299472 Batch 0.029 (0.015) Accuracy 0.9441.
+[2022-03-27 14:17:10,620 INFO test_aug_ensemble.py line 218 24626] 243/312: scene0645_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,653 INFO test_aug_ensemble.py line 299 24626] Test: [243/312]-352477 Batch 0.033 (0.015) Accuracy 0.9055.
+[2022-03-27 14:17:10,653 INFO test_aug_ensemble.py line 218 24626] 244/312: scene0645_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,683 INFO test_aug_ensemble.py line 299 24626] Test: [244/312]-330321 Batch 0.030 (0.015) Accuracy 0.9543.
+[2022-03-27 14:17:10,683 INFO test_aug_ensemble.py line 218 24626] 245/312: scene0645_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,708 INFO test_aug_ensemble.py line 299 24626] Test: [245/312]-269529 Batch 0.024 (0.015) Accuracy 0.9412.
+[2022-03-27 14:17:10,708 INFO test_aug_ensemble.py line 218 24626] 246/312: scene0647_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,723 INFO test_aug_ensemble.py line 299 24626] Test: [246/312]-196185 Batch 0.016 (0.015) Accuracy 0.7975.
+[2022-03-27 14:17:10,724 INFO test_aug_ensemble.py line 218 24626] 247/312: scene0647_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,741 INFO test_aug_ensemble.py line 299 24626] Test: [247/312]-194360 Batch 0.017 (0.015) Accuracy 0.8959.
+[2022-03-27 14:17:10,741 INFO test_aug_ensemble.py line 218 24626] 248/312: scene0648_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,756 INFO test_aug_ensemble.py line 299 24626] Test: [248/312]-167915 Batch 0.016 (0.015) Accuracy 0.8119.
+[2022-03-27 14:17:10,757 INFO test_aug_ensemble.py line 218 24626] 249/312: scene0648_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,773 INFO test_aug_ensemble.py line 299 24626] Test: [249/312]-172602 Batch 0.017 (0.015) Accuracy 0.8105.
+[2022-03-27 14:17:10,773 INFO test_aug_ensemble.py line 218 24626] 250/312: scene0651_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,782 INFO test_aug_ensemble.py line 299 24626] Test: [250/312]-88450 Batch 0.008 (0.015) Accuracy 0.9679.
+[2022-03-27 14:17:10,782 INFO test_aug_ensemble.py line 218 24626] 251/312: scene0651_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,789 INFO test_aug_ensemble.py line 299 24626] Test: [251/312]-79213 Batch 0.007 (0.015) Accuracy 0.9545.
+[2022-03-27 14:17:10,789 INFO test_aug_ensemble.py line 218 24626] 252/312: scene0651_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,802 INFO test_aug_ensemble.py line 299 24626] Test: [252/312]-124048 Batch 0.013 (0.015) Accuracy 0.9617.
+[2022-03-27 14:17:10,802 INFO test_aug_ensemble.py line 218 24626] 253/312: scene0652_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,811 INFO test_aug_ensemble.py line 299 24626] Test: [253/312]-100286 Batch 0.009 (0.015) Accuracy 0.8313.
+[2022-03-27 14:17:10,812 INFO test_aug_ensemble.py line 218 24626] 254/312: scene0653_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,840 INFO test_aug_ensemble.py line 299 24626] Test: [254/312]-284951 Batch 0.029 (0.015) Accuracy 0.9542.
+[2022-03-27 14:17:10,840 INFO test_aug_ensemble.py line 218 24626] 255/312: scene0653_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,871 INFO test_aug_ensemble.py line 299 24626] Test: [255/312]-331565 Batch 0.031 (0.015) Accuracy 0.9552.
+[2022-03-27 14:17:10,871 INFO test_aug_ensemble.py line 218 24626] 256/312: scene0655_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,883 INFO test_aug_ensemble.py line 299 24626] Test: [256/312]-139138 Batch 0.011 (0.015) Accuracy 0.9902.
+[2022-03-27 14:17:10,883 INFO test_aug_ensemble.py line 218 24626] 257/312: scene0655_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,896 INFO test_aug_ensemble.py line 299 24626] Test: [257/312]-159475 Batch 0.013 (0.015) Accuracy 0.9876.
+[2022-03-27 14:17:10,897 INFO test_aug_ensemble.py line 218 24626] 258/312: scene0655_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,909 INFO test_aug_ensemble.py line 299 24626] Test: [258/312]-133857 Batch 0.012 (0.015) Accuracy 0.9951.
+[2022-03-27 14:17:10,909 INFO test_aug_ensemble.py line 218 24626] 259/312: scene0658_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,921 INFO test_aug_ensemble.py line 299 24626] Test: [259/312]-129951 Batch 0.012 (0.015) Accuracy 0.9291.
+[2022-03-27 14:17:10,921 INFO test_aug_ensemble.py line 218 24626] 260/312: scene0660_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,930 INFO test_aug_ensemble.py line 299 24626] Test: [260/312]-110960 Batch 0.009 (0.015) Accuracy 0.9922.
+[2022-03-27 14:17:10,930 INFO test_aug_ensemble.py line 218 24626] 261/312: scene0663_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,950 INFO test_aug_ensemble.py line 299 24626] Test: [261/312]-184428 Batch 0.019 (0.015) Accuracy 0.9483.
+[2022-03-27 14:17:10,950 INFO test_aug_ensemble.py line 218 24626] 262/312: scene0663_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,975 INFO test_aug_ensemble.py line 299 24626] Test: [262/312]-258402 Batch 0.025 (0.015) Accuracy 0.9552.
+[2022-03-27 14:17:10,975 INFO test_aug_ensemble.py line 218 24626] 263/312: scene0663_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,980 INFO test_aug_ensemble.py line 299 24626] Test: [263/312]-48076 Batch 0.005 (0.015) Accuracy 0.8210.
+[2022-03-27 14:17:10,980 INFO test_aug_ensemble.py line 218 24626] 264/312: scene0664_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,985 INFO test_aug_ensemble.py line 299 24626] Test: [264/312]-44585 Batch 0.005 (0.015) Accuracy 0.9663.
+[2022-03-27 14:17:10,985 INFO test_aug_ensemble.py line 218 24626] 265/312: scene0664_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,990 INFO test_aug_ensemble.py line 299 24626] Test: [265/312]-45436 Batch 0.005 (0.015) Accuracy 0.9244.
+[2022-03-27 14:17:10,990 INFO test_aug_ensemble.py line 218 24626] 266/312: scene0664_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:10,995 INFO test_aug_ensemble.py line 299 24626] Test: [266/312]-46804 Batch 0.005 (0.015) Accuracy 0.9246.
+[2022-03-27 14:17:10,995 INFO test_aug_ensemble.py line 218 24626] 267/312: scene0665_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,017 INFO test_aug_ensemble.py line 299 24626] Test: [267/312]-252726 Batch 0.022 (0.015) Accuracy 0.9314.
+[2022-03-27 14:17:11,017 INFO test_aug_ensemble.py line 218 24626] 268/312: scene0665_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,034 INFO test_aug_ensemble.py line 299 24626] Test: [268/312]-200688 Batch 0.017 (0.015) Accuracy 0.9548.
+[2022-03-27 14:17:11,034 INFO test_aug_ensemble.py line 218 24626] 269/312: scene0670_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,051 INFO test_aug_ensemble.py line 299 24626] Test: [269/312]-176038 Batch 0.016 (0.015) Accuracy 0.9208.
+[2022-03-27 14:17:11,051 INFO test_aug_ensemble.py line 218 24626] 270/312: scene0670_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,076 INFO test_aug_ensemble.py line 299 24626] Test: [270/312]-256524 Batch 0.025 (0.015) Accuracy 0.8307.
+[2022-03-27 14:17:11,076 INFO test_aug_ensemble.py line 218 24626] 271/312: scene0671_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,083 INFO test_aug_ensemble.py line 299 24626] Test: [271/312]-81469 Batch 0.007 (0.015) Accuracy 0.8889.
+[2022-03-27 14:17:11,083 INFO test_aug_ensemble.py line 218 24626] 272/312: scene0671_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,088 INFO test_aug_ensemble.py line 299 24626] Test: [272/312]-51187 Batch 0.005 (0.015) Accuracy 0.9239.
+[2022-03-27 14:17:11,088 INFO test_aug_ensemble.py line 218 24626] 273/312: scene0678_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,121 INFO test_aug_ensemble.py line 299 24626] Test: [273/312]-364811 Batch 0.033 (0.015) Accuracy 0.8651.
+[2022-03-27 14:17:11,121 INFO test_aug_ensemble.py line 218 24626] 274/312: scene0678_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,153 INFO test_aug_ensemble.py line 299 24626] Test: [274/312]-377683 Batch 0.032 (0.015) Accuracy 0.8788.
+[2022-03-27 14:17:11,153 INFO test_aug_ensemble.py line 218 24626] 275/312: scene0678_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,180 INFO test_aug_ensemble.py line 299 24626] Test: [275/312]-328973 Batch 0.027 (0.015) Accuracy 0.8643.
+[2022-03-27 14:17:11,180 INFO test_aug_ensemble.py line 218 24626] 276/312: scene0684_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,185 INFO test_aug_ensemble.py line 299 24626] Test: [276/312]-41364 Batch 0.004 (0.015) Accuracy 0.9736.
+[2022-03-27 14:17:11,185 INFO test_aug_ensemble.py line 218 24626] 277/312: scene0684_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,189 INFO test_aug_ensemble.py line 299 24626] Test: [277/312]-39474 Batch 0.004 (0.015) Accuracy 0.9687.
+[2022-03-27 14:17:11,189 INFO test_aug_ensemble.py line 218 24626] 278/312: scene0685_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,200 INFO test_aug_ensemble.py line 299 24626] Test: [278/312]-132720 Batch 0.011 (0.015) Accuracy 0.9593.
+[2022-03-27 14:17:11,200 INFO test_aug_ensemble.py line 218 24626] 279/312: scene0685_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,212 INFO test_aug_ensemble.py line 299 24626] Test: [279/312]-138130 Batch 0.012 (0.015) Accuracy 0.9662.
+[2022-03-27 14:17:11,212 INFO test_aug_ensemble.py line 218 24626] 280/312: scene0685_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,232 INFO test_aug_ensemble.py line 299 24626] Test: [280/312]-222253 Batch 0.020 (0.015) Accuracy 0.9698.
+[2022-03-27 14:17:11,232 INFO test_aug_ensemble.py line 218 24626] 281/312: scene0686_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,240 INFO test_aug_ensemble.py line 299 24626] Test: [281/312]-89776 Batch 0.008 (0.015) Accuracy 0.9912.
+[2022-03-27 14:17:11,240 INFO test_aug_ensemble.py line 218 24626] 282/312: scene0686_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,249 INFO test_aug_ensemble.py line 299 24626] Test: [282/312]-91616 Batch 0.008 (0.015) Accuracy 0.9852.
+[2022-03-27 14:17:11,249 INFO test_aug_ensemble.py line 218 24626] 283/312: scene0686_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,257 INFO test_aug_ensemble.py line 299 24626] Test: [283/312]-84543 Batch 0.008 (0.015) Accuracy 0.9581.
+[2022-03-27 14:17:11,257 INFO test_aug_ensemble.py line 218 24626] 284/312: scene0689_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,269 INFO test_aug_ensemble.py line 299 24626] Test: [284/312]-122129 Batch 0.012 (0.015) Accuracy 0.9567.
+[2022-03-27 14:17:11,269 INFO test_aug_ensemble.py line 218 24626] 285/312: scene0690_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,278 INFO test_aug_ensemble.py line 299 24626] Test: [285/312]-106050 Batch 0.009 (0.015) Accuracy 0.7155.
+[2022-03-27 14:17:11,278 INFO test_aug_ensemble.py line 218 24626] 286/312: scene0690_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,287 INFO test_aug_ensemble.py line 299 24626] Test: [286/312]-109935 Batch 0.009 (0.015) Accuracy 0.6798.
+[2022-03-27 14:17:11,287 INFO test_aug_ensemble.py line 218 24626] 287/312: scene0693_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,292 INFO test_aug_ensemble.py line 299 24626] Test: [287/312]-41327 Batch 0.004 (0.015) Accuracy 0.8802.
+[2022-03-27 14:17:11,292 INFO test_aug_ensemble.py line 218 24626] 288/312: scene0693_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,297 INFO test_aug_ensemble.py line 299 24626] Test: [288/312]-47986 Batch 0.005 (0.015) Accuracy 0.8716.
+[2022-03-27 14:17:11,297 INFO test_aug_ensemble.py line 218 24626] 289/312: scene0693_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,302 INFO test_aug_ensemble.py line 299 24626] Test: [289/312]-47996 Batch 0.005 (0.015) Accuracy 0.8721.
+[2022-03-27 14:17:11,302 INFO test_aug_ensemble.py line 218 24626] 290/312: scene0695_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,317 INFO test_aug_ensemble.py line 299 24626] Test: [290/312]-133418 Batch 0.014 (0.015) Accuracy 0.8858.
+[2022-03-27 14:17:11,317 INFO test_aug_ensemble.py line 218 24626] 291/312: scene0695_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,331 INFO test_aug_ensemble.py line 299 24626] Test: [291/312]-143776 Batch 0.014 (0.015) Accuracy 0.9314.
+[2022-03-27 14:17:11,332 INFO test_aug_ensemble.py line 218 24626] 292/312: scene0695_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,347 INFO test_aug_ensemble.py line 299 24626] Test: [292/312]-157025 Batch 0.015 (0.015) Accuracy 0.8871.
+[2022-03-27 14:17:11,347 INFO test_aug_ensemble.py line 218 24626] 293/312: scene0695_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,366 INFO test_aug_ensemble.py line 299 24626] Test: [293/312]-205565 Batch 0.019 (0.015) Accuracy 0.9678.
+[2022-03-27 14:17:11,366 INFO test_aug_ensemble.py line 218 24626] 294/312: scene0696_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,387 INFO test_aug_ensemble.py line 299 24626] Test: [294/312]-231067 Batch 0.020 (0.015) Accuracy 0.8804.
+[2022-03-27 14:17:11,387 INFO test_aug_ensemble.py line 218 24626] 295/312: scene0696_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,414 INFO test_aug_ensemble.py line 299 24626] Test: [295/312]-288139 Batch 0.027 (0.015) Accuracy 0.8891.
+[2022-03-27 14:17:11,414 INFO test_aug_ensemble.py line 218 24626] 296/312: scene0696_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,442 INFO test_aug_ensemble.py line 299 24626] Test: [296/312]-305916 Batch 0.028 (0.015) Accuracy 0.9074.
+[2022-03-27 14:17:11,442 INFO test_aug_ensemble.py line 218 24626] 297/312: scene0697_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,457 INFO test_aug_ensemble.py line 299 24626] Test: [297/312]-139300 Batch 0.015 (0.015) Accuracy 0.7703.
+[2022-03-27 14:17:11,457 INFO test_aug_ensemble.py line 218 24626] 298/312: scene0697_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,470 INFO test_aug_ensemble.py line 299 24626] Test: [298/312]-146820 Batch 0.012 (0.015) Accuracy 0.7651.
+[2022-03-27 14:17:11,470 INFO test_aug_ensemble.py line 218 24626] 299/312: scene0697_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,485 INFO test_aug_ensemble.py line 299 24626] Test: [299/312]-166855 Batch 0.016 (0.015) Accuracy 0.7717.
+[2022-03-27 14:17:11,485 INFO test_aug_ensemble.py line 218 24626] 300/312: scene0697_03_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,500 INFO test_aug_ensemble.py line 299 24626] Test: [300/312]-165912 Batch 0.015 (0.015) Accuracy 0.7302.
+[2022-03-27 14:17:11,500 INFO test_aug_ensemble.py line 218 24626] 301/312: scene0699_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,515 INFO test_aug_ensemble.py line 299 24626] Test: [301/312]-153041 Batch 0.014 (0.015) Accuracy 0.8440.
+[2022-03-27 14:17:11,515 INFO test_aug_ensemble.py line 218 24626] 302/312: scene0700_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,531 INFO test_aug_ensemble.py line 299 24626] Test: [302/312]-167755 Batch 0.016 (0.015) Accuracy 0.8736.
+[2022-03-27 14:17:11,531 INFO test_aug_ensemble.py line 218 24626] 303/312: scene0700_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,562 INFO test_aug_ensemble.py line 299 24626] Test: [303/312]-153877 Batch 0.031 (0.015) Accuracy 0.8998.
+[2022-03-27 14:17:11,563 INFO test_aug_ensemble.py line 218 24626] 304/312: scene0700_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,578 INFO test_aug_ensemble.py line 299 24626] Test: [304/312]-148642 Batch 0.015 (0.015) Accuracy 0.8858.
+[2022-03-27 14:17:11,578 INFO test_aug_ensemble.py line 218 24626] 305/312: scene0701_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,585 INFO test_aug_ensemble.py line 299 24626] Test: [305/312]-73550 Batch 0.006 (0.015) Accuracy 0.9891.
+[2022-03-27 14:17:11,585 INFO test_aug_ensemble.py line 218 24626] 306/312: scene0701_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,592 INFO test_aug_ensemble.py line 299 24626] Test: [306/312]-77206 Batch 0.007 (0.015) Accuracy 0.9773.
+[2022-03-27 14:17:11,592 INFO test_aug_ensemble.py line 218 24626] 307/312: scene0701_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,603 INFO test_aug_ensemble.py line 299 24626] Test: [307/312]-110945 Batch 0.011 (0.015) Accuracy 0.8719.
+[2022-03-27 14:17:11,603 INFO test_aug_ensemble.py line 218 24626] 308/312: scene0702_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,611 INFO test_aug_ensemble.py line 299 24626] Test: [308/312]-54769 Batch 0.008 (0.015) Accuracy 0.9866.
+[2022-03-27 14:17:11,611 INFO test_aug_ensemble.py line 218 24626] 309/312: scene0702_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,620 INFO test_aug_ensemble.py line 299 24626] Test: [309/312]-56603 Batch 0.009 (0.015) Accuracy 0.9336.
+[2022-03-27 14:17:11,620 INFO test_aug_ensemble.py line 218 24626] 310/312: scene0702_02_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,626 INFO test_aug_ensemble.py line 299 24626] Test: [310/312]-32788 Batch 0.005 (0.015) Accuracy 0.9176.
+[2022-03-27 14:17:11,626 INFO test_aug_ensemble.py line 218 24626] 311/312: scene0704_00_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,645 INFO test_aug_ensemble.py line 299 24626] Test: [311/312]-183029 Batch 0.020 (0.015) Accuracy 0.7395.
+[2022-03-27 14:17:11,646 INFO test_aug_ensemble.py line 218 24626] 312/312: scene0704_01_inst_nostuff, loaded pred and label.
+[2022-03-27 14:17:11,659 INFO test_aug_ensemble.py line 299 24626] Test: [312/312]-149982 Batch 0.014 (0.015) Accuracy 0.9659.
+[2022-03-27 14:17:16,855 INFO test_aug_ensemble.py line 328 24626] Val result: mIoU/mAcc/allAcc 0.7428/0.8250/0.9071.
+[2022-03-27 14:17:16,855 INFO test_aug_ensemble.py line 329 24626] Val1 result: mIoU/mAcc/allAcc 0.7428/0.8250/0.9071.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_0 Result: iou/accuracy 0.8616/0.9509, name: bathtub.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_1 Result: iou/accuracy 0.9510/0.9817, name: bed.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_2 Result: iou/accuracy 0.6636/0.7887, name: bookshelf.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_3 Result: iou/accuracy 0.8092/0.8558, name: cabinet.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_4 Result: iou/accuracy 0.8995/0.9448, name: chair.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_5 Result: iou/accuracy 0.8294/0.9292, name: counter.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_6 Result: iou/accuracy 0.7662/0.8436, name: curtain.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_7 Result: iou/accuracy 0.6897/0.7951, name: desk.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_8 Result: iou/accuracy 0.7172/0.8478, name: door.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_9 Result: iou/accuracy 0.8219/0.9106, name: floor.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_10 Result: iou/accuracy 0.3006/0.3563, name: otherfurniture.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_11 Result: iou/accuracy 0.6597/0.7623, name: picture.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_12 Result: iou/accuracy 0.7106/0.8922, name: refrigerator.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_13 Result: iou/accuracy 0.7576/0.8410, name: showercurtain.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_14 Result: iou/accuracy 0.6652/0.7518, name: sink.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_15 Result: iou/accuracy 0.6860/0.7450, name: sofa.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_16 Result: iou/accuracy 0.9455/0.9753, name: table.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_17 Result: iou/accuracy 0.6759/0.7709, name: toilet.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_18 Result: iou/accuracy 0.8830/0.9280, name: wall.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 332 24626] Class_19 Result: iou/accuracy 0.5626/0.6280, name: window.
+[2022-03-27 14:17:16,856 INFO test_aug_ensemble.py line 333 24626] <<<<<<<<<<<<<<<<< End Evaluation <<<<<<<<<<<<<<<<<
