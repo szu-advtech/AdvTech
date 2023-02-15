@@ -335,4 +335,3 @@ def argo_plot_time_series_no_masks(args, save_path):
             plt.title(f'{args.columns[k]}')
         file_dir = os.path.join(save_path, f'sample{i}.png')
         plt.savefig(file_dir)
-        plt.show()
