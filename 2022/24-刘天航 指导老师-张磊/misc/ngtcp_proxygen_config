@@ -1,0 +1,3 @@
+ngtcp2: ./client --quiet --exit-on-all-streams-close --max-data=15728640 --max-stream-data-uni=6291456 --max-stream-data-bidi-local=6291456 --group=X25519 --qlog-dir=/tmp/qlog/client 127.0.0.1 8443 https://127.0.0.1:8443
+
+proxygen: ./hq --log_response=false --mode=client --stream_flow_control=6291456 --conn_flow_control=15728640 --quic_version=1 --httpversion=1.1 --qlogger_path=/tmp/qlog/client --host=127.0.0.1 --port=8443 --v=0
