@@ -1,9 +1,9 @@
-#Resnet18 training process and corresponding result is  in the 
+#Resnet18 training process and corresponding result are in 
 https://www.kaggle.com/code/wasonlee/resnet18/edit/run/118534091
 you must download the resnet18 model from the url,and put it in experiment/model
 
 #Dissection process is in the experiment/
-single_dissection.py:dissection for just on layer.
+single_dissection.py:dissection for just one layer.
 Sequential_dissection.py:dissection for sequential layers.
 
 #Usage for Sequential_dissection.py
