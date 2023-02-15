@@ -1,0 +1,33 @@
+[package]
+name = "fuzz-target-generator"
+version = "0.0.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# Cargo adds a number of paths to the dylib search path on windows, which results in
+# the wrong rustdoc being executed. To avoid the conflicting rustdocs, we name the "tool"
+# rustdoc a different name.
+[[bin]]
+name = "fuzz-target-generator"
+path = "src/bin/fuzz-target-generator.rs"
+
+[[bin]]
+name = "cargo-rsdoc"
+path = "src/bin/cargo-rsdoc.rs"
+
+[dependencies]
+rustdoc = {path = "../rust/src/librustdoc"}
+cargo_metadata = { version = "*", optional = true }
+directories = { version = "*", optional = true }
+rustc_version = { version = "*", optional = true }
+getrandom = { version = "*", features = ["std"] }
+serde = { version = "*", features = ["derive"] }
+serde_json = "*"
+tempfile = "*"
+itertools = "*"
+rand = "0.6.1"
+lazy_static = "*"
+num = "*"
+
+[features]
+jemalloc = ['rustdoc/jemalloc']

@@ -1,0 +1,5 @@
+digraph {
+node1[label = "A", style=filled color="red"]
+node2[label = "B"]
+node1 -> node2[taillabel = "0", color= "blue"]
+}
