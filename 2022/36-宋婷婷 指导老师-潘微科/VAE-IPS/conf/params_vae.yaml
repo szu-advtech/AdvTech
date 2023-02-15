@@ -1,0 +1,6 @@
+threshold: 4
+eta: 0.01        # initial learning rate
+lam: 0.001         # L2-regularization parameter
+dim: 35          # dimension
+batch_size: 10
+max_iters: 100
