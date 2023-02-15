@@ -1,0 +1,12 @@
+CUDA_VISIBLE_DEVICES=3 python ../src/combiner_train.py \
+        --dataset "FashionIQ" \
+        --projection-dim 2560 \
+        --hidden-dim 5120   \
+        --num-epochs 300 \
+        --clip-model-name RN50 \
+        --clip-model-path "/data/zhuyingying/multimodal_retrieval/code/liuzhihang/CLIP4Cir/models/clip_finetuned_on_fiq_RN50_onlyt_2022-12-13_09:55:55/saved_models/tuned_clip_best.pt" \
+        --combiner-lr 2e-5 --batch-size 128 \
+        --clip-bs 32 --transform targetpad --target-ratio 1.25 \
+        --save-training \
+        --save-best --validation-frequency 1 \
+        --output-dir "/data/zhuyingying/multimodal_retrieval/logs/"
