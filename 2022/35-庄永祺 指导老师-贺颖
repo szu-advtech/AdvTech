@@ -1,0 +1,920 @@
+function [TestNNOut]=RBF_predictor(W2,B2,Centers,Spreads,TestSamIn)
+% Usage: [TestNNOut]=RBF_predictor(W2,B2,Centers,Spreads,TestSamIn)
+% Single RBF Predictor
+% Input:
+% W2             - Weights of RBF Model
+% B2             - Bais of RBF Model
+% Centers        - Centers of RBF Model
+% Spreads        - Widths of RBF model
+% TestSamIn      - Test Data
+
+%
+% Output: 
+% TestNNOut      - Prediction of RBF Model for TestSamIn
+%
+%------------------------------------------------------------------------
+% Last Modified by Jian-Yu Li at 2020.4.1
+% Originally provided by Handing Wang on https://github.com/HandingWang/DDEA-SE
+%------------------------------------------------------------------------
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+N=size(TestSamIn,1);
+TestDistance = dist(Centers',TestSamIn');
+TestSpreadsMat = repmat(Spreads,1,N);
+TestHiddenUnitOut = radbas(TestDistance./TestSpreadsMat);
+TestNNOut = W2*TestHiddenUnitOut+B2;
+TestNNOut=TestNNOut';
+end
+Usage: just run the Main file.
+
+You are free to use this code for research purposes of this paper:
+Jian-Yu Li, Zhi-Hui Zhan, Hua Wang, Jun Zhang, "Data-Driven Evolutionary Algorithm With Perturbation-Based Ensemble Surrogates," IEEE Transactions on Cybernetics, vol. 51, no. 8, pp. 3925-3937, Aug. 2021.
+
+With these codes, we have two requests: 
+
+1. If other researchers are interested in these codes, please direct them to us, but not send the codes to them by yourself. We'd like to keep a record of researchers interested in these codes. 
+
+2. If you happen to publish making use of these codes, please include some of our relevant publications in your list of references and, if space permits, please include an acknowledgement stating the usage of our codes. 
+function [ NPOP ] = SBX( POP,bu,bd,pc,n )
+% Usage: [ NPOP ] = SBX( POP,bu,bd,pc,n )
+%
+% Input:
+% bu            -Upper Bound
+% bd            -Lower Bound
+% POP           -Input Population
+% pc            -Crossover Probability
+% n             -Population Scale
+%
+% Output: 
+% NPOP          -Output Population with 2n Solutions
+%
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+NPOP=[];
+eta_c=15;
+N=size(POP,1);
+C=size(bu,2);
+y=1;
+for i=1:n
+    r1=rand;
+    if r1<=pc
+        A=randperm(N);
+        k=i;
+
+        if A(2)<A(1)
+            y=A(2);
+        else
+            y=A(1);
+        end
+        if k==y
+            k=A(3);
+        end
+        d=(sum((POP(y,1:C)-POP(k,1:C)).^2)).^0.5;
+        if k~=y
+            for j=1:C
+                par1=POP(y,j);par2=POP(k,j);
+                yd=bd(j);yu=bu(j);
+                r2=rand;
+                if r2<=0.5
+                    y1=min(par1,par2);y2=max(par1,par2);
+                    if (y1-yd)>(yu-y2)
+                        beta=1+2*(yu-y2)/(y2-y1);
+                    else
+                        beta=1+2*(y1-yd)/(y2-y1);
+                    end
+                    expp=eta_c+1;beta=1/beta;alpha=2.0-beta^(expp);
+                    r3=rand;
+                    if r3<=1/alpha
+                        alpha=alpha*r3;expp=1/(eta_c+1.0);
+                        betaq=alpha^(expp);
+                    else
+                        alpha=1/(2.0-alpha*r3);expp=1/(eta_c+1);
+                        betaq=alpha^(expp);
+                    end
+                    chld1=0.5*((y1+y2)-betaq*(y2-y1));
+                    chld2=0.5*((y1+y2)+betaq*(y2-y1));   
+                    aa=max(chld1,yd);
+                    bb=max(chld2,yd);
+                    if rand>0.5
+                        NPOP(2*i-1,j)=min(aa,yu);
+                        NPOP(2*i,j)=min(bb,yu);
+                    else
+                        NPOP(2*i,j)=min(aa,yu);
+                        NPOP(2*i-1,j)=min(bb,yu);
+                    end
+                else
+                    NPOP(2*i-1,j)=par1;
+                    NPOP(2*i,j)=par2;
+                end
+            end
+        end
+    end
+    
+end
+end
+
+
+function [ S ] = SelectModels(W,B,C,S,Xb,c,Q )
+% Usage: [ S ] = SelectModels(W,B,C,S,Xb,c,Q )
+%Selecting a subset of bagging models
+% Input:
+% W             - Weights of RBF Models
+% B             - Bais of RBF Models
+% C             - Centers of RBF Models
+% S             - Widths of RBF models
+% Xb            - Best Individual
+% c             - Number of Decision Variables
+% Q             - Number of Selected Models
+%
+% Output: 
+% S             - Index of Selected Models
+%
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+
+Y = RBF_Ensemble_predictor( W,B,C,S,Xb(:,1:c),c );
+T=size(Y,2);
+[A,I]=sort(Y);
+
+S=[1:Q]';
+S=ceil(S*T/Q);
+S=I(S)';
+
+end
+
+
+function [ offy ] = bench_func( offdata,func )
+%BENCH_FUNC �˴���ʾ�йش˺�����ժҪ
+%   �˴���ʾ��ϸ˵��
+    [n,c]=size( offdata);
+    index=ones(n,1);
+    offdata=offdata;
+    switch(func)
+        case 1
+            %Ellipsoid Problem
+            para=repmat((1:c),n,1);
+            result=offdata.^2.*para;
+            offy=sum(result,2);
+        case 2
+            %Rosenbrock Problem
+            cutleft=offdata(1:n,2:c);
+            cutright=offdata(1:n,1:c-1);
+            result=100*((cutleft-cutright.^2).^2)+(cutright-1).^2;
+            offy=sum(result,2);
+        case 3
+            %Ackley Problem
+            result=-20*exp(-0.2*sqrt((1/c)*(sum(offdata.^2,2))))-exp((1/c)*sum(cos(2*pi.*offdata),2))+exp(1)+20; 
+            offy=result.*index;
+        case 4
+            %Griewank
+            y1 = 1 / 4000 * sum(offdata.^2,2);
+            y2 = index ;
+            for  h = 1 :c
+                  y2 = y2.* cos(offdata(:,h) / sqrt(h));
+            end
+             offy= y1.*index - y2 + 1 ;
+            
+        case 5
+            %Rastrigin
+            offy=sum((offdata.^2 - 10 * cos( 2 * pi * offdata) + 10 ),2).^index;
+    end
+
+end
+
+
+function [time,P,gbest ] =DDEA_PES(D,offline_data,upperbound,lowerbound)
+% Usage: [time,gbestP]=DDEA_PES(D,offline_data,upperbound,lowerbound)
+%
+% Input:
+% offline_data  - Offline Data with c Decision Variables and Exact Objective Value
+% D             - Number of Decision Variables
+% upperbound    - Upper Boundary of D Decision Variables
+% lowerbound    - Lower Boundary of D Decision Variables
+%
+% Output: 
+% time          - Optimization Time
+% gbest         - Final Predicted Optimum with D Decision Variables
+%
+%------------------------------- Copyright --------------------------------
+% Copyright 2020. You are free to use this code for research purposes.All 
+% publications which use this code should reference the following papaer:
+% Jian-Yu Li, Zhi-Hui Zhan, Hua Wang, Jun Zhang, Data-Driven Evolutionary 
+% Algorithm With Perturbation-Based Ensemble Surrogates, IEEE Transactions 
+% on Cybernetics, DOI: 10.1109/tcyb.2020.3008280.
+%--------------------------------------------------------------------------
+rand('state',sum(100*clock));
+nc=D;%Number of neurons of RBF models
+fold=100;
+T=fold;%Number of RBF models
+%Build Model Pool
+[ W,B,C,S] = RBF_EnsembleUN(offline_data,D,nc,T,upperbound(1));
+%-------------------------------------------
+gmax=500;
+pc=1;%Crossover Probability
+pm=1/D;%Mutation Probability
+n=50;%Population Size
+%Online Optimization-------------------------------------------
+tic;
+% POP = initialize_pop(n,D,upperbound,lowerbound);
+%RBF Predictors 
+% Y= RBF_Ensemble_predictor( W(1,:),B(1),C(:,:,1),S(:,1),POP,D );
+% POP=[POP,Y];
+g=1;
+gbest=[];
+I=(1);
+POP=offline_data;
+while g<=gmax
+    %Model Management   
+    if g~=1
+        
+        ri=ones(1,fold);
+        I=find(ri>0.95);
+        
+        POP=POP(:,1:D);
+        Y= RBF_Ensemble_predictor(W(I,:),B(I),C(:,:,I),S(:,I),POP,D );
+        POP=[POP,Y];
+    end
+    %Variations    
+    NPOP1=SBX(POP,upperbound,lowerbound,pc,n );
+    [ Y ] = RBF_Ensemble_predictor( W(I,:),B(I),C(:,:,I),S(:,I),NPOP1,D );
+    NPOP1=[NPOP1,Y];
+    NPOP2=mutation(POP,upperbound,lowerbound,pm,n);
+    [ Y ] = RBF_Ensemble_predictor( W(I,:),B(I),C(:,:,I),S(:,I),NPOP2,D );
+    NPOP2=[NPOP2,Y];
+    POP=[POP;NPOP1;NPOP2];
+    %Model Combination
+    YAVE=mean(POP(:,D+1:end),2);
+    [A,Is]=sort(YAVE);
+    POP=[POP(Is(1:n),1:D)];
+    g=g+1;
+    P= POP(1,1:D);
+    gbest=[gbest;P];
+
+end
+
+toc;
+time=toc;
+
+end
+
+
+function [time,P,gbest ] =DDEA_SE(c,L,bu,bd)
+% Usage: [time,P,gbest ] =DDEA_SE(c,L,bu,bd)
+%
+% Input:
+% L             - Offline Data with c Decision Variables and Exact Objective Value
+% c             - Number of Decision Variables
+% bu            - Upper Boundary of c Decision Variables
+% bd            - Lower Boundary of c Decision Variables
+%
+% Output: 
+% time          - Execution Time
+% P             - Final Predicted Optimum with c Decision Variables
+% gbest         - Predicted Optimum over Generations with c Decision Variables
+%
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+rand('state',sum(100*clock));
+nc=c;%Number of neurons of RBF models
+fold=100;
+T=fold;%Number of RBF models
+Q=1;%Ensemble size
+%Build Model Pool
+
+[ W,B,C,S] = RBF_EnsembleUN( L,c,nc,T,bu(1));
+I=[1:T];%Using all the RBF Models
+%-------------------------------------------
+gmax=500;
+pc=1;%Crossover Probability
+pm=1/c;%Mutation Probability
+n=100;%Population Sixe
+%Online Optimization-------------------------------------------
+tic;
+POP = initialize_pop(n,c,bu,bd);
+%RBF Predictors 
+%Y= RBF_Ensemble_predictor( W(I,:),B(I),C(:,:,I),S(:,I),POP,c );
+Y= RBF_Ensemble_predictor( W(1,:),B(1),C(:,:,1),S(:,1),POP,c );
+POP=[POP,Y];
+g=1;
+gbest=[];
+I=(1);
+while g<=gmax
+    %Model Management   
+    if g~=1
+        %I= SelectModels(W,B,C,S,P(:,1:c),c,Q);
+        %I=(1:floor((g-1)*T/gmax)+1);
+        %ri=rand(1,fold);
+        ri=ones(1,fold);
+        I=find(ri>0.95);
+        %I=min(fold,floor((g-1)*T/gmax)+1);
+        %I=fold;
+        POP=POP(:,1:c);
+        Y= RBF_Ensemble_predictor(W(I,:),B(I),C(:,:,I),S(:,I),POP,c );
+        POP=[POP,Y];
+    end
+    %Variations    
+    NPOP1=SBX( POP,bu,bd,pc,n );
+    [ Y ] = RBF_Ensemble_predictor( W(I,:),B(I),C(:,:,I),S(:,I),NPOP1,c );
+    NPOP1=[NPOP1,Y];
+    NPOP2=mutation(POP,bu,bd,pm,n);
+    [ Y ] = RBF_Ensemble_predictor( W(I,:),B(I),C(:,:,I),S(:,I),NPOP2,c );
+    NPOP2=[NPOP2,Y];
+    POP=[POP;NPOP1;NPOP2];
+    %Model Combination
+    YAVE=mean(POP(:,c+1:end),2);
+    [A,Is]=sort(YAVE);
+    POP=[POP(Is(1:n),1:c)];
+    g=g+1;
+    P= POP(1,1:c);
+    gbest=[gbest;P];
+      %A(1)
+end
+
+toc;
+time=toc;
+
+end
+
+
+function [ POP_new ] = GA_SBX( POP,upperbound,lowerbound,pc,pm,n )
+% Usage: [ POP_new ] = GA_SBX( POP,upperbound,lowerbound,pc,pm,n )
+%
+% Input:
+% upperbound            -Upper Bound
+% lowerbound            -Lower Bound
+% POP           -Input Population
+% pc            -Crossover Probability
+% pm            -Mutation Probability
+% n             -Population Size
+%
+% Output: 
+% POP_new          -The Generated New Population
+%------------------------------- Copyright --------------------------------
+% Copyright 2020. You are free to use this code for research purposes.All 
+% publications which use this code should reference the following papaer:
+% Jian-Yu Li, Zhi-Hui Zhan, Chuan Wang, Hu Jin, Jun Zhang, Boosting  
+% data-driven evolutionary algorithm with localized data generation, IEEE 
+% Transactions on Evolutionary Computation, DOI: 10.1109/TEVC.2020.2979740.
+%--------------------------------------------------------------------------
+
+POP_crossover=[];
+eta_c=15;
+N=size(POP,1);
+C=size(upperbound,2);
+y=1;
+for i=1:n
+    r1=rand;
+    if r1<=pc
+        A=randperm(N);
+        k=i;
+
+        if A(2)<A(1)
+            y=A(2);
+        else
+            y=A(1);
+        end
+        if k==y
+            k=A(3);
+        end
+        d=(sum((POP(y,1:C)-POP(k,1:C)).^2)).^0.5;
+        if k~=y
+            for j=1:C
+                par1=POP(y,j);par2=POP(k,j);
+                yd=lowerbound(j);yu=upperbound(j);
+                r2=rand;
+                if r2<=0.5
+                    y1=min(par1,par2);y2=max(par1,par2);
+                    if (y1-yd)>(yu-y2)
+                        beta=1+2*(yu-y2)/(y2-y1);
+                    else
+                        beta=1+2*(y1-yd)/(y2-y1);
+                    end
+                    expp=eta_c+1;beta=1/beta;alpha=2.0-beta^(expp);
+                    r3=rand;
+                    if r3<=1/alpha
+                        alpha=alpha*r3;expp=1/(eta_c+1.0);
+                        betaq=alpha^(expp);
+                    else
+                        alpha=1/(2.0-alpha*r3);expp=1/(eta_c+1);
+                        betaq=alpha^(expp);
+                    end
+                    chld1=0.5*((y1+y2)-betaq*(y2-y1));
+                    chld2=0.5*((y1+y2)+betaq*(y2-y1));   
+                    aa=max(chld1,yd);
+                    bb=max(chld2,yd);
+                    if rand>0.5
+                        POP_crossover(2*i-1,j)=min(aa,yu);
+                        POP_crossover(2*i,j)=min(bb,yu);
+                    else
+                        POP_crossover(2*i,j)=min(aa,yu);
+                        POP_crossover(2*i-1,j)=min(bb,yu);
+                    end
+                else
+                    POP_crossover(2*i-1,j)=par1;
+                    POP_crossover(2*i,j)=par2;
+                end
+            end
+        end
+    end
+    
+end
+
+eta_m=15;
+POP_new=POP_crossover(:,1:C);
+for i=1:n
+    k=i;
+    POP_new(i,:)=POP_crossover(k,1:C);
+    for j=1:C
+        r1=rand;
+        if r1<=pm
+            y=POP_crossover(k,j);
+            yd=lowerbound(j);yu=upperbound(j);
+            if y>yd
+                if (y-yd)<(yu-y)
+                    delta=(y-yd)/(yu-yd);
+                else
+                    delta=(yu-y)/(yu-yd);
+                end
+                r2=rand;
+                indi=1/(eta_m+1);
+                if r2<=0.5
+                    xy=1-delta;
+                    val=2*r2+(1-2*r2)*(xy^(eta_m+1));
+                    deltaq=val^indi-1;
+                else
+                    xy=1-delta;
+                    val=2*(1-r2)+2*(r2-0.5)*(xy^(eta_m+1));
+                    deltaq=1-val^indi;
+                end
+                y=y+deltaq*(yu-yd);
+                POP_new(i,j)=min(y,yu);POP_new(i,j)=max(y,yd);
+            else
+                POP_new(i,j)=rand*(yu-yd)+yd;
+            end
+        end
+    end
+end
+end
+
+
+
+function [ POP ] = initialize_pop(n,c,bu,bd)
+% Usage: [ POP ] = initialize_pop(n,c,bu,bd)
+%
+% Input:
+% bu            -Upper Bound
+% bd            -Lower Bound
+% c             -No. of Decision Variables
+% n             -Population Scale
+%
+% Output: 
+% POP           -Initial Population
+%
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+POP=lhsdesign(n,c).*(ones(n,1)*(bu-bd))+ones(n,1)*bd;
+
+end
+clear ;
+rmax=20;
+dimv=[10,30,50,100];
+ub=[5.12,2.048,32.768,600,5];
+
+
+for dimi=1:4
+    
+    dim=dimv(dimi);
+    for func=1:5
+        
+        finaly=[];
+        c=dim;
+        bd=ones(1,c)*-ub(func);
+        bu=ones(1,c)*ub(func);
+        
+        for r=1:rmax
+%             offsize=5*c;
+%             offdata=lhsdesign(offsize,c).*(ones(offsize,1)*(bu-bd))+ones(offsize,1)*bd;
+%             offy=bench_func(offdata,func);
+%             L=[offdata,offy];
+%             FE=offsize;
+
+
+% -----------execute GA_SBX until pop reach 6d------------
+            pc=1;%Crossover Probability
+            pm=1/c;%Mutation Probability
+            n=50;%Population Size
+            POP = initialize_pop(n,c,bu,bd);
+            Y=bench_func(POP,func);
+            L=[POP,Y];
+            FE=size(L,1);
+
+            while FE<6*c
+          
+                
+                NPOP1=SBX(L,bu,bd,pc,n);
+                [ Y ] = bench_func(NPOP1,func);
+                FE=FE+size(NPOP1,1);
+                NPOP1=[NPOP1,Y];
+                NPOP2=mutation(L,bu,bd,pm,n);
+                [ Y ] = bench_func(NPOP2,func);
+                FE=FE+size(NPOP2,1);
+                NPOP2=[NPOP2,Y];
+                L=[L;NPOP1;NPOP2];
+
+                YAVE=mean(L(:,c+1:end),2);
+                [A,Is]=sort(YAVE);
+                POP=[L(Is(1:n),1:c)];
+                L=[L(Is(1:n),1:c+1)];
+
+            
+                  
+            end
+
+
+            [time,P,gbest] =DDEA_PES(c,L,bu,bd);
+            
+            y=bench_func(P,func);
+            finaly=[finaly y];
+        end
+       
+        meany=sum(finaly)/rmax;
+        stdy=std(finaly);
+        [meany stdy];
+        
+        filename=['DDEA-PES_func ',num2str(func),'Dim ',num2str(dim),'bserror.txt'];
+        
+        fp=fopen(filename,'w');
+        fprintf(fp,'%f\n',finaly');
+        fprintf(fp,'mean: %f\n',meany);
+        fprintf(fp,'std: %f\n',stdy);
+        fclose(fp);
+    end
+end
+
+function [NPOP]=mutation(POP,bu,bd,pm,n)
+% Usage: [NPOP]=mutation(POP,bu,bd,pm,n)
+%
+% Input:
+% bu            -Upper Bound
+% bd            -Lower Bound
+% POP           -Input Population
+% pm            -Mutation Probability
+% n             -Population Size
+%
+% Output: 
+% NPOP          -Output Population
+%
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+N=size(POP,1);
+C=size(bu,2);
+eta_m=15;
+NPOP=POP(:,1:C);
+for i=1:n
+%     k=randperm(N);
+%     k=k(1);
+    k=i;
+    NPOP(i,:)=POP(k,1:C);
+    for j=1:C
+        r1=rand;
+        if r1<=pm
+            y=POP(k,j);
+            yd=bd(j);yu=bu(j);
+            if y>yd
+                if (y-yd)<(yu-y)
+                    delta=(y-yd)/(yu-yd);
+                else
+                    delta=(yu-y)/(yu-yd);
+                end
+                r2=rand;
+                indi=1/(eta_m+1);
+                if r2<=0.5
+                    xy=1-delta;
+                    val=2*r2+(1-2*r2)*(xy^(eta_m+1));
+                    deltaq=val^indi-1;
+                else
+                    xy=1-delta;
+                    val=2*(1-r2)+2*(r2-0.5)*(xy^(eta_m+1));
+                    deltaq=1-val^indi;
+                end
+                y=y+deltaq*(yu-yd);
+                NPOP(i,j)=min(y,yu);NPOP(i,j)=max(y,yd);
+            else
+                NPOP(i,j)=rand*(yu-yd)+yd;
+            end
+        end
+    end
+end
+end
+
+
+function [ W2,B2,Centers,Spreads ] = RBF( SamIn,SamOut,Nc)
+% Usage: [ W2,B2,Centers,Spreads ] = RBF( SamIn,SamOut,Nc)
+% Build a Single RBF Model Using the Method below.
+% K.-L. Du and M. Swamy, ��Radial basis function networks,�� in Neural Networks and Statistical Learning.   Springer, 2014, pp. 299�C335.
+% Input:
+% SamIn         - Offline Data with c Decision Variables
+% SamOut        - Offline Data with Exact Objective Value
+% Nc            - Number of neurons of RBF models
+
+%
+% Output: 
+% W2             - Weights of RBF Model
+% B2             - Bais of RBF Model
+% Centers        - Centers of RBF Model
+% Spreads        - Widths of RBF model
+%
+%------------------------------------------------------------------------
+% Last Modified by Jian-Yu Li at 2020.4.1
+% Originally provided by Handing Wang on https://github.com/HandingWang/DDEA-SE
+%------------------------------------------------------------------------
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+SamIn=SamIn';
+SamOut=SamOut';
+SamNum = size(SamIn,2); 
+InDim = size(SamIn,1); 
+ClusterNum = Nc; 
+Overlap = 1.0; 
+
+A=randperm(SamNum);
+Centers = SamIn(:,A(1:ClusterNum));
+
+ik=0;
+while 1
+    NumberInClusters = zeros(ClusterNum,1); 
+    IndexInClusters = zeros(ClusterNum,SamNum);
+
+
+    for i = 1:SamNum
+        AllDistance = dist(Centers',SamIn(:,i));
+        [MinDist,Pos] = min(AllDistance);
+        NumberInClusters(Pos) = NumberInClusters(Pos) + 1;
+        IndexInClusters(Pos,NumberInClusters(Pos)) = i;
+    end
+    OldCenters = Centers;
+
+    for i = 1:ClusterNum
+        if NumberInClusters(i)~=0
+            Index = IndexInClusters(i,1:NumberInClusters(i));
+            Centers(:,i) = mean(SamIn(:,Index),2);
+        else
+            A=randperm(SamNum);
+            Centers(:,i)=SamIn(:,A(1));
+        end
+    end
+    EqualNum = sum(sum(Centers==OldCenters));
+    if EqualNum == InDim*ClusterNum|ik>=50
+        break;
+    end
+    ik=ik+1;
+end
+
+AllDistances = dist(Centers',Centers); 
+Maximum = max(max(AllDistances)); 
+for i = 1:ClusterNum 
+AllDistances(i,i) = Maximum+1;
+end
+I=find(AllDistances==0);
+AllDistances(I)=0.000001;
+Spreads = Overlap*min(AllDistances)'; 
+
+
+Distance = dist(Centers',SamIn); 
+SpreadsMat = repmat(Spreads,1,SamNum);
+HiddenUnitOut = radbas(Distance./SpreadsMat); 
+HiddenUnitOutEx = [HiddenUnitOut' ones(SamNum,1)]'; 
+W2Ex = SamOut*pinv(HiddenUnitOutEx); 
+W2 = W2Ex(:,1:ClusterNum); 
+B2 = W2Ex(:,ClusterNum+1); 
+
+
+end
+
+
+function [ Y ] = RBF_Ensemble_predictor( Weight,Bias,Centers,Spreads,Decision_vairables,D )
+% Usage: [ Y ] = RBF_Ensemble_predictor( W,B,C,S,U,c )
+%RBF Predictors 
+% Input:
+% W             - Weights of RBF Models
+% B             - Bais of RBF Models
+% C             - Centers of RBF Models
+% S             - Widths of RBF models
+% U             - Test Data with c Decision Variables
+% c             - Number of Decision Variables
+%
+% Output: 
+% Y             - Predictions of RBF Models for U
+%
+%------------------------------------------------------------------------
+% Last Modified by Jian-Yu Li at 2020.4.1
+% Originally provided by Handing Wang on https://github.com/HandingWang/DDEA-SE
+%------------------------------------------------------------------------
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+Y=[];
+T=size(Bias,2);%Number of RBF models
+for i=1:T
+    Y_i=RBF_predictor(Weight(i,:),Bias(i),Centers(:,:,i),Spreads(:,i),Decision_vairables(:,1:D));
+    Y=[Y,Y_i];
+end
+
+end
+
+
+function [ W,B,C,S] = RBF_EnsembleUN( L,c,nc,T,ub)
+% Usage: [ W,B,C,S] = RBF_EnsembleUN( L,c,nc,T)
+%Build RBF Model Pool
+% Input:
+% L             - Offline Data with c Decision Variables and Exact Objective Value
+% c             - Number of Decision Variables
+% nc            - Number of neurons of RBF models
+% T             - %Number of RBF models
+%
+% Output: 
+% W             - Weights of RBF Models
+% B             - Bais of RBF Models
+% C             - Centers of RBF Models
+% S             - Widths of RBF models
+%
+    %%%%    Authors:    Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty
+    %%%%    University of Surrey, UK and Taiyuan University of Science and Technology, China.
+    %%%%    EMAIL:      wanghanding.patch@gmail.com
+    %%%%    WEBSITE:    https://sites.google.com/site/handingwanghomepage
+    %%%%    DATE:       May 2018
+%------------------------------------------------------------------------
+%This code is part of the program that produces the results in the following paper:
+
+%Handing Wang, Yaochu Jin, Chaoli Sun, John Doherty, Offline data-driven evolutionary optimization using selective surrogate ensembles, IEEE Transactions on Evolutionary Computation, Accepted.
+
+%You are free to use it for non-commercial purposes. However, we do not offer any forms of guanrantee or warranty associated with the code. We would appreciate your acknowledgement.
+%------------------------------------------------------------------------
+t=0.5;%probability of out-of-bag
+W=zeros(T,nc);
+B=zeros(1,T);
+C=zeros(c,nc,T);
+S=zeros(nc,T);
+
+
+[row,col]=size(L);
+traindata=L;
+for i=1:T
+
+    
+    [ W2,B2,Centers,Spreads ] = RBF( traindata(:,1:c),traindata(:,c+1),nc);
+    
+    W(i,:)=W2;
+    B(i)=B2;
+    C(:,:,i)=Centers;
+    S(:,i)=Spreads;
+    
+    prey=RBF_Ensemble_predictor( W(i,:),B(i),C(:,:,i),S(:,i), L(:,1:c),c );
+    d=prey-( L(:,c+1));
+   
+    
+    addid=find(d>median(d));
+   
+
+     rmat=ub*2*unifrnd(0,0.000001,row,c+1)/sqrt(c);
+     rmat(:,c+1)=rmat(:,c+1)*0;
+    rl=L+rmat;
+   
+traindata=[ L;rl(addid,:)];
+end
+
+end
+
+
+function [ W,B,C,S] = RBF_EnsembleUN( offline_data,D,nc,T,upperbound)
+% Usage: [ W,B,C,S] = RBF_EnsembleUN( offline_data,D,nc,T,upperbound)
+%Build RBF Model Pool
+% Input:
+% offline_data             - Offline Data with c Decision Variables and Exact Objective Value
+% D             - Number of Decision Variables
+% nc            - Number of neurons of RBF models
+% T             - Number of RBF models
+% upperbound    - The upperbound of search space
+%
+% Output: 
+% W             - Weights of RBF Models
+% B             - Bais of RBF Models
+% C             - Centers of RBF Models
+% S             - Widths of RBF models
+%
+%------------------------------- Copyright --------------------------------
+% Copyright 2020. You are free to use this code for research purposes.All 
+% publications which use this code should reference the following papaer:
+% Jian-Yu Li, Zhi-Hui Zhan, Hua Wang, Jun Zhang, Data-Driven Evolutionary 
+% Algorithm With Perturbation-Based Ensemble Surrogates, IEEE Transactions 
+% on Cybernetics, DOI: 10.1109/tcyb.2020.3008280.
+%--------------------------------------------------------------------------
+W=zeros(T,nc);
+B=zeros(1,T);
+C=zeros(D,nc,T);
+S=zeros(nc,T);
+
+
+[row,~]=size(offline_data);
+traindata=offline_data;
+for i=1:T
+
+    [ W2,B2,Centers,Spreads ] = RBF( traindata(:,1:D),traindata(:,D+1),nc);
+    
+    W(i,:)=W2;
+    B(i)=B2;
+    C(:,:,i)=Centers;
+    S(:,i)=Spreads;
+    
+    prey=RBF_Ensemble_predictor( W(i,:),B(i),C(:,:,i),S(:,i), offline_data(:,1:D),D );
+    d=prey-( offline_data(:,D+1));
+    
+    addid=find(d>median(d));
+    rmat=upperbound*2*unifrnd(0,0.000001,row,D+1)/sqrt(D);
+    rmat(:,D+1)=rmat(:,D+1)*0;%D+1 dimension is the fitness
+    rl=offline_data+rmat;
+    
+    traindata=[ offline_data;rl(addid,:)];
+end
+
+end
+
