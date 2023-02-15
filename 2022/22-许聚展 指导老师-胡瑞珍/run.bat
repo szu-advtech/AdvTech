@@ -1,0 +1,1 @@
+C:/omniverse/pkg/isaac_sim-2022.1.1/python.bat main.py
