@@ -1,0 +1,63 @@
+gcc -fopenmp -O3 -DOMPVER2 -DOMPVER3 -c syncbench.c 
+gcc -fopenmp -O3 -DOMPVER2 -DOMPVER3 -c common.c 
+gcc -o bin/syncbench -fopenmp -O3 -L -lomp -Wl,-rpath= syncbench.o common.o    -lm
+gcc -fopenmp -O3 -DOMPVER2 -DOMPVER3 -c schedbench.c 
+gcc -fopenmp -O3 -DSCHEDBENCH -DOMPVER2 -DOMPVER3 -o common_sched.o -c common.c
+gcc -o bin/schedbench  -fopenmp -O3 -L -lomp -Wl,-rpath= schedbench.o common_sched.o    -lm 
+gcc -fopenmp -O3 -DOMPVER2 -DOMPVER3 -c taskbench.c 
+gcc -o bin/taskbench -fopenmp -O3 -L -lomp -Wl,-rpath= -DOMPVER2 -DOMPVER3 taskbench.o common.o    -lm 
+make IDA=1 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=1 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_1.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_1.o common.o    -lm -o bin/arraybench_1 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=3 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=3 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_3.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_3.o common.o    -lm -o bin/arraybench_3 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=9 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=9 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_9.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_9.o common.o    -lm -o bin/arraybench_9 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=27 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=27 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_27.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_27.o common.o    -lm -o bin/arraybench_27 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=81 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=81 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_81.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_81.o common.o    -lm -o bin/arraybench_81 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=243 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=243 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_243.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_243.o common.o    -lm -o bin/arraybench_243 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=729 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=729 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_729.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_729.o common.o    -lm -o bin/arraybench_729 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=2187 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=2187 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_2187.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_2187.o common.o    -lm -o bin/arraybench_2187 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=6561 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=6561 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_6561.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_6561.o common.o    -lm -o bin/arraybench_6561 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=19683 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=19683 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_19683.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_19683.o common.o    -lm -o bin/arraybench_19683 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'
+make IDA=59049 prog
+make[1]: Entering directory `/home/lsh/OpenMP/EPCC'
+gcc -fopenmp -O3 -DIDA=59049 -DOMPVER2 -DOMPVER3 arraybench.c -c -o arraybench_59049.o
+gcc -fopenmp -O3 -L -lomp -Wl,-rpath= arraybench_59049.o common.o    -lm -o bin/arraybench_59049 
+make[1]: Leaving directory `/home/lsh/OpenMP/EPCC'

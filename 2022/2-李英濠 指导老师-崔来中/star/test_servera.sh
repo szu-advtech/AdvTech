@@ -1,0 +1,1 @@
+python ./main_server.py --eth_rpc=http://localhost:8546 --port=8001

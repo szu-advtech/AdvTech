@@ -1,0 +1,6 @@
+//size, type, name
+TABLE=MAIN_TABLE
+	100,string,F0
+
+INDEX=HASH_MAIN_INDEX
+MAIN_TABLE,0

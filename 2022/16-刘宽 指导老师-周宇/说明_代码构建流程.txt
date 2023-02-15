@@ -1,0 +1,32 @@
+代码引用自https://github.com/HKUST-Aerial-Robotics/VINS-MONO，并根据https://blog.csdn.net/hltt3838/article/details/109739046增加GPU融合
+1)代码基于ubuntu 16.04
+2)使用ROS Kinetic，安装ROS package
+    sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+    sudo sh -c '. /etc/lsb-release && echo "deb http://mirrors.tuna.tsinghua.edu.cn/ros/ubuntu/ `lsb_release -cs` main" > /etc/apt/sources.list.d/ros-latest.list'
+    sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+    sudo apt-get update
+    sudo apt-get install ros-kinetic-cv-bridge ros-kinetic-tf ros-kinetic-message-filters ros-kinetic-image-transport ros-kinetic-nav-msgs ros-kinetic-ros-base ros-kinetic-rviz
+3)	安装Ceres Solver
+    git clone -b 1.14.0 https://ceres-solver.googlesource.com/ceres-solver
+    sudo apt-get install cmake libgoogle-glog-dev libgflags-dev libatlas-base-dev libeigen3-dev libsuitesparse-dev
+    mkdir ceres-bin
+    cd ceres-bin
+    cmake ../ceres-solver
+    make -j4
+    make test
+    sudo make install
+4)	构建VINS-Mono
+    sudo chown -R freedom /home/freedom/catkin_ws/
+    cd ~/catkin_ws/src
+    保存代码到该目录下
+    cd ../
+    catkin_make
+    source ~/catkin_ws/devel/setup.bash
+4.3、界面分析与使用说明
+1）打开三个terminal，均使用以下命令：
+    source /opt/ros/kinetic/setup.bash
+    source ~/catkin_ws/devel/setup.bash
+2）在第一个终端使用roslaunch vins_estimator euroc.launch启动vins_estimator
+3）在第二个终端使用roslaunch vins_estimator vins_rviz.launch启动rviz界面
+4）在第三个终端使用rosbag play MH_01_easy.bag读取公共数据集
+5）在rviz上即可以看到结果

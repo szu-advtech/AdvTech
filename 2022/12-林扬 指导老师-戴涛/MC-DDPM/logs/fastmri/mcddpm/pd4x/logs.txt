@@ -1,0 +1,69 @@
+2022-12-07 18:03:26,495 (Elapsed: 00:00:00) making device configuration...
+2022-12-07 18:03:26,496 (Elapsed: 00:00:00) creating model...
+2022-12-07 18:03:29,134 (Elapsed: 00:00:02) creating data loader...
+2022-12-07 18:03:29,134 (Elapsed: 00:00:02) test...
+2022-12-07 18:03:29,135 (Elapsed: 00:00:02) creating diffusion...
+2022-12-07 18:03:29,139 (Elapsed: 00:00:02) loading model from checkpoint: checkpoints/fastmri/mcddpm/pd4x/model035000.pt...
+2022-12-07 18:03:30,579 (Elapsed: 00:00:04) This model contains 86.325634M parameters
+2022-12-07 18:16:26,139 (Elapsed: 00:12:59) complete sampling for file1000031.h5 slice 5
+2022-12-07 18:16:26,152 (Elapsed: 00:12:59) have test 1 steps
+2022-12-07 18:29:24,075 (Elapsed: 00:25:57) complete sampling for file1000031.h5 slice 6
+2022-12-07 18:29:24,076 (Elapsed: 00:25:57) have test 2 steps
+2022-12-07 18:42:22,169 (Elapsed: 00:38:55) complete sampling for file1000031.h5 slice 7
+2022-12-07 18:42:22,170 (Elapsed: 00:38:55) have test 3 steps
+2022-12-07 18:55:19,179 (Elapsed: 00:51:52) complete sampling for file1000031.h5 slice 8
+2022-12-07 18:55:19,180 (Elapsed: 00:51:52) have test 4 steps
+2022-12-07 19:08:16,575 (Elapsed: 01:04:50) complete sampling for file1000031.h5 slice 9
+2022-12-07 19:08:16,576 (Elapsed: 01:04:50) have test 5 steps
+2022-12-07 19:21:17,191 (Elapsed: 01:17:50) complete sampling for file1000031.h5 slice 10
+2022-12-07 19:21:17,192 (Elapsed: 01:17:50) have test 6 steps
+2022-12-07 19:34:15,507 (Elapsed: 01:30:49) complete sampling for file1000031.h5 slice 11
+2022-12-07 19:34:15,508 (Elapsed: 01:30:49) have test 7 steps
+2022-12-07 19:47:13,055 (Elapsed: 01:43:46) complete sampling for file1000031.h5 slice 12
+2022-12-07 19:47:13,056 (Elapsed: 01:43:46) have test 8 steps
+2022-12-07 20:00:10,047 (Elapsed: 01:56:43) complete sampling for file1000031.h5 slice 13
+2022-12-07 20:00:10,048 (Elapsed: 01:56:43) have test 9 steps
+2022-12-07 20:13:06,856 (Elapsed: 02:09:40) complete sampling for file1000031.h5 slice 14
+2022-12-07 20:13:06,857 (Elapsed: 02:09:40) have test 10 steps
+2022-12-07 20:26:04,823 (Elapsed: 02:22:38) complete sampling for file1000031.h5 slice 15
+2022-12-07 20:26:04,824 (Elapsed: 02:22:38) have test 11 steps
+2022-12-07 20:39:03,512 (Elapsed: 02:35:37) complete sampling for file1000031.h5 slice 16
+2022-12-07 20:39:03,513 (Elapsed: 02:35:37) have test 12 steps
+2022-12-07 20:52:01,617 (Elapsed: 02:48:35) complete sampling for file1000031.h5 slice 17
+2022-12-07 20:52:01,618 (Elapsed: 02:48:35) have test 13 steps
+2022-12-07 21:04:59,065 (Elapsed: 03:01:32) complete sampling for file1000031.h5 slice 18
+2022-12-07 21:04:59,066 (Elapsed: 03:01:32) have test 14 steps
+2022-12-07 21:17:56,062 (Elapsed: 03:14:29) complete sampling for file1000031.h5 slice 19
+2022-12-07 21:17:56,063 (Elapsed: 03:14:29) have test 15 steps
+2022-12-07 21:30:53,283 (Elapsed: 03:27:26) complete sampling for file1000031.h5 slice 20
+2022-12-07 21:30:53,284 (Elapsed: 03:27:26) have test 16 steps
+2022-12-07 21:43:51,507 (Elapsed: 03:40:25) complete sampling for file1000031.h5 slice 21
+2022-12-07 21:43:51,508 (Elapsed: 03:40:25) have test 17 steps
+2022-12-07 21:56:48,403 (Elapsed: 03:53:21) complete sampling for file1000031.h5 slice 22
+2022-12-07 21:56:48,404 (Elapsed: 03:53:21) have test 18 steps
+2022-12-07 22:09:46,138 (Elapsed: 04:06:19) complete sampling for file1000031.h5 slice 23
+2022-12-07 22:09:46,138 (Elapsed: 04:06:19) have test 19 steps
+2022-12-07 22:22:42,063 (Elapsed: 04:19:15) complete sampling for file1000031.h5 slice 24
+2022-12-07 22:22:42,064 (Elapsed: 04:19:15) have test 20 steps
+2022-12-07 22:35:37,907 (Elapsed: 04:32:11) complete sampling for file1000031.h5 slice 25
+2022-12-07 22:35:37,908 (Elapsed: 04:32:11) have test 21 steps
+2022-12-07 22:48:35,421 (Elapsed: 04:45:08) complete sampling for file1000031.h5 slice 26
+2022-12-07 22:48:35,422 (Elapsed: 04:45:08) have test 22 steps
+2022-12-07 23:01:33,390 (Elapsed: 04:58:06) complete sampling for file1000031.h5 slice 27
+2022-12-07 23:01:33,391 (Elapsed: 04:58:06) have test 23 steps
+2022-12-07 23:14:32,328 (Elapsed: 05:11:05) complete sampling for file1000031.h5 slice 28
+2022-12-07 23:14:32,329 (Elapsed: 05:11:05) have test 24 steps
+2022-12-07 23:27:29,564 (Elapsed: 05:24:03) complete sampling for file1000031.h5 slice 29
+2022-12-07 23:27:29,566 (Elapsed: 05:24:03) have test 25 steps
+2022-12-07 23:40:24,408 (Elapsed: 05:36:57) complete sampling for file1000031.h5 slice 30
+2022-12-07 23:40:24,409 (Elapsed: 05:36:57) have test 26 steps
+2022-12-07 23:53:19,898 (Elapsed: 05:49:53) complete sampling for file1000031.h5 slice 31
+2022-12-07 23:53:19,899 (Elapsed: 05:49:53) have test 27 steps
+2022-12-08 00:06:15,323 (Elapsed: 06:02:48) complete sampling for file1000031.h5 slice 32
+2022-12-08 00:06:15,324 (Elapsed: 06:02:48) have test 28 steps
+2022-12-08 00:19:10,271 (Elapsed: 06:15:43) complete sampling for file1000031.h5 slice 33
+2022-12-08 00:19:10,272 (Elapsed: 06:15:43) have test 29 steps
+2022-12-08 00:32:04,420 (Elapsed: 06:28:37) complete sampling for file1000031.h5 slice 34
+2022-12-08 00:32:04,421 (Elapsed: 06:28:37) have test 30 steps
+2022-12-08 00:32:36,539 (Elapsed: 06:29:10) complete test.
+

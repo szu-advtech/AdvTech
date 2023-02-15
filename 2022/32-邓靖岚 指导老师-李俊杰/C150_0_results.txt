@@ -1,0 +1,52 @@
+iteration 0 : 0.14s
+iteration 1 : 0.13s
+iteration 2 : 0.13s
+iteration 3 : 0.12s
+iteration 4 : 0.12s
+iteration 5 : 0.13s
+iteration 6 : 0.13s
+iteration 7 : 0.13s
+iteration 8 : 0.13s
+iteration 9 : 0.13s
+iteration 10 : 0.13s
+iteration 11 : 0.13s
+iteration 12 : 0.13s
+iteration 13 : 0.13s
+iteration 14 : 0.13s
+iteration 15 : 0.13s
+iteration 16 : 0.13s
+iteration 17 : 0.13s
+iteration 18 : 0.12s
+iteration 19 : 0.13s
+iteration 20 : 0.12s
+iteration 21 : 0.12s
+iteration 22 : 0.12s
+iteration 23 : 0.13s
+iteration 24 : 0.13s
+Pure training time : 13.93s
+Pure average training time : 0.56s
+iteration: 1--free_energy:	   -27.486166--loglikelihood:	   -27.485114--q-error:	9796057295653.078125--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	128856/1300000 (x10.09)
+iteration: 2--free_energy:	   -27.409386--loglikelihood:	   -27.408938--q-error:	8986277422055.025391--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	128901/1300000 (x10.09)
+iteration: 3--free_energy:	   -27.374951--loglikelihood:	   -27.374613--q-error:	8558444671305.623047--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129909/1300000 (x10.01)
+iteration: 4--free_energy:	   -27.353271--loglikelihood:	   -27.353017--q-error:	8320480114495.202148--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129437/1300000 (x10.04)
+iteration: 5--free_energy:	   -27.341360--loglikelihood:	   -27.341161--q-error:	8215160995477.573242--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129428/1300000 (x10.04)
+iteration: 6--free_energy:	   -27.335836--loglikelihood:	   -27.335663--q-error:	8182104286261.333984--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	128983/1300000 (x10.08)
+iteration: 7--free_energy:	   -27.333067--loglikelihood:	   -27.332908--q-error:	8168889534952.924805--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129747/1300000 (x10.02)
+iteration: 8--free_energy:	   -27.331166--loglikelihood:	   -27.331011--q-error:	8160855978518.902344--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129428/1300000 (x10.04)
+iteration: 9--free_energy:	   -27.329398--loglikelihood:	   -27.329247--q-error:	8154171032078.153320--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129948/1300000 (x10.00)
+iteration:10--free_energy:	   -27.327525--loglikelihood:	   -27.327377--q-error:	8148567269085.521484--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129606/1300000 (x10.03)
+iteration:11--free_energy:	   -27.325506--loglikelihood:	   -27.325360--q-error:	8142185089805.106445--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129999/1300000 (x10.00)
+iteration:12--free_energy:	   -27.323439--loglikelihood:	   -27.323295--q-error:	8134297032765.290039--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129752/1300000 (x10.02)
+iteration:13--free_energy:	   -27.321581--loglikelihood:	   -27.321438--q-error:	8127695549150.206055--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129871/1300000 (x10.01)
+iteration:14--free_energy:	   -27.320136--loglikelihood:	   -27.319994--q-error:	8126056122569.219727--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129601/1300000 (x10.03)
+iteration:15--free_energy:	   -27.319061--loglikelihood:	   -27.318917--q-error:	8126648461671.077148--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129732/1300000 (x10.02)
+iteration:16--free_energy:	   -27.318224--loglikelihood:	   -27.318080--q-error:	8129398899609.043945--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129678/1300000 (x10.02)
+iteration:17--free_energy:	   -27.317522--loglikelihood:	   -27.317376--q-error:	8131851015807.751953--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129910/1300000 (x10.01)
+iteration:18--free_energy:	   -27.316890--loglikelihood:	   -27.316742--q-error:	8133519269479.304688--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130078/1300000 (x9.99)
+iteration:19--free_energy:	   -27.316300--loglikelihood:	   -27.316152--q-error:	8135551756955.660156--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130053/1300000 (x10.00)
+iteration:20--free_energy:	   -27.315759--loglikelihood:	   -27.315610--q-error:	8137260979538.694336--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	129826/1300000 (x10.01)
+iteration:21--free_energy:	   -27.315281--loglikelihood:	   -27.315131--q-error:	8139192021565.074219--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130045/1300000 (x10.00)
+iteration:22--free_energy:	   -27.314873--loglikelihood:	   -27.314723--q-error:	8140068473306.685547--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130008/1300000 (x10.00)
+iteration:23--free_energy:	   -27.314532--loglikelihood:	   -27.314381--q-error:	8140844816346.685547--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130126/1300000 (x9.99)
+iteration:24--free_energy:	   -27.314244--loglikelihood:	   -27.314093--q-error:	8141434935276.955078--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130199/1300000 (x9.98)
+iteration:25--free_energy:	   -27.313998--loglikelihood:	   -27.313846--q-error:	8141468888516.680664--purity_score:	1.000000--NMI_score:	1.000000--AMI_score:	1.000000--ndistevals:	130212/1300000 (x9.98)

@@ -1,0 +1,2 @@
+bidict # MPL-2.0
+kubernetes==25.3.* # Apache-2.0

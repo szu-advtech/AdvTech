@@ -1,0 +1,8 @@
+imgaug==0.4.0
+numpy==1.19.2
+opencv_python==4.6.0.66
+Pillow==9.3.0
+pytorch_lightning==1.5.10
+scikit_learn==1.2.0
+torch==1.10.0+cu113
+torchvision==0.11.0+cu113

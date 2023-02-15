@@ -1,0 +1,1 @@
+{"seeds": 42, "path": "data/simulation/contact/contact_quadratic_alpha1_beta1_sigmoid.mat", "exp_num": 10, "weight_decay": 0.01, "epochs": 1000, "lr": 1e-05, "h_dim": 64, "g_dim": 64, "dropout": 0.5, "wass": 0.001, "max_hyperedge_size": 50, "clip": 1.0, "exp_name": "LR", "graph_model": "hypergraph"}
