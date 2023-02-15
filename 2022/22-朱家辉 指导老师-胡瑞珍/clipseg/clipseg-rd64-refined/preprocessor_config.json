@@ -1,0 +1,23 @@
+{
+  "do_normalize": true,
+  "do_rescale": true,
+  "do_resize": true,
+  "feature_extractor_type": "ViTImageProcessor",
+  "image_mean": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "image_std": [
+    0.5,
+    0.5,
+    0.5
+  ],
+  "processor_class": "CLIPSegProcessor",
+  "resample": 2,
+  "rescale_factor": 0.00392156862745098,
+  "size": {
+    "height": 352,
+    "width": 352
+  }
+}

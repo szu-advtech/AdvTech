@@ -1,0 +1,15 @@
+TRAIN:
+  BATCH_SIZE: 16
+  EPOCHS: 300
+  DATASET: 'echonet_random'
+  INPUT_SIZE: 112
+MODEL:
+  NAME: 'SDGCN'
+  BACKBONE: 'r3d_18'
+  LOSS_FUNC: ['L2', 'CrossEnt']
+AUG:
+  METHOD: 'strong_echo_cycle'
+  PROB: 0.90
+SOLVER:
+  BASE_LR: 0.002
+NUM_FRAMES : 16

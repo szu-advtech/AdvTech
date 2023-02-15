@@ -1,0 +1,5 @@
+MOSI数据集：
+https://drive.google.com/drive/folders/1-KPm0KUPJtc63IwA6ZCyb5i_zU2_2tRX?usp=sharing
+
+预训练BERT模型：
+https://drive.google.com/drive/folders/1-c0iRQJcScPCfhS3tz1714iGgp1L6zh3?usp=sharing

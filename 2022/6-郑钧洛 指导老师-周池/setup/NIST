@@ -1,0 +1,7 @@
+--imagesPath ../data/NIST.txt
+--train_size 4000
+--batch_size 128
+--SIZE 262144
+--FSIZE 5
+--row 512
+--col 512

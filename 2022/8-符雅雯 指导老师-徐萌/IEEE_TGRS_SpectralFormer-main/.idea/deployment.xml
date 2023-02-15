@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="mzc@172.31.224.193:22" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="172.31.226.136">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="mzc@172.31.224.193:22">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home2/mzc/SpectralFormer" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="sshConfig://mzc@172.31.226.136:22 password/home/mzc/anaconda3/envs/pytorch/bin/python">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="sshConfig://sshConfig://mzc@172.31.226.136:22 password/home/mzc/anaconda3/envs/pytorch/bin/python/home/mzc/anaconda3/envs/pytorch/bin/python (1)">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>

@@ -1,0 +1,1 @@
+cpm：https://huggingface.co/TsinghuaAI/CPM-Generate/tree/main

@@ -1,0 +1,155 @@
+# Copyright (c) 2019-2022, NVIDIA CORPORATION.  All rights reserved.
+#
+# NVIDIA CORPORATION and its licensors retain all intellectual property
+# and proprietary rights in and to this software, related documentation
+# and any modifications thereto.  Any use, reproduction, disclosure or
+# distribution of this software and related documentation without an express
+# license agreement from NVIDIA CORPORATION is strictly prohibited.
+
+# The robot descriptor defines the generalized coordinates and how to map those
+# to the underlying URDF dofs.
+
+api_version: 1.0
+
+# Defines the generalized coordinates. Each generalized coordinate is assumed
+# to have an entry in the URDF.
+# RMPflow will only use these joints to control the robot position.
+
+
+# # Global frame of the URDF
+# root_link: world
+
+# # The default cspace position of this robot
+# default_q: [
+#     0.00, 0.00, 0.00, 0.00, 0.00, 0.00
+# ]
+
+
+cspace:
+  - shoulder_pan_joint
+  - shoulder_lift_joint
+  - elbow_joint
+  - wrist_1_joint
+  - wrist_2_joint
+  - wrist_3_joint
+
+root_link: world
+subtree_root_link: base_link
+
+default_q: [-1.57, -1.57, -1.57, -1.57, 1.57, 0]
+
+# Most dimensions of the cspace have a direct corresponding element
+# in the URDF. This list of rules defines how unspecified coordinates
+# should be extracted or how values in the URDF should be overwritten.
+
+cspace_to_urdf_rules:
+#     - {name: fixed_joint, rule: fixed, value: 0.025}
+
+# RMPflow uses collision spheres to define the robot geometry in order to avoid
+# collisions with external obstacles.  If no spheres are specified, RMPflow will
+# not be able to avoid obstacles.
+# The example spheres specified are translated along the z axis of the link0 frame by
+# .05 and .1 m respectively.
+
+collision_spheres:
+  - base_link:
+        - "center": [0.0, 0.0, 0.06]
+          "radius": 0.06
+        - "center": [0.0, 0.0, 0.14]
+          "radius": 0.06
+  - shoulder_link:
+        - "center": [0.0, 0.06, 0.0]
+          "radius": 0.05
+        - "center": [0.0, 0.12, 0.0]
+          "radius": 0.05
+  - upper_arm_link:
+        - "center": [0.0, 0.0, 0.07]
+          "radius": 0.06
+        - "center": [0.0, 0.0, 0.14]
+          "radius": 0.06
+        - "center": [0.0, 0.0, 0.21]
+          "radius": 0.06
+        - "center": [0.0, 0.0, 0.28]
+          "radius": 0.06
+        - "center": [0.0, 0.0, 0.35]
+          "radius": 0.06
+        - "center": [0.0, 0.0, 0.42]
+          "radius": 0.06
+  - forearm_link:
+        - "center": [0.0, 0.0, 0.0]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.05]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.1]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.15]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.20]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.25]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.30]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.35]
+          "radius": 0.045
+        - "center": [0.0, 0.0, 0.40]
+          "radius": 0.045
+  - wrist_1_link:
+        - "center": [0.0, -0.02, 0.0]
+          "radius": 0.03
+        - "center": [0.0, 0.05, 0.0]
+          "radius": 0.045
+        - "center": [0.0, 0.1, 0.0]
+          "radius": 0.045
+  - wrist_2_link:
+        - "center": [0.0, 0.0, -0.025]
+          "radius": 0.04
+        - "center": [0.0, 0.0, 0.05]
+          "radius": 0.04
+  - wrist_3_link:
+        - "center": [0.0, -0.025, 0.0]
+          "radius": 0.04
+        - "center": [0.0, 0.05, 0.0]
+          "radius": 0.04
+  - gripper_base:
+        - "center": [0.0, 0, 0.02]
+          "radius": 0.035
+        - "center": [0.0, 0, 0.06]
+          "radius": 0.035
+        # - "center": [0.015, 0.0, 0.0]
+        #   "radius": 0.03
+        # - "center": [-0.015, 0.0, 0.0]
+        #   "radius": 0.03
+  # - gripper_left:
+  #       - "center": [0.0, 0, -0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, 0, 0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, -0.0075, -0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, -0.0075, 0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, 0.0075, -0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, 0.0075, 0.0075]
+  #         "radius": 0.0075
+  # - gripper_right:
+  #       - "center": [0.0, 0, -0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, 0, 0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, -0.0075, -0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, -0.0075, 0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, 0.0075, -0.0075]
+  #         "radius": 0.0075
+  #       - "center": [0.0, 0.0075, 0.0075]
+  #         "radius": 0.0075
+
+
+
+# This argument is no longer supported, but is required for legacy reasons.
+# There is no need to change it.
+
+composite_task_spaces: []

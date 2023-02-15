@@ -1,0 +1,1 @@
+python3 train.py --shot 2 --train-way 10 --test-way 10 --max-epoch 60 --save-path ./save/gesture_2shot

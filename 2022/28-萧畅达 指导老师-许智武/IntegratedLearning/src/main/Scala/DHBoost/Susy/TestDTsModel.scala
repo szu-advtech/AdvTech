@@ -1,0 +1,278 @@
+package DHBoost.Susy
+
+import org.apache.spark.ml.classification._
+import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.ml.linalg.Vector
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.functions.column
+
+import scala.collection.mutable
+
+object TestDTsModel {
+
+    def main(args: Array[String]): Unit = {
+        // 日志输出
+        val log = new StringBuilder()
+
+        // 创建环境
+        val spark: SparkSession = SparkSession
+            .builder
+            .appName("TestModel_Susy")
+            .getOrCreate()
+
+        // 写入配置
+        val path = "hdfs://172.31.238.20:8020/user/chandler/recurrence/susy/"
+        log.append("job,Test_Susy_DTs\n")
+
+        // 加载数据，并进行类型转换
+        val dataFrame = spark
+            .read.format("csv")
+            .load("hdfs://172.31.238.20:8020/user/chandler/recurrence/susy/test/part-00000*.csv") // 加载测试数据
+            .toDF("label", "f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15", "f16", "f17", "f18")
+            .withColumn("label", column("label").cast("Double"))
+            .withColumn("f1", column("f1").cast("Double"))
+            .withColumn("f2", column("f2").cast("Double"))
+            .withColumn("f3", column("f3").cast("Double"))
+            .withColumn("f4", column("f4").cast("Double"))
+            .withColumn("f5", column("f5").cast("Double"))
+            .withColumn("f6", column("f6").cast("Double"))
+            .withColumn("f7", column("f7").cast("Double"))
+            .withColumn("f8", column("f8").cast("Double"))
+            .withColumn("f9", column("f9").cast("Double"))
+            .withColumn("f10", column("f10").cast("Double"))
+            .withColumn("f11", column("f11").cast("Double"))
+            .withColumn("f12", column("f12").cast("Double"))
+            .withColumn("f13", column("f13").cast("Double"))
+            .withColumn("f14", column("f14").cast("Double"))
+            .withColumn("f15", column("f15").cast("Double"))
+            .withColumn("f16", column("f16").cast("Double"))
+            .withColumn("f17", column("f17").cast("Double"))
+            .withColumn("f18", column("f18").cast("Double"))
+
+        // 封装dataFrame成(feature,label)形式
+        var dataFrameModify = new VectorAssembler()
+            .setInputCols(Array("f1", "f2", "f3", "f4", "f5", "f6", "f7", "f8", "f9", "f10", "f11", "f12", "f13", "f14", "f15", "f16", "f17", "f18"))
+            .setOutputCol("feature")
+            .transform(dataFrame)
+            .select("feature", "label")
+
+        // 记录数据集大小和标签数
+        val datasetSize: Double = dataFrameModify.count().toDouble
+        val labelSize: Double = dataFrameModify.select("label").distinct().count().toDouble
+        log.append(s"datasetSize," + datasetSize + "\n")
+            .append(s"labelSize," + labelSize + "\n")
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>0. 公共变量初始化e>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+        var modelPath:String = null
+        val n: Int = 10 // 集成使用的模型数
+        var i = -1 // 将权重转换成tuple辅助变量
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>1. 测试AdaBoostDecisionTree>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // 配置模型路径
+        modelPath = path + "AdaBoostDecisionTree/"
+        // 加载权重向量，以(索引，权重值)存储
+        i = -1
+        val adaBoostDecisionTreeModelInfo = spark.sparkContext.textFile(modelPath + "weight").map(x => {
+            i = i + 1
+            (i, x.toDouble)
+        }).sortBy(_._2,false).take(n)
+        // 加载模型
+        val adaBoostDecisionTreeModelArray: Array[DecisionTreeClassificationModel] = new Array[DecisionTreeClassificationModel](n)
+        for(i <- 0 until n){
+            adaBoostDecisionTreeModelArray(i) = DecisionTreeClassificationModel.read.load(modelPath + adaBoostDecisionTreeModelInfo(i)._1)
+        }
+        // 集成判断
+        val adaBoostDecisionTreeCorrect = dataFrameModify.rdd.map(row => {
+
+            // 使用hashmap存储预测值与权重, key: Label; value: Weight
+            val map = new mutable.HashMap[Double, Double]()
+
+            // 输入模型进行预测，将预测结果、权重进行存储到map中
+            for (i <- 0 until n) {
+                val predict = adaBoostDecisionTreeModelArray(i).predict(row(0).asInstanceOf[Vector])
+                if (map.contains(predict))
+                    map.put(predict, map.get(predict).get + adaBoostDecisionTreeModelInfo(i)._2)
+                else
+                    map.put(predict, adaBoostDecisionTreeModelInfo(i)._2)
+            }
+
+            // 以权重最大的预测结果作为集成结果
+            var maxWeight: Double = 0
+            var currentPredict: Double = -1
+            map.foreach(iterator => {
+                if (iterator._2 > maxWeight) {
+                    maxWeight = iterator._2
+                    currentPredict = iterator._1
+                }
+            })
+
+            // 判断最后的预测值是否与真实值一致
+            if (currentPredict != row(1))
+                0.0
+            else
+                1.0
+        }).sum() / datasetSize
+
+        // 输出结果
+        println(s"adaBoostDecisionTreeCorrect = " + adaBoostDecisionTreeCorrect)
+        log.append(s"adaBoostDecisionTreeCorrect," + adaBoostDecisionTreeCorrect + "\n")
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>2. 测试AdaBoostDecisionTree1>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // 配置模型路径
+        modelPath = path + "AdaBoostDecisionTree1/"
+        // 加载权重向量，以(索引，权重值)存储
+        i = -1
+        val adaBoostDecisionTreeModelInfo1 = spark.sparkContext.textFile(modelPath + "weight").map(x => {
+            i = i + 1
+            (i, x.toDouble)
+        }).sortBy(_._2, false).take(n)
+        // 加载模型
+        val adaBoostDecisionTreeModelArray1: Array[DecisionTreeClassificationModel] = new Array[DecisionTreeClassificationModel](n)
+        for (i <- 0 until n) {
+            adaBoostDecisionTreeModelArray1(i) = DecisionTreeClassificationModel.read.load(modelPath + adaBoostDecisionTreeModelInfo(i)._1)
+        }
+        // 集成判断
+        val adaBoostDecisionTreeCorrect1 = dataFrameModify.rdd.map(row => {
+
+            // 使用hashmap存储预测值与权重, key: Label; value: Weight
+            val map = new mutable.HashMap[Double, Double]()
+
+            // 输入模型进行预测，将预测结果、权重进行存储到map中
+            for (i <- 0 until n) {
+                val predict = adaBoostDecisionTreeModelArray1(i).predict(row(0).asInstanceOf[Vector])
+                if (map.contains(predict))
+                    map.put(predict, map.get(predict).get + adaBoostDecisionTreeModelInfo1(i)._2)
+                else
+                    map.put(predict, adaBoostDecisionTreeModelInfo1(i)._2)
+            }
+
+            // 以权重最大的预测结果作为集成结果
+            var maxWeight: Double = 0
+            var currentPredict: Double = -1
+            map.foreach(iterator => {
+                if (iterator._2 > maxWeight) {
+                    maxWeight = iterator._2
+                    currentPredict = iterator._1
+                }
+            })
+
+            // 判断最后的预测值是否与真实值一致
+            if (currentPredict != row(1))
+                0.0
+            else
+                1.0
+        }).sum() / datasetSize
+
+        // 输出结果
+        println(s"adaBoostDecisionTreeCorrect1 = " + adaBoostDecisionTreeCorrect1)
+        log.append(s"adaBoostDecisionTreeCorrect1," + adaBoostDecisionTreeCorrect1 + "\n")
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>3. 测试AdaBoostSVM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // 配置模型路径
+        modelPath = path + "AdaBoostDecisionTree2/"
+        // 加载权重向量，以(索引，权重值)存储
+        i = -1
+        val adaBoostDecisionTreeModelInfo2 = spark.sparkContext.textFile(modelPath + "weight").map(x => {
+            i = i + 1
+            (i, x.toDouble)
+        }).sortBy(_._2, false).take(n)
+        // 加载模型
+        val adaBoostDecisionTreeModelArray2: Array[DecisionTreeClassificationModel] = new Array[DecisionTreeClassificationModel](n)
+        for (i <- 0 until n) {
+            adaBoostDecisionTreeModelArray2(i) = DecisionTreeClassificationModel.read.load(modelPath + adaBoostDecisionTreeModelInfo2(i)._1)
+        }
+        // 集成判断
+        val adaBoostDecisionTreeCorrect2 = dataFrameModify.rdd.map(row => {
+
+            // 使用hashmap存储预测值与权重, key: Label; value: Weight
+            val map = new mutable.HashMap[Double, Double]()
+
+            // 输入模型进行预测，将预测结果、权重进行存储到map中
+            for (i <- 0 until n) {
+                val predict = adaBoostDecisionTreeModelArray2(i).predict(row(0).asInstanceOf[Vector])
+                if (map.contains(predict))
+                    map.put(predict, map.get(predict).get + adaBoostDecisionTreeModelInfo2(i)._2)
+                else
+                    map.put(predict, adaBoostDecisionTreeModelInfo2(i)._2)
+            }
+
+            // 以权重最大的预测结果作为集成结果
+            var maxWeight: Double = 0
+            var currentPredict: Double = -1
+            map.foreach(iterator => {
+                if (iterator._2 > maxWeight) {
+                    maxWeight = iterator._2
+                    currentPredict = iterator._1
+                }
+            })
+
+            // 判断最后的预测值是否与真实值一致
+            if (currentPredict != row(1))
+                0.0
+            else
+                1.0
+        }).sum() / datasetSize
+
+        // 输出结果
+        println(s"adaBoostDecisionTreeCorrect2 = " + adaBoostDecisionTreeCorrect2)
+        log.append(s"adaBoostDecisionTreeCorrect2," + adaBoostDecisionTreeCorrect2 + "\n")
+
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>4. 测试DHBoost_裁剪>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        // 集成判断
+        val DTs = dataFrameModify.rdd.map(row => {
+
+            // 使用hashmap存储预测值与权重, key: Label; value: Weight
+            val map = new mutable.HashMap[Double, Double]()
+
+            // 输入模型进行预测，将预测结果、权重进行存储到map中
+            for (i <- 0 until n) {
+                val predict = adaBoostDecisionTreeModelArray(i).predict(row(0).asInstanceOf[Vector])
+                if (map.contains(predict))
+                    map.put(predict, map.get(predict).get + adaBoostDecisionTreeModelInfo(i)._2)
+                else
+                    map.put(predict, adaBoostDecisionTreeModelInfo(i)._2)
+            }
+            for (i <- 0 until n) {
+                val predict = adaBoostDecisionTreeModelArray1(i).predict(row(0).asInstanceOf[Vector])
+                if (map.contains(predict))
+                    map.put(predict, map.get(predict).get + adaBoostDecisionTreeModelInfo1(i)._2)
+                else
+                    map.put(predict, adaBoostDecisionTreeModelInfo1(i)._2)
+            }
+            for (i <- 0 until n) {
+                val predict = adaBoostDecisionTreeModelArray2(i).predict(row(0).asInstanceOf[Vector])
+                if (map.contains(predict))
+                    map.put(predict, map.get(predict).get + adaBoostDecisionTreeModelInfo2(i)._2)
+                else
+                    map.put(predict, adaBoostDecisionTreeModelInfo2(i)._2)
+            }
+
+            // 以权重最大的预测结果作为集成结果
+            var maxWeight: Double = 0
+            var currentPredict: Double = -1
+            map.foreach(iterator => {
+                if (iterator._2 > maxWeight) {
+                    maxWeight = iterator._2
+                    currentPredict = iterator._1
+                }
+            })
+
+            // 判断最后的预测值是否与真实值一致
+            if (currentPredict != row(1))
+                0.0
+            else
+                1.0
+        }).sum() / datasetSize
+
+        // 输出结果
+        println(s"DTs = " + DTs)
+        log.append(s"DTs," + DTs + "\n")
+
+        // 写出日志
+        spark.sparkContext.parallelize(log.toString().split("\n").toSeq,1).saveAsTextFile(path + "testRes_DTs")
+
+        //关闭所有东西
+        spark.close()
+    }
+}

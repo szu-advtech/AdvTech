@@ -1,0 +1,31 @@
+{
+    "n_epochs": 100,
+    "grid_size": null,
+    "discount_gamma": 0.99,
+    "gae_lambda": 0.95,
+    "logdir": "logs",
+    "random_init_episodes": 50,
+    "max_episodes": null,
+    "actor_entropy": true,
+    "n_paths": 30,
+    "n_steps": 30,
+    "horizon": 10,
+    "expl_amount": 0.0,
+    "total_steps": 260000.0,
+    "action_dist": "tanh_normal",
+    "use_rewards": false,
+    "contrastive": true,
+    "disable_cuda": false,
+    "save_every": 100,
+    "render_every": 0,
+    "record_every": 100,
+    "recon_every": 100,
+    "suite": "dmc",
+    "task": "reacher_easy_13",
+    "algo": "contrastive_actinf",
+    "config": [
+        "dmc_small",
+        "dmc_benchmark"
+    ],
+    "seed": 34
+}
