@@ -1,0 +1,32 @@
+_target_: src.models.undc_module_pre.UNDCLitModule
+
+optimizer:
+  _target_: torch.optim.Adam
+  _partial_: true
+  lr: 0.0001
+  weight_decay: 0.0
+
+scheduler:
+  _target_: torch.optim.lr_scheduler.ReduceLROnPlateau
+  _partial_: true
+  mode: min
+  factor: 0.1
+  patience: 1
+
+net:
+  _target_: src.models.components.undc_pc_net.local_pointnet
+net_float:
+  _target_: src.models.components.undc_pc_net_base.local_pointnet
+  out_bool: false
+  out_float: true
+net_bool: 
+  _target_: src.models.components.undc_pc_net_base.local_pointnet
+  out_bool: true
+  out_float: false
+
+out_dir: ${hydra:runtime.output_dir}
+
+
+train_float: True
+
+net_bool_pth: /home/fubao/dev/my-ndc/logs/train/runs/2023-01-22_19-48-06/net_bool-3.pth
