@@ -1,0 +1,35 @@
+table_set_default hcf_check_table check_hcf 1
+table_set_default session_check_table _drop
+table_set_default session_init_table init_session
+table_set_default session_complete_table tag_abnormal
+table_set_default packet_sample_table sample_packet
+table_set_default packet_normal_table tag_normal
+table_set_default packet_abnormal_table tag_abnormal
+table_set_default hc_compute_table compute_hc 255
+table_set_default hc_compute_table_copy compute_hc 255
+table_set_default hc_inspect_table inspect_hc
+table_set_default hc_compute_twice_table _nop
+table_set_default hc_abnormal_table filtering_other_abnormal
+table_set_default l2_forward_table _drop
+table_add hcf_check_table check_hcf 2 => 0
+table_add session_check_table lookup_session_map 1 =>
+table_add session_check_table lookup_reverse_session_map 2 =>
+table_add session_complete_table complete_session 1 =>
+table_add hc_compute_table compute_hc 0->29 => 30 0
+table_add hc_compute_table compute_hc 30->31 => 32 0
+table_add hc_compute_table compute_hc 32->59 => 60 0
+table_add hc_compute_table compute_hc 60->64 => 64 0
+table_add hc_compute_table compute_hc 65->128 => 128 0
+table_add hc_compute_table compute_hc 129->254 => 255 0
+table_add hc_compute_table_copy compute_hc 0->29 => 30 0
+table_add hc_compute_table_copy compute_hc 30->31 => 32 0
+table_add hc_compute_table_copy compute_hc 32->59 => 60 0
+table_add hc_compute_table_copy compute_hc 60->64 => 64 0
+table_add hc_compute_table_copy compute_hc 65->128 => 128 0
+table_add hc_compute_table_copy compute_hc 129->254 => 255 0
+table_add hc_compute_twice_table compute_hc 0->29 => 32 0
+table_add hc_compute_twice_table compute_hc 32->59 => 64 0
+table_add hc_abnormal_table learning_abnormal 0 0 =>
+table_add hc_abnormal_table filtering_sample_abnormal 1 0 =>
+table_add l2_forward_table forward_l2 0 1 => 2
+table_add l2_forward_table forward_l2 0 2 => 1
