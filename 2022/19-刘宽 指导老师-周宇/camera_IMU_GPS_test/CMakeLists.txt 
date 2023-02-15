@@ -1,2 +1,0 @@
-add_executable(camera_IMU_GPS_test src/camera_IMU_GPS_test.cpp)
-target_link_libraries(camera_IMU_GPS_test vins_lib) 
