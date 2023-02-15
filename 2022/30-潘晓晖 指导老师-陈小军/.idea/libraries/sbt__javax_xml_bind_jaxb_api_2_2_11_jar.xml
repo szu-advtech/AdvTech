@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: javax.xml.bind:jaxb-api:2.2.11:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

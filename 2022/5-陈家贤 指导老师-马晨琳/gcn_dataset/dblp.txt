@@ -1,0 +1,4 @@
+edge,105734
+feature,1639
+vertex,17716
+class,4

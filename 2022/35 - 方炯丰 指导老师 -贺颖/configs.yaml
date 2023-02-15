@@ -1,0 +1,42 @@
+base:
+  n_epochs: 100
+  grid_size: null
+  discount_gamma: 0.99
+  gae_lambda: 0.95
+  logdir: 'logs'
+  random_init_episodes: 5
+  max_episodes: null
+  actor_entropy: True
+
+dmc_benchmark:
+  random_init_episodes: 50
+
+dmc_default:
+  n_paths: 50
+  n_steps: 50
+  horizon: 15
+  expl_amount: 0.3
+  total_steps: 5e6
+  action_dist: 'tanh_normal'
+            
+dmc_small:
+  n_paths: 30
+  n_steps: 30
+  horizon: 10
+  expl_amount: 0.0
+  total_steps: 260e3
+  action_dist: 'tanh_normal'
+
+dmc_nano:
+  n_paths: 5
+  n_steps: 5
+  horizon: 3
+  expl_amount: 0.3
+  total_steps: 5e6
+  action_dist: 'tanh_normal'
+
+
+algos:
+  contrastive_actinf:
+    use_rewards: False
+    contrastive: True

@@ -1,0 +1,1 @@
+kosarak数据集一已经过处理，其他两个数据集为enron.format和orkut-ungraph.txt，由于文件太大不作上传，可自行上网下载。

@@ -1,0 +1,10 @@
+n02056570 king_penguin
+n02085936 Maltese_dog
+n02128757 snow_leopard
+n02690373 airliner
+n02692877 airship
+n03095699 container_ship
+n04254680 soccer_ball
+n04285008 sports_car
+n04467665 trailer_truck
+n07747607 orange

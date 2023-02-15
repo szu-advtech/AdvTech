@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: dev.ludovic.netlib:blas:2.2.1:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/dev/ludovic/netlib/blas/2.2.1/blas-2.2.1.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/dev/ludovic/netlib/blas/2.2.1/blas-2.2.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/dev/ludovic/netlib/blas/2.2.1/blas-2.2.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

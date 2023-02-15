@@ -1,0 +1,124 @@
+module router {
+  yang-version 1.1;
+  namespace "http://polycube.network/router";
+  prefix "router";
+
+  import polycube-base { prefix "polycube-base"; }
+  import polycube-standard-base { prefix "polycube-standard-base"; }
+
+  import ietf-inet-types { prefix "inet"; }
+  import ietf-yang-types { prefix "yang";  }
+
+  organization "Polycube open source project";
+  description "YANG data model for the Polycube Router service";
+
+  polycube-base:service-description "Router Service";
+  polycube-base:service-version "2.0";
+  polycube-base:service-name "router";
+  polycube-base:service-min-kernel-version "4.15.0";
+
+  uses "polycube-standard-base:standard-base-yang-module" {
+     augment ports {
+      leaf ip {
+        type inet:ipv4-prefix;
+        description "IP address and prefix of the port";
+        polycube-base:cli-example "10.0.0.1/24";
+        polycube-base:name-metric "router_ip_ports";
+        polycube-base:type-metric "GAUGE";
+        polycube-base:path-metric "$.ports[?(@.ip != '')]";
+        polycube-base:help-metric "Number of ports of the router with ip";
+        polycube-base:type-operation "FILTER";
+      }
+
+      list secondaryip {
+        description "Additional IP addresses for the port";
+        key "ip";
+        polycube-base:name-metric "router_secondaryip_ports";
+        polycube-base:type-metric "GAUGE";
+        polycube-base:path-metric 'sum($.ports[*].secondaryip.length)';
+        polycube-base:help-metric "Number of secondary ip addresses of the router";
+        leaf ip {
+          type inet:ipv4-prefix;
+          description "Secondary IP address and prefix of the port";
+          polycube-base:cli-example "10.0.0.2/24";
+        }
+      }
+
+      leaf mac {
+        type yang:mac-address;
+        description "MAC address of the port";
+        polycube-base:cli-example "B3:23:45:F5:3A";
+        polycube-base:name-metric "router_ports"; // every ports has a MAC
+        polycube-base:type-metric "GAUGE";
+        polycube-base:path-metric '$.ports.length';
+        polycube-base:help-metric "Number of ports on the router";
+      }
+    }
+  }
+
+  list route {
+    key "network nexthop";
+    description "Entry associated with the routing table";
+    polycube-base:name-metric "router_route_routes";
+    polycube-base:type-metric "GAUGE";
+    polycube-base:path-metric '$.route.length';
+    polycube-base:help-metric "Number of entries in routing table";
+    leaf network {
+      type inet:ipv4-prefix;
+      mandatory true;
+      description "Destination network IP";
+      polycube-base:cli-example "10.0.0.0/24";
+    }
+
+    leaf nexthop {
+      type inet:ipv4-address;
+      mandatory true;
+      description "Next hop; if destination is local will be shown 'local' instead of the ip address";
+      polycube-base:cli-example "123.14.23.3";
+    }
+
+    leaf interface {
+      type string;
+      config true;
+      polycube-base:init-only-config;
+      description "Outgoing interface";
+      polycube-base:cli-example "port2";
+    }
+
+    leaf pathcost {
+      type uint32;
+      default 1;
+      description "Cost of this route";
+      polycube-base:cli-example "10";
+    }
+  }
+
+  list arp-table {
+    key "address";
+    description "Entry associated with the ARP table";
+    polycube-base:name-metric "router_arp_table_entries";
+    polycube-base:type-metric "GAUGE";
+    polycube-base:path-metric '$.arp-table.length';
+    polycube-base:help-metric "Number of entries in arp table";
+    leaf address {
+      type inet:ip-prefix;
+      mandatory true;
+      description "Destination IP address";
+      polycube-base:cli-example "123.13.34.0";
+    }
+
+    leaf mac {
+      type yang:mac-address;
+      mandatory true;
+      description "Destination MAC address";
+      polycube-base:cli-example "C5:13:2D:36:27:9B";
+    }
+
+    leaf interface {
+      type string;
+      mandatory true;
+      description "Outgoing interface";
+      polycube-base:cli-example "port2";
+    }
+  }
+}

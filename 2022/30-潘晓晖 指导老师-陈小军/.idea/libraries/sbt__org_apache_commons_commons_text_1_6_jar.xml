@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.apache.commons:commons-text:1.6:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/commons/commons-text/1.6/commons-text-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/commons/commons-text/1.6/commons-text-1.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/commons/commons-text/1.6/commons-text-1.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

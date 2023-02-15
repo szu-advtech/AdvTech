@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.apache.xbean:xbean-asm9-shaded:4.20:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/xbean/xbean-asm9-shaded/4.20/xbean-asm9-shaded-4.20.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/xbean/xbean-asm9-shaded/4.20/xbean-asm9-shaded-4.20-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,4 @@
+﻿  源.cpp
+D:\Visual Studio2017 临时项目文件\BMCE--字符串排序\BMCE--基数排序\BMCE--基数排序\源.cpp(24,21): warning C4018: “>”: 有符号/无符号不匹配
+D:\Visual Studio2017 临时项目文件\BMCE--字符串排序\BMCE--基数排序\BMCE--基数排序\源.cpp(74,21): warning C4018: “<”: 有符号/无符号不匹配
+  BMCE--基数排序.vcxproj -> D:\Visual Studio2017 临时项目文件\BMCE--字符串排序\BMCE--基数排序\Debug\BMCE--基数排序.exe

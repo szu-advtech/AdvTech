@@ -1,0 +1,7 @@
+--imagesPath ../data/vgg.txt
+--train_size 40000
+--batch_size 128
+--SIZE 40000
+--FSIZE 5
+--row 200
+--col 200

@@ -1,0 +1,98 @@
+module pbforwarder {
+  yang-version 1.1;
+  namespace "http://polycube.network/pbforwarder";
+  prefix "pbforwarder";
+
+  import polycube-base { prefix "polycube-base"; }
+  import polycube-standard-base { prefix "polycube-standard-base"; }
+
+  import ietf-inet-types { prefix "inet"; }
+  import ietf-yang-types { prefix "yang"; }
+
+  organization "Polycube open source project";
+  description "YANG data model for the Polycube Policy-Based Forwarder service";
+
+  polycube-base:service-description "Policy-Based Forwarder Service";
+  polycube-base:service-version "2.0";
+  polycube-base:service-name "pbforwarder";
+  polycube-base:service-min-kernel-version "4.14.0";
+
+  uses "polycube-standard-base:standard-base-yang-module";
+
+  list rules {
+    key "id";
+    description "Rule that contains all possible matches and the action for a packet";
+    polycube-base:name-metric "pbforwarder_rules_number_rules";
+    polycube-base:type-metric "GAUGE";
+    polycube-base:path-metric '$.rules.length';
+    polycube-base:help-metric "Number of rules";
+
+    leaf id {
+      type uint32;
+      description "Rule Identifier";
+    }
+
+    leaf vlan {
+      type uint32;
+      description "VLAN Identifier";
+    }
+
+    leaf src_mac {
+      type yang:mac-address;
+      description "Source MAC Address in the form AA:BB:CC:DD:EE:FF";
+    }
+
+    leaf dst_mac {
+      type yang:mac-address;
+      description "Destination MAC Address in the form AA:BB:CC:DD:EE:FF";
+    }
+
+    leaf src_ip {
+      type inet:ipv4-address;
+      description "Source IP Address in the form AA.BB.CC.DD";
+    }
+
+    leaf dst_ip {
+      type inet:ipv4-address;
+      description "Destination IP Address in the form AA.BB.CC.DD";
+    }
+
+    leaf l4_proto {
+      type enumeration {
+        enum UDP;
+        enum TCP;
+      }
+      description "Level 4 Protocol (i.e. UDP, TCP)";
+    }
+
+    leaf src_port {
+      type uint16;
+      description "Source L4 Port";
+    }
+
+    leaf dst_port {
+      type uint16;
+      description "Destination L4 Port";
+    }
+
+    leaf in_port {
+      type string;
+      description "Ingress port";
+    }
+
+    leaf out_port {
+      type string;
+      description "Output port (used only when action is FORWARD)";
+    }
+
+    leaf action {
+      type enumeration {
+        enum DROP;
+        enum SLOWPATH;
+        enum FORWARD;
+      }
+      default DROP;
+      description "Action associated to the rule(i.e., DROP, SLOWPATH, or FORWARD; default: DROP)";
+    }
+  }
+}

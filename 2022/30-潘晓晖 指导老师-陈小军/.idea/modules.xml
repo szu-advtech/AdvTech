@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/lsh_ddp.iml" filepath="$PROJECT_DIR$/lsh_ddp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lsh_ddp-build.iml" filepath="$PROJECT_DIR$/.idea/modules/lsh_ddp-build.iml" />
+    </modules>
+  </component>
+</project>
