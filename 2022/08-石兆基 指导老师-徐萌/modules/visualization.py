@@ -264,8 +264,8 @@ def argo_plot_time_series_with_masks(args, save_path):
         plt.figure(figsize=(16, 12))
         depth = ts_ori[:, 0]
 
-        # Plot max 6 features
-        for k in range(1, min(args.z_dim, 6)):
+        # Plot max 4 features
+        for k in range(1, min(args.z_dim, 4)):
             ts_ori_k = ts_ori[:, k]  # (seq_len, )
             ts_art_k = ts_art[:, k]  # (seq_len, )
             ts_art_k_mask = ts_art_k[mask]
@@ -320,8 +320,8 @@ def argo_plot_time_series_no_masks(args, save_path):
         plt.figure(figsize=(16, 12))
         depth = ts_ori[:, 0]
 
-        # Plot max 6 features 最多绘制6个特征
-        for k in range(min(args.z_dim, 6)):
+        # Plot max 6 features 最多绘制4个特征
+        for k in range(min(args.z_dim, 4)):
             # 所有行的第k个特征
             ts_ori_k = ts_ori[:, k]  # (seq_len, )
             ts_art_k = ts_art[:, k]  # (seq_len, )
