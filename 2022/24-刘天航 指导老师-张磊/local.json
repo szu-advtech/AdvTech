@@ -1,0 +1,45 @@
+{
+    "proxygen_h3": [
+        "/home/sky/proxygen/proxygen/_build/proxygen/httpserver/hq",
+        "--log_response=false",
+        "--mode=client",
+        "--stream_flow_control=6291456",
+        "--conn_flow_control=15728640",
+        "--use_draft=true",
+        "--draft-version=29",
+        "--logdir=''",
+        "--qlogger_path={qlog_dir}",
+        "--host={host}",
+        "--port={port}",
+        "--path={path}",
+        "--v=0"
+    ],
+    "ngtcp2_h3": [
+        "/home/sky/ngtcp2/ngtcp2/examples/client",
+        "--quiet",
+        "--exit-on-all-streams-close",
+        "--max-data=15728640",
+        "--max-stream-data-uni=6291456",
+        "--max-stream-data-bidi-local=6291456",
+        "--group=X25519",
+        "--qlog-dir={qlog_dir}",
+        "{host}",
+        "{port}",
+        "{url}"
+    ],
+    "curl_h2": [
+        "curl",
+        "--insecure",
+        "-s",
+        "-w",
+        "time_namelookup:%{time_namelookup}\ntime_total:%{time_total}\n",
+        "-o",
+        "/dev/null",
+        "--connect-timeout",
+        "5",
+        "--max-time",
+        "120",
+        "--http2",
+        "{url}"
+    ]
+}

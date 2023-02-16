@@ -1,0 +1,605 @@
+{
+  "description": "Converted from file",
+  "qlog_version": "draft-00",
+  "summary": {
+    "max_duration": 25434,
+    "total_event_count": 36,
+    "trace_count": 1
+  },
+  "title": "mvfst qlog",
+  "traces": [
+    {
+      "common_fields": {
+        "dcid": "b0d6138f2a086506",
+        "protocol_type": "QUIC_HTTP3",
+        "reference_time": "0",
+        "scid": ""
+      },
+      "configuration": {
+        "time_offset": 0,
+        "time_units": "us"
+      },
+      "description": "Generated qlog from connection",
+      "event_fields": [
+        "relative_time",
+        "category",
+        "event",
+        "data"
+      ],
+      "events": [
+        [
+          "61277697872",
+          "transport",
+          "transport_state_update",
+          {
+            "update": "start"
+          }
+        ],
+        [
+          "61277698309",
+          "transport",
+          "packet_sent",
+          {
+            "frames": [
+              {
+                "frame_type": "crypto_frame",
+                "len": 335,
+                "offset": 0
+              },
+              {
+                "frame_type": "padding",
+                "num_frames": 876
+              }
+            ],
+            "header": {
+              "packet_number": 974055,
+              "packet_size": 1252
+            },
+            "packet_type": "initial"
+          }
+        ],
+        [
+          "61277711279",
+          "transport",
+          "datagram_received",
+          {
+            "data_len": 1252
+          }
+        ],
+        [
+          "61277711280",
+          "transport",
+          "datagram_received",
+          {
+            "data_len": 1252
+          }
+        ],
+        [
+          "61277711280",
+          "transport",
+          "datagram_received",
+          {
+            "data_len": 119
+          }
+        ],
+        [
+          "61277711305",
+          "transport",
+          "packet_received",
+          {
+            "frames": [
+              {
+                "frame_type": "crypto_frame",
+                "len": 90,
+                "offset": 0
+              },
+              {
+                "frame_type": "padding",
+                "num_frames": 1
+              }
+            ],
+            "header": {
+              "packet_number": 0,
+              "packet_size": 1252
+            },
+            "packet_type": "initial"
+          }
+        ],
+        [
+          "61277711422",
+          "transport",
+          "packet_received",
+          {
+            "frames": [
+              {
+                "frame_type": "crypto_frame",
+                "len": 1214,
+                "offset": 0
+              }
+            ],
+            "header": {
+              "packet_number": 1,
+              "packet_size": 1252
+            },
+            "packet_type": "handshake"
+          }
+        ],
+        [
+          "61277711503",
+          "metric_update",
+          "congestion_metric_update",
+          {
+            "bytes_in_flight": 0,
+            "congestion_event": "congestion packet ack",
+            "current_cwnd": 13772,
+            "recovery_state": "",
+            "state": "Hystart"
+          }
+        ],
+        [
+          "61277711509",
+          "transport",
+          "packet_received",
+          {
+            "frames": [
+              {
+                "frame_type": "crypto_frame",
+                "len": 37,
+                "offset": 1214
+              }
+            ],
+            "header": {
+              "packet_number": 2,
+              "packet_size": 119
+            },
+            "packet_type": "handshake"
+          }
+        ],
+        [
+          "61277711594",
+          "loss",
+          "packet_drop",
+          {
+            "drop_reason": "parse",
+            "packet_size": 44
+          }
+        ],
+        [
+          "61277711622",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": true,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277711624",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": false,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277711624",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": true,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277711626",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": false,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277711626",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": true,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277711669",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": false,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277711761",
+          "HTTP3",
+          "stream_state_update",
+          {
+            "id": 0,
+            "ms_since_creation": 0,
+            "update": "headers"
+          }
+        ],
+        [
+          "61277711768",
+          "HTTP3",
+          "stream_state_update",
+          {
+            "id": 0,
+            "ms_since_creation": 0,
+            "update": "eom"
+          }
+        ],
+        [
+          "61277711825",
+          "transport",
+          "packet_sent",
+          {
+            "frames": [
+              {
+                "frame_type": "crypto_frame",
+                "len": 36,
+                "offset": 0
+              },
+              {
+                "ack_delay": 523,
+                "acked_ranges": [
+                  [
+                    1,
+                    2
+                  ]
+                ],
+                "frame_type": "ack"
+              }
+            ],
+            "header": {
+              "packet_number": 974055,
+              "packet_size": 81
+            },
+            "packet_type": "handshake"
+          }
+        ],
+        [
+          "61277711842",
+          "transport",
+          "packet_sent",
+          {
+            "frames": [
+              {
+                "fin": false,
+                "frame_type": "stream",
+                "length": 24,
+                "offset": 0,
+                "stream_id": "2"
+              },
+              {
+                "fin": false,
+                "frame_type": "stream",
+                "length": 1,
+                "offset": 0,
+                "stream_id": "6"
+              },
+              {
+                "fin": false,
+                "frame_type": "stream",
+                "length": 1,
+                "offset": 0,
+                "stream_id": "10"
+              },
+              {
+                "fin": true,
+                "frame_type": "stream",
+                "length": 40,
+                "offset": 0,
+                "stream_id": "0"
+              },
+              {
+                "frame_type": "padding",
+                "num_frames": 26
+              }
+            ],
+            "header": {
+              "packet_number": 974055,
+              "packet_size": 132
+            },
+            "packet_type": "1RTT"
+          }
+        ],
+        [
+          "61277723091",
+          "transport",
+          "datagram_received",
+          {
+            "data_len": 451
+          }
+        ],
+        [
+          "61277723092",
+          "transport",
+          "datagram_received",
+          {
+            "data_len": 563
+          }
+        ],
+        [
+          "61277723110",
+          "transport",
+          "packet_received",
+          {
+            "frames": [
+              {
+                "frame_type": "crypto_frame",
+                "len": 428,
+                "offset": 0
+              },
+              {
+                "frame_type": "handshake_done"
+              }
+            ],
+            "header": {
+              "packet_number": 4,
+              "packet_size": 451
+            },
+            "packet_type": "1RTT"
+          }
+        ],
+        [
+          "61277723129",
+          "metric_update",
+          "congestion_metric_update",
+          {
+            "bytes_in_flight": 132,
+            "congestion_event": "congestion packet ack",
+            "current_cwnd": 13853,
+            "recovery_state": "",
+            "state": "Hystart"
+          }
+        ],
+        [
+          "61277723157",
+          "transport",
+          "packet_buffered",
+          {
+            "packet_size": 563,
+            "protection_type": "Handshake"
+          }
+        ],
+        [
+          "61277723162",
+          "transport",
+          "packet_received",
+          {
+            "frames": [
+              {
+                "ack_delay": 0,
+                "acked_ranges": [
+                  [
+                    974055,
+                    974055
+                  ]
+                ],
+                "frame_type": "ack"
+              },
+              {
+                "frame_type": "new_connection_id",
+                "sequence": 1,
+                "token": [
+                  30,
+                  69,
+                  255,
+                  95,
+                  33,
+                  126,
+                  163,
+                  227,
+                  183,
+                  39,
+                  189,
+                  161,
+                  95,
+                  10,
+                  118,
+                  99
+                ]
+              },
+              {
+                "fin": false,
+                "frame_type": "stream",
+                "length": 1,
+                "offset": 0,
+                "stream_id": "7"
+              },
+              {
+                "fin": false,
+                "frame_type": "stream",
+                "length": 14,
+                "offset": 0,
+                "stream_id": "3"
+              },
+              {
+                "fin": false,
+                "frame_type": "stream",
+                "length": 4,
+                "offset": 0,
+                "stream_id": "11"
+              },
+              {
+                "fin": true,
+                "frame_type": "stream",
+                "length": 435,
+                "offset": 0,
+                "stream_id": "0"
+              }
+            ],
+            "header": {
+              "packet_number": 6,
+              "packet_size": 521
+            },
+            "packet_type": "1RTT"
+          }
+        ],
+        [
+          "61277723165",
+          "recovery",
+          "metric_update",
+          {
+            "ack_delay": 0,
+            "latest_rtt": 11251,
+            "min_rtt": 11251,
+            "smoothed_rtt": 11251
+          }
+        ],
+        [
+          "61277723173",
+          "metric_update",
+          "congestion_metric_update",
+          {
+            "bytes_in_flight": 0,
+            "congestion_event": "congestion packet ack",
+            "current_cwnd": 13985,
+            "recovery_state": "",
+            "state": "Hystart"
+          }
+        ],
+        [
+          "61277723226",
+          "HTTP3",
+          "stream_state_update",
+          {
+            "id": 0,
+            "ttlb": 11,
+            "update": "on eom"
+          }
+        ],
+        [
+          "61277723228",
+          "transport",
+          "transport_state_update",
+          {
+            "update": "closing stream, stream id: 0"
+          }
+        ],
+        [
+          "61277723231",
+          "idle_update",
+          "app_idle_update",
+          {
+            "idle": true,
+            "idle_event": "app idle"
+          }
+        ],
+        [
+          "61277723252",
+          "transport",
+          "packet_sent",
+          {
+            "frames": [
+              {
+                "ack_delay": 144,
+                "acked_ranges": [
+                  [
+                    6,
+                    6
+                  ],
+                  [
+                    4,
+                    4
+                  ]
+                ],
+                "frame_type": "ack"
+              },
+              {
+                "frame_type": "padding",
+                "num_frames": 3
+              }
+            ],
+            "header": {
+              "packet_number": 974056,
+              "packet_size": 36
+            },
+            "packet_type": "1RTT"
+          }
+        ],
+        [
+          "61277723272",
+          "HTTP3",
+          "stream_state_update",
+          {
+            "id": 0,
+            "ttfb": 11,
+            "update": "on headers"
+          }
+        ],
+        [
+          "61277723293",
+          "transport",
+          "transport_summary",
+          {
+            "current_conn_flow_control": 1572798,
+            "current_writable_bytes": 13985,
+            "dsr_packet_count": 0,
+            "final_packet_loss_reordering_threshold": 3,
+            "final_packet_loss_time_reordering_threshold_dividend": 5,
+            "quic_version": 1,
+            "sum_cur_stream_buffer_len": 0,
+            "sum_cur_write_offset": 66,
+            "sum_max_observed_offset": 454,
+            "total_bytes_cloned": 0,
+            "total_bytes_recvd": 3637,
+            "total_bytes_retransmitted": 0,
+            "total_bytes_sent": 1501,
+            "total_crypto_data_recvd": 1769,
+            "total_crypto_data_written": 371,
+            "total_packets_spuriously_marked_lost": 0,
+            "total_stream_bytes_cloned": 0,
+            "used_zero_rtt": false
+          }
+        ],
+        [
+          "61277723294",
+          "connectivity",
+          "connection_close",
+          {
+            "drain_connection": false,
+            "error": "HTTP: No error",
+            "reason": "HTTP: No error",
+            "send_close_immediately": true
+          }
+        ],
+        [
+          "61277723306",
+          "transport",
+          "packet_sent",
+          {
+            "frames": [
+              {
+                "closing_frame_type": "APPLICATION_CLOSE",
+                "error_code": "256",
+                "frame_type": "connection_close",
+                "reason_phrase": "HTTP: No error"
+              }
+            ],
+            "header": {
+              "packet_number": 974057,
+              "packet_size": 44
+            },
+            "packet_type": "1RTT"
+          }
+        ]
+      ],
+      "title": "mvfst qlog from single connection",
+      "vantage_point": {
+        "name": "client",
+        "type": "client"
+      }
+    }
+  ]
+}
