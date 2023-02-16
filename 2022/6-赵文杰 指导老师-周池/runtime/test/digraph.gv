@@ -1,0 +1,12 @@
+digraph
+{
+  FUNS -> TERMINATE [label="DF_output_A"];
+  SOURCED1 -> FUNS [label="DF_Source_D1"];
+  SOURCEC1 -> FUNS [label="DF_Source_C1"];
+  SOURCED -> FUNS [label="DF_Source_D"];
+  SOURCEC -> FUNS [label="DF_Source_C"];
+  SOURCEB1 -> FUNS [label="DF_Source_B1"];
+  SOURCEA1 -> FUNS [label="DF_Source_A1"];
+  SOURCEB -> FUNS [label="DF_Source_B"];
+  SOURCEA -> FUNS [label="DF_Source_A"];
+}

@@ -1,0 +1,70 @@
+module simplebridge {
+  yang-version 1.1;
+  namespace "http://polycube.network/simplebridge";
+  prefix "simplebridge";
+
+  import polycube-base { prefix "polycube-base"; }
+  import polycube-standard-base { prefix "polycube-standard-base"; }
+
+  import ietf-yang-types { prefix "yang"; }
+
+  organization "Polycube open source project";
+  description "YANG data model for the Polycube simple L2 bridge";
+
+  polycube-base:service-description "Simple L2 Bridge Service";
+  polycube-base:service-version "1.0.0";
+  polycube-base:service-name "simplebridge";
+  polycube-base:service-min-kernel-version "4.11.0";
+
+  uses "polycube-standard-base:standard-base-yang-module";
+
+  container fdb {
+    leaf aging-time {
+      type uint32;
+      units seconds;
+      default 300;
+      description "Aging time of the filtering database (in seconds)";
+      polycube-base:cli-example "300";
+    }
+
+    list entry {
+      key "address";
+      description "Entry associated with the filtering database";
+      polycube-base:name-metric "simplebridge_entry_fdb_number_entries";
+      polycube-base:type-metric "GAUGE";
+      polycube-base:path-metric '$.fdb.entry.length';
+      polycube-base:help-metric "Number of entries associated with the filtering database";
+      leaf address {
+        type yang:mac-address;
+        mandatory true;
+        description "Address of the filtering database entry";
+        polycube-base:cli-example "C5:13:2D:36:27:9B";
+      }
+
+      leaf port {
+        type string;
+        mandatory true;
+        description "Output port name";
+        polycube-base:cli-example "port2";
+      }
+
+      leaf age {
+        type uint32;
+        units seconds;
+        description "Age of the current filtering database entry";
+        config false;
+      }
+    }
+
+    action flush {
+      description "Flushes the filtering database of the bridge";
+      output {
+        leaf flushed {
+          type boolean;
+          description "Returns true if the Filtering database has been flushed. False otherwise";
+          mandatory true;
+        }
+      }
+    }
+  }
+}

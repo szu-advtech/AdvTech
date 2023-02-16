@@ -1,0 +1,22 @@
+论文信息：
+
+@Article{Zhan8052206,
+  author =  {Kun Zhan and Chaoxi Niu and Changlu Chen and Feiping Nie and Changqing Zhang and Yi Yang},
+  title =   {Graph structure fusion for multiview clustering},
+  journal = {IEEE Transactions on Knowledge and Data Engineering},
+  year =    {2019},
+  volume =  {31},
+  number =  {10},
+  pages =   {1984--1993},
+  doi =     {https://doi.org/10.1109/TKDE.2018.2872061},
+  issn =    {1041-4347}
+}
+
+
+这是复现代码，其中所有代码已经封装完毕并且添加了详细的中文注释。代码可以顺畅执行.
+如果想要数据集，可以联系1592651405@qq.com
+
+绽教授个人GitHub主页：https://github.com/kunzhan
+出处：https://github.com/kunzhan/GSF
+
+非常感谢绽教授等人为多视图聚类这一领域做出的努力和贡献！

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+kubectl delete deployment --namespace=kube-system boreas-scheduler
+kubectl delete clusterrolebinding --namespace=kube-system boreas-scheduler-as-kube-scheduler
+kubectl delete serviceaccount --namespace=kube-system boreas-scheduler

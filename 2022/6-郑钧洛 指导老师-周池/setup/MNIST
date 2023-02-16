@@ -1,0 +1,7 @@
+--imagesPath ../data/mnist.txt
+--train_size 10000
+--batch_size 128
+--SIZE 784
+--FSIZE 5
+--row 28
+--col 28

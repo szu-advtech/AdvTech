@@ -1,0 +1,108 @@
+{
+  "layouts" : [
+    {
+      "canvasWidth" : 1920,
+      "id" : "originalLayout",
+      "canvasHeight" : 1080,
+      "elements" : [
+        {
+          "id" : "<ImageElement: 0x600003e19a00>",
+          "x" : 64,
+          "y" : 96,
+          "width" : 199,
+          "height" : 99,
+          "type" : "image"
+
+        },
+        {
+          "id" : "<HeadingElement: 0x10323dda0>",
+          "x" : 310,
+          "y" : 96,
+          "height" : 91,
+          "width" : 618,
+          "type" : "title",
+          "color" : "#00ff00"
+        },
+        {
+          "id" : "<ParagraphElement: 0x103225650>",
+          "x" : 64,
+          "y" : 288,
+          "width" : 403,
+          "height" : 288,
+          "type" : "text",
+          "color" : "#00ab24"
+        },
+        {
+          "id" : "<ButtonElement: 0x103056470>",
+          "x" : 512,
+          "y" : 640,
+          "width" : 206,
+          "height" : 72,
+          "type" : "button",
+          "color" : "green"
+
+        },
+        {
+          "id" : "<ButtonElement: 0x103224580>",
+          "x" : 288,
+          "y" : 640,
+          "width" : 188,
+          "height" : 70,
+          "type" : "button",
+          "color" : "#ab1424"
+        },
+        {
+          "id" : "<ImageElement: 0x600003e16400>",
+          "x" : 512,
+          "y" : 288,
+          "width" : 420,
+          "height" : 288,
+          "type" : "image"
+        }
+      ]
+    },
+
+
+    {
+      "canvasWidth" : 480,
+      "id" : "originalLayout",
+      "canvasHeight" : 960,
+      "elements" : [
+        {
+          "id" : "<ImageElement: 0x600003e19a00>",
+          "x" : 50,
+          "y" : 50,
+          "width" : 150,
+          "height" : 200,
+          "type" : "image"
+        },
+        {
+          "id" : "<HeadingElement: 0x10323dda0>",
+          "x" : 250,
+          "y" : 50,
+          "height" : 100,
+          "width" : 200,
+          "type" : "title"
+        },
+        {
+          "id" : "<ParagraphElement: 0x103225650>",
+          "x" : 30,
+          "y" : 400,
+          "width" : 420,
+          "height" : 300,
+          "type" : "text"
+        },
+        {
+          "id" : "<ButtonElement: 0x103056470>",
+          "x" : 350,
+          "y" : 740,
+          "width" : 60,
+          "height" : 40,
+          "type" : "button"
+        }
+      ]
+    }
+
+
+  ]
+}

@@ -1,0 +1,3 @@
+1. Run python vdiv_agriculture.py to get the vdivergences
+
+2. Run plotting_map_crop.py to plot the vdivergence on the map

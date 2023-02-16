@@ -1,0 +1,13 @@
+python3 -m paddle.distributed.launch --selected_gpus='0' run_tydi.py \
+  --state_dict_path=data/tydiqa_baseline_model/train \
+  --predict_file=data/tydi/tydiqa-v1.0-dev.jsonl.gz \
+  --precomputed_predict_file=data/tydi/dev.h5df \
+  --do_predict \
+  --max_seq_length=2048 \
+  --max_answer_length=100 \
+  --candidate_beam=30 \
+  --predict_batch_size=32 \
+  --logging_steps=100 \
+  --seed=2020 \
+  --output_dir=data/tydiqa_baseline_model/predict \
+  --output_prediction_file=data/tydiqa_baseline_model/predict/pred.jsonl

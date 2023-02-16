@@ -1,0 +1,18 @@
+python -m example.run_squad \
+    --model_type canine \
+    --model_name_or_path canine-s \
+    --max_seq_length 1536 \
+    --doc_stride 512 \
+    --batch_size 32 \
+    --learning_rate 3e-5 \
+    --num_train_epochs 2 \
+    --logging_steps 1000 \
+    --save_steps 5000 \
+    --warmup_proportion 0.1 \
+    --weight_decay 0.01 \
+    --output_dir ./tmp/squad/ \
+    --device gpu \
+    --do_train \
+    --do_predict \
+    --fp16 \
+    --version_2_with_negative

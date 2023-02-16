@@ -1,0 +1,6 @@
+--train_size 640000
+--batch_size 128
+--SIZE 2048
+--FSIZE 5
+--row 64
+--col 32

@@ -1,0 +1,10 @@
+datasets：数据文件夹
+Log：运行结果文件夹
+neighbor_data：邻居数据文件夹
+dataset.py：数据读取
+evaluation.py：指标计算
+model_1.py：VAEN(I)
+model_2.py：VAEN(H,P)
+model_3.py：VAEN(H,E)——不公开
+train_hot.py：与model_1.py和model_2.py结合使用
+run.py：运行脚本

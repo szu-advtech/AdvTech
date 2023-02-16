@@ -1,0 +1,5180 @@
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 5
+INFO:root:CLOCK: 161.0: Action: 4
+INFO:root:CLOCK: 161.0: Action: 3
+INFO:root:CLOCK: 161.0: Action: 2
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 1
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 8
+INFO:root:CLOCK: 44: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 3
+INFO:root:CLOCK: 43: Action: 2
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 2
+INFO:root:CLOCK: 43: Action: 3
+INFO:root:CLOCK: 43: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 1
+INFO:root:CLOCK: 44: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 6
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 1
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 6
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 67: Action: 8
+INFO:root:CLOCK: 67: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 2
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 3
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 5
+INFO:root:CLOCK: 76.3: Action: 9
+INFO:root:CLOCK: 76.3: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 3
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 7
+INFO:root:CLOCK: 76.3: Action: 4
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 6
+INFO:root:CLOCK: 76.3: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 1
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 54: Action: 4
+INFO:root:CLOCK: 54: Action: 7
+INFO:root:CLOCK: 54: Action: 7
+INFO:root:CLOCK: 54: Action: 8
+INFO:root:CLOCK: 54: Finished placement of job: 6
+INFO:root:CLOCK: 81: Finished execution of job: 5
+INFO:root:CLOCK: 81: Action: 8
+INFO:root:CLOCK: 81: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 9
+INFO:root:CLOCK: 76.3: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 3
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 2
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 67: Action: 8
+INFO:root:CLOCK: 67: Action: 8
+INFO:root:CLOCK: 67: Action: 8
+INFO:root:CLOCK: 67: Action: 9
+INFO:root:CLOCK: 67: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 1
+INFO:root:CLOCK: 43: Action: 3
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 5
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 81: Finished execution of job: 5
+INFO:root:CLOCK: 81: Action: 9
+INFO:root:CLOCK: 81: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 67: Action: 7
+INFO:root:CLOCK: 67: Action: 2
+INFO:root:CLOCK: 67: Action: 7
+INFO:root:CLOCK: 67: Action: 4
+INFO:root:CLOCK: 67: Finished placement of job: 3
+INFO:root:CLOCK: 130.7: Finished execution of job: 3
+INFO:root:CLOCK: 130.7: Action: 9
+INFO:root:CLOCK: 130.7: Action: 4
+INFO:root:CLOCK: 130.7: Action: 7
+INFO:root:CLOCK: 130.7: Action: 1
+INFO:root:CLOCK: 130.7: Action: 7
+INFO:root:CLOCK: 130.7: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 8
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 54: Action: 6
+INFO:root:CLOCK: 54: Action: 8
+INFO:root:CLOCK: 54: Action: 8
+INFO:root:CLOCK: 54: Action: 9
+INFO:root:CLOCK: 54: Finished placement of job: 6
+INFO:root:CLOCK: 55: Action: 4
+INFO:root:CLOCK: 55: Action: 3
+INFO:root:CLOCK: 55: Action: 7
+INFO:root:CLOCK: 55: Action: 6
+INFO:root:CLOCK: 55: Action: 7
+INFO:root:CLOCK: 55: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 9
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 104.7: Finished execution of job: 3
+INFO:root:CLOCK: 104.7: Action: 7
+INFO:root:CLOCK: 104.7: Action: 3
+INFO:root:CLOCK: 104.7: Action: 8
+INFO:root:CLOCK: 104.7: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Action: 6
+INFO:root:CLOCK: 161.0: Action: 5
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 9
+INFO:root:CLOCK: 161.0: Action: 9
+INFO:root:CLOCK: 161.0: Action: 4
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 6
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 3
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 131: Finished execution of job: 1
+INFO:root:CLOCK: 131: Action: 7
+INFO:root:CLOCK: 131: Action: 7
+INFO:root:CLOCK: 131: Action: 4
+INFO:root:CLOCK: 131: Action: 9
+INFO:root:CLOCK: 131: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 7
+INFO:root:CLOCK: 76.3: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 4
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Action: 5
+INFO:root:CLOCK: 161.0: Finished placement of job: 3
+INFO:root:CLOCK: 210.0: Finished execution of job: 3
+INFO:root:CLOCK: 210.0: Action: 4
+INFO:root:CLOCK: 210.0: Action: 7
+INFO:root:CLOCK: 210.0: Action: 7
+INFO:root:CLOCK: 210.0: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 131: Finished execution of job: 1
+INFO:root:CLOCK: 131: Action: 4
+INFO:root:CLOCK: 131: Action: 7
+INFO:root:CLOCK: 131: Action: 8
+INFO:root:CLOCK: 131: Action: 7
+INFO:root:CLOCK: 131: Finished placement of job: 2
+INFO:root:CLOCK: 171.3: Finished execution of job: 2
+INFO:root:CLOCK: 171.3: Action: 7
+INFO:root:CLOCK: 171.3: Action: 5
+INFO:root:CLOCK: 171.3: Action: 6
+INFO:root:CLOCK: 171.3: Action: 6
+INFO:root:CLOCK: 171.3: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 67: Action: 4
+INFO:root:CLOCK: 67: Action: 7
+INFO:root:CLOCK: 67: Action: 7
+INFO:root:CLOCK: 67: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 7
+INFO:root:CLOCK: 76.3: Action: 7
+INFO:root:CLOCK: 76.3: Action: 1
+INFO:root:CLOCK: 76.3: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 5
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Action: 4
+INFO:root:CLOCK: 161.0: Action: 6
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 5
+INFO:root:CLOCK: 76.3: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 6
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Action: 5
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 7
+INFO:root:CLOCK: 76.3: Action: 5
+INFO:root:CLOCK: 76.3: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 1
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 1
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 5
+INFO:root:CLOCK: 76.3: Action: 9
+INFO:root:CLOCK: 76.3: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 6
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 7
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 54: Action: 7
+INFO:root:CLOCK: 54: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 4
+INFO:root:CLOCK: 76.3: Action: 5
+INFO:root:CLOCK: 76.3: Action: 7
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 6
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: No Executor Placement When No Job was Running. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 4
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 161.0: Finished execution of job: 1
+INFO:root:CLOCK: 161.0: Action: 7
+INFO:root:CLOCK: 161.0: Action: 4
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Action: 8
+INFO:root:CLOCK: 161.0: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 5
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 90: Finished execution of job: 3
+INFO:root:CLOCK: 90: Action: 7
+INFO:root:CLOCK: 90: Action: 7
+INFO:root:CLOCK: 90: Action: 5
+INFO:root:CLOCK: 90: Action: 8
+INFO:root:CLOCK: 90: Action: 1
+INFO:root:CLOCK: 90: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 7
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 54: Action: 9
+INFO:root:CLOCK: 54: Action: 7
+INFO:root:CLOCK: 54: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 2
+INFO:root:CLOCK: 76.3: Action: 4
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 5
+INFO:root:CLOCK: 76.3: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 8
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 9
+INFO:root:CLOCK: 43: Action: 4
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 7
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 81: Finished execution of job: 5
+INFO:root:CLOCK: 81: Action: 7
+INFO:root:CLOCK: 81: Action: 6
+INFO:root:CLOCK: 81: Action: 5
+INFO:root:CLOCK: 81: Action: 6
+INFO:root:CLOCK: 81: Finished placement of job: 6
+INFO:root:CLOCK: 113.2: Finished execution of job: 4
+INFO:root:CLOCK: 113.2: Action: 4
+INFO:root:CLOCK: 113.2: Action: 8
+INFO:root:CLOCK: 113.2: Action: 9
+INFO:root:CLOCK: 113.2: Action: 7
+INFO:root:CLOCK: 113.2: Action: 7
+INFO:root:CLOCK: 113.2: Finished placement of job: 7
+INFO:root:CLOCK: 58: Action: 9
+INFO:root:CLOCK: 58: Action: 9
+INFO:root:CLOCK: 58: Action: 4
+INFO:root:CLOCK: 58: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 67: Action: 1
+INFO:root:CLOCK: 67: Action: 8
+INFO:root:CLOCK: 67: Action: 9
+INFO:root:CLOCK: 67: Action: 7
+INFO:root:CLOCK: 67: Finished placement of job: 3
+INFO:root:CLOCK: 116: Finished execution of job: 3
+INFO:root:CLOCK: 116: Action: 8
+INFO:root:CLOCK: 116: Action: 5
+INFO:root:CLOCK: 116: Action: 5
+INFO:root:CLOCK: 116: Action: 8
+INFO:root:CLOCK: 116: Action: 9
+INFO:root:CLOCK: 116: Finished placement of job: 4
+INFO:root:CLOCK: 44: Action: 9
+INFO:root:CLOCK: 44: Finished placement of job: 5
+INFO:root:CLOCK: 54: Action: 7
+INFO:root:CLOCK: 54: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 5
+INFO:root:CLOCK: 43: Action: 2
+INFO:root:CLOCK: 43: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7
+INFO:root:CLOCK: 41: Action: 8
+INFO:root:CLOCK: 41: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 2
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 76.3: Finished execution of job: 2
+INFO:root:CLOCK: 76.3: Action: 8
+INFO:root:CLOCK: 76.3: Action: 2
+INFO:root:CLOCK: 76.3: Invalid Executor Placement, Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 4
+INFO:root:CLOCK: 36: Action: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 67: Finished execution of job: 2
+INFO:root:CLOCK: 67: Action: 8
+INFO:root:CLOCK: 67: Action: 9
+INFO:root:CLOCK: 67: Action: 7
+INFO:root:CLOCK: 67: Action: 9
+INFO:root:CLOCK: 67: Finished placement of job: 3
+INFO:root:CLOCK: 43: Action: 7
+INFO:root:CLOCK: 43: Action: 2
+INFO:root:CLOCK: 43: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 2
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 9
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 5
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 3
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 5
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 7
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Partial Executor Placement for a Job. Episode Ended
+
+
+INFO:root:CLOCK: 31: Action: 7
+INFO:root:CLOCK: 31: Action: 8
+INFO:root:CLOCK: 31: Action: 9
+INFO:root:CLOCK: 31: Finished placement of job: 1
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Action: 6
+INFO:root:CLOCK: 36: Action: 9
+INFO:root:CLOCK: 36: Action: 8
+INFO:root:CLOCK: 36: Finished placement of job: 2
+INFO:root:CLOCK: 41: Action: 2
+INFO:root:CLOCK: 41: Action: 4
+INFO:root:CLOCK: 41: Action: 7

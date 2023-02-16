@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: org.apache.hadoop:hadoop-client-api:3.3.1:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/hadoop/hadoop-client-api/3.3.1/hadoop-client-api-3.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/hadoop/hadoop-client-api/3.3.1/hadoop-client-api-3.3.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

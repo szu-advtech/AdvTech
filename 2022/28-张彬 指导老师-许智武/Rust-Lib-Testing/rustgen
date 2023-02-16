@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+# For Mac
+if [ $(command uname) == "Darwin" ]; then
+	if ! [ -x "$(command -v greadlink)"  ]; then
+		brew install coreutils
+	fi
+	BIN_PATH=$(greadlink -f "$0")
+	ROOT_DIR=$(dirname $BIN_PATH)
+# For Linux
+else
+	BIN_PATH=$(readlink -f "$0")
+	ROOT_DIR=$(dirname $BIN_PATH)
+fi
+
+# Crustheck the precondiction (find Cargo.toml)
+if [ ! -f "Cargo.toml" ]; then
+	echo "Please move to the root dir of the crate"
+	exit 0
+fi
+
+MODE="init"
+
+if [ $# -ne 0 ];then
+	if [ "$1" == "target" ];then
+		MODE="target"
+	elif [ "$1" == "fuzz" ];then
+		MODE="fuzz"
+	else
+		MODE="init"
+	fi
+fi
+
+PY_VERSION_FIRST_ATTEMPT=`python3 -V 2>&1|awk '{print $2}'|awk -F '.' '{print $1}'`
+PY_VERSION_SECOND_ATTEMPT=`python -V 2>&1|awk '{print $2}'|awk -F '.' '{print $1}'`
+
+set -exo pipefail
+
+export ROOT_DIR=${ROOT_DIR}
+export DOC_RUST_LANG_ORG_CHANNEL="https://doc.rust-lang.org/nightly"
+
+rustup default myrust
+
+if [[ "${GenChoose}" ]];then
+	echo "GenChoose=$GenChoose"
+else
+	GenChoose="unsafe"
+	export GenChoose=$GenChoose
+fi
+
+if [[ $strategy ]];then
+	echo "strategy=$strategy"
+else
+	strategy="bfs"
+	export strategy=$strategy
+fi
+
+cargo clean
+if (( $PY_VERSION_FIRST_ATTEMPT == 3 ))
+then
+	echo "Your 'python3' Version is 3."
+	python3 ${ROOT_DIR}/scripts/rustGen.py $MODE
+elif (( $PY_VERSION_SECOND_ATTEMPT == 3 ))
+then
+	echo "Your 'python' Version is 3."
+	python ${ROOT_DIR}/scripts/rustGen.py $MODE
+else
+	echo "I don't know your 'python' Version."
+	${ROOT_DIR}/scripts/rustGen.py $MODE
+fi

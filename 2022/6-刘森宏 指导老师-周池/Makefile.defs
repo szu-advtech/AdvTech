@@ -1,0 +1,10 @@
+# Uncomment the following line to use OpenMP 2.0 features
+#OMPFLAG = -DOMPVER2
+# Uncomment the following line to use OpenMP 3.0 features
+OMPFLAG = -DOMPVER2 -DOMPVER3
+
+CC=gcc
+CFLAGS = -fopenmp -O3
+LDFLAGS = -fopenmp -O3 -L$(OMP_TR4_DIR) -lomp -Wl,-rpath=$(OMP_TR4_DIR)
+CPP = /usr/bin/cpp
+LIBS = 

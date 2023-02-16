@@ -1,0 +1,10 @@
+h5py
+matplotlib
+numpy
+Pillow
+PyYAML
+scipy
+setuptools
+tensorboardX
+termcolor
+timm

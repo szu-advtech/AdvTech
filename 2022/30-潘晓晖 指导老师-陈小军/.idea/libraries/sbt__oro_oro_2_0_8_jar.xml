@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="sbt: oro:oro:2.0.8:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/oro/oro/2.0.8/oro-2.0.8.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/oro/oro/2.0.8/oro-2.0.8-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
