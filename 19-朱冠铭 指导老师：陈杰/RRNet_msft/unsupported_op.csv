@@ -1,0 +1,4 @@
+File,Start Line,End Line,OP,Tips
+utils/dataloader.py,64,64,torch.cuda.set_device,
+operators/distributed_wrapper.py,43,43,torch.cuda.set_device,
+operators/base_operator.py,24,24,torch.cuda.manual_seed,
