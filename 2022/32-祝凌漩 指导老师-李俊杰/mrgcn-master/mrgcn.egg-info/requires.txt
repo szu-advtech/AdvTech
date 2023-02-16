@@ -1,0 +1,7 @@
+torch
+numpy
+rdflib
+scipy
+pillow
+toml
+deep_geometry

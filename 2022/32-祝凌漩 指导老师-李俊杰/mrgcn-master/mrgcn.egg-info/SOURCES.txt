@@ -1,0 +1,17 @@
+LICENSE
+MANIFEST.in
+README.md
+setup.py
+if/aifb.toml
+if/am.toml
+if/bgs.toml
+if/dmg.toml
+if/mutag.toml
+mrgcn/mkdataset.py
+mrgcn/run.py
+mrgcn.egg-info/PKG-INFO
+mrgcn.egg-info/SOURCES.txt
+mrgcn.egg-info/dependency_links.txt
+mrgcn.egg-info/requires.txt
+mrgcn.egg-info/top_level.txt
+mrgcn.egg-info/zip-safe
