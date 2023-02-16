@@ -1,0 +1,2 @@
+model_checkpoint_path: "MLP"
+all_model_checkpoint_paths: "MLP"
