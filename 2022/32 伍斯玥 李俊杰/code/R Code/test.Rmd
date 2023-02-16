@@ -1,0 +1,155 @@
+---
+title: "Guide sampling"
+output: html_document
+date: "2022-12-04"
+---
+# 测试
+## 读入原图
+```{r}
+graph_name= "Route views"
+file_edge=paste("data/",graph_name,".txt ",collapse = ",",sep = "")
+E=as.matrix(read.table(file=file_edge))
+graph=graph_from_data_frame(E, directed=FALSE)  
+```
+## 抽样子图
+```{r}
+# 平均聚类系数
+avgc=transitivity(graph, type="average")
+# 平均度
+avgdeg=mean(igraph::degree(graph))
+# 抽样
+newgraph=Guidesampling(graph,avgdeg,avgc)
+```
+
+## 比较抽样图与原图
+### clustering coefficient distribution 画图
+```{r}
+disc=transitivity(graph,type="local")
+disc_s=transitivity(newgraph,type="local")
+d=data.frame(disc,rep("original",length(disc)))
+colnames(d)=c("ccd","data")
+ds=data.frame(disc_s,rep("sampling",length(disc_s)))
+colnames(ds)=c("ccd","data")
+de=rbind(d,ds)
+
+p=ggplot(de,aes(x=ccd))
+p+geom_density(aes(color=data,fill=data),alpha=0.2)+labs(x="ccd",y="density",title=graph_name)
+```
+### degree distribution 画图
+```{r}
+disd=igraph::degree(graph)
+disd_s=igraph::degree(newgraph)
+
+d=data.frame(disd,rep("original",length(disd)))
+colnames(d)=c("degree","data")
+ds=data.frame(disd_s,rep("sampling",length(disd_s)))
+colnames(ds)=c("degree","data")
+de=rbind(d,ds)
+  
+p=ggplot(de,aes(x=degree))
+p+geom_density(aes(color=data,fill=data),alpha=0.2)+labs(x="degree",y="density",title=graph_name)
+```
+### path length distribution 画图
+```{r}
+dispal=as.vector(distances(graph))
+dispal_s=as.vector(distances(newgraph))
+
+d=data.frame(dispal,rep("original",length(dispal)))
+colnames(d)=c("path_length","data")
+ds=data.frame(dispal_s,rep("sampling",length(dispal_s)))
+colnames(ds)=c("path_length","data")
+de=rbind(d,ds)
+
+p=ggplot(de,aes(x=path_length))
+p+geom_density(aes(color=data,fill=data),alpha=0.2)+labs(x="path_length",y="density",title=graph_name)
+```
+### 子图与原图的值的比较
+```{r}
+dis <- function(d)
+{
+  temp=matrix(rep(0,length(d)*2),ncol = 2)
+  temp[,1]=as.numeric(rownames(d))
+  temp[,2]=d
+  temp[order(temp[,1,drop=F]),,drop=F]
+  return(temp)
+}
+
+dis_compare <- function(d,d_s)
+  {
+  d=as.matrix(d)
+  d_s=as.matrix(d_s)
+  d=dis(d)
+  d_s=dis(d_s)
+  num=sort(union(d[,1],d_s[,1]))
+  temp=matrix(rep(0,length(num)*3),ncol = 3)
+  temp[,1]=num
+
+  for (j in 1:(dim(temp)[1])) 
+    {
+      for (i in 1:(dim(d)[1])) 
+      {
+        if(temp[j,1]==d[i,1])
+        {
+          temp[j,2]=d[i,2]
+        }
+      }
+     for (i in 1:(dim(d_s)[1])) 
+      {
+        if(temp[j,1]==d_s[i,1])
+        {
+          temp[j,3]=d_s[i,2]
+        }
+     }
+  }
+ J= JSD(t(temp[,2:3]))
+  return(J)
+}
+
+compare <- function(graph,newgraph){
+
+# 原图
+# 聚类系数分布
+disc=table(transitivity(graph,type="local"))/(vcount(graph))
+# 获得度分布
+disd=table(igraph::degree(graph))/(vcount(graph))
+# 路径长度分布
+dispal=(table(distances(graph)))/(vcount(graph)^2)
+# 平均最短路径
+avgpal=average.path.length(graph, directed = FALSE)
+# 直径
+dia=diameter(graph)
+  
+# 子图
+# 聚类系数分布
+disc_s=table(transitivity(newgraph,type="local"))/(vcount(newgraph))
+# 获得度分布
+disd_s=table(igraph::degree(newgraph))/(vcount(newgraph))
+# 路径长度分布
+dispal_s=(table(distances(newgraph)))/(vcount(newgraph)^2)
+# 平均最短路径
+avgpal_s=average.path.length(newgraph, directed = FALSE)
+# 直径
+dia_s=diameter(newgraph)
+
+JSD_cc=dis_compare(disc,disc_s)
+JSD_deg=dis_compare(disd,disd_s)
+JSD_pal=dis_compare(dispal,dispal_s)
+RMSE_avgpal=abs(avgpal-avgpal_s)
+RMSE_dia=abs(dia-dia_s)
+
+result=c(JSD_cc,JSD_deg,JSD_pal,RMSE_avgpal,RMSE_dia)
+result=data.frame(t(result))
+colnames(result)=c("clustering coefficient distribution JSD",
+              "degree distribution JSD",
+              "path length distribution JSD",
+              "average path length RMSE",
+              "diameter RMSE")
+return(result)
+}
+```
+
+**-------------------------把计算比较结果输出--------------------------**
+```{r}
+compare(graph,newgraph)
+```
+

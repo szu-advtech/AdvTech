@@ -1,0 +1,2 @@
+只对冷启动用户评分做RMSE，只用非冷启动用户训练M，b
+LinearMapping(Vs, Vt, 0.05, 0.01, 3000, Mt, Ut)

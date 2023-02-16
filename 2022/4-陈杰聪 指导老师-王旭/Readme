@@ -1,0 +1,5 @@
+因为数据集太大，没有上传数据集，若本地有coco数据集，只需在运行前，在配置文件dw_senet50.py或coco_detection.py中修改数据集路径即可
+
+运行可使用命令：
+运行fcos：PORT=29500 python -m torch.distributed.launch --nproc_per_node=2 train.py fcos_senet50.py --launcher pytorch
+运行DW：PORT=29500 python -m torch.distributed.launch --nproc_per_node=2 train.py dw_senet50.py --launcher pytorch

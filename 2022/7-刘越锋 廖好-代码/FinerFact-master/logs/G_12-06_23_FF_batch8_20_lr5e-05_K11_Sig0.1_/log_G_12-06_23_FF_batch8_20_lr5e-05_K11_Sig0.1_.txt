@@ -1,0 +1,24 @@
+[06-12-2022 23:50:15] INFO: Namespace(bert_hidden_dim=768, bert_pretrain='../bert_base', config_file='G.ini', cuda=True, data_dir='../data', dataset='gossipcop', debug=False, dropout=0.6, enable_tensorboard=False, eval_step=500, evi_num=5, gradient_accumulation_steps=8.0, itp=False, keep_claim=True, kernel=11, kfold_index=-1, layer=1, learning_rate=5e-05, max_len=130, min_evi_num=4, mode='FF', model_name='bert-base-cased', num_labels=2, num_train_epochs=20, num_tweets=6, num_users=32, num_words_per_topic=7, only_claim=True, outdir='C:\\Users\\22691\\Desktop\\result', path_test='../data\\Test_bert-base-cased_gossipcop_130_5.pt', path_train='../data\\Train_bert-base-cased_gossipcop_130_5.pt', patience=20, pool='att', postpretrain=None, prefix='bert-base-cased_gossipcop_130_5', pretrained_user_embed=False, root='../Demo', sample_ratio=None, sample_suffix='', seed=21, sent_num=6, sigma=0.1, test_size=0.2, threshold=0.0, train_batch_size=8, train_path=None, user_embed_dim=64, valid_batch_size=8, valid_path=None, warmup_proportion=0.1, warmup_ratio=0.06, weight_decay=0.0005)
+[06-12-2022 23:50:15] INFO: gossipcop Start training!
+[06-12-2022 23:50:15] INFO: Using batch size 8 | accumulation 8.0
+[06-12-2022 23:50:16] INFO: Loading train files ../data\Train_bert-base-cased_gossipcop_130_5.pt
+[06-12-2022 23:50:19] INFO: Loading test files ../data\Test_bert-base-cased_gossipcop_130_5.pt
+[06-12-2022 23:50:20] INFO: loading train set
+[06-12-2022 23:50:20] INFO: loading validation set
+[06-12-2022 23:50:21] INFO: Initializing BERT model
+[06-12-2022 23:50:21] INFO: loading archive file ../bert_base
+[06-12-2022 23:50:21] INFO: Model config {
+  "attention_probs_dropout_prob": 0.1,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "max_position_embeddings": 512,
+  "num_attention_heads": 12,
+  "num_hidden_layers": 12,
+  "type_vocab_size": 2,
+  "vocab_size": 28996
+}
+
+[06-12-2022 23:50:22] INFO: Weights from pretrained model not used in BertForSequenceEncoder: ['cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.seq_relationship.weight', 'cls.seq_relationship.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.LayerNorm.bias']

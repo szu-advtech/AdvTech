@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: jakarta.servlet:jakarta.servlet-api:4.0.3:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/jakarta/servlet/jakarta.servlet-api/4.0.3/jakarta.servlet-api-4.0.3.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/jakarta/servlet/jakarta.servlet-api/4.0.3/jakarta.servlet-api-4.0.3-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/jakarta/servlet/jakarta.servlet-api/4.0.3/jakarta.servlet-api-4.0.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,34 @@
+MF：
+k=100
+For lr=0.001, lamda_U=0.001, lamda_V=0.001
+0.750057423436541
+For lr=0.005, lamda_U=0.001, lamda_V=0.001
+Result: 1.074954510094201
+For lr=0.010, lamda_U=0.001, lamda_V=0.001
+Result: 1.0717306905444572
+For lr=0.001, lamda_U=0.010, lamda_V=0.010
+Result: 0.7494775262587757
+
+target：
+For lr=0.001, lamda_U=0.050, lamda_V=0.050
+Ideal Epoch: 56, Result: 56.0 0.811278
+
+BPR：
+For lr=0.001, lamda_U=0.010, lamda_V=0.010
+Ideal Epoch: 22, Result: 0.517319
+
+For lr=0.005, lamda_U=0.100, lamda_V=0.100
+Ideal Epoch: 34, Result: 0.520866
+For lr=0.005, lamda_U=0.050, lamda_V=0.050
+Ideal Epoch: 48, Result: 0.542571
+For lr=0.005, lamda_U=0.010, lamda_V=0.010
+Ideal Epoch: 30, Result: 0.538306
+For lr=0.005, lamda_U=0.005, lamda_V=0.005
+Ideal Epoch: 66, Result: 0.535379
+For lr=0.005, lamda_U=0.001, lamda_V=0.001
+Ideal Epoch: 46, Result: 0.522124
+
+For lr=0.010, lamda_U=0.010, lamda_V=0.010
+Ideal Epoch: 54, Result: 0.531237
+For lr=0.050, lamda_U=0.010, lamda_V=0.010
+Ideal Epoch: 64, Result: 0.528865

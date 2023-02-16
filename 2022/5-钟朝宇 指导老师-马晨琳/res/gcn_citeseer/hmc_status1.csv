@@ -1,0 +1,2 @@
+finish_time,byte_noc_router,num_act_cmds,num_pre_cmds,num_read_cmds,num_write_cmds,num_ref_cmds,num_read_row_hits,num_write_row_hits,dram_dynamic_energy,dram_standby_energy,dram_energy
+38905,4496160,19783,19713,282464,47808,64,265900,44809,8.1022e+07,3.1891e+07,1.12913e+08

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+buildah bud -t boreas-scheduler-improve:local .
+buildah push --tls-verify=false boreas-scheduler-improve docker://localhost:5000/boreas-scheduler-improve:local
+kubectl create -f scheduler-local.yaml

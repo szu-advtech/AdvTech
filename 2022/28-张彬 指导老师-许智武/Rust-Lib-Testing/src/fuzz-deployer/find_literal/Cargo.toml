@@ -1,0 +1,11 @@
+[package]
+name = "find_literal"
+version = "0.1.0"
+authors = ["wcventure <wcventure@126.com>"]
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+regex = "1.4.2"
+rand = "0.7.3"

@@ -1,0 +1,12 @@
+
+
+
+由于数据过大，文档中不含有相应的数据文件，可以在以下链接中进行下载，并进行预处理和特征提取，
+数据集链接：https://github.com/huster123/c-mapss-full-dataset-/tree/master/Data
+数据集中有四个子集，可以根据不同需要进行验证
+下载完数据集后，可以提取相应的特征，并保存到对应文件中，具体保存路径可以自己设置
+通过运行 Raw-Stream.py ，可以获得原始特征流raw stream
+运行HFF-Stream.py ，可以获得HFF stream 特征
+上述两组特征是不同的，可以根据需要自己设置
+
+Late-Fusion.py 和 Addition-Fusion.py 是报告中提到的两组不同融合方法下构建的Bi-LSTM模型

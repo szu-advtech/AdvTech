@@ -1,0 +1,1 @@
+mpirun -np 3 ../conv ../../setup/MNIST

@@ -1,0 +1,638 @@
+2022-11-29 00:06:13,355 INFO     input_dir:./data
+2022-11-29 00:06:13,355 INFO     save_dir:./modelsave
+2022-11-29 00:06:13,355 INFO     ckpt:None
+2022-11-29 00:06:13,355 INFO     bert_lr:3e-05
+2022-11-29 00:06:13,355 INFO     lr:0.001
+2022-11-29 00:06:13,355 INFO     weight_decay:1e-05
+2022-11-29 00:06:13,355 INFO     num_epoch:30
+2022-11-29 00:06:13,355 INFO     batch_size:16
+2022-11-29 00:06:13,356 INFO     seed:666
+2022-11-29 00:06:13,356 INFO     opt:radam
+2022-11-29 00:06:13,356 INFO     warmup_proportion:0.1
+2022-11-29 00:06:13,356 INFO     bert_name:bert-base-uncased
+2022-11-29 00:06:13,356 INFO     log_name:2022-11-29-00:06:13_radam_0.001_16.log
+2022-11-29 00:12:53,981 INFO     Create model.........
+2022-11-29 00:13:46,444 INFO     TransferNet(
+  (bert_encoder): BertModel(
+    (embeddings): BertEmbeddings(
+      (word_embeddings): Embedding(30522, 768, padding_idx=0)
+      (position_embeddings): Embedding(512, 768)
+      (token_type_embeddings): Embedding(2, 768)
+      (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+      (dropout): Dropout(p=0.1, inplace=False)
+    )
+    (encoder): BertEncoder(
+      (layer): ModuleList(
+        (0): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (1): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (2): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (3): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (4): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (5): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (6): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (7): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (8): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (9): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (10): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+        (11): BertLayer(
+          (attention): BertAttention(
+            (self): BertSelfAttention(
+              (query): Linear(in_features=768, out_features=768, bias=True)
+              (key): Linear(in_features=768, out_features=768, bias=True)
+              (value): Linear(in_features=768, out_features=768, bias=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+            (output): BertSelfOutput(
+              (dense): Linear(in_features=768, out_features=768, bias=True)
+              (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+              (dropout): Dropout(p=0.1, inplace=False)
+            )
+          )
+          (intermediate): BertIntermediate(
+            (dense): Linear(in_features=768, out_features=3072, bias=True)
+            (intermediate_act_fn): GELUActivation()
+          )
+          (output): BertOutput(
+            (dense): Linear(in_features=3072, out_features=768, bias=True)
+            (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+            (dropout): Dropout(p=0.1, inplace=False)
+          )
+        )
+      )
+    )
+    (pooler): BertPooler(
+      (dense): Linear(in_features=768, out_features=768, bias=True)
+      (activation): Tanh()
+    )
+  )
+  (step_encoders_0): Sequential(
+    (0): Linear(in_features=768, out_features=768, bias=True)
+    (1): Tanh()
+  )
+  (step_encoders_1): Sequential(
+    (0): Linear(in_features=768, out_features=768, bias=True)
+    (1): Tanh()
+  )
+  (rel_classifier): Linear(in_features=768, out_features=1144, bias=True)
+  (hop_selector): Linear(in_features=768, out_features=2, bias=True)
+)
+2022-11-29 00:13:46,452 INFO     Start training........
+2022-11-29 00:14:34,570 INFO     progress: 0.096  loss: 0.1294 (0.1479)  lr: 0.000001
+2022-11-29 00:15:22,804 INFO     progress: 0.191  loss: 0.1130 (0.1360)  lr: 0.000002
+2022-11-29 00:16:15,031 INFO     progress: 0.287  loss: 0.0882 (0.1215)  lr: 0.000003
+2022-11-29 00:16:59,401 INFO     progress: 0.383  loss: 0.0642 (0.1096)  lr: 0.000004
+2022-11-29 00:17:45,504 INFO     progress: 0.479  loss: 0.0421 (0.0966)  lr: 0.000005
+2022-11-29 00:18:32,481 INFO     progress: 0.574  loss: 0.0416 (0.0908)  lr: 0.000006
+2022-11-29 00:19:06,711 INFO     progress: 0.670  loss: 0.0214 (0.0835)  lr: 0.000007
+2022-11-29 00:19:40,606 INFO     progress: 0.766  loss: 0.0177 (0.0774)  lr: 0.000008
+2022-11-29 00:20:16,380 INFO     progress: 0.862  loss: 0.0164 (0.0719)  lr: 0.000009
+2022-11-29 00:20:51,216 INFO     progress: 0.957  loss: 0.0098 (0.0657)  lr: 0.000010
+2022-11-29 00:21:45,345 INFO     progress: 1.096  loss: 0.0087 (0.0595)  lr: 0.000011
+2022-11-29 00:22:26,832 INFO     progress: 1.191  loss: 0.0078 (0.0557)  lr: 0.000012
+2022-11-29 00:23:07,856 INFO     progress: 1.287  loss: 0.0057 (0.0522)  lr: 0.000013
+2022-11-29 00:23:43,058 INFO     progress: 1.383  loss: 0.0079 (0.0492)  lr: 0.000014
+2022-11-29 00:24:19,904 INFO     progress: 1.479  loss: 0.0060 (0.0464)  lr: 0.000015
+2022-11-29 00:24:53,981 INFO     progress: 1.574  loss: 0.0049 (0.0439)  lr: 0.000016
+2022-11-29 00:25:29,430 INFO     progress: 1.670  loss: 0.0051 (0.0418)  lr: 0.000017
+2022-11-29 00:26:04,243 INFO     progress: 1.766  loss: 0.0055 (0.0405)  lr: 0.000018
+2022-11-29 00:26:38,426 INFO     progress: 1.862  loss: 0.0049 (0.0388)  lr: 0.000019
+2022-11-29 00:27:14,085 INFO     progress: 1.957  loss: 0.0039 (0.0372)  lr: 0.000020
+2022-11-29 00:28:09,324 INFO     progress: 2.096  loss: 0.0039 (0.0357)  lr: 0.000021
+2022-11-29 00:28:46,854 INFO     progress: 2.191  loss: 0.0040 (0.0344)  lr: 0.000022
+2022-11-29 00:29:22,845 INFO     progress: 2.287  loss: 0.0046 (0.0334)  lr: 0.000023
+2022-11-29 00:29:56,987 INFO     progress: 2.383  loss: 0.0031 (0.0322)  lr: 0.000024
+2022-11-29 00:30:30,306 INFO     progress: 2.479  loss: 0.0027 (0.0311)  lr: 0.000025
+2022-11-29 00:31:04,030 INFO     progress: 2.574  loss: 0.0044 (0.0303)  lr: 0.000026
+2022-11-29 00:31:37,009 INFO     progress: 2.670  loss: 0.0037 (0.0293)  lr: 0.000027
+2022-11-29 00:32:12,026 INFO     progress: 2.766  loss: 0.0026 (0.0284)  lr: 0.000028
+2022-11-29 00:32:45,598 INFO     progress: 2.862  loss: 0.0033 (0.0277)  lr: 0.000029
+2022-11-29 00:33:19,454 INFO     progress: 2.957  loss: 0.0036 (0.0270)  lr: 0.000030
+2022-11-29 00:34:06,470 INFO     progress: 3.096  loss: 0.0023 (0.0259)  lr: 0.000030
+2022-11-29 00:34:47,599 INFO     progress: 3.191  loss: 0.0025 (0.0252)  lr: 0.000030
+2022-11-29 00:35:21,594 INFO     progress: 3.287  loss: 0.0024 (0.0248)  lr: 0.000030
+2022-11-29 00:35:56,951 INFO     progress: 3.383  loss: 0.0018 (0.0242)  lr: 0.000030
+2022-11-29 00:36:30,610 INFO     progress: 3.479  loss: 0.0020 (0.0236)  lr: 0.000029
+2022-11-29 00:37:05,109 INFO     progress: 3.574  loss: 0.0019 (0.0230)  lr: 0.000029
+2022-11-29 00:37:40,139 INFO     progress: 3.670  loss: 0.0019 (0.0226)  lr: 0.000029
+2022-11-29 00:38:15,561 INFO     progress: 3.766  loss: 0.0019 (0.0222)  lr: 0.000029
+2022-11-29 00:38:50,190 INFO     progress: 3.862  loss: 0.0021 (0.0217)  lr: 0.000029
+2022-11-29 00:39:24,134 INFO     progress: 3.957  loss: 0.0020 (0.0213)  lr: 0.000029
+2022-11-29 00:40:11,205 INFO     progress: 4.096  loss: 0.0016 (0.0207)  lr: 0.000029
+2022-11-29 00:40:44,178 INFO     progress: 4.191  loss: 0.0014 (0.0202)  lr: 0.000029
+2022-11-29 00:41:17,983 INFO     progress: 4.287  loss: 0.0013 (0.0198)  lr: 0.000029
+2022-11-29 00:41:53,463 INFO     progress: 4.383  loss: 0.0017 (0.0194)  lr: 0.000028
+2022-11-29 00:42:27,760 INFO     progress: 4.479  loss: 0.0015 (0.0191)  lr: 0.000028
+2022-11-29 00:43:03,717 INFO     progress: 4.574  loss: 0.0012 (0.0187)  lr: 0.000028
+2022-11-29 00:43:37,434 INFO     progress: 4.670  loss: 0.0015 (0.0184)  lr: 0.000028
+2022-11-29 00:44:13,591 INFO     progress: 4.766  loss: 0.0017 (0.0181)  lr: 0.000028
+2022-11-29 00:44:48,884 INFO     progress: 4.862  loss: 0.0015 (0.0178)  lr: 0.000028
+2022-11-29 00:45:22,347 INFO     progress: 4.957  loss: 0.0012 (0.0175)  lr: 0.000028
+2022-11-29 00:49:13,884 INFO     0.17131732641142117
+2022-11-29 00:50:03,673 INFO     progress: 5.096  loss: 0.0010 (0.0171)  lr: 0.000028
+2022-11-29 00:50:44,990 INFO     progress: 5.191  loss: 0.0011 (0.0168)  lr: 0.000028
+2022-11-29 00:51:32,760 INFO     progress: 5.287  loss: 0.0010 (0.0165)  lr: 0.000027
+2022-11-29 00:52:01,687 INFO     progress: 5.383  loss: 0.0009 (0.0163)  lr: 0.000027
+2022-11-29 00:52:29,483 INFO     progress: 5.479  loss: 0.0009 (0.0160)  lr: 0.000027
+2022-11-29 00:52:56,951 INFO     progress: 5.574  loss: 0.0013 (0.0158)  lr: 0.000027
+2022-11-29 00:53:24,806 INFO     progress: 5.670  loss: 0.0011 (0.0155)  lr: 0.000027
+2022-11-29 00:53:51,877 INFO     progress: 5.766  loss: 0.0013 (0.0153)  lr: 0.000027
+2022-11-29 00:54:18,909 INFO     progress: 5.862  loss: 0.0014 (0.0151)  lr: 0.000027
+2022-11-29 00:54:46,125 INFO     progress: 5.957  loss: 0.0013 (0.0149)  lr: 0.000027
+2022-11-29 00:55:26,249 INFO     progress: 6.096  loss: 0.0009 (0.0146)  lr: 0.000027
+2022-11-29 00:55:55,276 INFO     progress: 6.191  loss: 0.0008 (0.0144)  lr: 0.000026
+2022-11-29 00:56:24,444 INFO     progress: 6.287  loss: 0.0009 (0.0142)  lr: 0.000026
+2022-11-29 00:56:53,544 INFO     progress: 6.383  loss: 0.0007 (0.0140)  lr: 0.000026
+2022-11-29 00:57:22,781 INFO     progress: 6.479  loss: 0.0009 (0.0138)  lr: 0.000026
+2022-11-29 00:57:52,872 INFO     progress: 6.574  loss: 0.0010 (0.0136)  lr: 0.000026
+2022-11-29 00:58:22,881 INFO     progress: 6.670  loss: 0.0008 (0.0135)  lr: 0.000026
+2022-11-29 00:58:53,289 INFO     progress: 6.766  loss: 0.0010 (0.0133)  lr: 0.000026
+2022-11-29 00:59:22,981 INFO     progress: 6.862  loss: 0.0008 (0.0131)  lr: 0.000026
+2022-11-29 00:59:53,352 INFO     progress: 6.957  loss: 0.0010 (0.0130)  lr: 0.000026
+2022-11-29 01:00:38,869 INFO     progress: 7.096  loss: 0.0008 (0.0127)  lr: 0.000025
+2022-11-29 01:01:09,294 INFO     progress: 7.191  loss: 0.0007 (0.0126)  lr: 0.000025
+2022-11-29 01:01:42,652 INFO     progress: 7.287  loss: 0.0010 (0.0124)  lr: 0.000025
+2022-11-29 01:02:16,035 INFO     progress: 7.383  loss: 0.0010 (0.0123)  lr: 0.000025
+2022-11-29 01:02:46,777 INFO     progress: 7.479  loss: 0.0007 (0.0121)  lr: 0.000025
+2022-11-29 01:03:16,720 INFO     progress: 7.574  loss: 0.0006 (0.0120)  lr: 0.000025
+2022-11-29 01:03:47,274 INFO     progress: 7.670  loss: 0.0010 (0.0119)  lr: 0.000025
+2022-11-29 01:04:17,929 INFO     progress: 7.766  loss: 0.0007 (0.0117)  lr: 0.000025
+2022-11-29 01:04:48,520 INFO     progress: 7.862  loss: 0.0007 (0.0116)  lr: 0.000025
+2022-11-29 01:05:20,647 INFO     progress: 7.957  loss: 0.0006 (0.0115)  lr: 0.000024
+2022-11-29 01:06:01,498 INFO     progress: 8.096  loss: 0.0005 (0.0113)  lr: 0.000024
+2022-11-29 01:06:30,260 INFO     progress: 8.191  loss: 0.0005 (0.0112)  lr: 0.000024
+2022-11-29 01:06:59,499 INFO     progress: 8.287  loss: 0.0005 (0.0110)  lr: 0.000024
+2022-11-29 01:07:29,627 INFO     progress: 8.383  loss: 0.0006 (0.0109)  lr: 0.000024
+2022-11-29 01:07:59,546 INFO     progress: 8.479  loss: 0.0009 (0.0108)  lr: 0.000024
+2022-11-29 01:08:30,143 INFO     progress: 8.574  loss: 0.0006 (0.0107)  lr: 0.000024
+2022-11-29 01:09:05,381 INFO     progress: 8.670  loss: 0.0007 (0.0106)  lr: 0.000024
+2022-11-29 01:09:40,118 INFO     progress: 8.766  loss: 0.0007 (0.0105)  lr: 0.000024
+2022-11-29 01:10:20,894 INFO     progress: 8.862  loss: 0.0006 (0.0104)  lr: 0.000023
+2022-11-29 01:10:57,940 INFO     progress: 8.957  loss: 0.0006 (0.0103)  lr: 0.000023
+2022-11-29 01:11:49,054 INFO     progress: 9.096  loss: 0.0007 (0.0101)  lr: 0.000023
+2022-11-29 01:12:20,248 INFO     progress: 9.191  loss: 0.0005 (0.0100)  lr: 0.000023
+2022-11-29 01:12:54,711 INFO     progress: 9.287  loss: 0.0005 (0.0099)  lr: 0.000023
+2022-11-29 01:13:32,383 INFO     progress: 9.383  loss: 0.0007 (0.0098)  lr: 0.000023
+2022-11-29 01:14:07,943 INFO     progress: 9.479  loss: 0.0006 (0.0098)  lr: 0.000023
+2022-11-29 01:14:41,009 INFO     progress: 9.574  loss: 0.0006 (0.0097)  lr: 0.000023
+2022-11-29 01:15:15,680 INFO     progress: 9.670  loss: 0.0006 (0.0096)  lr: 0.000023
+2022-11-29 01:15:49,633 INFO     progress: 9.766  loss: 0.0005 (0.0095)  lr: 0.000022
+2022-11-29 01:16:24,449 INFO     progress: 9.862  loss: 0.0005 (0.0094)  lr: 0.000022
+2022-11-29 01:17:00,022 INFO     progress: 9.957  loss: 0.0005 (0.0093)  lr: 0.000022
+2022-11-29 01:19:56,757 INFO     0.3659961064243997
+2022-11-29 01:20:34,403 INFO     progress: 10.096  loss: 0.0004 (0.0092)  lr: 0.000022
+2022-11-29 01:21:10,606 INFO     progress: 10.191  loss: 0.0004 (0.0091)  lr: 0.000022
+2022-11-29 01:21:43,647 INFO     progress: 10.287  loss: 0.0004 (0.0090)  lr: 0.000022
+2022-11-29 01:22:17,969 INFO     progress: 10.383  loss: 0.0004 (0.0090)  lr: 0.000022
+2022-11-29 01:22:52,385 INFO     progress: 10.479  loss: 0.0005 (0.0089)  lr: 0.000022
+2022-11-29 01:23:30,629 INFO     progress: 10.574  loss: 0.0004 (0.0088)  lr: 0.000022
+2022-11-29 01:24:05,680 INFO     progress: 10.670  loss: 0.0004 (0.0087)  lr: 0.000021
+2022-11-29 01:24:41,315 INFO     progress: 10.766  loss: 0.0005 (0.0087)  lr: 0.000021
+2022-11-29 01:25:16,855 INFO     progress: 10.862  loss: 0.0005 (0.0086)  lr: 0.000021
+2022-11-29 01:25:53,248 INFO     progress: 10.957  loss: 0.0005 (0.0085)  lr: 0.000021
+2022-11-29 01:26:43,301 INFO     progress: 11.096  loss: 0.0005 (0.0084)  lr: 0.000021
+2022-11-29 01:27:19,331 INFO     progress: 11.191  loss: 0.0004 (0.0084)  lr: 0.000021
+2022-11-29 01:27:59,064 INFO     progress: 11.287  loss: 0.0005 (0.0083)  lr: 0.000021
+2022-11-29 01:28:31,822 INFO     progress: 11.383  loss: 0.0003 (0.0082)  lr: 0.000021
+2022-11-29 01:29:07,192 INFO     progress: 11.479  loss: 0.0004 (0.0082)  lr: 0.000021
+2022-11-29 01:29:41,207 INFO     progress: 11.574  loss: 0.0004 (0.0081)  lr: 0.000020
+2022-11-29 01:30:25,294 INFO     progress: 11.670  loss: 0.0004 (0.0080)  lr: 0.000020
+2022-11-29 01:31:00,977 INFO     progress: 11.766  loss: 0.0004 (0.0080)  lr: 0.000020
+2022-11-29 01:31:36,250 INFO     progress: 11.862  loss: 0.0003 (0.0079)  lr: 0.000020
+2022-11-29 01:32:11,705 INFO     progress: 11.957  loss: 0.0004 (0.0079)  lr: 0.000020
+2022-11-29 01:33:06,170 INFO     progress: 12.096  loss: 0.0004 (0.0078)  lr: 0.000020
+2022-11-29 01:33:42,122 INFO     progress: 12.191  loss: 0.0003 (0.0077)  lr: 0.000020
+2022-11-29 01:34:17,066 INFO     progress: 12.287  loss: 0.0003 (0.0077)  lr: 0.000020
+2022-11-29 01:34:55,279 INFO     progress: 12.383  loss: 0.0004 (0.0076)  lr: 0.000020
+2022-11-29 01:35:32,020 INFO     progress: 12.479  loss: 0.0003 (0.0075)  lr: 0.000019
+2022-11-29 01:36:12,404 INFO     progress: 12.574  loss: 0.0003 (0.0075)  lr: 0.000019
+2022-11-29 01:36:52,099 INFO     progress: 12.670  loss: 0.0003 (0.0074)  lr: 0.000019
+2022-11-29 01:37:31,769 INFO     progress: 12.766  loss: 0.0003 (0.0074)  lr: 0.000019
+2022-11-29 01:38:09,134 INFO     progress: 12.862  loss: 0.0004 (0.0073)  lr: 0.000019
+2022-11-29 01:38:48,442 INFO     progress: 12.957  loss: 0.0003 (0.0073)  lr: 0.000019
+2022-11-29 01:39:45,527 INFO     progress: 13.096  loss: 0.0003 (0.0072)  lr: 0.000019
+2022-11-29 01:40:40,365 INFO     progress: 13.191  loss: 0.0003 (0.0072)  lr: 0.000019
+2022-11-29 01:41:14,767 INFO     progress: 13.287  loss: 0.0003 (0.0071)  lr: 0.000019
+2022-11-29 01:41:52,873 INFO     progress: 13.383  loss: 0.0003 (0.0071)  lr: 0.000018
+2022-11-29 01:42:30,505 INFO     progress: 13.479  loss: 0.0003 (0.0070)  lr: 0.000018
+2022-11-29 01:43:08,671 INFO     progress: 13.574  loss: 0.0003 (0.0070)  lr: 0.000018
+2022-11-29 01:43:46,984 INFO     progress: 13.670  loss: 0.0003 (0.0069)  lr: 0.000018
+2022-11-29 01:44:26,770 INFO     progress: 13.766  loss: 0.0004 (0.0069)  lr: 0.000018
+2022-11-29 01:45:04,068 INFO     progress: 13.862  loss: 0.0003 (0.0068)  lr: 0.000018
+2022-11-29 01:45:49,080 INFO     progress: 13.957  loss: 0.0003 (0.0068)  lr: 0.000018
+2022-11-29 01:46:42,906 INFO     progress: 14.096  loss: 0.0004 (0.0067)  lr: 0.000018
+2022-11-29 01:47:19,830 INFO     progress: 14.191  loss: 0.0002 (0.0067)  lr: 0.000018
+2022-11-29 01:47:53,011 INFO     progress: 14.287  loss: 0.0003 (0.0067)  lr: 0.000017
+2022-11-29 01:48:30,643 INFO     progress: 14.383  loss: 0.0003 (0.0066)  lr: 0.000017
+2022-11-29 01:49:09,784 INFO     progress: 14.479  loss: 0.0004 (0.0066)  lr: 0.000017
+2022-11-29 01:49:42,550 INFO     progress: 14.574  loss: 0.0003 (0.0065)  lr: 0.000017
+2022-11-29 01:50:18,458 INFO     progress: 14.670  loss: 0.0003 (0.0065)  lr: 0.000017
+2022-11-29 01:50:51,718 INFO     progress: 14.766  loss: 0.0003 (0.0064)  lr: 0.000017
+2022-11-29 01:51:31,690 INFO     progress: 14.862  loss: 0.0002 (0.0064)  lr: 0.000017
+2022-11-29 01:52:04,853 INFO     progress: 14.957  loss: 0.0003 (0.0064)  lr: 0.000017
+2022-11-29 01:54:55,615 INFO     0.4808565866320571
+2022-11-29 01:55:31,629 INFO     progress: 15.096  loss: 0.0002 (0.0063)  lr: 0.000017
+2022-11-29 01:56:07,698 INFO     progress: 15.191  loss: 0.0003 (0.0063)  lr: 0.000016
+2022-11-29 01:56:40,511 INFO     progress: 15.287  loss: 0.0002 (0.0062)  lr: 0.000016
+2022-11-29 01:57:19,504 INFO     progress: 15.383  loss: 0.0002 (0.0062)  lr: 0.000016
+2022-11-29 01:57:53,622 INFO     progress: 15.479  loss: 0.0002 (0.0062)  lr: 0.000016
+2022-11-29 01:58:33,399 INFO     progress: 15.574  loss: 0.0002 (0.0061)  lr: 0.000016
+2022-11-29 01:59:13,116 INFO     progress: 15.670  loss: 0.0003 (0.0061)  lr: 0.000016
+2022-11-29 01:59:48,817 INFO     progress: 15.766  loss: 0.0002 (0.0061)  lr: 0.000016
+2022-11-29 02:00:27,108 INFO     progress: 15.862  loss: 0.0002 (0.0060)  lr: 0.000016
+2022-11-29 02:01:03,945 INFO     progress: 15.957  loss: 0.0003 (0.0060)  lr: 0.000016
+2022-11-29 02:01:48,614 INFO     progress: 16.096  loss: 0.0002 (0.0059)  lr: 0.000015
+2022-11-29 02:02:23,224 INFO     progress: 16.191  loss: 0.0002 (0.0059)  lr: 0.000015
+2022-11-29 02:02:55,882 INFO     progress: 16.287  loss: 0.0003 (0.0059)  lr: 0.000015
+2022-11-29 02:03:26,977 INFO     progress: 16.383  loss: 0.0002 (0.0058)  lr: 0.000015
+2022-11-29 02:04:01,791 INFO     progress: 16.479  loss: 0.0002 (0.0058)  lr: 0.000015
+2022-11-29 02:04:34,364 INFO     progress: 16.574  loss: 0.0002 (0.0058)  lr: 0.000015
+2022-11-29 02:05:05,187 INFO     progress: 16.670  loss: 0.0003 (0.0058)  lr: 0.000015
+2022-11-29 02:05:36,896 INFO     progress: 16.766  loss: 0.0002 (0.0057)  lr: 0.000015
+2022-11-29 02:06:08,551 INFO     progress: 16.862  loss: 0.0002 (0.0057)  lr: 0.000015
+2022-11-29 02:06:39,858 INFO     progress: 16.957  loss: 0.0002 (0.0057)  lr: 0.000014
+2022-11-29 02:07:27,852 INFO     progress: 17.096  loss: 0.0002 (0.0056)  lr: 0.000014
+2022-11-29 02:08:01,420 INFO     progress: 17.191  loss: 0.0002 (0.0056)  lr: 0.000014
+2022-11-29 02:08:35,159 INFO     progress: 17.287  loss: 0.0002 (0.0056)  lr: 0.000014
+2022-11-29 02:09:08,900 INFO     progress: 17.383  loss: 0.0002 (0.0055)  lr: 0.000014
+2022-11-29 02:09:42,590 INFO     progress: 17.479  loss: 0.0002 (0.0055)  lr: 0.000014
+2022-11-29 02:10:14,934 INFO     progress: 17.574  loss: 0.0002 (0.0055)  lr: 0.000014
+2022-11-29 02:10:46,344 INFO     progress: 17.670  loss: 0.0002 (0.0054)  lr: 0.000014
+2022-11-29 02:11:20,301 INFO     progress: 17.766  loss: 0.0002 (0.0054)  lr: 0.000014
+2022-11-29 02:11:53,433 INFO     progress: 17.862  loss: 0.0002 (0.0054)  lr: 0.000013
+2022-11-29 02:12:26,891 INFO     progress: 17.957  loss: 0.0002 (0.0054)  lr: 0.000013
+2022-11-29 02:13:13,043 INFO     progress: 18.096  loss: 0.0001 (0.0053)  lr: 0.000013
+2022-11-29 02:13:45,299 INFO     progress: 18.191  loss: 0.0001 (0.0053)  lr: 0.000013
+2022-11-29 02:14:17,314 INFO     progress: 18.287  loss: 0.0001 (0.0053)  lr: 0.000013
+2022-11-29 02:14:51,043 INFO     progress: 18.383  loss: 0.0003 (0.0052)  lr: 0.000013
+2022-11-29 02:15:22,592 INFO     progress: 18.479  loss: 0.0002 (0.0052)  lr: 0.000013
+2022-11-29 02:15:54,442 INFO     progress: 18.574  loss: 0.0002 (0.0052)  lr: 0.000013
+2022-11-29 02:16:25,748 INFO     progress: 18.670  loss: 0.0003 (0.0052)  lr: 0.000013
+2022-11-29 02:16:58,008 INFO     progress: 18.766  loss: 0.0002 (0.0051)  lr: 0.000012
+2022-11-29 02:17:30,535 INFO     progress: 18.862  loss: 0.0001 (0.0051)  lr: 0.000012
+2022-11-29 02:18:02,507 INFO     progress: 18.957  loss: 0.0002 (0.0051)  lr: 0.000012
+2022-11-29 02:18:47,780 INFO     progress: 19.096  loss: 0.0002 (0.0051)  lr: 0.000012
+2022-11-29 02:19:20,723 INFO     progress: 19.191  loss: 0.0001 (0.0050)  lr: 0.000012
+2022-11-29 02:19:52,349 INFO     progress: 19.287  loss: 0.0002 (0.0050)  lr: 0.000012
+2022-11-29 02:20:25,150 INFO     progress: 19.383  loss: 0.0002 (0.0050)  lr: 0.000012
+2022-11-29 02:20:57,733 INFO     progress: 19.479  loss: 0.0001 (0.0050)  lr: 0.000012
+2022-11-29 02:21:29,693 INFO     progress: 19.574  loss: 0.0002 (0.0049)  lr: 0.000012
+2022-11-29 02:22:01,075 INFO     progress: 19.670  loss: 0.0001 (0.0049)  lr: 0.000011
+2022-11-29 02:22:33,218 INFO     progress: 19.766  loss: 0.0002 (0.0049)  lr: 0.000011
+2022-11-29 02:23:05,852 INFO     progress: 19.862  loss: 0.0002 (0.0049)  lr: 0.000011
+2022-11-29 02:23:36,621 INFO     progress: 19.957  loss: 0.0001 (0.0049)  lr: 0.000011
+2022-11-29 02:26:12,815 INFO     0.5535366645035691
+2022-11-29 02:26:44,336 INFO     progress: 20.096  loss: 0.0002 (0.0048)  lr: 0.000011
+2022-11-29 02:27:17,857 INFO     progress: 20.191  loss: 0.0001 (0.0048)  lr: 0.000011
+2022-11-29 02:27:49,894 INFO     progress: 20.287  loss: 0.0002 (0.0048)  lr: 0.000011
+2022-11-29 02:28:22,676 INFO     progress: 20.383  loss: 0.0001 (0.0048)  lr: 0.000011
+2022-11-29 02:28:50,711 INFO     progress: 20.479  loss: 0.0002 (0.0047)  lr: 0.000011
+2022-11-29 02:29:20,080 INFO     progress: 20.574  loss: 0.0002 (0.0047)  lr: 0.000010
+2022-11-29 02:29:48,169 INFO     progress: 20.670  loss: 0.0002 (0.0047)  lr: 0.000010
+2022-11-29 02:30:23,407 INFO     progress: 20.766  loss: 0.0002 (0.0047)  lr: 0.000010
+2022-11-29 02:30:54,197 INFO     progress: 20.862  loss: 0.0001 (0.0047)  lr: 0.000010
+2022-11-29 02:31:24,644 INFO     progress: 20.957  loss: 0.0001 (0.0046)  lr: 0.000010
+2022-11-29 02:32:05,080 INFO     progress: 21.096  loss: 0.0002 (0.0046)  lr: 0.000010
+2022-11-29 02:32:33,952 INFO     progress: 21.191  loss: 0.0001 (0.0046)  lr: 0.000010
+2022-11-29 02:33:02,299 INFO     progress: 21.287  loss: 0.0001 (0.0046)  lr: 0.000010
+2022-11-29 02:33:30,913 INFO     progress: 21.383  loss: 0.0002 (0.0045)  lr: 0.000010
+2022-11-29 02:34:02,591 INFO     progress: 21.479  loss: 0.0001 (0.0045)  lr: 0.000009
+2022-11-29 02:34:33,583 INFO     progress: 21.574  loss: 0.0001 (0.0045)  lr: 0.000009
+2022-11-29 02:35:03,835 INFO     progress: 21.670  loss: 0.0002 (0.0045)  lr: 0.000009
+2022-11-29 02:35:37,224 INFO     progress: 21.766  loss: 0.0002 (0.0045)  lr: 0.000009
+2022-11-29 02:36:07,649 INFO     progress: 21.862  loss: 0.0001 (0.0045)  lr: 0.000009
+2022-11-29 02:36:42,486 INFO     progress: 21.957  loss: 0.0002 (0.0044)  lr: 0.000009
+2022-11-29 02:37:31,597 INFO     progress: 22.096  loss: 0.0001 (0.0044)  lr: 0.000009
+2022-11-29 02:38:07,095 INFO     progress: 22.191  loss: 0.0002 (0.0044)  lr: 0.000009
+2022-11-29 02:38:43,828 INFO     progress: 22.287  loss: 0.0001 (0.0044)  lr: 0.000009
+2022-11-29 02:39:28,015 INFO     progress: 22.383  loss: 0.0001 (0.0044)  lr: 0.000008
+2022-11-29 02:40:07,153 INFO     progress: 22.479  loss: 0.0001 (0.0043)  lr: 0.000008
+2022-11-29 02:40:42,383 INFO     progress: 22.574  loss: 0.0001 (0.0043)  lr: 0.000008
+2022-11-29 02:41:22,839 INFO     progress: 22.670  loss: 0.0002 (0.0043)  lr: 0.000008
+2022-11-29 02:42:03,510 INFO     progress: 22.766  loss: 0.0001 (0.0043)  lr: 0.000008
+2022-11-29 02:42:41,264 INFO     progress: 22.862  loss: 0.0002 (0.0043)  lr: 0.000008
+2022-11-29 02:43:18,123 INFO     progress: 22.957  loss: 0.0001 (0.0043)  lr: 0.000008
+2022-11-29 02:44:05,289 INFO     progress: 23.096  loss: 0.0001 (0.0042)  lr: 0.000008
+2022-11-29 02:44:38,838 INFO     progress: 23.191  loss: 0.0002 (0.0042)  lr: 0.000008
+2022-11-29 02:45:16,916 INFO     progress: 23.287  loss: 0.0001 (0.0042)  lr: 0.000007
+2022-11-29 02:45:51,203 INFO     progress: 23.383  loss: 0.0001 (0.0042)  lr: 0.000007
+2022-11-29 02:46:28,618 INFO     progress: 23.479  loss: 0.0001 (0.0042)  lr: 0.000007
+2022-11-29 02:47:04,973 INFO     progress: 23.574  loss: 0.0001 (0.0041)  lr: 0.000007
+2022-11-29 02:47:40,319 INFO     progress: 23.670  loss: 0.0002 (0.0041)  lr: 0.000007
+2022-11-29 02:48:14,656 INFO     progress: 23.766  loss: 0.0001 (0.0041)  lr: 0.000007
+2022-11-29 02:48:50,393 INFO     progress: 23.862  loss: 0.0001 (0.0041)  lr: 0.000007
+2022-11-29 02:49:25,643 INFO     progress: 23.957  loss: 0.0001 (0.0041)  lr: 0.000007
+2022-11-29 02:50:14,115 INFO     progress: 24.096  loss: 0.0001 (0.0041)  lr: 0.000007
+2022-11-29 02:50:49,106 INFO     progress: 24.191  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:51:24,403 INFO     progress: 24.287  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:51:58,133 INFO     progress: 24.383  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:52:31,112 INFO     progress: 24.479  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:53:06,292 INFO     progress: 24.574  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:53:40,794 INFO     progress: 24.670  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:54:22,787 INFO     progress: 24.766  loss: 0.0001 (0.0040)  lr: 0.000006
+2022-11-29 02:54:58,230 INFO     progress: 24.862  loss: 0.0002 (0.0039)  lr: 0.000006
+2022-11-29 02:55:33,749 INFO     progress: 24.957  loss: 0.0002 (0.0039)  lr: 0.000006
+2022-11-29 02:59:33,221 INFO     0.6022063595068138
+2022-11-29 03:00:07,023 INFO     progress: 25.096  loss: 0.0001 (0.0039)  lr: 0.000005
+2022-11-29 03:00:43,027 INFO     progress: 25.191  loss: 0.0001 (0.0039)  lr: 0.000005
+2022-11-29 03:01:25,744 INFO     progress: 25.287  loss: 0.0001 (0.0039)  lr: 0.000005
+2022-11-29 03:02:08,227 INFO     progress: 25.383  loss: 0.0001 (0.0039)  lr: 0.000005
+2022-11-29 03:02:41,826 INFO     progress: 25.479  loss: 0.0001 (0.0039)  lr: 0.000005
+2022-11-29 03:03:14,421 INFO     progress: 25.574  loss: 0.0001 (0.0038)  lr: 0.000005
+2022-11-29 03:03:50,112 INFO     progress: 25.670  loss: 0.0001 (0.0038)  lr: 0.000005
+2022-11-29 03:04:24,967 INFO     progress: 25.766  loss: 0.0001 (0.0038)  lr: 0.000005
+2022-11-29 03:05:00,161 INFO     progress: 25.862  loss: 0.0001 (0.0038)  lr: 0.000005
+2022-11-29 03:05:33,359 INFO     progress: 25.957  loss: 0.0001 (0.0038)  lr: 0.000004
+2022-11-29 03:06:34,351 INFO     progress: 26.096  loss: 0.0001 (0.0038)  lr: 0.000004
+2022-11-29 03:07:11,281 INFO     progress: 26.191  loss: 0.0001 (0.0038)  lr: 0.000004
+2022-11-29 03:07:45,360 INFO     progress: 26.287  loss: 0.0002 (0.0037)  lr: 0.000004
+2022-11-29 03:08:20,255 INFO     progress: 26.383  loss: 0.0002 (0.0037)  lr: 0.000004
+2022-11-29 03:08:55,295 INFO     progress: 26.479  loss: 0.0001 (0.0037)  lr: 0.000004
+2022-11-29 03:09:29,950 INFO     progress: 26.574  loss: 0.0001 (0.0037)  lr: 0.000004
+2022-11-29 03:10:04,021 INFO     progress: 26.670  loss: 0.0001 (0.0037)  lr: 0.000004
+2022-11-29 03:10:38,818 INFO     progress: 26.766  loss: 0.0001 (0.0037)  lr: 0.000004
+2022-11-29 03:11:13,281 INFO     progress: 26.862  loss: 0.0001 (0.0037)  lr: 0.000003
+2022-11-29 03:11:48,046 INFO     progress: 26.957  loss: 0.0001 (0.0037)  lr: 0.000003
+2022-11-29 03:12:38,281 INFO     progress: 27.096  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:13:13,211 INFO     progress: 27.191  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:13:48,050 INFO     progress: 27.287  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:14:25,770 INFO     progress: 27.383  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:15:03,484 INFO     progress: 27.479  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:15:37,850 INFO     progress: 27.574  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:16:13,276 INFO     progress: 27.670  loss: 0.0001 (0.0036)  lr: 0.000003
+2022-11-29 03:16:47,857 INFO     progress: 27.766  loss: 0.0001 (0.0036)  lr: 0.000002
+2022-11-29 03:17:20,472 INFO     progress: 27.862  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:17:57,908 INFO     progress: 27.957  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:19:07,744 INFO     progress: 28.096  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:19:44,807 INFO     progress: 28.191  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:20:19,071 INFO     progress: 28.287  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:20:53,401 INFO     progress: 28.383  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:21:33,715 INFO     progress: 28.479  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:22:08,213 INFO     progress: 28.574  loss: 0.0001 (0.0035)  lr: 0.000002
+2022-11-29 03:22:43,105 INFO     progress: 28.670  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:23:20,251 INFO     progress: 28.766  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:23:54,629 INFO     progress: 28.862  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:24:30,383 INFO     progress: 28.957  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:25:22,078 INFO     progress: 29.096  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:25:56,613 INFO     progress: 29.191  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:26:32,843 INFO     progress: 29.287  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:27:16,396 INFO     progress: 29.383  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:27:54,523 INFO     progress: 29.479  loss: 0.0001 (0.0034)  lr: 0.000001
+2022-11-29 03:28:34,204 INFO     progress: 29.574  loss: 0.0001 (0.0033)  lr: 0.000000
+2022-11-29 03:29:18,420 INFO     progress: 29.670  loss: 0.0001 (0.0033)  lr: 0.000000
+2022-11-29 03:29:52,003 INFO     progress: 29.766  loss: 0.0001 (0.0033)  lr: 0.000000
+2022-11-29 03:30:35,064 INFO     progress: 29.862  loss: 0.0001 (0.0033)  lr: 0.000000
+2022-11-29 03:31:19,260 INFO     progress: 29.957  loss: 0.0001 (0.0033)  lr: 0.000000
+2022-11-29 03:34:55,187 INFO     0.6249188838416613

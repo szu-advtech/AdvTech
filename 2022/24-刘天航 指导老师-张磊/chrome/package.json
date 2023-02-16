@@ -1,0 +1,23 @@
+{
+  "name": "browser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "chrome-har": "^0.11.12",
+    "lighthouse": "^6.5.0",
+    "puppeteer": "^19.1.1",
+    "puppeteer-har": "^1.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}

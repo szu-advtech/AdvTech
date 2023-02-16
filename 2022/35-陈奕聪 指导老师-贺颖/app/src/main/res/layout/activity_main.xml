@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffd8d8d8"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/top_linear"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:background="#ffd8d8d8"
+        android:orientation="vertical">
+
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/contour_btn"
+            android:textSize="18dp"
+            android:text="边缘振动"/>
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/music_btn"
+            android:textSize="18dp"
+            android:text="音效"/>
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/description_btn"
+            android:textSize="18dp"
+            android:text="详细描述"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/sample_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"
+        android:clickable="true"
+        android:layout_toLeftOf="@id/bottom_linear"
+        android:layout_toRightOf="@+id/top_linear"/>
+
+    <LinearLayout
+        android:id="@+id/bottom_linear"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:background="#ffd8d8d8"
+        android:orientation="vertical" >
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/start_btn"
+            android:textSize="18dp"
+            android:text="背景了解模式"/>
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/level_btn"
+            android:textSize="20dp"
+            android:text="粗粒度模式"/>
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/object_btn"
+            android:textSize="20dp"
+            android:text="细粒度模式"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tnow"
+            android:textSize="10dp"
+            android:text="@string/test"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
