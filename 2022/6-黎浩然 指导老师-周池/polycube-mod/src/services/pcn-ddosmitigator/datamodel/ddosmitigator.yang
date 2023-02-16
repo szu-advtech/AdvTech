@@ -1,0 +1,85 @@
+module ddosmitigator {
+  yang-version 1.1;
+  namespace "http://polycube.network/ddosmitigator";
+  prefix "ddosmitigator";
+
+  import polycube-base { prefix "polycube-base"; }
+  import polycube-transparent-base { prefix "polycube-transparent-base"; }
+
+  organization "Polycube open source project";
+  description "YANG data model for the Polycube DDoS Mitigator service";
+
+  polycube-base:service-description "DDoS Mitigator Service";
+  polycube-base:service-version "2.0";
+  polycube-base:service-name "ddosmitigator";
+  polycube-base:service-min-kernel-version "4.14.0";
+
+  uses "polycube-transparent-base:transparent-base-yang-module";
+
+  container stats {
+    description "Statistics on dropped packets";
+    config false;
+
+    leaf pps {
+      type uint64;
+      config false;
+      description "Dropped Packets/s";
+      // polycube-base:name-metric "ddos_stats_pps_packets";
+      // polycube-base:type-metric "COUNTER";
+      // polycube-base:path-metric '$.stats.pps';
+      // polycube-base:help-metric "Dropped Packets";
+    }
+
+    leaf pkts {
+      type uint64;
+      config false;
+      description "Total Dropped Packets";
+      polycube-base:name-metric "ddos_stats_pkts_packets";
+      polycube-base:type-metric "COUNTER";
+      polycube-base:path-metric '$.stats.pkts';
+      polycube-base:help-metric "Total Dropped Packets";
+    }
+  }
+
+  list blacklist-src {
+      key "ip";
+      description "Blacklisted source IP addresses";
+      polycube-base:name-metric "ddos_blacklist_src_addresses";
+      polycube-base:type-metric "GAUGE";
+      polycube-base:path-metric '$.blacklist-src.length';
+      polycube-base:help-metric "Number of addresses in blacklist-src";
+
+      leaf ip {
+        type string;
+        description "Source IP Address";
+        polycube-base:cli-example "10.0.0.1";
+      }
+
+      leaf drop-pkts {
+        type uint64;
+        config false;
+        description "Dropped Packets";
+      }
+  }
+
+  list blacklist-dst {
+      key "ip";
+      description "Blacklisted destination IP addresses";
+      polycube-base:name-metric "ddos_blacklist_dst_addresses";
+      polycube-base:type-metric "GAUGE";
+      polycube-base:path-metric '$.blacklist-dst.length';
+      polycube-base:help-metric "Number of addresses in blacklist-dst";
+
+      leaf ip {
+        type string;
+        description "Destination IP Address";
+        polycube-base:cli-example "10.0.0.2";
+      }
+
+      leaf drop-pkts {
+        type uint64;
+        config false;
+        description "Dropped Packets";
+      }
+  }
+}

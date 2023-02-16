@@ -1,0 +1,1831 @@
+{
+    "char_embeddings.position_ids": {
+        "paddle_layer": "char_embeddings.position_ids",
+        "transpose": false,
+        "target_shape": [
+            1,
+            16384
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_0.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_0.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_1.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_1.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_2.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_2.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_3.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_3.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_4.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_4.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_5.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_5.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_6.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_6.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.HashBucketCodepointEmbedder_7.weight": {
+        "paddle_layer": "char_embeddings.HashBucketCodepointEmbedder_7.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            96
+        ]
+    },
+    "char_embeddings.char_position_embeddings.weight": {
+        "paddle_layer": "char_embeddings.char_position_embeddings.weight",
+        "transpose": false,
+        "target_shape": [
+            16384,
+            768
+        ]
+    },
+    "char_embeddings.token_type_embeddings.weight": {
+        "paddle_layer": "char_embeddings.token_type_embeddings.weight",
+        "transpose": false,
+        "target_shape": [
+            16,
+            768
+        ]
+    },
+    "char_embeddings.LayerNorm.weight": {
+        "paddle_layer": "char_embeddings.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "char_embeddings.LayerNorm.bias": {
+        "paddle_layer": "char_embeddings.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.self.query.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.self.query.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.self.key.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.self.key.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.self.value.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.self.value.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.output.dense.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.output.dense.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.output.LayerNorm.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.attention.output.LayerNorm.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.intermediate.dense.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "initial_char_encoder.layer.0.intermediate.dense.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "initial_char_encoder.layer.0.output.dense.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.output.dense.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.output.LayerNorm.weight": {
+        "paddle_layer": "initial_char_encoder.layers.0.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "initial_char_encoder.layer.0.output.LayerNorm.bias": {
+        "paddle_layer": "initial_char_encoder.layers.0.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "chars_to_molecules.conv.weight": {
+        "paddle_layer": "chars_to_molecules.conv.weight",
+        "transpose": false,
+        "target_shape": [
+            768,
+            768,
+            4
+        ]
+    },
+    "chars_to_molecules.conv.bias": {
+        "paddle_layer": "chars_to_molecules.conv.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "chars_to_molecules.LayerNorm.weight": {
+        "paddle_layer": "chars_to_molecules.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "chars_to_molecules.LayerNorm.bias": {
+        "paddle_layer": "chars_to_molecules.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.0.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.0.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.0.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.0.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.0.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.0.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.0.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.0.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.0.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.0.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.0.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.0.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.0.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.0.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.0.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.0.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.0.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.0.output.dense.weight": {
+        "paddle_layer": "encoder.layers.0.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.0.output.dense.bias": {
+        "paddle_layer": "encoder.layers.0.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.0.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.0.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.0.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.1.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.1.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.1.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.1.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.1.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.1.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.1.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.1.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.1.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.1.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.1.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.1.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.1.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.1.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.1.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.1.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.1.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.1.output.dense.weight": {
+        "paddle_layer": "encoder.layers.1.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.1.output.dense.bias": {
+        "paddle_layer": "encoder.layers.1.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.1.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.1.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.1.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.2.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.2.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.2.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.2.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.2.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.2.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.2.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.2.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.2.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.2.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.2.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.2.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.2.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.2.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.2.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.2.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.2.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.2.output.dense.weight": {
+        "paddle_layer": "encoder.layers.2.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.2.output.dense.bias": {
+        "paddle_layer": "encoder.layers.2.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.2.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.2.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.2.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.3.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.3.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.3.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.3.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.3.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.3.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.3.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.3.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.3.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.3.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.3.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.3.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.3.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.3.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.3.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.3.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.3.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.3.output.dense.weight": {
+        "paddle_layer": "encoder.layers.3.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.3.output.dense.bias": {
+        "paddle_layer": "encoder.layers.3.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.3.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.3.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.3.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.4.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.4.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.4.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.4.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.4.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.4.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.4.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.4.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.4.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.4.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.4.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.4.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.4.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.4.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.4.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.4.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.4.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.4.output.dense.weight": {
+        "paddle_layer": "encoder.layers.4.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.4.output.dense.bias": {
+        "paddle_layer": "encoder.layers.4.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.4.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.4.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.4.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.5.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.5.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.5.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.5.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.5.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.5.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.5.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.5.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.5.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.5.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.5.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.5.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.5.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.5.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.5.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.5.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.5.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.5.output.dense.weight": {
+        "paddle_layer": "encoder.layers.5.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.5.output.dense.bias": {
+        "paddle_layer": "encoder.layers.5.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.5.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.5.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.5.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.6.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.6.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.6.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.6.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.6.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.6.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.6.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.6.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.6.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.6.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.6.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.6.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.6.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.6.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.6.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.6.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.6.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.6.output.dense.weight": {
+        "paddle_layer": "encoder.layers.6.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.6.output.dense.bias": {
+        "paddle_layer": "encoder.layers.6.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.6.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.6.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.6.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.7.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.7.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.7.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.7.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.7.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.7.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.7.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.7.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.7.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.7.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.7.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.7.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.7.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.7.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.7.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.7.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.7.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.7.output.dense.weight": {
+        "paddle_layer": "encoder.layers.7.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.7.output.dense.bias": {
+        "paddle_layer": "encoder.layers.7.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.7.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.7.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.7.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.8.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.8.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.8.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.8.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.8.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.8.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.8.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.8.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.8.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.8.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.8.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.8.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.8.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.8.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.8.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.8.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.8.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.8.output.dense.weight": {
+        "paddle_layer": "encoder.layers.8.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.8.output.dense.bias": {
+        "paddle_layer": "encoder.layers.8.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.8.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.8.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.8.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.9.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.9.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.9.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.9.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.9.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.9.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.9.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.9.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.9.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.9.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.9.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.9.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.9.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.9.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.9.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.9.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.9.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.9.output.dense.weight": {
+        "paddle_layer": "encoder.layers.9.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.9.output.dense.bias": {
+        "paddle_layer": "encoder.layers.9.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.9.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.9.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.9.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.10.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.10.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.10.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.10.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.10.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.10.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.10.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.10.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.10.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.10.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.10.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.10.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.10.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.10.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.10.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.10.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.10.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.10.output.dense.weight": {
+        "paddle_layer": "encoder.layers.10.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.10.output.dense.bias": {
+        "paddle_layer": "encoder.layers.10.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.10.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.10.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.10.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.attention.self.query.weight": {
+        "paddle_layer": "encoder.layers.11.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.11.attention.self.query.bias": {
+        "paddle_layer": "encoder.layers.11.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.attention.self.key.weight": {
+        "paddle_layer": "encoder.layers.11.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.11.attention.self.key.bias": {
+        "paddle_layer": "encoder.layers.11.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.attention.self.value.weight": {
+        "paddle_layer": "encoder.layers.11.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.11.attention.self.value.bias": {
+        "paddle_layer": "encoder.layers.11.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.attention.output.dense.weight": {
+        "paddle_layer": "encoder.layers.11.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "encoder.layer.11.attention.output.dense.bias": {
+        "paddle_layer": "encoder.layers.11.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.attention.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.11.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.attention.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.11.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.intermediate.dense.weight": {
+        "paddle_layer": "encoder.layers.11.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "encoder.layer.11.intermediate.dense.bias": {
+        "paddle_layer": "encoder.layers.11.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "encoder.layer.11.output.dense.weight": {
+        "paddle_layer": "encoder.layers.11.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "encoder.layer.11.output.dense.bias": {
+        "paddle_layer": "encoder.layers.11.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.output.LayerNorm.weight": {
+        "paddle_layer": "encoder.layers.11.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "encoder.layer.11.output.LayerNorm.bias": {
+        "paddle_layer": "encoder.layers.11.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "projection.conv.weight": {
+        "paddle_layer": "projection.conv.weight",
+        "transpose": false,
+        "target_shape": [
+            768,
+            1536,
+            4
+        ]
+    },
+    "projection.conv.bias": {
+        "paddle_layer": "projection.conv.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "projection.LayerNorm.weight": {
+        "paddle_layer": "projection.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "projection.LayerNorm.bias": {
+        "paddle_layer": "projection.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.self.query.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.self_attn.q_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.self.query.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.self_attn.q_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.self.key.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.self_attn.k_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.self.key.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.self_attn.k_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.self.value.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.self_attn.v_proj.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.self.value.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.self_attn.v_proj.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.output.dense.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.dense.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.output.dense.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.dense.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.output.LayerNorm.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.attention.output.LayerNorm.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.attention.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.intermediate.dense.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.ffn.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            3072
+        ]
+    },
+    "final_char_encoder.layer.0.intermediate.dense.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.ffn.bias",
+        "transpose": false,
+        "target_shape": [
+            3072
+        ]
+    },
+    "final_char_encoder.layer.0.output.dense.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.ffn_output.weight",
+        "transpose": true,
+        "target_shape": [
+            3072,
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.output.dense.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.ffn_output.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.output.LayerNorm.weight": {
+        "paddle_layer": "final_char_encoder.layers.0.layer_norm.weight",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "final_char_encoder.layer.0.output.LayerNorm.bias": {
+        "paddle_layer": "final_char_encoder.layers.0.layer_norm.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    },
+    "pooler.dense.weight": {
+        "paddle_layer": "pooler.weight",
+        "transpose": true,
+        "target_shape": [
+            768,
+            768
+        ]
+    },
+    "pooler.dense.bias": {
+        "paddle_layer": "pooler.bias",
+        "transpose": false,
+        "target_shape": [
+            768
+        ]
+    }
+}

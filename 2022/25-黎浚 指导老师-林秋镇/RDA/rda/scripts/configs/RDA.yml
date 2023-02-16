@@ -1,0 +1,13 @@
+GPU_ID: 0
+SOURCE: GTA
+TARGET: Cityscapes
+NUM_WORKERS: 4
+TRAIN:
+  DA_METHOD: RDA
+  MODEL: DeepLabv2
+  RESTORE_FROM: ../../pretrained_models/DeepLab_resnet_pretrained_imagenet.pth
+#  RESTORE_FROM: ../../experiments/snapshots/GTA2Cityscapes_DeepLabv2_RDA/model_76800.pth
+  MULTI_LEVEL: True
+  LAMBDA_SVMIN: 1.0
+TEST:
+  MODE: best

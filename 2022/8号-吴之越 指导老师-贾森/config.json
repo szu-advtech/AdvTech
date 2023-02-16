@@ -1,0 +1,12 @@
+{
+  "name": "aeDPCN",
+  "version": "1.0.0",
+  "c": 40,
+  "chikusei":{
+    "img_band": 128,
+    "img_h" : 2517,
+    "img_w" : 2335,
+    "batch_size" : 8}
+
+
+}

@@ -1,0 +1,157 @@
+{
+    "name": "test_inpainting_celebahq",
+    "gpu_ids": [
+        0
+    ],
+    "seed": -1,
+    "finetune_norm": false,
+    "path": {
+        "base_dir": "experiments",
+        "code": "code",
+        "tb_logger": "tb_logger",
+        "results": "results",
+        "checkpoint": "checkpoint",
+        "resume_state": "experiments/train_inpainting_celebahq_220426_233652/checkpoint/190"
+    },
+    "datasets": {
+        "train": {
+            "which_dataset": {
+                "name": [
+                    "data.dataset",
+                    "InpaintDataset"
+                ],
+                "args": {
+                    "data_root": "datasets/celebahq/flist/train.flist",
+                    "data_len": -1,
+                    "mask_config": {
+                        "mask_mode": "hybrid"
+                    }
+                }
+            },
+            "dataloader": {
+                "validation_split": 2,
+                "args": {
+                    "batch_size": 3,
+                    "num_workers": 4,
+                    "shuffle": true,
+                    "pin_memory": true,
+                    "drop_last": true
+                },
+                "val_args": {
+                    "batch_size": 1,
+                    "num_workers": 4,
+                    "shuffle": false,
+                    "pin_memory": true,
+                    "drop_last": false
+                }
+            }
+        },
+        "test": {
+            "which_dataset": {
+                "name": "InpaintDataset",
+                "args": {
+                    "data_root": "datasets/celebahq/flist/test.flist",
+                    "mask_config": {
+                        "mask_mode": "center"
+                    }
+                }
+            },
+            "dataloader": {
+                "args": {
+                    "batch_size": 8,
+                    "num_workers": 4,
+                    "pin_memory": true
+                }
+            }
+        }
+    },
+    "model": {
+        "which_model": {
+            "name": [
+                "models.model",
+                "Palette"
+            ],
+            "args": {
+                "sample_num": 8,
+                "task": "inpainting",
+                "ema_scheduler": {
+                    "ema_start": 1,
+                    "ema_iter": 1,
+                    "ema_decay": 0.9999
+                },
+                "optimizers": [
+                    {
+                        "lr": 5e-05,
+                        "weight_decay": 0
+                    }
+                ]
+            }
+        },
+        "which_networks": [
+            {
+                "name": [
+                    "models.network",
+                    "Network"
+                ],
+                "args": {
+                    "init_type": "kaiming",
+                    "module_name": "guided_diffusion",
+                    "unet": {
+                        "in_channel": 6,
+                        "out_channel": 3,
+                        "inner_channel": 64,
+                        "channel_mults": [
+                            1,
+                            2,
+                            4,
+                            8
+                        ],
+                        "attn_res": [
+                            16
+                        ],
+                        "num_head_channels": 32,
+                        "res_blocks": 2,
+                        "dropout": 0.2,
+                        "image_size": 256
+                    },
+                    "beta_schedule": {
+                        "train": {
+                            "schedule": "linear",
+                            "n_timestep": 2000,
+                            "linear_start": 1e-06,
+                            "linear_end": 0.01
+                        },
+                        "test": {
+                            "schedule": "linear",
+                            "n_timestep": 1000,
+                            "linear_start": 0.0001,
+                            "linear_end": 0.09
+                        }
+                    }
+                }
+            }
+        ],
+        "which_losses": [
+            "mse_loss"
+        ],
+        "which_metrics": [
+            "mae"
+        ]
+    },
+    "train": {
+        "n_epoch": 100000000.0,
+        "n_iter": 100000000.0,
+        "val_epoch": 5,
+        "save_checkpoint_epoch": 10,
+        "log_iter": 1000.0,
+        "tensorboard": true
+    },
+    "debug": {
+        "val_epoch": 1,
+        "save_checkpoint_epoch": 1,
+        "log_iter": 2,
+        "debug_split": 50
+    },
+    "phase": "test",
+    "distributed": false
+}

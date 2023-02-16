@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: com.github.fommil.netlib:core:1.1.2:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/github/fommil/netlib/core/1.1.2/core-1.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/github/fommil/netlib/core/1.1.2/core-1.1.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/github/fommil/netlib/core/1.1.2/core-1.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

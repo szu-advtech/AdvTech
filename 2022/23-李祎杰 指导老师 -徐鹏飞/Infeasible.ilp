@@ -1,0 +1,12 @@
+\ Model GLayout_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ 5_&_2_width_equal: - W[2] + W[5] = 0
+Bounds
+ W[2] >= 476
+ -infinity <= W[5] <= 452
+Generals
+ W[2] W[5]
+End

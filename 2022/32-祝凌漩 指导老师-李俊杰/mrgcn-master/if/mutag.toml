@@ -1,0 +1,100 @@
+# Dataset configuration context
+
+# name of the dataset
+name = "MUTAG"
+
+[graph]
+# available at https://gitlab.com/wxwilcke/mmkg
+context = "../../datasets/mutag/mutag.nt.gz"
+train = "../../datasets/mutag/mutag_train_set.nt.gz"
+valid = "../../datasets/mutag/mutag_valid_set.nt.gz"
+test = "../../datasets/mutag/mutag_test_set.nt.gz"
+
+[graph.structural]
+include_inverse_properties = true
+exclude_properties = []  # use empty list to include all
+separate_literals = false
+multiprocessing = false
+
+[[graph.features]]
+datatype = 'xsd.numeric'
+include = true
+share_weights = false
+embedding_dim = 4
+p_dropout = 0.0
+gpu_acceleration = false
+p_noise = 0.0
+noise_multiplier = 0.0
+
+#[[graph.features]]
+#datatype = 'xsd.gYear'
+#include = true
+#share_weights = true
+#
+#[[graph.features]]
+#datatype = 'xsd.date'
+#include = true
+#share_weights = true 
+
+[[graph.features]]
+datatype = 'xsd.boolean'
+include = true
+share_weights = false
+p_dropout = 0.0
+gpu_acceleration = false
+p_noise = 0.0
+noise_multiplier = 0.0
+embedding_dim = 128
+
+#[[graph.features]]
+#datatype = 'xsd.string'
+#include = true
+#num_batches = 16
+#share_weights = true
+#trim_outliers = false
+#remove_outliers = false
+#embedding_dim = 16
+#
+#[[graph.features]]
+#datatype = 'blob.image'
+#include = true
+#num_batches = 16
+#share_weights = true
+#remove_outliers = false
+#embedding_dim = 128
+#
+#[[graph.features]]
+#datatype = 'ogc.wktLiteral'
+#include = true
+#num_batches = 16
+#share_weights = true
+#trim_outliers = false
+#remove_outliers = false
+#embedding_dim = 16
+
+[task]
+type = "node classification"
+target_property = 'http://dl-learner.org/carcinogenesis#isMutagenic'
+target_property_inv = ''
+seed = -1  # use < 0 for random
+gcn_gpu_acceleration = false
+batchsize = -1  # < 0 for full batch
+early_stopping.patience = -1
+early_stopping.tolerance = 0.01
+
+[model]
+epoch = 50
+learning_rate = 0.01
+num_bases = 0
+p_dropout = 0.0
+weight_decay = 0.0
+l1_lambda = 0.0
+l2_lambda = 0.0
+bias = false
+
+[[model.layers]]
+type = 'mrgcn'
+hidden_nodes = 16
+
+[[model.layers]]
+type = 'mrgcn'

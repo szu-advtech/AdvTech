@@ -1,0 +1,110 @@
+File,Start Line,End Line,Operation Type,Message
+models/rrnet.py,12,12,INSERT,['import torch_npu']
+detectors/fastaccurate_detector.py,14,14,INSERT,['import torch_npu']
+detectors/retinanet_detector.py,4,4,INSERT,['import torch_npu']
+detectors/centernet_detector.py,6,6,INSERT,['import torch_npu']
+detectors/fasterrcnn_detector.py,6,6,INSERT,['import torch_npu']
+modules/apss.py,5,5,INSERT,['import torch_npu']
+modules/anchor.py,6,6,INSERT,['import torch_npu']
+modules/fpn.py,5,5,INSERT,['import torch_npu']
+modules/self_attention.py,7,7,INSERT,['import torch_npu']
+modules/self_attention.py,98,98,MODIFY,change function cuda to npu
+modules/self_attention.py,101,101,MODIFY,change function cuda to npu
+modules/loss/focalloss.py,5,5,INSERT,['import torch_npu']
+modules/loss/functional.py,6,6,INSERT,['import torch_npu']
+modules/loss/regl1loss.py,5,5,INSERT,['import torch_npu']
+modules/loss/klloss.py,5,5,INSERT,['import torch_npu']
+utils/dataloader.py,15,15,INSERT,['import torch_npu']
+utils/dataloader.py,219,219,MODIFY,change function torch.cuda.current_device to torch_npu.npu.current_device
+utils/dataloader.py,191,191,MODIFY,change function torch.cuda.is_available to torch_npu.npu.is_available
+utils/dataloader.py,64,64,MODIFY,change function torch.cuda.set_device to torch_npu.npu.set_device
+utils/dataloader.py,64,64,MODIFY,change module cuda to npu
+utils/dataloader.py,191,191,MODIFY,change module cuda to npu
+utils/dataloader.py,219,219,MODIFY,change module cuda to npu
+utils/functional.py,7,7,INSERT,['import torch_npu']
+utils/warmup_lr.py,10,10,INSERT,['import torch_npu']
+utils/vis/annotations.py,5,5,INSERT,['import torch_npu']
+utils/vis/logger.py,9,9,INSERT,['import torch_npu']
+utils/metrics/metrics.py,11,11,INSERT,['import torch_npu']
+operators/distributed_wrapper.py,6,6,INSERT,['import torch_npu']
+operators/distributed_wrapper.py,22,22,MODIFY,change function torch.cuda.device_count to torch_npu.npu.device_count
+operators/distributed_wrapper.py,43,43,MODIFY,change function torch.cuda.set_device to torch_npu.npu.set_device
+operators/distributed_wrapper.py,22,22,MODIFY,change module cuda to npu
+operators/distributed_wrapper.py,43,43,MODIFY,change module cuda to npu
+operators/distributed_wrapper.py,41,41,MODIFY,"replace string ""nccl"" with ""hccl"""
+operators/rrnet_operator.py,23,23,INSERT,['import torch_npu']
+operators/rrnet_operator.py,27,27,MODIFY,change function cuda to npu
+operators/rrnet_operator.py,256,256,MODIFY,change function cuda to npu
+operators/base_operator.py,9,9,INSERT,['import torch_npu']
+operators/base_operator.py,24,24,MODIFY,change module cuda to npu
+backbones/resnet.py,6,6,INSERT,['import torch_npu']
+backbones/hrnet.py,7,7,INSERT,['import torch_npu']
+backbones/hrnet.py,304,304,MODIFY,"replace string ""cuda"" with ""npu"""
+backbones/trident.py,8,8,INSERT,['import torch_npu']
+backbones/load.py,5,5,INSERT,['import torch_npu']
+backbones/load.py,8,8,MODIFY,"replace string ""cuda:"" with ""npu:"""
+backbones/hrnetv2.py,30,30,INSERT,['import torch_npu']
+backbones/dense_hourglass.py,9,9,INSERT,['import torch_npu']
+backbones/shufflenet.py,5,5,INSERT,['import torch_npu']
+backbones/se_hourglass.py,9,9,INSERT,['import torch_npu']
+backbones/hourglass.py,9,9,INSERT,['import torch_npu']
+configs/rrnet_config.py,7,7,INSERT,['import torch_npu']
+datasets/dataloader.py,4,4,INSERT,['import torch_npu']
+datasets/dataloader.py,18,18,MODIFY,"replace string ""cuda"" with ""npu"""
+datasets/dataloader.py,27,27,MODIFY,"replace string ""cuda"" with ""npu"""
+datasets/__init__.py,5,5,INSERT,['import torch_npu']
+datasets/drones_det.py,10,10,INSERT,['import torch_npu']
+datasets/transforms/functional.py,13,13,INSERT,['import torch_npu']
+datasets/transforms/transforms.py,14,14,INSERT,['import torch_npu']
+ext/nms/setup.py,44,44,MODIFY,"replace string ""cuda"" with ""npu"""
+ext/dcn/setup.py,15,15,INSERT,['import torch_npu']
+ext/dcn/setup.py,30,30,MODIFY,change function torch.cuda.is_available to torch_npu.npu.is_available
+ext/dcn/setup.py,30,30,MODIFY,change module cuda to npu
+ext/dcn/setup.py,23,23,MODIFY,"replace string ""cuda"" with ""npu"""
+ext/dcn/test.py,14,14,INSERT,['import torch_npu']
+ext/dcn/test.py,33,37,MODIFY,change function cuda to npu
+ext/dcn/test.py,39,43,MODIFY,change function cuda to npu
+ext/dcn/test.py,45,47,MODIFY,change function cuda to npu
+ext/dcn/test.py,55,55,MODIFY,change function cuda to npu
+ext/dcn/test.py,71,71,MODIFY,change function cuda to npu
+ext/dcn/test.py,74,74,MODIFY,change function cuda to npu
+ext/dcn/test.py,79,79,MODIFY,change function cuda to npu
+ext/dcn/test.py,84,84,MODIFY,change function cuda to npu
+ext/dcn/test.py,87,87,MODIFY,change function cuda to npu
+ext/dcn/test.py,102,102,MODIFY,change function cuda to npu
+ext/dcn/test.py,105,108,MODIFY,change function cuda to npu
+ext/dcn/test.py,109,114,MODIFY,change function cuda to npu
+ext/dcn/test.py,121,126,MODIFY,change function cuda to npu
+ext/dcn/test.py,127,127,MODIFY,change function cuda to npu
+ext/dcn/test.py,135,135,MODIFY,change function cuda to npu
+ext/dcn/test.py,137,137,MODIFY,change function cuda to npu
+ext/dcn/test.py,138,138,MODIFY,change function cuda to npu
+ext/dcn/test.py,139,139,MODIFY,change function cuda to npu
+ext/dcn/test.py,140,140,MODIFY,change function cuda to npu
+ext/dcn/test.py,141,141,MODIFY,change function cuda to npu
+ext/dcn/test.py,143,143,MODIFY,change function cuda to npu
+ext/dcn/test.py,170,170,MODIFY,change function cuda to npu
+ext/dcn/test.py,172,173,MODIFY,change function cuda to npu
+ext/dcn/test.py,184,184,MODIFY,change function cuda to npu
+ext/dcn/test.py,185,185,MODIFY,change function cuda to npu
+ext/dcn/test.py,186,186,MODIFY,change function cuda to npu
+ext/dcn/test.py,187,187,MODIFY,change function cuda to npu
+ext/dcn/test.py,188,188,MODIFY,change function cuda to npu
+ext/dcn/test.py,189,189,MODIFY,change function cuda to npu
+ext/dcn/test.py,191,191,MODIFY,change function cuda to npu
+ext/dcn/test.py,196,201,MODIFY,change function cuda to npu
+ext/dcn/test.py,204,209,MODIFY,change function cuda to npu
+ext/dcn/test.py,227,227,MODIFY,change function cuda to npu
+ext/dcn/test.py,229,229,MODIFY,change function cuda to npu
+ext/dcn/test.py,230,230,MODIFY,change function cuda to npu
+ext/dcn/test.py,231,231,MODIFY,change function cuda to npu
+ext/dcn/test.py,232,232,MODIFY,change function cuda to npu
+ext/dcn/test.py,233,233,MODIFY,change function cuda to npu
+ext/dcn/test.py,237,243,MODIFY,change function cuda to npu
+ext/dcn/dcn_v2.py,16,16,INSERT,['import torch_npu']
+ext/kmeans/kmeans.py,6,6,INSERT,['import torch_npu']
+ext/kmeans/kmeans.py,14,14,MODIFY,change function cuda to npu
+ext/kmeans/pairwise.py,17,17,MODIFY,change function cuda to npu
+ext/kmeans/pairwise.py,17,17,MODIFY,change function cuda to npu
+ext/kmeans/pairwise.py,37,37,MODIFY,change function cuda to npu
+ext/kmeans/pairwise.py,38,38,MODIFY,change function cuda to npu

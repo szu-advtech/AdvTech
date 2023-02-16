@@ -1,0 +1,246 @@
+2022-12-11 12:07:55 [INFO]    Initialing rules...
+2022-12-11 12:07:55 [INFO]    MsFmkTransplt start working now, please wait for a moment.
+2022-12-11 12:07:55 [INFO]    Analysis start...
+2022-12-11 12:07:55 [INFO]    [Progress:  0.00%]  Start analysis eval.py.
+2022-12-11 12:07:56 [INFO]    [Progress:  0.00%]  Analysis eval.py complete.
+2022-12-11 12:07:56 [INFO]    [Progress:  1.54%]  Start analysis train.py.
+2022-12-11 12:07:56 [INFO]    [Progress:  1.54%]  Analysis train.py complete.
+2022-12-11 12:07:56 [INFO]    [Progress:  3.08%]  Start analysis models/rrnet.py.
+2022-12-11 12:08:00 [INFO]    [Progress:  3.08%]  line: 12 ~ 12         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:00 [INFO]    [Progress:  3.08%]  Analysis models/rrnet.py complete.
+2022-12-11 12:08:00 [INFO]    [Progress:  4.62%]  Start analysis models/__init__.py.
+2022-12-11 12:08:00 [INFO]    [Progress:  4.62%]  Analysis models/__init__.py complete.
+2022-12-11 12:08:00 [INFO]    [Progress:  6.15%]  Start analysis detectors/fastaccurate_detector.py.
+2022-12-11 12:08:01 [INFO]    [Progress:  6.15%]  line: 14 ~ 14         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:01 [INFO]    [Progress:  6.15%]  Analysis detectors/fastaccurate_detector.py complete.
+2022-12-11 12:08:01 [INFO]    [Progress:  7.69%]  Start analysis detectors/retinanet_detector.py.
+2022-12-11 12:08:02 [INFO]    [Progress:  7.69%]  line: 4 ~ 4           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:02 [INFO]    [Progress:  7.69%]  Analysis detectors/retinanet_detector.py complete.
+2022-12-11 12:08:02 [INFO]    [Progress:  9.23%]  Start analysis detectors/centernet_detector.py.
+2022-12-11 12:08:04 [INFO]    [Progress:  9.23%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:04 [INFO]    [Progress:  9.23%]  Analysis detectors/centernet_detector.py complete.
+2022-12-11 12:08:04 [INFO]    [Progress: 10.77%]  Start analysis detectors/fasterrcnn_detector.py.
+2022-12-11 12:08:04 [INFO]    [Progress: 10.77%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:04 [INFO]    [Progress: 10.77%]  Analysis detectors/fasterrcnn_detector.py complete.
+2022-12-11 12:08:04 [INFO]    [Progress: 12.31%]  Start analysis modules/apss.py.
+2022-12-11 12:08:05 [INFO]    [Progress: 12.31%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:05 [INFO]    [Progress: 12.31%]  Analysis modules/apss.py complete.
+2022-12-11 12:08:05 [INFO]    [Progress: 13.85%]  Start analysis modules/anchor.py.
+2022-12-11 12:08:08 [INFO]    [Progress: 13.85%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:08 [INFO]    [Progress: 13.85%]  Analysis modules/anchor.py complete.
+2022-12-11 12:08:08 [INFO]    [Progress: 15.38%]  Start analysis modules/fpn.py.
+2022-12-11 12:08:08 [INFO]    [Progress: 15.38%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:08 [INFO]    [Progress: 15.38%]  Analysis modules/fpn.py complete.
+2022-12-11 12:08:08 [INFO]    [Progress: 16.92%]  Start analysis modules/self_attention.py.
+2022-12-11 12:08:11 [INFO]    [Progress: 16.92%]  line: 7 ~ 7           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:11 [INFO]    [Progress: 16.92%]  line: 98 ~ 98         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:08:11 [INFO]    [Progress: 16.92%]  line: 101 ~ 101       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:08:11 [INFO]    [Progress: 16.92%]  Analysis modules/self_attention.py complete.
+2022-12-11 12:08:11 [INFO]    [Progress: 18.46%]  Start analysis modules/__init__.py.
+2022-12-11 12:08:11 [INFO]    [Progress: 18.46%]  Analysis modules/__init__.py complete.
+2022-12-11 12:08:11 [INFO]    [Progress: 20.00%]  Start analysis modules/loss/focalloss.py.
+2022-12-11 12:08:11 [INFO]    [Progress: 20.00%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:11 [INFO]    [Progress: 20.00%]  Analysis modules/loss/focalloss.py complete.
+2022-12-11 12:08:11 [INFO]    [Progress: 21.54%]  Start analysis modules/loss/functional.py.
+2022-12-11 12:08:16 [INFO]    [Progress: 21.54%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:16 [INFO]    [Progress: 21.54%]  Analysis modules/loss/functional.py complete.
+2022-12-11 12:08:16 [INFO]    [Progress: 23.08%]  Start analysis modules/loss/__init__.py.
+2022-12-11 12:08:16 [INFO]    [Progress: 23.08%]  Analysis modules/loss/__init__.py complete.
+2022-12-11 12:08:16 [INFO]    [Progress: 24.62%]  Start analysis modules/loss/regl1loss.py.
+2022-12-11 12:08:17 [INFO]    [Progress: 24.62%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:17 [INFO]    [Progress: 24.62%]  Analysis modules/loss/regl1loss.py complete.
+2022-12-11 12:08:17 [INFO]    [Progress: 26.15%]  Start analysis modules/loss/klloss.py.
+2022-12-11 12:08:17 [INFO]    [Progress: 26.15%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:17 [INFO]    [Progress: 26.15%]  Analysis modules/loss/klloss.py complete.
+2022-12-11 12:08:17 [INFO]    [Progress: 27.69%]  Start analysis utils/dataloader.py.
+2022-12-11 12:08:18 [WARNING] [Progress: 27.69%]  line: 64 ~ 64         Operation Type: UNSUPPORTED         Message: torch.cuda.set_device is not supported now!
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 15 ~ 15         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 219 ~ 219       Operation Type: MODIFY              Message: change function torch.cuda.current_device to torch_npu.npu.current_device
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 191 ~ 191       Operation Type: MODIFY              Message: change function torch.cuda.is_available to torch_npu.npu.is_available
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 64 ~ 64         Operation Type: MODIFY              Message: change function torch.cuda.set_device to torch_npu.npu.set_device
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 64 ~ 64         Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 191 ~ 191       Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  line: 219 ~ 219       Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:08:21 [INFO]    [Progress: 27.69%]  Analysis utils/dataloader.py complete.
+2022-12-11 12:08:21 [INFO]    [Progress: 29.23%]  Start analysis utils/data_type_convertor.py.
+2022-12-11 12:08:24 [INFO]    [Progress: 29.23%]  Analysis utils/data_type_convertor.py complete.
+2022-12-11 12:08:24 [INFO]    [Progress: 30.77%]  Start analysis utils/functional.py.
+2022-12-11 12:08:25 [INFO]    [Progress: 30.77%]  line: 7 ~ 7           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:25 [INFO]    [Progress: 30.77%]  Analysis utils/functional.py complete.
+2022-12-11 12:08:25 [INFO]    [Progress: 32.31%]  Start analysis utils/model_tools.py.
+2022-12-11 12:08:25 [INFO]    [Progress: 32.31%]  Analysis utils/model_tools.py complete.
+2022-12-11 12:08:25 [INFO]    [Progress: 33.85%]  Start analysis utils/__init__.py.
+2022-12-11 12:08:25 [INFO]    [Progress: 33.85%]  Analysis utils/__init__.py complete.
+2022-12-11 12:08:25 [INFO]    [Progress: 35.38%]  Start analysis utils/warmup_lr.py.
+2022-12-11 12:08:26 [INFO]    [Progress: 35.38%]  line: 10 ~ 10         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:26 [INFO]    [Progress: 35.38%]  Analysis utils/warmup_lr.py complete.
+2022-12-11 12:08:26 [INFO]    [Progress: 36.92%]  Start analysis utils/vis/annotations.py.
+2022-12-11 12:08:28 [INFO]    [Progress: 36.92%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:28 [INFO]    [Progress: 36.92%]  Analysis utils/vis/annotations.py complete.
+2022-12-11 12:08:28 [INFO]    [Progress: 38.46%]  Start analysis utils/vis/logger.py.
+2022-12-11 12:08:28 [INFO]    [Progress: 38.46%]  line: 9 ~ 9           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:28 [INFO]    [Progress: 38.46%]  Analysis utils/vis/logger.py complete.
+2022-12-11 12:08:28 [INFO]    [Progress: 40.00%]  Start analysis utils/vis/__init__.py.
+2022-12-11 12:08:28 [INFO]    [Progress: 40.00%]  Analysis utils/vis/__init__.py complete.
+2022-12-11 12:08:28 [INFO]    [Progress: 41.54%]  Start analysis utils/vis/timer.py.
+2022-12-11 12:08:29 [INFO]    [Progress: 41.54%]  Analysis utils/vis/timer.py complete.
+2022-12-11 12:08:29 [INFO]    [Progress: 43.08%]  Start analysis utils/metrics/metrics.py.
+2022-12-11 12:08:37 [INFO]    [Progress: 43.08%]  line: 11 ~ 11         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:37 [INFO]    [Progress: 43.08%]  Analysis utils/metrics/metrics.py complete.
+2022-12-11 12:08:37 [INFO]    [Progress: 44.62%]  Start analysis utils/metrics/__init__.py.
+2022-12-11 12:08:37 [INFO]    [Progress: 44.62%]  Analysis utils/metrics/__init__.py complete.
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  Start analysis operators/distributed_wrapper.py.
+2022-12-11 12:08:37 [WARNING] [Progress: 46.15%]  line: 43 ~ 43         Operation Type: UNSUPPORTED         Message: torch.cuda.set_device is not supported now!
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  line: 22 ~ 22         Operation Type: MODIFY              Message: change function torch.cuda.device_count to torch_npu.npu.device_count
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  line: 43 ~ 43         Operation Type: MODIFY              Message: change function torch.cuda.set_device to torch_npu.npu.set_device
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  line: 22 ~ 22         Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  line: 43 ~ 43         Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:08:37 [INFO]    [Progress: 46.15%]  line: 41 ~ 41         Operation Type: MODIFY              Message: replace string "nccl" with "hccl"
+2022-12-11 12:08:38 [INFO]    [Progress: 46.15%]  Analysis operators/distributed_wrapper.py complete.
+2022-12-11 12:08:38 [INFO]    [Progress: 47.69%]  Start analysis operators/rrnet_operator.py.
+2022-12-11 12:08:44 [INFO]    [Progress: 47.69%]  line: 23 ~ 23         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:44 [INFO]    [Progress: 47.69%]  line: 27 ~ 27         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:08:44 [INFO]    [Progress: 47.69%]  line: 256 ~ 256       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:08:44 [INFO]    [Progress: 47.69%]  Analysis operators/rrnet_operator.py complete.
+2022-12-11 12:08:44 [INFO]    [Progress: 49.23%]  Start analysis operators/__init__.py.
+2022-12-11 12:08:44 [INFO]    [Progress: 49.23%]  Analysis operators/__init__.py complete.
+2022-12-11 12:08:44 [INFO]    [Progress: 50.77%]  Start analysis operators/base_operator.py.
+2022-12-11 12:08:44 [WARNING] [Progress: 50.77%]  line: 24 ~ 24         Operation Type: UNSUPPORTED         Message: torch.cuda.manual_seed is not supported now!
+2022-12-11 12:08:44 [INFO]    [Progress: 50.77%]  line: 9 ~ 9           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:44 [INFO]    [Progress: 50.77%]  line: 24 ~ 24         Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:08:44 [INFO]    [Progress: 50.77%]  Analysis operators/base_operator.py complete.
+2022-12-11 12:08:44 [INFO]    [Progress: 52.31%]  Start analysis backbones/resnet.py.
+2022-12-11 12:08:47 [INFO]    [Progress: 52.31%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:47 [INFO]    [Progress: 52.31%]  Analysis backbones/resnet.py complete.
+2022-12-11 12:08:47 [INFO]    [Progress: 53.85%]  Start analysis backbones/hrnet.py.
+2022-12-11 12:08:54 [INFO]    [Progress: 53.85%]  line: 7 ~ 7           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:08:54 [INFO]    [Progress: 53.85%]  line: 304 ~ 304       Operation Type: MODIFY              Message: replace string "cuda" with "npu"
+2022-12-11 12:08:54 [INFO]    [Progress: 53.85%]  Analysis backbones/hrnet.py complete.
+2022-12-11 12:08:54 [INFO]    [Progress: 55.38%]  Start analysis backbones/trident.py.
+2022-12-11 12:09:00 [INFO]    [Progress: 55.38%]  line: 8 ~ 8           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:00 [INFO]    [Progress: 55.38%]  Analysis backbones/trident.py complete.
+2022-12-11 12:09:00 [INFO]    [Progress: 56.92%]  Start analysis backbones/load.py.
+2022-12-11 12:09:01 [INFO]    [Progress: 56.92%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:01 [INFO]    [Progress: 56.92%]  line: 8 ~ 8           Operation Type: MODIFY              Message: replace string "cuda:" with "npu:"
+2022-12-11 12:09:01 [INFO]    [Progress: 56.92%]  Analysis backbones/load.py complete.
+2022-12-11 12:09:01 [INFO]    [Progress: 58.46%]  Start analysis backbones/hrnetv2.py.
+2022-12-11 12:09:09 [INFO]    [Progress: 58.46%]  line: 30 ~ 30         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:09 [INFO]    [Progress: 58.46%]  Analysis backbones/hrnetv2.py complete.
+2022-12-11 12:09:09 [INFO]    [Progress: 60.00%]  Start analysis backbones/dense_hourglass.py.
+2022-12-11 12:09:12 [INFO]    [Progress: 60.00%]  line: 9 ~ 9           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:12 [INFO]    [Progress: 60.00%]  Analysis backbones/dense_hourglass.py complete.
+2022-12-11 12:09:12 [INFO]    [Progress: 61.54%]  Start analysis backbones/shufflenet.py.
+2022-12-11 12:09:16 [INFO]    [Progress: 61.54%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:16 [INFO]    [Progress: 61.54%]  Analysis backbones/shufflenet.py complete.
+2022-12-11 12:09:16 [INFO]    [Progress: 63.08%]  Start analysis backbones/__init__.py.
+2022-12-11 12:09:16 [INFO]    [Progress: 63.08%]  Analysis backbones/__init__.py complete.
+2022-12-11 12:09:16 [INFO]    [Progress: 64.62%]  Start analysis backbones/se_hourglass.py.
+2022-12-11 12:09:20 [INFO]    [Progress: 64.62%]  line: 9 ~ 9           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:20 [INFO]    [Progress: 64.62%]  Analysis backbones/se_hourglass.py complete.
+2022-12-11 12:09:20 [INFO]    [Progress: 66.15%]  Start analysis backbones/hourglass.py.
+2022-12-11 12:09:24 [INFO]    [Progress: 66.15%]  line: 9 ~ 9           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:24 [INFO]    [Progress: 66.15%]  Analysis backbones/hourglass.py complete.
+2022-12-11 12:09:24 [INFO]    [Progress: 67.69%]  Start analysis configs/rrnet_config.py.
+2022-12-11 12:09:25 [INFO]    [Progress: 67.69%]  line: 7 ~ 7           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:25 [INFO]    [Progress: 67.69%]  Analysis configs/rrnet_config.py complete.
+2022-12-11 12:09:25 [INFO]    [Progress: 69.23%]  Start analysis configs/__init__.py.
+2022-12-11 12:09:25 [INFO]    [Progress: 69.23%]  Analysis configs/__init__.py complete.
+2022-12-11 12:09:25 [INFO]    [Progress: 70.77%]  Start analysis datasets/dataloader.py.
+2022-12-11 12:09:26 [INFO]    [Progress: 70.77%]  line: 4 ~ 4           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:26 [INFO]    [Progress: 70.77%]  line: 18 ~ 18         Operation Type: MODIFY              Message: replace string "cuda" with "npu"
+2022-12-11 12:09:26 [INFO]    [Progress: 70.77%]  line: 27 ~ 27         Operation Type: MODIFY              Message: replace string "cuda" with "npu"
+2022-12-11 12:09:26 [INFO]    [Progress: 70.77%]  Analysis datasets/dataloader.py complete.
+2022-12-11 12:09:26 [INFO]    [Progress: 72.31%]  Start analysis datasets/__init__.py.
+2022-12-11 12:09:27 [INFO]    [Progress: 72.31%]  line: 5 ~ 5           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:27 [INFO]    [Progress: 72.31%]  Analysis datasets/__init__.py complete.
+2022-12-11 12:09:27 [INFO]    [Progress: 73.85%]  Start analysis datasets/drones_det.py.
+2022-12-11 12:09:30 [INFO]    [Progress: 73.85%]  line: 10 ~ 10         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:30 [INFO]    [Progress: 73.85%]  Analysis datasets/drones_det.py complete.
+2022-12-11 12:09:30 [INFO]    [Progress: 75.38%]  Start analysis datasets/transforms/functional.py.
+2022-12-11 12:09:42 [INFO]    [Progress: 75.38%]  line: 13 ~ 13         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:42 [INFO]    [Progress: 75.38%]  Analysis datasets/transforms/functional.py complete.
+2022-12-11 12:09:42 [INFO]    [Progress: 76.92%]  Start analysis datasets/transforms/transforms.py.
+2022-12-11 12:09:46 [INFO]    [Progress: 76.92%]  line: 14 ~ 14         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:46 [INFO]    [Progress: 76.92%]  Analysis datasets/transforms/transforms.py complete.
+2022-12-11 12:09:46 [INFO]    [Progress: 78.46%]  Start analysis datasets/transforms/__init__.py.
+2022-12-11 12:09:46 [INFO]    [Progress: 78.46%]  Analysis datasets/transforms/__init__.py complete.
+2022-12-11 12:09:46 [INFO]    [Progress: 80.00%]  Start analysis ext/__init__.py.
+2022-12-11 12:09:46 [INFO]    [Progress: 80.00%]  Analysis ext/__init__.py complete.
+2022-12-11 12:09:46 [INFO]    [Progress: 81.54%]  Start analysis ext/nms/nms_wrapper.py.
+2022-12-11 12:09:47 [INFO]    [Progress: 81.54%]  Analysis ext/nms/nms_wrapper.py complete.
+2022-12-11 12:09:47 [INFO]    [Progress: 83.08%]  Start analysis ext/nms/setup.py.
+2022-12-11 12:09:48 [INFO]    [Progress: 83.08%]  line: 44 ~ 44         Operation Type: MODIFY              Message: replace string "cuda" with "npu"
+2022-12-11 12:09:49 [INFO]    [Progress: 83.08%]  Analysis ext/nms/setup.py complete.
+2022-12-11 12:09:49 [INFO]    [Progress: 84.62%]  Start analysis ext/nms/__init__.py.
+2022-12-11 12:09:49 [INFO]    [Progress: 84.62%]  Analysis ext/nms/__init__.py complete.
+2022-12-11 12:09:49 [INFO]    [Progress: 86.15%]  Start analysis ext/nms/nms/py_cpu_nms.py.
+2022-12-11 12:09:49 [INFO]    [Progress: 86.15%]  Analysis ext/nms/nms/py_cpu_nms.py complete.
+2022-12-11 12:09:49 [INFO]    [Progress: 87.69%]  Start analysis ext/nms/nms/__init__.py.
+2022-12-11 12:09:50 [INFO]    [Progress: 87.69%]  Analysis ext/nms/nms/__init__.py complete.
+2022-12-11 12:09:50 [INFO]    [Progress: 89.23%]  Start analysis ext/dcn/setup.py.
+2022-12-11 12:09:50 [INFO]    [Progress: 89.23%]  line: 15 ~ 15         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:50 [INFO]    [Progress: 89.23%]  line: 30 ~ 30         Operation Type: MODIFY              Message: change function torch.cuda.is_available to torch_npu.npu.is_available
+2022-12-11 12:09:50 [INFO]    [Progress: 89.23%]  line: 30 ~ 30         Operation Type: MODIFY              Message: change module cuda to npu
+2022-12-11 12:09:50 [INFO]    [Progress: 89.23%]  line: 23 ~ 23         Operation Type: MODIFY              Message: replace string "cuda" with "npu"
+2022-12-11 12:09:50 [INFO]    [Progress: 89.23%]  Analysis ext/dcn/setup.py complete.
+2022-12-11 12:09:50 [INFO]    [Progress: 90.77%]  Start analysis ext/dcn/__init__.py.
+2022-12-11 12:09:50 [INFO]    [Progress: 90.77%]  Analysis ext/dcn/__init__.py complete.
+2022-12-11 12:09:50 [INFO]    [Progress: 92.31%]  Start analysis ext/dcn/test.py.
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 14 ~ 14         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 33 ~ 37         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 39 ~ 43         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 45 ~ 47         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 55 ~ 55         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 71 ~ 71         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 74 ~ 74         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 79 ~ 79         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 84 ~ 84         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 87 ~ 87         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 102 ~ 102       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 105 ~ 108       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 109 ~ 114       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 121 ~ 126       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 127 ~ 127       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 135 ~ 135       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 137 ~ 137       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 138 ~ 138       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 139 ~ 139       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 140 ~ 140       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 141 ~ 141       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 143 ~ 143       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 170 ~ 170       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 172 ~ 173       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 184 ~ 184       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 185 ~ 185       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 186 ~ 186       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 187 ~ 187       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 188 ~ 188       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 189 ~ 189       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 191 ~ 191       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 196 ~ 201       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 204 ~ 209       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 227 ~ 227       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 229 ~ 229       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 230 ~ 230       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 231 ~ 231       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 232 ~ 232       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 233 ~ 233       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  line: 237 ~ 243       Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:09:56 [INFO]    [Progress: 92.31%]  Analysis ext/dcn/test.py complete.
+2022-12-11 12:09:56 [INFO]    [Progress: 93.85%]  Start analysis ext/dcn/dcn_v2.py.
+2022-12-11 12:10:00 [INFO]    [Progress: 93.85%]  line: 16 ~ 16         Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:10:00 [INFO]    [Progress: 93.85%]  Analysis ext/dcn/dcn_v2.py complete.
+2022-12-11 12:10:00 [INFO]    [Progress: 95.38%]  Start analysis ext/kmeans/kmeans.py.
+2022-12-11 12:10:01 [INFO]    [Progress: 95.38%]  line: 6 ~ 6           Operation Type: INSERT              Message: ['import torch_npu']
+2022-12-11 12:10:01 [INFO]    [Progress: 95.38%]  line: 14 ~ 14         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:10:01 [INFO]    [Progress: 95.38%]  Analysis ext/kmeans/kmeans.py complete.
+2022-12-11 12:10:01 [INFO]    [Progress: 96.92%]  Start analysis ext/kmeans/pairwise.py.
+2022-12-11 12:10:01 [INFO]    [Progress: 96.92%]  line: 17 ~ 17         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:10:01 [INFO]    [Progress: 96.92%]  line: 17 ~ 17         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:10:01 [INFO]    [Progress: 96.92%]  line: 37 ~ 37         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:10:01 [INFO]    [Progress: 96.92%]  line: 38 ~ 38         Operation Type: MODIFY              Message: change function cuda to npu
+2022-12-11 12:10:01 [INFO]    [Progress: 96.92%]  Analysis ext/kmeans/pairwise.py complete.
+2022-12-11 12:10:01 [INFO]    [Progress: 98.46%]  Start analysis ext/kmeans/__init__.py.
+2022-12-11 12:10:01 [INFO]    [Progress: 98.46%]  Analysis ext/kmeans/__init__.py complete.
+2022-12-11 12:10:01 [INFO]    [Progress:100.00%]  MsFmkTransplt run success, welcome to the next use.

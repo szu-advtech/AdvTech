@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.apache.hive:hive-storage-api:2.7.2:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/hive/hive-storage-api/2.7.2/hive-storage-api-2.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/hive/hive-storage-api/2.7.2/hive-storage-api-2.7.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/apache/hive/hive-storage-api/2.7.2/hive-storage-api-2.7.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

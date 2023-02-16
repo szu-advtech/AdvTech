@@ -1,0 +1,1231 @@
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.399999856949,1000,2.59,0,0,3
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: MD|C|D**
+ Samples: MD,MD,PhD,DVM,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.5,1000,2.593,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DDS|Ph*|V|MD
+ Samples: DDS,PhD,MD,DDS,Jr.
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.550000190735,1000,2.57,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: DDS|MD|JrD.|V
+ Samples: MD,MD,MD,DDS,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.45799994469,1000,6.533,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: (a|i)(d|t)|a|e(a|x)|(d|t|c)(e|o)c(e|p)(r|o|e)cccccc|c(p|e)cccc|(e|i|a)(a|e|u)(r|d|i)um
+ Samples: earum,temporibus,iste,repellat,tempora
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.77999997139,1000,6.442,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|(i|e)(p|s)(s|i)(m|e|u)m|(a|e)(t|a|d)|c(a|i)ccccctiocccc|d(o|e)l(o|e)(r|c)(e|t)(u|m)sue|cu(t|m)
+ Samples: delectus,dolore,quae,vitae,debitis
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.52999997139,1000,6.463,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: False
+ MODEL: cccccccccccc|a|(a|e|q)(u|i)(t|i)c|ec
+ Samples: aut,animi,aut,esse,amet
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.70000004768,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2)(1|3|4|5|2|0)D.(1|2)DD.(1|2)(4|3|0|1|2|9)D.(1|2)(2|4|3|0|5)(1|5|3|8|4|6)
+ Samples: 169.172.69.84,158.47.100.130,84.6.205.151,158.247.53.67,143.225.137.128
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.90000009537,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2)(2|3|0|9|1|5)D.(1|2)(2|3|5|1|4|0)D.(1|2)(1|4|3|2|7|5)D.(1|2)(2|1|0|4|3)D
+ Samples: 225.189.21.177,120.246.134.220,99.143.27.122,196.47.212.126,30.29.174.161
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.36999988556,1000,13.286,3,3,2
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: 1DD.1DD.1DD.DDD|(1|8)DD.DD.DD5.(1|2)DD
+ Samples: 124.14.14.28,95.189.181.43,1.58.175.176,46.180.147.37,205.231.223.87
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.22999978065,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 2b0a:c27b:9386:94:f72b:16da:e4bb:b78e,3d82:7001:ed35:48c1:a54:51ef:2c34:5dba,7d47:520d:bd2e:13a0:c37d:e2bc:cfcd:8407,f10:1a20:de8e:d395:a5a9:7a5:8b2f:b306,f6c4:7b88:6100:28b3:bf23:a829:93f6:f793
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.47999978065,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: f753:db1c:cb11:55fa:31a1:3a5b:35c5:b5ed,5b30:b860:86f4:4906:ed1c:d841:4c91:e46b,a37c:9664:cac7:5839:649f:4eb0:34e0:71d2,9e84:27ab:a0b:380:847a:7404:36b1:8255,f8b0:98b5:412d:7511:c983:1366:9081:efaa
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.72999978065,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 41a5:29ef:8f87:8a5b:c3d4:dd4d:7d49:a4db,4a27:c70c:6c8a:a8f4:c972:53b9:2de7:71d1,fee2:1de0:c79a:1b9b:260f:76a3:557d:e8e1,dbae:8fa6:cd0:ffc7:40c:127c:90de:88d6,d76c:bdbb:ba57:47bf:5efb:2b6:74f5:ec0f
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.38999986649,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 85a1413b-9666-43b1-983b-8c27d96387ab,981e3a8b-51e2-4691-91ab-55a4b243f292,78fa2f3a-fc34-4e6b-937f-3478acc5522d,bc1456a1-8e45-48c5-a363-6594ffc2163b,316d6308-d71a-4b98-a117-8a67d00cefff
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.65000009537,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 5dbf64f4-f48d-449c-8ae9-0a65db7037ed,f4e10097-dcdf-40c2-810d-702392709eda,604c05c1-9124-419c-b752-39f5eb8df1e6,3d020586-bba2-45a8-adfd-56eabfc05d02,dbd8f97d-4a52-4300-bac6-576fa2ff698d
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.26999998093,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 98154f92-6737-4d5d-bfb6-695a47090a33,5b063058-f054-4dc2-ba2b-5a971fdb162b,5cf61968-a23c-415e-a7cd-c1c4b3a3e860,2f3021aa-2f6d-48b9-8dac-d177f974f9db,47af4956-ef2e-4b07-8f01-277a4c8e4fff
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,37.2479999065
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.380000114441,1000,2.59,0,0,3
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: MD|C|(D|P)**
+ Samples: MD,PhD,MD,DDS,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.47000002861,1000,2.593,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: MD|JrD.|D(D|V)(S|M)|V
+ Samples: DDS,DVM,MD,DDS,Jr.
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.04999995232,1000,2.57,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: (P|J)(h|r)D.|MD|III|D(D|V)(S|M)|V
+ Samples: II,Jr.,DVM,MD,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.20000004768,1000,6.533,0,0,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: cccc|a|c(l|u|a)cccicccc|(a|e)(x|d)|dolor(e|u)m
+ Samples: dolorum,culpa,quos,aliquam,atque
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.31200003624,1000,6.442,0,0,8
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|(e|n|d)(a|e|i)c(u|i)(e|a|m)|e(a|x)|(d|n)(u|o)lcccccccccc|e(u|s)(m|t)|in|a(d|b)|ccc(o|e|s)
+ Samples: ad,nulla,ducimus,molestiae,quisquam
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.0,1000,6.463,0,0,9
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: True
+ MODEL: a|(e|i)(a|d)|iste|(e|a)(x|d)|(n|r|c)(e|u)cc(a|s)cccccc|c(u|i)c|et|(q|o)ui(a|t)|(i|u|d)(l|p|o)(l|s)(a|u)m
+ Samples: quia,repellendus,natus,reiciendis,nulla
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.62999987602,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2)(3|2|4|1|0|5)D.(1|2)DD.(1|2)(3|4|0|2|5|1)D.(1|2)(2|4|3|0|1|5)(1|5|3|8|4|6)
+ Samples: 81.47.65.13,37.242.144.163,121.193.81.185,135.129.211.59,55.209.66.239
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.83000016212,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2)(0|3|2|4|5|1)D.(1|2)(0|2|4|1|3|7)D.(1|2)(4|1|0|2|3)D.(1|7|2|5|9)D(0|9|8)
+ Samples: 98.205.230.240,249.252.37.19,74.44.242.88,70.152.197.238,239.17.241.21
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.07999992371,1000,13.286,3,3,2
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)DD.(1|9)DD.(1|2)DD.DDD|(1|2)D(0|1).(1|2)DD.(6|9)D.(1|2|8)(0|8)8
+ Samples: 151.130.60.108,59.90.225.249,29.127.244.31,226.182.177.176,135.128.244.222
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.76400017738,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: e4dd:80af:b212:295f:cb92:691:7f32:e8b5,721e:8393:682a:21b4:c7da:8b97:7885:6555,c157:a515:460e:12d6:af46:5e0d:6310:2a75,feb7:9719:5ca8:a611:ae2f:38a2:d5f3:7414,648:c925:4f0b:9c91:dc6a:e456:e098:2a36
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.14999985695,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: aa7e:dc7a:3aa3:7f58:c638:1479:4cfa:1f61,724d:de4d:a4ac:3536:2891:229d:6bc2:bfd7,7833:7e4a:1f21:d58c:10d8:edeb:ae8b:957f,eeb9:34f1:508f:4dd9:b0ee:44a5:1ba1:611f,8710:6ee1:8f3:b981:3200:991b:3ee7:db66
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.83000016212,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: b4f8:7c28:a200:bfee:b18a:7d61:790a:f87e,549e:dfba:2403:69ff:95f4:5bee:2971:9a7e,ef1e:341f:e4ff:5be5:5236:7665:9f51:c49e,a0c0:11b5:4b9e:3948:1cbe:df9e:f073:795d,7627:5300:39fa:17f1:a834:29d5:bdec:2e37
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.29999995232,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: c8031773-fb5a-4ca2-9336-bddc08526acd,6c607ab8-ff31-4e6e-a1cb-71d9deb39549,e59ff3e9-57a8-49ea-b780-84df4c6b7c72,3fdc6d4e-d3f1-4619-b37d-b8d9aad520ba,a13a424f-28c9-446a-931f-f1e9c3386646
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.00099992752,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 1656a4bb-b0f1-4d03-9fd3-dedec797d85d,648e7736-b3ae-448f-8553-b27485fb57f2,98d687da-22db-41b2-bfa7-55065c327552,d9ca7ea6-3ff6-4f72-a6da-c8817213bfb8,6583e778-78c5-4dd4-9d1d-fe32d77005b0
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,7.45200014114,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: a51ab345-e7f8-4986-86d1-ad41b47b967d,98c0b496-0137-4c8f-a4e4-b5d21f04936e,63128eca-2bce-47be-b61d-4c7146027f66,b02a42cc-3a93-4423-9d39-5734c0e64ea8,086380bf-919f-4531-820e-11b39b060e83
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,42.739000082
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.600000143051,1000,2.59,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: Jr.|C|PhD|D(V|D)(M|S)|MD
+ Samples: Jr.,MD,DVM,DVM,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.460000038147,1000,2.593,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DDS|MD|JrD.|V
+ Samples: DVM,DDS,MD,MD,DDS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.539999961853,1000,2.57,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: DVM|MD|JrD.|V
+ Samples: MD,Jr.,DVM,MD,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.64100003242,1000,6.533,0,0,8
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: a|(a|i)c|c(o|a)(l|m|a)ccccc|c(u|o)ccc|(c|d|a)cc(i|s|d)cc(t|s)c(t|u)ccccc|asper(n|i)(a|o)(t|r)(u|e)(r|s)|(c|n)(u|e)(m|d)|(o|s|i)(i|d)(i|n)(t|o)
+ Samples: aspernatur,soluta,magni,mollitia,tempora
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.11999988556,1000,6.442,0,0,9
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|cc(s|q|e)cc|c(u|a|i)(m|t)|(l|t)a(b|c)(e|o)r(e|u)c|(s|c|e)(o|i)ccccccccc|(a|i)(b|n)|(a|e)(t|d)|(q|e)uc(m|s|a)|(n|i|m)cc(o|i)
+ Samples: labore,amet,esse,dignissimos,voluptate
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.17000007629,1000,6.463,0,0,7
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: True
+ MODEL: a|dolor(e|u)(s|m)|(o|q|f)(u|d)(i|g)(a|t)|(i|a)(u|a|l)(e|l)cc|c(o|a|e)c(e|u|i)c(i|t)ccesc|a(d|b)|e(x|a)
+ Samples: dolorum,quae,sit,facilis,voluptate
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.87000012398,1000,13.305,3,3,3
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: 1DD.(2|8)DD.1DD.DD(1|0)|(1|9)DD.DD(1|0).DD.(1|8)DD|DD.(1|9)DD.DDD.(1|2)DD
+ Samples: 182.88.176.131,167.227.180.34,162.170.247.181,61.27.116.66,225.235.158.102
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.53999996185,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: 1DD.(1|2)(2|0|5|1|3|7)D.(1|2)(2|0|8|9|4)(2|7|3|0).(1|2)(4|0|3|2|1)D
+ Samples: 183.10.202.69,152.180.193.181,134.240.18.244,171.206.122.60,155.49.107.63
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.97000002861,1000,13.286,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)(0|4|1|2|5|3)D.(1|2)(1|0|4|2|3|5)(4|2|9|1|0|3).(1|2)(0|1|3|4|8|2)D.(1|2|7)(0|2|4|5|1)D
+ Samples: 25.149.29.74,251.11.110.7,245.204.112.206,164.44.225.142,197.142.74.32
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.45000004768,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: fe75:6d4:8807:119d:9a55:3aa6:32fa:1f28,8423:62c0:12e1:cd8b:10de:2433:9c45:4173,80b2:558a:1388:d91e:1922:77c8:dce1:646,10f8:6e86:902d:450f:12bf:712f:22bb:572e,bb0a:4213:8e6e:be0:dd41:a4f9:7e8d:77fb
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.15999984741,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: bee0:597f:db51:eb:c217:62d8:f5a:69eb,b859:e55c:4ea0:89b6:ff85:2082:6af4:8862,a40a:6f07:3446:ba3d:a292:370d:7d28:e1a3,96a9:be00:ba53:ef1b:7c53:e10f:2100:289a,262b:c079:1267:fa6c:9dfa:a8ca:ff47:d301
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.3900001049,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 6be9:9a50:35f5:6981:26a2:de63:26fe:dca,2c10:ceb3:30f2:3fc4:6d1d:4fa8:549f:410d,6ee6:b5d0:ab7e:22ff:eeb9:e2bb:1e7f:e836,ccd1:82d8:127b:3538:f36f:1aaa:c090:1de2,10e:9a95:53dd:1b49:668:ca2f:ad62:4a3
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.84999990463,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: c3649cb1-a766-43dc-8b5e-ecfa034357d0,ba23c9f7-b39f-4441-8fcc-aef150cb6793,51f5ea68-ae87-4a34-8be9-b875ae71c72e,7a437c46-c10a-4dd6-b642-829ab4303181,5cb99f87-8f88-4bc1-a11c-4a9d0a7ac37e
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.8599998951,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 1d9803b7-1520-44bd-ba79-1dcda1fe2396,590276a6-3672-49af-ba4b-b3461fe98394,a6592f9a-cb7d-40e1-8a75-80ec69ff20b1,3e8176b8-fd84-4a0d-9b3a-bd88de2899d5,948c2ad8-0ff8-4d29-94ff-7e4097481e64
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.95000004768,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 8974049b-afb2-46b1-928b-258ddbc5701c,44081c88-14f4-4f30-bb27-7801824e4326,82b3be81-4a3b-483d-b3e7-cf55f6466c96,f69790ae-3303-4e57-8bf2-97971efbec8d,fc604157-5b48-4d00-a28c-7df09d680ee8
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,37.8410000801
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.679999828339,1000,2.59,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: DDS|Jr.|C|MD|PhD
+ Samples: PhD,Jr.,II,MD,Jr.
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.509999990463,1000,2.593,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DVM|MD|JrD.|V
+ Samples: DVM,III,MD,Jr.,DVM
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.689999818802,1000,2.57,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: Jr.|V|PhD|D(D|V)(S|M)|MD
+ Samples: Jr.,MD,MD,Jr.,DDS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.75,1000,6.533,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: a|cccc(e|i)c(e|a)cccc|e(a|x)|a(t|d)|inventore|in
+ Samples: inventore,occaecati,vitae,tempore,dolor
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.92000007629,1000,6.442,0,0,7
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|(d|r)(i|e)(g|p)(n|e|f)(i|e)(s|c|i)(s|e)(i|n)(m|d)(o|u)s|(e|h)um|ea|c(u|a)cccec|(a|e)(t|x)|(n|s|c)(e|u)ccc
+ Samples: dignissimos,facilis,dolorem,fuga,ipsum
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.42000007629,1000,6.463,0,0,7
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: False
+ MODEL: a|(m|a|d)(o|i|e)c(i|u|e)ccctccc|(q|i)(u|a)ccc|(e|i)(a|n|b)|(e|s|a)cc|c(u|i)cc|inventore
+ Samples: inventore,nihil,repellat,et,ab
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.71099996567,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2)(3|1|4|2|5|0)D.(1|2)(3|2|1|4|8|0)D.(1|2)(4|3|0|2|1|5)D.(1|2)(2|4|0|3|5|1)(1|5|3|8|6|4)
+ Samples: 31.132.153.166,86.86.72.35,247.125.248.153,41.101.46.171,237.85.17.229
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.710000038147,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: DDD.DD(9|3).(1|2)DD.(2|1)DD
+ Samples: 70.209.22.65,120.227.157.150,44.229.80.23,196.79.48.245,128.41.136.204
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.36000013351,1000,13.286,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)(1|2|0|4|5|7)D.(1|2)(1|4|0|3|2|5)D.(1|2)(0|3|1|4|2|8)D.(1|2)(0|2|1|4|3|5)D
+ Samples: 57.253.130.217,132.147.110.164,144.250.204.66,213.255.242.158,13.76.160.248
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.5,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 7fab:23f1:9dbe:fcee:727:2ef5:59e:1597,3e96:8a26:f934:2348:9981:d303:bee3:779b,217:eb49:c481:60f7:4a64:ccfe:2dca:3de1,cd42:4cc4:2bc5:6c11:5b07:8fef:d600:c01a,ce5b:3307:2ea:10e6:98d1:11d4:30f3:deac
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.44099998474,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:D***:****:****
+ Samples: bdb9:1038:f068:c1d2:b9d5:48b8:bc96:bd13,7a9a:de59:8f94:bd0f:7d15:7e0a:f143:6ce6,9c5c:4c5:6dc4:34d0:404:5202:af5c:e2e6,fb2e:ce3:f6a7:d2da:763b:3b70:2a61:4be3,9976:3ea6:bd0f:f163:f95c:bece:8874:5dd0
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.5,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 6fbe:ee18:5a51:952c:bc26:f376:6827:e399,8cfb:fc18:c578:db34:e08d:15eb:d958:7997,de0a:e214:bb3c:cdb7:da56:e897:407c:17a9,f5b5:97ad:4564:340e:c57a:4ae8:73d1:d219,ef0a:44cb:635a:e27c:8865:6b94:d4cb:825f
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.75,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: bf216470-fcbe-4fc5-92bf-807db34efe2c,0ca02128-4d6c-4851-9ddc-5307acadb162,8e169641-fc4f-4400-8a90-46d45d25dc4a,47f9d50c-b656-40a5-9885-f6026cd0a6f9,0f9b221a-5335-40a4-b6fc-b89fc59167ba
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.96000003815,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: aa31269c-796e-442f-9028-6fc03acab8c9,817a9889-ab44-45cd-bbba-40e7acebbfba,8430549b-2036-4232-a094-8f84f36c3ad9,437b9db7-5c77-4d27-b7ba-d0e70549409d,65cd9dc1-74d2-44aa-9b14-d2f581650f0e
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.01999998093,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 52f4a523-3612-4b07-b150-cd6b13f5c155,81401141-4c4a-4b7a-970e-a9a56b7972e6,08732529-a64f-4238-99f7-eaacf6660a4f,ab6e0e3e-8586-473e-8229-8111c3392649,7fac86a2-48a0-49cf-998b-323f993590a0
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,36.2019999027
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.910000085831,1000,2.59,0,1,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: MD|C|DDS|Jr.|PhD|II
+ Samples: II,DDS,DVM,DDS,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.77999997139,1000,2.593,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DDS|Jr.|V|MD|PhD
+ Samples: PhD,Jr.,DVM,DVM,Jr.
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.569999933243,1000,2.57,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: MD|V|PhD|D(D|V)(S|M)|Jr.
+ Samples: DVM,MD,DDS,MD,DDS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.57000017166,1000,6.533,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: False
+ MODEL: a|ccc(e|o|i)cccccc|(v|q)(u|e)(t|i|l)cec|(e|a)(x|t|a)
+ Samples: aut,quisquam,illo,veritatis,dicta
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.82999992371,1000,6.442,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|e(a|x)|a(t|d)|labor(i|e)osam|c(u|e)ccc|ccc(u|e|a)c(i|a|r)c(t|s)(i|e)cmc
+ Samples: laboriosam,ex,laudantium,praesentium,perspiciatis
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.28399991989,1000,6.463,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: True
+ MODEL: a|(a|e)(d|a|t)|d(o|i)(l|s)(o|i)r(u|e)(s|m)c|in|ccc(i|d)cit(a|i)tccccc|aliquam
+ Samples: cupiditate,architecto,aliquid,aliquid,minima
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.72900009155,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2)(3|4|1|2|0|5)D.(1|2)DD.(1|2)(0|4|3|2|1)D.(1|2)(2|0|3|4|1|5)(1|4|3|5|8|0)
+ Samples: 47.170.194.127,126.186.196.229,55.171.149.236,113.173.73.16,85.161.167.51
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.85000014305,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2)(3|2|0|1|4|5)D.(1|2)(1|0|2|5|3|4)D.(1|2)(4|1|3|2|0|7)D.(1|2)(1|4|2|3|0|6)D
+ Samples: 71.211.160.8,249.122.182.151,237.88.47.168,196.47.212.126,65.251.21.139
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.62000012398,1000,13.286,3,3,2
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: DD.DD0.(1|2)DD.(1|2)DD|(1|2)DD.(1|2)DD.(1|9)DD.DDD
+ Samples: 73.76.183.209,155.5.204.77,101.190.173.71,122.20.9.15,105.12.99.77
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.69999980927,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 881f:2246:612a:4463:6bb6:748f:2533:6b6f,9785:f135:1883:a5e6:15a6:a049:48ad:7d6b,70ed:da6b:952:483e:85fb:60d7:ade9:a953,36de:326c:1f3c:322b:8b7a:31c3:d679:8fb4,d6aa:d54:2388:953a:e203:b557:1896:d0c6
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,6.26999998093,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: c7e2:2405:c692:676:6744:4229:e3e7:64fa,fa5f:f462:cd2f:d136:d98e:c7d:ec2f:ee78,e810:9213:95eb:5c2b:1c63:ce0a:fbd:f26c,8fc:bcf7:66e6:b257:4e14:cb6e:2f74:14b5,1665:2614:a31:6955:28f8:577b:793:d0dd
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.42299985886,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 1fff:9c8f:1931:4131:b779:392b:81ac:f04d,fee2:1de0:c79a:1b9b:260f:76a3:557d:e8e1,e4b0:531e:98b5:ea20:b70:7db:bda9:6126,3fdb:df11:6406:5294:2dda:13d1:2c6c:5c25,4549:44aa:6f81:6503:12cb:e278:6a44:dfa8
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.93700003624,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 3053e90c-b3c9-4900-9680-ddf62a628298,82ea7936-7835-4ca0-8e19-0b87d29cc072,7a7796d0-5480-4c7c-bd37-a58e63d1a1fb,75e53eee-6456-4a49-b939-4919e2e566f9,829f4d9b-1959-4b6c-9963-5d565251847c
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.87000012398,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 3fa3094c-e109-4754-8e7f-74e84cbfa405,8fbeed40-e649-4fd7-8534-ea991a1269a7,2ac07f87-13de-4101-9315-e2a987cf51ed,1589978e-0e64-4b64-ad6c-a5ed3b3f4040,dda59002-b6f5-4d8d-8dd7-1c3fa790c72f
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.83999991417,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: deafb6dc-903b-4051-aceb-b5625f6cb9ad,24f839d6-6b9d-4214-acd2-acfe20972c80,a2d26a11-7ddc-4d31-9988-be2c341d40c7,931e4d51-d45c-49c7-839c-6659e6c3da8d,47c40a42-4c4a-4c45-bdd8-22827e2ba9ea
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,38.4479999542
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.700000047684,1000,2.59,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: MD|C|D(V|D)(M|S)|Jr.|PhD
+ Samples: PhD,MD,MD,PhD,DVM
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.5,1000,2.593,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DVM|MD|V|(P|J)(h|r)D.
+ Samples: MD,DVM,DVM,Jr.,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.480000019073,1000,2.57,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: Jr.|V|MD|D*(S|D)
+ Samples: Jr.,PhD,MD,MD,III
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.18000006676,1000,6.533,0,0,8
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: False
+ MODEL: a|c(o|u|a)(l|a|c)cc(e|t)(a|t)tec|(q|m)(a|u)c(i|u)(m|i)c|(e|a|c)ct|(i|a)(d|x)|at|cc(i|s|l)c(m|u)ccc|(l|d)(o|a)(b|l)orum
+ Samples: laborum,voluptatem,sapiente,dolore,eveniet
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.93000006676,1000,6.442,0,0,7
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|a(d|t)|ccccc(i|t|u)cccc|(i|u)(t|n)|corporis|c(e|u|m)ccc|e(x|a)
+ Samples: corporis,sed,similique,reiciendis,ad
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.54999995232,1000,6.463,0,0,8
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: False
+ MODEL: a|cuc(t|a|s)c|ea|cc(p|l|a)cccccccc|(s|e|a)(i|e|o)(t|c|d)|in|et|aliquam
+ Samples: aliquam,voluptas,itaque,nulla,repellendus
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.98000001907,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2)(3|4|1|2|0|5)D.(1|2)(2|3|1|7|8|4)D.(1|2)(0|3|4|1|5|2)D.(1|2|8)(0|2|4|3|1|5)(1|5|3|6|8|4)
+ Samples: 170.162.170.245,126.186.196.229,71.24.135.82,198.147.137.225,64.179.172.191
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.23000001907,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2|7)(0|2|3|1|9|5)D.(1|2)(1|0|5|2|4|3)D.(1|2|9)(1|4|2|7|3|0)(2|0|1|7|3|5).(1|2)(4|0|2|3|1|6)D
+ Samples: 160.93.176.193,173.94.56.10,37.58.20.113,241.202.234.250,125.228.189.240
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.61999988556,1000,13.286,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)(1|4|0|3|2|5)D.(1|2)(0|1|4|3|2|5)D.(1|2)(0|3|1|2|4|5)D.(1|2)(0|2|1|4|3|5)D
+ Samples: 73.178.159.104,175.216.221.250,217.177.33.100,1.58.251.227,173.229.165.180
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.16000008583,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 6e4a:240:6c8d:927:6a4a:a7f1:fbaa:d6ad,236c:5fea:6f43:83e4:d6cd:956d:e91a:7606,1c4f:90ef:b3e6:2a1:ccf1:f856:5e5b:3225,8f9a:d25d:7825:f3cc:f451:b9b4:b1ca:b61e,c43b:1b0d:ea9c:c0f2:148b:5bf7:a08:9760
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.41000008583,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: b5f2:5877:8a67:8eb0:19cf:d806:a7b0:d277,336f:5dd4:28f9:ef53:2704:8ff:b9a8:290,432e:ea59:b91b:64d5:3930:ddda:7a91:7ced,978e:116:8d39:1b96:a8bc:1905:a67f:e593,dd96:dab9:150:3249:ea8:d4a2:959f:69f6
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.33999991417,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 632c:4d16:30d0:110a:148c:d7ec:d00b:a6eb,734c:c80f:4502:443d:5e20:c408:c3ea:28c,cb52:2e3a:e840:723e:81c3:c366:b3b8:f55d,a772:a5f7:8740:ec75:8079:e0c5:b62e:f1e4,ca0d:e8f:be10:b874:9c97:7dd5:b38b:9f08
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.92000007629,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 27035985-135c-47b6-94ba-e7f960a9d999,a50b849b-4bdb-43ac-a9a6-8fc087d952c2,85a1413b-9666-43b1-983b-8c27d96387ab,bfb0a0f5-2e5a-4ac0-a94f-26b3a1cf6021,0cabb3e2-a432-43ad-8d49-f95bf4a47fac
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.29999995232,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: accce3c4-e02d-46e6-8a26-8b17f5272898,37429774-c2b5-404c-a6ce-cb888001bb91,9ccb0eb0-bf0f-4d10-9856-68ee9fba40f3,0b13fb35-0304-4345-8e99-627574054463,b2837287-0813-4579-a00f-63a218b25f11
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.93000006676,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 41cdafb5-6da2-4653-957c-3a970a712000,04e9d572-bebd-4f8f-9c0e-d28380c9262a,25948b7b-a93d-4ed3-8662-586cca1538db,b11b32b8-32fa-44fa-97a1-18301d527cc2,8f87fefc-f8bc-4f41-9066-5060f2b4215f
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,37.5199999809
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.640000104904,1000,2.59,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: DDS|Jr.|C|PhD|MD
+ Samples: Jr.,DDS,DDS,MD,DDS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.459999799728,1000,2.593,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DDS|Ph*|V|MD
+ Samples: DDS,DDS,DVM,DDS,PhD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.360000133514,1000,2.57,0,0,3
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: (D|J)**|MD|V
+ Samples: MD,DDS,MD,PhD,Jr.
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.27999997139,1000,6.533,0,0,8
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: a|(s|q|e)(i|u)(t|i|u)(s|m)c|ut|c(i|o)cccc|(q|s|a)(u|e)cc|c(a|o)c(a|i|e)cccc|(e|q|n)(u|o)(m|o)|(e|i)(a|t|d)
+ Samples: ut,totam,modi,expedita,saepe
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.09000015259,1000,6.442,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|(q|i)(u|p)(i|s)c|(p|d)(i|e)(s|o|c)(u|t)(i|p)(n|i|d)(c|a)(t|n)(i|a|t)(o|a|e)cc|ccc(e|m)cc|(a|e)(t|a)|(s|d|o)(o|u|c)ccccacc
+ Samples: distinctio,dolor,est,voluptatem,soluta
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.38999986649,1000,6.463,0,0,7
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: False
+ MODEL: a|(v|r|f|s)(e|o)(l|p|g)(u|e|i)(p|c|l|a|i)(t|l|i)(a|i)(t|s)(e|d)(u|m|s)(s|e)cc|e(a|x)|in|c(e|u|a)(m|e)(q|i|p)(u|i|o)(a|i|r)(m|e|s)|(s|q|a)(i|u)(t|i|c)|(a|e|d)(i|u|l)ccc
+ Samples: numquam,fuga,veniam,repudiandae,corporis
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.70000004768,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2|3)(3|4|1|2|5|7)D.(1|2)DD.(1|2)(0|4|3|1|2|5)D.(1|2|3)(4|0|2|3|1|5)(1|3|8|5|4|0)
+ Samples: 235.222.216.199,125.180.6.142,17.171.56.211,215.145.154.210,83.167.249.225
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.80999994278,1000,13.301,3,3,3
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|6)DD.DD1.DDD.DD|(1|9)D(0|6).DDD.(1|2)DD.(1|7)DD|D(3|5)D.DD.DDD.(2|1)DD
+ Samples: 43.77.68.157,196.253.206.12,200.208.18.74,97.233.85.102,54.7.161.168
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.53000020981,1000,13.286,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)(1|2|5|4|0|3)D.(1|2)(1|0|3|4|2|5)D.(1|2)(1|0|3|4|2|8)D.(1|2)(0|2|4|1|3)D
+ Samples: 156.187.218.50,181.162.173.160,97.68.36.139,7.201.84.185,100.77.233.115
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.40999984741,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 365e:dcf4:1ad6:d793:55d5:5ea8:aeeb:34b3,ba7b:1a62:a4ff:cc98:d239:dbae:89a0:1f1,66e9:785f:636f:97f6:6358:c757:280b:2bac,c100:825e:9d66:76d4:7e3:7b19:63a3:4da3,8ada:7beb:6c61:9827:8e40:d6b9:44ec:da95
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.47000002861,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 30b6:a4f5:2652:b65c:a7c9:8750:bd8c:1edd,dd96:dab9:150:3249:ea8:d4a2:959f:69f6,8540:4f05:38aa:c069:a7ef:4c56:f970:b1ed,68e8:3ea9:2f80:1a58:e96a:e9ff:7063:7704,15a5:f789:1fcd:c840:a2:8a12:5d19:71ae
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.44000005722,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: fbcd:b82d:75a5:c08c:c7d5:fe09:f94b:c66c,2a40:1086:278b:a56:245:c82d:7148:891f,771a:fa91:5979:695a:8d16:460f:9f73:59a,87c1:85d8:48a:c609:4f:19a5:cc0b:d15f,c3be:91c3:2b5c:761e:c7a6:b9a4:9eba:5a88
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.85000014305,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 2f8a5a2f-2fff-43b6-be99-a3408010fd5c,980d136c-d781-42c2-9261-e12bcef96faf,15e7095a-be70-461b-8546-8c3334ab960e,9935edab-8d6f-4179-b20a-04b8699b198d,46ba0909-cbd9-4225-b213-1a3cfa49d650
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.83999991417,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: a6ab316c-c0ae-42c8-821b-bdb4fb82dc85,b9e77bb7-67aa-468c-8acc-34b748658bd1,6f0caf69-9ac5-45f7-bcde-ee8e243d6f28,dd35a5bf-c846-4d51-b331-b90e9ee0a83f,90e1e751-acde-43d3-b9b9-81a1a9acae30
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.94000005722,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: c4bda507-6832-417f-bad2-06b78bf8a999,493d7db6-2160-4ebe-a5ce-3425998b6c20,8449f440-9763-42b9-8c82-7f7b7c534332,2fb7876a-1b29-42ac-8efb-c85b2d57a30b,fad818d6-fc3d-4b82-9396-546e8316403f
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,37.4800000191
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.579999923706,1000,2.59,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: MD|C|D(D|V)(S|M)|Jr.|PhD
+ Samples: DVM,MD,PhD,DDS,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.460000038147,1000,2.593,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: MD|(J|P)(r|h)*|D(D|V)(S|M)|V
+ Samples: DDS,MD,DVM,MD,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.650000095367,1000,2.57,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: Jr.|V|PhD|D(V|D)(M|S)|MD
+ Samples: Jr.,DVM,Jr.,DVM,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.63999986649,1000,6.533,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: a|c(u|e)ccccc|(q|c|e)(u|a)(m|o)|(s|e)i(n|u)(s|t)|c(i|x|e)c(e|i|r)c(i|t)cc(e|i|m)csccc|(e|a)(t|d)
+ Samples: sint,ducimus,ipsam,totam,tempore
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.90000009537,1000,6.442,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|c(e|x)c(r|e)cc(t|a)(i|a|b)cccccc|ccc(i|e|u)c(e|t)nda|(e|i)(x|n)|(a|e)(t|b)|minus
+ Samples: minus,assumenda,unde,fugiat,assumenda
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.23000001907,1000,6.463,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: False
+ MODEL: a|in|(r|a)(e|s)pe(l|r)(l|n)(a|e)(t|n)(d|u)(u|r)s|e(x|a)
+ Samples: aspernatur,amet,ex,ad,repellendus
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.51999998093,1000,13.305,3,3,2
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: 18.113.155.77|(1|2|9|8|3)DD.(1|2)(3|2|0|1|4|8)D.(1|2)(3|4|0|1|2|7)D.(1|2|8|3)DD
+ Samples: 18.113.155.77,110.251.39.164,157.89.102.209,30.39.25.124,71.199.59.35
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.74000000954,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2|3)(2|9|1|3|0|5)(8|3|9|7|0|4).(1|2)(1|3|5|8|0)(3|2|1|5|0|4).(1|2|9|5|8)DD.(1|2|7)(3|1|4|2|0|9)D
+ Samples: 178.133.235.113,136.147.238.114,71.93.186.146,241.14.172.67,142.90.187.97
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.61000013351,1000,13.286,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)(1|2|4|0|3|5)D.(1|2)(1|0|4|3|2|5)D.(1|2)(0|3|1|4|2|8)D.(1|2)(0|2|1|4|3|5)D
+ Samples: 183.208.172.182,52.95.3.212,251.176.188.20,50.93.207.187,112.62.83.155
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.24199986458,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: b868:ad7b:67ec:26f6:b978:7e97:de8f:e9e4,300:33ca:5cd9:d505:24db:fb7b:68c2:b335,7bfa:3550:4c43:1c5f:484d:bb25:5094:f7d3,6cdc:1ae6:db46:e704:fddc:b9b8:c4c2:70fb,6011:2aa0:bc3a:918d:9ccd:4b15:1368:db38
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.32000017166,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: ba40:2795:58ab:3b54:db02:8ff4:9181:c81b,d86c:40b2:3fd:3dcf:bd2f:479f:fc45:1d21,4723:14ea:2a7b:1ff3:50b3:a96c:ce41:3ab,76b4:f156:835:8156:9791:d54b:7660:f2ec,1bde:6b08:bfb3:7358:4e86:d8e3:8cef:d57
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.39999985695,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 1df2:5c1e:e45:43f3:7230:30c1:3d0e:d752,e02d:f523:713b:769a:8f3:82c6:e006:1342,5db0:7224:1f9:3719:b2ca:612e:e987:7070,41fe:8a4e:4b82:499d:ef28:95d2:af69:1d57,2452:9849:470c:bb62:17c1:fc85:3683:b2a9
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.08999991417,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: b35a2dfc-812b-47e8-85fd-4b3d3dca8d54,2d3f8d52-c871-4376-980c-97eaea38caa3,70370af8-8bdf-4378-98f9-738515a221a1,5e518b9c-dbdd-4a4c-aaf1-d01b4c372e97,b03e85e8-9281-43cb-a401-08ceb81c7c2b
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.75099992752,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 72ef2e73-0b00-4d67-a40e-b1a442b91bd7,76849cb9-0be0-4428-8a7a-6489705de7e0,bdaa9343-947a-43fd-9cb7-d1348539105d,8b235f9f-ab09-4592-95b5-b72acb661ecb,e05c71f3-2a9e-4eff-bb3e-a43e6bb25851
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.12800002098,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 15f10c2c-d6be-495f-a2bf-a0f3b2834a66,621e98da-a20f-4c21-9eb3-92f29478dca8,00e8e266-5682-4e45-9bdf-2548bda2fe41,54f4a731-7ed8-4de6-bbe5-dd469a55854d,c4bda507-6832-417f-bad2-06b78bf8a999
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,39.5409998894
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.480000019073,1000,2.59,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: DDS|MD|C|(J|P)(r|h)*
+ Samples: DDS,MD,DDS,PhD,Jr.
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.700000047684,1000,2.593,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DDS|MD|V|Jr.|PhD
+ Samples: DDS,PhD,II,PhD,DDS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.759999990463,1000,2.57,0,1,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: MD|V|D(D|V)(S|M)|Jr.|PhD
+ Samples: PhD,DVM,DDS,MD,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,6.00999999046,1000,6.533,0,0,9
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: False
+ MODEL: a|(e|i)(d|x)|(n|v|b)(a|e)ccccctcc|(q|i|f)(u|p)(i|s|o)(a|s|i|d)(m|o|s)(t|m)|(n|e|s)(i|o)(n|s|m)c|veniam|at|in|(a|e|h)u(t|m)
+ Samples: veniam,voluptatum,natus,porro,deserunt
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.0,1000,6.442,0,0,6
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: a|minima|c(o|u|e)(l|n)(u|s|e)(a|e|c)c(t|a)c(u|t)(m|u)r|ccccccctcc|(i|u)(t|n)|(a|e)(a|b)
+ Samples: minima,cum,delectus,nulla,consectetur
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.33999991417,1000,6.463,0,0,7
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: False
+ MODEL: a|c(u|e|o)(m|t)|c(u|a)cccccccc|c(i|u)(r|d|c)(e|s)|(v|a|r)(o|e)(l|c)(u|e)(s|p)(t|a)(a|i)t(i|a)(b|u)(u|m)scc|(i|a)(n|d)|e(x|a)
+ Samples: voluptatibus,omnis,molestias,iste,dolor
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.25999999046,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2|3|9)(4|1|2|3|5|0)(3|2|6|5|8|1).(1|2)(3|1|2|4|0|5)D.(1|2|6|7)(3|4|0|5|7|6)D.(1|2)(2|4|3|1|0|6)D
+ Samples: 31.133.194.227,74.111.53.58,32.31.169.88,59.135.132.121,212.36.169.106
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.5600001812,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2)(2|0|3|1|4|5)D.(1|2)(2|0|1|3|4|5)D.(1|2)(4|2|1|3|7|0)D.(1|2)(2|4|1|0|3|9)D
+ Samples: 76.38.125.160,242.43.105.188,234.84.230.166,205.211.245.11,111.119.104.36
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.19999980927,1000,13.286,3,3,2
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (2|1)DD.(1|2)DD.DDD.(2|1)DD|DD.1DD.(2|1)D(2|0).DDD
+ Samples: 210.118.33.214,163.249.212.160,197.158.116.69,205.241.163.63,132.201.84.47
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.66299986839,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: faf7:2f01:34de:26d:5f06:629f:bb07:d40c,49d4:82c7:87c6:cd84:a973:8c2e:15e2:d2a0,b0d5:6e6c:87b:26c7:1e41:fcc:ec4b:1eca,3ffd:70c1:2174:27c9:b25a:d2c4:8b3a:dec1,fe75:6d4:8807:119d:9a55:3aa6:32fa:1f28
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.20000004768,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 994d:9841:efc:3665:703d:6d:c2a6:3429,f145:73d3:b16e:24fc:1bd2:635f:de00:ed33,9bfd:aa16:24e:71d3:aec8:705a:bcc5:c7f9,b417:7a0d:3ffb:58bb:bbf2:e4aa:6ab8:362,40ec:7943:406e:c92c:b83b:c6ae:3922:bd92
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.35599994659,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 4536:47c5:ef14:d6ac:cf9e:54a0:9c63:3eb5,5c58:8e97:83bd:dedf:9fb:ca8a:f584:662e,7978:28a1:377d:1781:6a6d:412a:8b52:5725,7094:5397:f6d8:29b3:f3cc:af59:802e:b6fe,cf35:139c:c6e7:8dfe:b9f8:824a:ef1c:67e3
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.94000005722,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: c5a0a167-3b01-4095-a29f-e0d942378eb2,32b63071-ffb4-4abd-b0d6-26223e1dbd86,17693578-6dc7-4280-9908-a3cc39da771e,cd95614e-7076-42bb-b7c7-3df1d89f59f5,74fa6b97-6f97-4aaa-bc3b-731168e78a0c
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.63000011444,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: fd1a0b9b-2af0-4ea1-b846-c4cdaae5ead8,70dc5e93-4ca9-4e3d-a38d-fe4ddcf23362,43795ba2-6339-4027-a55f-683355661ba9,f39bd29c-1540-4003-826f-81332bd27eb5,a80c9d9d-75a3-483d-a7e7-c35861bdd8d9
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.84999990463,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: d934a36e-bb9a-44d0-b15d-c3a1ab26437b,716c90ac-cf9d-4380-a589-ffdd65b3abf4,bd019d4a-839e-439c-b8d0-a36841cedd4f,50a7ebef-fcc6-4c28-851c-d582edaedc41,23acedf1-37ea-460c-aeee-03d76079cc6e
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,40.2089998722
+Namespace(directory='synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text', errordetect=None, filename=None, output=None, threshold=None)
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.430000066757,1000,2.59,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix01.txt - MD
+STRUCT. SCORE: True
+ MODEL: MD|D*S|C|Jr.
+ Samples: MD,DVM,PhD,MD,PhD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.47000002861,1000,2.593,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix02.txt - PhD
+STRUCT. SCORE: True
+ MODEL: DDS|MD|(P|J)(h|r)*|V
+ Samples: DVM,MD,MD,DDS,DDS
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,0.44000005722,1000,2.57,0,1,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-suffix03.txt - DDS
+STRUCT. SCORE: True
+ MODEL: MD|V|Jr.|D*(S|D)
+ Samples: MD,DDS,MD,Jr.,MD
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.69999980927,1000,6.533,0,0,4
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word01.txt - numquam
+STRUCT. SCORE: True
+ MODEL: a|ccc(i|a|p)ccccc|(e|i)(t|d)|dolor(e|u)m
+ Samples: dolorum,veritatis,cum,porro,dolore
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.27000021935,1000,6.442,0,0,5
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word02.txt - aliquam
+STRUCT. SCORE: True
+ MODEL: (a|e)(x|t)|(c|e)(o|x)(n|e)(s|r)(e|c)(c|i)t(e|a)t(u|i)(r|o)nem|(e|a)(u|a|s)(m|t)|a|c(u|a|o)cccccc
+ Samples: consectetur,nulla,optio,et,commodi
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,5.50999999046,1000,6.463,0,0,9
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160913-rowvariable-col1000-word03.txt - hic
+STRUCT. SCORE: True
+ MODEL: e(x|t)|a|est|c(u|d|l)(l|i|m)(t|u)(a|m)|a(d|b)|in|d(o|i)(l|g)(o|n)(r|i)(i|s)(b|s)(u|i)(s|m)os|c(a|d)(i|c|b)orec|(q|i)(u|n)c(s|e)i
+ Samples: facere,doloribus,dignissimos,dignissimos,possimus
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.5,1000,13.305,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv401.txt - 159.112.55.237
+STRUCT. SCORE: True
+ MODEL: (1|2)(1|3|4|2|5|0)D.(1|2)DD.(1|2)(4|0|3|1|2|5)D.(1|2)(2|4|3|0|5)(1|5|8|3|4|0)
+ Samples: 175.182.107.129,211.21.123.136,62.80.36.4,165.38.133.5,181.68.107.97
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.21000003815,1000,13.301,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv402.txt - 158.207.137.192
+STRUCT. SCORE: True
+ MODEL: (1|2)(0|2|3|1|5|4)D.(1|2)(2|4|1|0|3|5)(1|7|8|6|0|4).(1|2|5)(1|4|7|3|0|2)(6|1|0|3|7|4).(1|2|7)(3|1|4|2|0|9)D
+ Samples: 30.117.136.183,155.207.106.107,161.191.37.168,76.136.106.162,124.228.111.138
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,1.47000002861,1000,13.286,3,3,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv403.txt - 143.249.48.197
+STRUCT. SCORE: True
+ MODEL: (1|2)(0|2|1|5|4|7)D.(1|2)(1|3|4|0|2|9)D.(9|3|2|4|8|1)DD.(1|2)(0|2|1|3|4|7)(1|9|5|4|6|8)
+ Samples: 55.211.42.61,202.6.89.216,177.85.117.156,95.189.181.43,107.121.212.63
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.51999998093,1000,38.458,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-01.txt - a40:c59e:ef76:3373:d2ba:d9c7:37c0:5dea
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 5c03:7126:39b5:56e4:c61c:7815:7111:c8dc,442c:fbf8:bb91:c45c:86c6:267d:fb51:ae4f,ad93:5c6c:e72f:d494:680:8435:cccc:85af,62c6:4a78:f0d2:b105:8f10:a473:c6da:f52a,4b67:8eda:7de1:8679:44cf:60c8:7196:593b
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,4.45000004768,1000,38.474,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-02.txt - d9d7:6bb2:dab4:f7b2:c6ef:76ac:a4d3:5c2f
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: 885a:f9e9:ed2:9c83:10cb:9861:bf6a:c031,b36:7bc3:32b5:d70b:39f7:d77c:eacb:123d,3b77:4d2f:a732:1cde:9e0f:bfce:1e8c:cfb7,1d1f:3ee7:8c8c:4c0:32ba:c9d3:d276:52dc,d0e5:c338:9554:9838:7d6d:15ef:6791:718b
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,3.38999986649,1000,38.497,7,7,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-ipv6-03.txt - 9500:fcf5:591b:f62f:169a:4dce:a524:4d36
+STRUCT. SCORE: True
+ MODEL: ****:****:****:****:****:****:****:****
+ Samples: cdf3:2ad2:cbaa:a16e:90cc:6697:1781:ac99,6070:1cbb:2595:3522:3e12:57a6:2811:ad96,c03c:144e:e54:d5b7:f666:8d13:7840:b73a,5f1:25f1:b1d3:58e9:eea5:8cc:5300:e841,19cf:88cd:7d67:d33c:6ad:4e8f:15b9:d839
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,5.74000000954,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-01.txt - 4d687af4-f749-41cf-85b8-8e9035380ca6
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: fcca1e83-4282-434d-ad7f-4aba1063323e,260afba7-0f8f-49da-b632-0a9150d2a3df,2ac0f742-60b4-4e9a-ab3e-221f93c95e15,da895202-8364-4af4-b59f-596a14365aee,f78a73d2-c122-48f2-ad68-5d574a134451
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.87000012398,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-02.txt - c2f03ae0-7519-47b2-866e-9481cec5309d
+STRUCT. SCORE: True
+ MODEL: ********-****-4***-****-************
+ Samples: 4ad50b10-e5b9-4504-a46a-aaee31b87b2d,b065fde7-bfa5-4dcd-be61-c1486ab014df,a8d1cdb7-6f81-4675-986c-590149e77d18,54b600af-7e56-449c-9080-8a3f7e12d817,d388237a-d905-4227-b211-863e85ff16be
+
+
+function,runtime_seconds,column_length,average_row_length,avg_num_hinges,max_num_hinges,num_branches
+learn_structures_for_single_column,2.92000007629,1000,36.0,4,4,1
+synthetic_datasets/fixed_col_size/different_hinges_and_free_form_text/20160921-rowvariable-col1000-uuid4-03.txt - 095a05e3-cffb-418b-b659-8bbd89defac7
+STRUCT. SCORE: True
+ MODEL: ********-****-4**D-****-************
+ Samples: 963faf63-6a5a-49d6-bd4e-dc416356b396,0b5e1c6b-bd06-4af4-ac78-697184041f6c,9fbf5463-f5c9-436e-af10-2185b8e303ec,cfaf4ec8-360f-4c66-9248-e86b971b4bbb,ecbdb5c1-21e0-4054-a27d-ef7ff7bd8c01
+
+
+function,runtime_seconds
+learn_structures_for_all_files_in_path,39.1700000763
+1 loops, best of 10: 36.9 sec per loop

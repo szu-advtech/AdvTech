@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: org.ejml:ejml-simple:0.41:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/ejml/ejml-simple/0.41/ejml-simple-0.41.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/ejml/ejml-simple/0.41/ejml-simple-0.41-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/org/ejml/ejml-simple/0.41/ejml-simple-0.41-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

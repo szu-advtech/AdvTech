@@ -1,0 +1,8 @@
+### public dataset 
+1. BeerAdcocate and yelp data
+2. column of both files: `(user, object, time(day), edges)`
+
+### code
+1. `python run_beer.py` to run BeerAdvocate data
+2. `python run_yelp.py` to run yelp data
+3. required enviroment: `python 3.6`

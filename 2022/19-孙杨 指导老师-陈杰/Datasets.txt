@@ -1,0 +1,2 @@
+Install [COCOAPI](https://github.com/cocodataset/cocoapi)
+Install [CrowdPoseAPI](https://github.com/Jeff-sjtu/CrowdPose)

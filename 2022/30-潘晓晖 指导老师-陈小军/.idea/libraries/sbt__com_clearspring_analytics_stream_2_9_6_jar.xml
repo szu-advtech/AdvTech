@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="sbt: com.clearspring.analytics:stream:2.9.6:jar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/clearspring/analytics/stream/2.9.6/stream-2.9.6.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/clearspring/analytics/stream/2.9.6/stream-2.9.6-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../../../sbt/coursier/cache/https/repo.huaweicloud.com/repository/maven/com/clearspring/analytics/stream/2.9.6/stream-2.9.6-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

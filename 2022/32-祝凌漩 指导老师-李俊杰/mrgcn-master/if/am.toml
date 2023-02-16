@@ -1,0 +1,102 @@
+# Dataset configuration context
+
+# name of the dataset
+name = "AM"
+
+[graph]
+# available at https://gitlab.com/wxwilcke/mmkg
+context = "../../datasets/am/am2d+.nt.gz"
+train = "../../datasets/am/am_train_set.nt.gz"
+valid = "../../datasets/am/am_valid_set.nt.gz"
+test = "../../datasets/am/am_test_set.nt.gz"
+
+[graph.structural]
+include_inverse_properties = true
+exclude_properties = []  # use empty list to include all
+separate_literals = false
+multiprocessing = false
+
+[[graph.features]]
+datatype = 'xsd.numeric'
+include = true
+share_weights = false
+embedding_dim = 4
+gpu_acceleration = false
+p_dropout = 0.0
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.date'
+include = true
+share_weights = false
+embedding_dim = 3
+gpu_acceleration = false
+p_dropout = 0.0
+p_noise = 0.0
+noise_multiplier = 0.0
+
+[[graph.features]]
+datatype = 'xsd.string'
+include = true
+share_weights = true
+trim_outliers = false
+remove_outliers = false
+embedding_dim = 16
+gpu_acceleration = false
+p_dropout = 0.0
+model = [ "huggingface/pytorch-transformers",
+          "model",
+          "distilbert-base-multilingual-cased" ]
+tokenizer.config = [ "huggingface/pytorch-transformers",
+                     "tokenizer",
+                     "distilbert-base-multilingual-cased" ]
+tokenizer.pad_token = "[PAD]"
+
+
+[[graph.features]]
+datatype = 'blob.image'
+include = true
+share_weights = false
+remove_outliers = false
+embedding_dim = 128
+gpu_acceleration = false
+p_dropout = 0.0
+p_noise = 0.0
+noise_multiplier = 0.0
+model = [ "pytorch/vision:v0.10.0",
+          "mobilenet_v2",
+          "MobileNet_V2_Weights.IMAGENET1K_V1" ]
+transform.mode = "RGB"
+transform.interpolationMode = "BILINEAR"
+transform.resizeSize = 232
+transform.centerCrop = 224
+transform.mean = [0.485, 0.456, 0.406]
+transform.std = [0.229, 0.224, 0.225]
+
+[task]
+type = 'node classification'
+target_property = 'http://purl.org/collections/nl/am/objectCategory'
+target_property_inv = 'http://purl.org/collections/nl/am/material'
+seed = -1  # use < 0 for random
+gcn_gpu_acceleration = false
+batchsize = -1  # < 0 for full batch
+
+[model]
+epoch = 50
+learning_rate = 0.01
+num_bases = 40
+p_dropout = 0.0
+weight_decay = 0.0
+l1_lambda = 0.0
+l2_lambda = 0.0
+bias = false
+early_stopping.patience = -1
+early_stopping.tolerance = 0.01
+
+[[model.layers]]
+type = 'mrgcn'
+hidden_nodes = 10
+
+[[model.layers]]
+type = 'mrgcn'
