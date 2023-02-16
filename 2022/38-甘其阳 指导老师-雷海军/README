@@ -1,0 +1,6 @@
+configs为配置文件夹
+doc为测试输入图像
+output为输出文件夹
+ppocr为基于paddle的ocr工具库，做了部分修改
+svtr_train_model为训练好的网络模型
+tools为使用工具

@@ -1,0 +1,2 @@
+ndp_dram_sp_read,ndp_dram_in_read,ndp_dram_out_read,ndp_dram_sp_write,ndp_dram_in_write,ndp_dram_out_write,ndp_sram_sp_read,ndp_sram_in_read,ndp_sram_out_read,ndp_sram_sp_write,ndp_sram_in_write,ndp_sram_out_write,ndp_num_mac_op,ndp_end_time
+32768,698368,0,0,0,0,42780,1825280,1825280,32768,698368,1825280,456320,35376

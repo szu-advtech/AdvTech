@@ -1,0 +1,10 @@
+_target_: src.datamodules.undc_pc_datamodule.UNDC_PC_DataModule
+data_dir: ${paths.data_dir}
+batch_size: 1
+grid_size: 64
+num_points: 4096
+knn_num: 8
+pooling_radius: 2
+receptive_padding: 3
+num_workers: 24
+pin_memory: True

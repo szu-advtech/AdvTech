@@ -1,0 +1,10 @@
+_target_: src.datamodules.undc_pc_datamodule2.UNDC_PC_DataModule
+data_dir: "/home/fubao/dev/InterRecon/gt_UNDC_onlys00"
+batch_size: 1
+grid_size: 64
+num_points: 8192
+knn_num: 8
+pooling_radius: 2
+receptive_padding: 3
+num_workers: 48
+pin_memory: True

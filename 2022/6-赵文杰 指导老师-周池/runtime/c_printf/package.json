@@ -1,0 +1,9 @@
+{
+  "name": "c_printf",
+  "version": "0.0.1",
+  "repo": "Gioyik/c_printf",
+  "description": "Color C lib for printf",
+  "keywords": ["color", "c", "printf", "lib"],
+  "license": "MIT",
+  "src": ["sources/c_printf.c", "sources/c_printf.h"]
+}
